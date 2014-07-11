@@ -1,0 +1,2896 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="uyan_auth" content="04a3f6938d" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="微信营销、微信代运营、微信定制开发、微信托管、微网站、微商城、微营销" name="Keywords">
+	<meta content="盛世源码—国内优秀的微信公众服务平台，国内最大的微信公众智能服务平台，盛世源码—国内优秀的微信公众服务平台八大微体系：微菜单、微官网、微会员、微活动、微商城、微推送、微服务、微统计，企业微营销必备。" name="Description">
+    <script src="/static/wxgjcn/src/html5.js" ></script>
+    <link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/www/index1/index.css-2014-03-07-1.css"  media="all" />
+<script type="text/javascript" src="/static/wxgjcn/src/jQuery.js-2014-03-07-1.js" ></script>
+<script type="text/javascript" src="/static/wxgjcn/src/www/index1/weimob-index.js-2014-03-07-1.js" ></script>
+<title>盛世源码—国内优秀的微信公众服务平台</title>
+	<link rel="shortcut icon" href="httpimg/favicon.ico" />
+</head>
+<body>
+	<!--[if lte IE 8]>  <script language="javascript">$(function (){$.browser.msie&&$("#ie9-tips").show().find("#stopSuggestA").click(function(){$("#ie9-tips").hide()})})</script><![endif]-->
+<div class="nav clearfix">
+	<div class="nav-content">
+		<h1 class="left"><a href="/static/wxgjcn/index.html"   title="盛世源码—国内优秀的微信公众服务平台官网">盛世源码—国内优秀的微信公众服务平台·微信营销，如此简单！</a></h1>
+		<div class="left city">
+			<h2>上海</h2>
+							<a href="/static/wxgjcn/city1.htm" >
+					切换城市<i class="tri4"></i>
+				</a>
+					</div>
+		<div class="right line-li">
+        
+			 <ul>
+        <li><a href="/static/wxgjcn/index.html" >首页</a></li>
+        <li><a href="/static/wxgjcn/case1.htm"  class="hover">经典案例</a></li>
+	    <li class="nav_menu_li_1"><a style="width:70px; text-align:left;" class="_hover">产品中心<i></i></a>
+					 <div class="sub-nav">
+						 <a href="/static/wxgjcn/package.htm"  target="_black">服务套餐</a>
+						 <a href="/static/wxgjcn/guide1.htm" >功能介绍</a>
+						 <a href="/static/wxgjcn/topic/weipai.htm"  target="_black">微拍</a>
+
+					 </div>
+
+	    </li>
+        <li><a href="/static/wxgjcn/proxy1.htm"  >渠道代理</a></li>
+        <li><a href="/static/wxgjcn/help.htm"   target="_black">帮助</a></li>
+    </ul>
+            <div class="account">
+        <a href="/reg.html"  class="btn-reg btn0" target="_black">注册</a>
+                  <a href="javascript:;" class="btn-login btn0" onclick="if(location.hostname.indexOf('.cn')>-1){location.href='/static/wxgjcn/login.htm'/*tpa=http://www.weimob.com/site/login*/; return false;} loginBox.toggle(this, event);">登录</a>
+		</div>
+		</div>
+	</div>
+</div>
+
+	<div id="loginBox">
+		<div class="login-panel">
+			<h3>登录</h3>
+			<div class="login-mod">
+				<div class="login-err-panel dn" id="err_area">
+					<span class="icon-wrapper"><i class="icon24-login err" style="margin-top:-.2em;*margin-top:0;"></i></span>
+					<span id="err_tips"></span>
+				</div>
+				<form class="login-form" id="login-form">
+					<div class="login-un">
+						<span class="icon-wrapper"><i class="icon24-login un"></i></span>
+						<input type="text" id="username" placeholder="盛世源码—国内优秀的微信公众服务平台号">
+					</div>
+					<div class="login-pwd">
+						<span class="icon-wrapper"><i class="icon24-login pwd"></i></span>
+						<input type="password" id="password" placeholder="密码">
+					</div>
+				</form>
+				<div class="login-help-panel">
+					<a id="rememberPwd" class="login-remember-pwd" href="javascript:;">
+						<input type="checkbox" id="rememberPwdIcon">记住帐号
+					</a>
+					<a class="login-forget-pwd" href="/static/wxgjcn/forgotpassword/index.html" >忘记密码？</a>
+                    <a class="login-forget-pwd" href="/reg.html" >新用户注册</a>
+				</div>
+				<div class="login-btn-panel">
+					<a class="login-btn" title="点击登录" href="javascript:;" id="login_button" onclick="login();">登录</a>
+				</div>
+			</div>
+		</div>
+		<div class="login-cover" onclick="loginBox.toggle(this, event);"></div>
+	</div>
+<div id="ie9-tips" class="clearfix">
+	<div id="tipsPanel">
+		<div id="tipsDesc">系统检测到您所使用的浏览器版本较低，推荐使用<a   target="_blank">Firefox</a>或<a   target="_blank">Chrome</a>浏览器打开，否则将无法体验完整产品功能。</div>
+		<a id="stopSuggestA" href="javascript:;">×</a>
+	</div>
+</div>
+
+<script>
+var $do_submit = false;
+
+// 绑定回车键
+$('#loginBox').keydown(function(e){
+	if(13 == event.keyCode){
+		login();
+	}
+});
+
+	function login()
+	{
+		if (true == $do_submit)
+		{
+			return false;
+		}
+
+		var $pre_submit = '登录', $done_submit = '登录中...';
+		var $username = $('#username').val(), $password = $('#password').val(), $keepalive = $('#rememberPwdIcon').val();
+		$('#login_button').text($done_submit);
+		$do_submit = true;
+
+		// check
+		if ('' == $username || '' == $password)
+		{
+			$('#err_tips').text('您输入的盛世源码—国内优秀的微信公众服务平台号或密码错误，请重新输入！');
+			$('#err_area').show();
+			$('#login_button').text($pre_submit);
+			$do_submit = false;
+			return false;
+		}
+
+		var $login_data = {
+			username:$username,
+			password:$password,
+			keepalive:$keepalive
+		};
+		$.post('/login', $login_data, function(rs){
+			if(rs.errno == 200)
+			{
+				location.href = rs.url_route;
+			}
+			else
+			{
+				$('#err_tips').text(rs.error);
+				$('#err_area').show();
+				$('#login_button').text($pre_submit);
+			}
+			$do_submit = false;
+		}, 'json');
+	}
+</script>
+
+<div class="Public-content clearfix">
+<div class="Public">
+<h1 class="Public-h1">经典案例</h1>
+<div class="Public-box clearfix">
+<ul id="nav_lis" class="case-nav left">
+	<li data-index="0" data-hash="#case-a">汽车</li>
+	<li data-index="1" data-hash="#case-b">房产</li>
+	<li data-index="6" data-hash="#case-g">电商</li>
+	<li data-index="4" data-hash="#case-e">餐饮</li>
+	<li data-index="9" data-hash="#case-j">婚纱摄影</li>
+	<li data-index="17" data-hash="#case-r">婚庆</li>
+	<li data-index="3" data-hash="#case-d">酒店</li>
+	<li data-index="2" data-hash="#case-c">医疗</li>
+	<li data-index="5" data-hash="#case-f">旅游</li>
+	<li data-index="25" data-hash="#case-z">政府机构</li>
+	<li data-index="20" data-hash="#case-u">生活服务</li>
+	<li data-index="7" data-hash="#case-h">娱乐</li>
+	<li data-index="8" data-hash="#case-i">装潢装饰</li>
+	<li data-index="10" data-hash="#case-k">通讯</li>
+	<li data-index="11" data-hash="#case-l">养生美容健身</li>
+	<li data-index="12" data-hash="#case-m">金融</li>
+	<li data-index="13" data-hash="#case-n">广告传媒</li>
+	<li data-index="14" data-hash="#case-o">零售</li>
+	<li data-index="15" data-hash="#case-p">百货</li>
+	<li data-index="16" data-hash="#case-q" style="display:none;">法律</li>
+	<li data-index="18" data-hash="#case-s">IT</li>
+	<li data-index="19" data-hash="#case-t">教育</li>
+	<li data-index="21" data-hash="#case-u">珠宝</li>
+	<li data-index="22" data-hash="#case-v">艺术文化</li>
+	<li data-index="23" data-hash="#case-w">酒水咖啡</li>
+    <li data-index="24" data-hash="#case-x">数码家电</li>
+	<li data-index="30" data-hash="#case-xx">其它</li>
+
+</ul>
+<div id="nav_uls" style="overflow:hidden;">
+
+
+
+<!-- 汽车开始 -->
+<div data-index="0" class="wm_case_mod_bd right">
+	<ul class="wm_case_list">
+		<li class="wm_case_item"  data-id="0">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case auto car1 on"></i>
+							</span>
+			<h4 class="wm_case_t">绿地宝马5S</h4>
+		</li>
+		<li class="wm_case_item"  data-id="1">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case auto car2"></i>
+							</span>
+			<h4 class="wm_case_t">威汉汽车</h4>
+		</li>
+		<li class="wm_case_item" data-id="2">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case auto car3"></i>
+							</span>
+			<h4 class="wm_case_t">奔驰世家</h4>
+		</li>
+		<li class="wm_case_item" data-id="3">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case auto car4 "></i>
+							</span>
+			<h4 class="wm_case_t">沃尔沃丰颐</h4>
+		</li>
+
+		<li class="wm_case_item" data-id="4">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case auto car5"></i>
+							</span>
+			<h4 class="wm_case_t">长安铃木</h4>
+		</li>
+		<li class="wm_case_item" data-id="5">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case auto car6"></i>
+							</span>
+			<h4 class="wm_case_t">郑州日产</h4>
+		</li>
+		<li class="wm_case_item" data-id="6">
+                            <span class="icon_wrapper">
+                                <i class="icon_wm_case auto car7"></i>
+                            </span>
+			<h4 class="wm_case_t">湘潭润锦汽车</h4>
+		</li>
+	</ul>
+	<div class="default_wrapper wm_case_desc" data-id="0">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/car/car1-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/car/car1-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/car/car1-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="1" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/car/car2-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/car/car2-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/car/car2-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="2" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/car/car3-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/car/car3-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/car/car3-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="3" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/car/car4-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/car/car4-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/car/car4-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="4" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/car/car6-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/car/car6-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/car/car6-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="5" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/car/car7-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/car/car7-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/car/car7-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="6" style="display: none;">
+		<img id="Img379" src="/static/wxgjcn/img/www/index1/car/car8-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="Img380" src="/static/wxgjcn/img/www/index1/car/car8-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="Img381" src="/static/wxgjcn/img/www/index1/car/car8-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+	<span class="arrow" id="case_arrow">
+		<i class="arrow_out"></i>
+		<i class="arrow_in"></i>
+	</span>
+</div>
+<!--汽车结束-->
+
+<!--房地产开始-->
+<div data-index="1" class="wm_case_mod_bd right">
+	<ul class="wm_case_list">
+		<li class="wm_case_item" data-id="0">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case real on"></i>
+							</span>
+			<h4 class="wm_case_t">石梅湾九里</h4>
+		</li>
+		<li class="wm_case_item" data-id="1">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case real est2" ></i>
+							</span>
+			<h4 class="wm_case_t">曲江公馆·和园</h4>
+		</li>
+		<li class="wm_case_item" data-id="2">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case real est3" ></i>
+							</span>
+			<h4 class="wm_case_t">雅居乐·剑桥郡</h4>
+		</li>
+
+		<li class="wm_case_item" data-id="3">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case real est4" ></i>
+							</span>
+			<h4 class="wm_case_t">金地檀溪</h4>
+		</li>
+		<li class="wm_case_item" data-id="4">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case real est5" ></i>
+							</span>
+			<h4 class="wm_case_t">万科学府</h4>
+		</li>
+		<li class="wm_case_item" data-id="5">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case real est6" ></i>
+							</span>
+			<h4 class="wm_case_t">安阳恒大绿洲</h4>
+		</li>
+		<li class="wm_case_item" data-id="6">
+                                <span class="icon_wrapper">
+                                    <i class="icon_wm_case real est7" style="background-image: url(/img/www/index1/fdc/icon_wm_case_est.png-v=2014-03-07-1.png)/*tpa=httpimg/www/index1/fdc/icon_wm_case_est.png?v=2014-03-07-1*/;"></i>
+                                </span>
+			<h4 class="wm_case_t">武汉和昌都汇华府</h4>
+		</li>
+
+	</ul>
+	<div class="default_wrapper wm_case_desc" data-id="0" >
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/fdc/fdc1-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/fdc/fdc1-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/fdc/fdc1-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="1" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/fdc/fdc2-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/fdc/fdc2-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/fdc/fdc2-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="2" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/fdc/fdc3-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/fdc/fdc3-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/fdc/fdc3-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+	<div class="default_wrapper wm_case_desc" data-id="3" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/fdc/fdc5-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/fdc/fdc5-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/fdc/fdc5-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="4" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/fdc/fdc6-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/fdc/fdc6-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/fdc/fdc6-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="5" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/fdc/fdc8-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/fdc/fdc8-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/fdc/fdc8-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="6" style="display: none;">
+		<img  src="/static/wxgjcn/img/www/index1/fdc/fdc9-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img  src="/static/wxgjcn/img/www/index1/fdc/fdc9-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img  src="/static/wxgjcn/img/www/index1/fdc/fdc9-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+</div>
+<!--房地产结束-->
+
+<!--医疗开始-->
+<div data-index="2" class="wm_case_mod_bd right">
+	<ul class="wm_case_list">
+		<li class="wm_case_item" data-id="0">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case medi med1 on" ></i>
+							</span>
+			<h4 class="wm_case_t">上海复大医院</h4>
+		</li>
+		<li class="wm_case_item" data-id="1">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case medi med2" ></i>
+							</span>
+			<h4 class="wm_case_t">美缔整形美容</h4>
+		</li>
+		<li class="wm_case_item" data-id="2">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case medi med3" ></i>
+							</span>
+			<h4 class="wm_case_t">德泰恒</h4>
+		</li>
+		<li class="wm_case_item" data-id="3">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case medi med4" ></i>
+							</span>
+			<h4 class="wm_case_t">玛丽亚妇产医院</h4>
+		</li>
+
+		<li class="wm_case_item" data-id="4">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case medi med5" ></i>
+							</span>
+			<h4 class="wm_case_t">泰安丽人妇产医院</h4>
+		</li>
+		<li class="wm_case_item" data-id="5">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case medi med6" ></i>
+							</span>
+			<h4 class="wm_case_t">济南爱容整形</h4>
+		</li>
+		<li class="wm_case_item" data-id="6">
+                                <span class="icon_wrapper">
+                                    <i class="icon_wm_case medi med7"></i>
+                                </span>
+			<h4 class="wm_case_t">上海中大肿瘤医院</h4>
+		</li>
+
+	</ul>
+	<div class="default_wrapper wm_case_desc" data-id="0">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/yl/yl1-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/yl/yl1-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/yl/yl1-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="1" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/yl/yl2-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/yl/yl2-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/yl/yl2-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+	<div class="default_wrapper wm_case_desc" data-id="2" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/yl/yl3-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/yl/yl3-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/yl/yl3-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+	<div class="default_wrapper wm_case_desc" data-id="3" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/yl/yl4-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/yl/yl4-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/yl/yl4-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+	<div class="default_wrapper wm_case_desc" data-id="4" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/yl/yl6-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/yl/yl6-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/yl/yl6-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+	<div class="default_wrapper wm_case_desc" data-id="5" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/yl/yl9-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/yl/yl9-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/yl/yl9-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="6" style="display: none;">
+		<img  id="case_img_left"  src="/static/wxgjcn/img/www/index1/yl/yl20-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img  id="case_img_right"  src="/static/wxgjcn/img/www/index1/yl/yl20-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img  id="case_ewm"  src="/static/wxgjcn/img/www/index1/yl/yl20-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+</div>
+<!--医疗结束-->
+
+<!--开始-->
+<div data-index="3" class="wm_case_mod_bd right">
+	<ul class="wm_case_list">
+    <li class="wm_case_item" data-id="0">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case hotel jd1 on" ></i>
+							</span>
+			<h4 class="wm_case_t">巴黎名豪大酒店</h4>
+		</li>
+		<li class="wm_case_item" data-id="1">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case hotel jd2" ></i>
+							</span>
+			<h4 class="wm_case_t">柳林赛威快捷</h4>
+		</li>
+		<li class="wm_case_item" data-id="2">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case hotel jd3" ></i>
+							</span>
+			<h4 class="wm_case_t">年代风尚</h4>
+		</li>
+		<li class="wm_case_item" data-id="3">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case hotel jd4" ></i>
+							</span>
+			<h4 class="wm_case_t">五环大</h4>
+		</li>
+		<li class="wm_case_item" data-id="4">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case hotel jd5" ></i>
+							</span>
+			<h4 class="wm_case_t">最佳财富西方</h4>
+		</li>
+		<li class="wm_case_item" data-id="5">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case hotel jd6" ></i>
+							</span>
+			<h4 class="wm_case_t">丽江懒阳阳客栈</h4>
+		</li>
+		<li class="wm_case_item" data-id="6">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case hotel jd7" ></i>
+							</span>
+			<h4 class="wm_case_t">三亚福朋喜来登</h4>
+		</li>
+	</ul>
+    <div class="default_wrapper wm_case_desc" data-id="0">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/jd/jd5-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/jd/jd5-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/jd/jd5-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="1" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/jd/jd1-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/jd/jd1-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/jd/jd1-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="2" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/jd/jd2-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/jd/jd2-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/jd/jd2-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="3" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/jd/jd3-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/jd/jd3-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/jd/jd3-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="4" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/jd/jd4-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/jd/jd4-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/jd/jd4-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="5" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/jd/jd6-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/jd/jd6-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/jd/jd6-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="6" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/jd/jd7-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/jd/jd7-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/jd/jd7-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+</div>
+<!--酒店结束-->
+
+<!--餐饮开始-->
+<div data-index="4" class="wm_case_mod_bd right">
+	<ul class="wm_case_list">
+		<li class="wm_case_item" data-id="0">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case eat cy2"></i>
+							</span>
+			<h4 class="wm_case_t">麦兜点点</h4>
+		</li>
+		<li class="wm_case_item" data-id="1">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case eat cy3"></i>
+							</span>
+			<h4 class="wm_case_t">南平小南国</h4>
+		</li>
+		<li class="wm_case_item" data-id="2">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case eat cy4"></i>
+							</span>
+			<h4 class="wm_case_t">黔香阁</h4>
+		</li>
+		<li class="wm_case_item" data-id="3">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case eat cy5"></i>
+							</span>
+			<h4 class="wm_case_t">舌尖上的酸菜鱼</h4>
+		</li>
+		<li class="wm_case_item" data-id="4">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case eat cy6"></i>
+							</span>
+			<h4 class="wm_case_t">泰和阁</h4>
+		</li>
+		<li class="wm_case_item" data-id="5">
+                                <span class="icon_wrapper">
+                                    <i class="icon_wm_case eat cy7"></i>
+                                </span>
+			<h4 class="wm_case_t">东方豪客牛排</h4>
+		</li>
+
+	</ul>
+
+	<div class="default_wrapper wm_case_desc" data-id="0">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/ys/ys3-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/ys/ys3-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/ys/ys3-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="1" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/ys/ys4-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/ys/ys4-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/ys/ys4-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="2" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/ys/ys5-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/ys/ys5-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/ys/ys5-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="3" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/ys/ys6-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/ys/ys6-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/ys/ys6-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="4" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/ys/ys7-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/ys/ys7-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img"> <img id="case_ewm" src="/static/wxgjcn/img/www/index1/ys/ys7-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180"></p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="5" style="display: none;">
+		<img id="Img385" src="/static/wxgjcn/img/www/index1/ys/ys2-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="Img386" src="/static/wxgjcn/img/www/index1/ys/ys2-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="Img387" src="/static/wxgjcn/img/www/index1/ys/ys2-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+</div>
+<!--餐饮结束-->
+
+<!--旅游开始-->
+<div data-index="5" class="wm_case_mod_bd right">
+	<ul class="wm_case_list">
+
+		<li class="wm_case_item" data-id="0">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case trip ly1"></i>
+							</span>
+			<h4 class="wm_case_t">美地度假</h4>
+		</li>
+
+		<li class="wm_case_item" data-id="1">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case trip ly2"></i>
+							</span>
+			<h4 class="wm_case_t">滁州琅琊山</h4>
+		</li>
+		<li class="wm_case_item" data-id="2">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case trip ly3"></i>
+							</span>
+			<h4 class="wm_case_t">西林生态旅游</h4>
+		</li>
+		<li class="wm_case_item" data-id="3">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case trip ly4"></i>
+							</span>
+			<h4 class="wm_case_t">爱游团</h4>
+		</li>
+		<li class="wm_case_item" data-id="4">
+                                <span class="icon_wrapper">
+                                    <i class="icon_wm_case trip ly5"></i>
+                                </span>
+			<h4 class="wm_case_t">河北康辉旅行社</h4>
+		</li>
+        <li class="wm_case_item" data-id="5">
+                                <span class="icon_wrapper">
+                                    <i class="icon_wm_case trip ly6"></i>
+                                </span>
+			<h4 class="wm_case_t">兰州旅游网</h4>
+		</li>
+        
+
+	</ul>
+
+	<div class="default_wrapper wm_case_desc" data-id="0">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/ly/ly2-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/ly/ly2-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/ly/ly2-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+	<div class="default_wrapper wm_case_desc" data-id="1">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/ly/ly4-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/ly/ly4-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/ly/ly4-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="2">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/ly/ly5-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/ly/ly5-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/ly/ly5-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+	<div class="default_wrapper wm_case_desc" data-id="3">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/ly/ly7-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/ly/ly7-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/ly/ly7-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="4" style="display: none;">
+		<img id="Img400" src="/static/wxgjcn/img/www/index1/ly/ly8-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="Img401" src="/static/wxgjcn/img/www/index1/ly/ly8-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="Img402" src="/static/wxgjcn/img/www/index1/ly/ly8-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+    <div class="default_wrapper wm_case_desc" data-id="45" style="display: none;">
+		<img id="Img400" src="/static/wxgjcn/img/www/index1/ly/ly1-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="Img401" src="/static/wxgjcn/img/www/index1/ly/ly1-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="Img402" src="/static/wxgjcn/img/www/index1/ly/ly1-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+    
+</div>
+<!--旅游结束-->
+
+
+<!--政府机构开始-->
+<div data-index="25" class="wm_case_mod_bd right">
+	<ul class="wm_case_list">
+
+		<li class="wm_case_item" data-id="0">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case  govt gov1"></i>
+							</span>
+			<h4 class="wm_case_t">开封交警</h4>
+		</li>
+
+		<li class="wm_case_item" data-id="1">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case  govt gov2"></i>
+							</span>
+			<h4 class="wm_case_t">宝安地税</h4>
+		</li>
+		<li class="wm_case_item" data-id="2">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case  govt gov3"></i>
+							</span>
+			<h4 class="wm_case_t">侯马电视台广告部</h4>
+		</li>
+		<li class="wm_case_item" data-id="3">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case govt gov4"></i>
+							</span>
+			<h4 class="wm_case_t">济源煤炭局</h4>
+		</li>
+		<li class="wm_case_item" data-id="4">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case govt gov5"></i>
+							</span>
+			<h4 class="wm_case_t">台州城管执法</h4>
+		</li>
+		<li class="wm_case_item" data-id="5">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case govt gov6"></i>
+							</span>
+			<h4 class="wm_case_t">郴州新闻联播</h4>
+		</li>
+		<li class="wm_case_item" data-id="6">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case govt gov7"></i>
+							</span>
+			<h4 class="wm_case_t">台州福彩</h4>
+		</li>
+
+
+
+	</ul>
+
+	<div class="default_wrapper wm_case_desc" data-id="0">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/gov/gov1-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/gov/gov1-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/gov/gov1-erwei.jpg-v=2014-03-07-1"  width="180" height="180">
+		</p>
+	</div>
+
+	<div class="default_wrapper wm_case_desc" data-id="1">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/gov/gov2-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/gov/gov2-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/gov/gov2-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="2">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/gov/gov3-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/gov/gov3-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/gov/gov3-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+	<div class="default_wrapper wm_case_desc" data-id="3">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/gov/gov4-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/gov/gov4-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/gov/gov4-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+	<div class="default_wrapper wm_case_desc" data-id="4">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/gov/gov5-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/gov/gov5-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/gov/gov5-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="5">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/gov/gov6-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/gov/gov6-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/gov/gov6-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="6">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/gov/gov7-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/gov/gov7-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/gov/gov7-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+
+</div>
+<!--政府机构结束-->
+
+<!--电商开始-->
+<div data-index="6" class="wm_case_mod_bd right">
+	<ul class="wm_case_list">
+		<li class="wm_case_item" data-id="0">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case o2o ds1 on"></i>
+							</span>
+			<h4 class="wm_case_t">虎都男装</h4>
+		</li>
+		<li class="wm_case_item" data-id="1">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case o2o ds2"></i>
+							</span>
+			<h4 class="wm_case_t">欧培拉</h4>
+		</li>
+		<li class="wm_case_item" data-id="2">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case o2o ds3"></i>
+							</span>
+			<h4 class="wm_case_t">婴缘坊</h4>
+		</li>
+
+		<li class="wm_case_item" data-id="3">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case o2o ds4"></i>
+							</span>
+			<h4 class="wm_case_t">波司登</h4>
+		</li>
+
+		<li class="wm_case_item" data-id="4">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case o2o ds5"></i>
+							</span>
+			<h4 class="wm_case_t">美兰晋风</h4>
+		</li>
+		<li class="wm_case_item" data-id="5">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case o2o ds6"></i>
+							</span>
+			<h4 class="wm_case_t">北京大生酒业</h4>
+		</li>
+		<li class="wm_case_item" data-id="6">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case o2o ds7"></i>
+							</span>
+			<h4 class="wm_case_t">团购礼品</h4>
+		</li>
+
+	</ul>
+	<div class="default_wrapper wm_case_desc" data-id="0">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/ds/ds1-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/ds/ds1-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/ds/ds1-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="1">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/ds/ds2-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/ds/ds2-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/ds/ds2-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="2">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/ds/ds3-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/ds/ds3-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/ds/ds3-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="3">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/ds/ds4-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/ds/ds4-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/ds/ds4-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="4">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/ds/ds5-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/ds/ds5-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/ds/ds5-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="5">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/ds/ds6-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/ds/ds6-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/ds/ds6-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="6">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/ds/ds7-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/ds/ds7-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/ds/ds7-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+</div>
+<!--电商结束-->
+
+<!--娱乐开始-->
+<div data-index="7" class="wm_case_mod_bd right">
+	<ul class="wm_case_list">
+		<li class="wm_case_item" data-id="0">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case recr yul1 on" ></i>
+							</span>
+			<h4 class="wm_case_t">BBOSS至尊</h4>
+		</li>
+		<li class="wm_case_item" data-id="1">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case recr yul2" ></i>
+							</span>
+			<h4 class="wm_case_t">丹东二人转大</h4>
+		</li>
+		<li class="wm_case_item" data-id="2">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case recr yul3" ></i>
+							</span>
+			<h4 class="wm_case_t">名流之星KTV</h4>
+		</li>
+		<li class="wm_case_item"  data-id="3">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case recr yul4" ></i>
+							</span>
+			<h4 class="wm_case_t">西安倾国倾城</h4>
+		</li>
+		<li class="wm_case_item"  data-id="4">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case recr yul5" ></i>
+							</span>
+			<h4 class="wm_case_t">东方明珠娱乐会所</h4>
+		</li>
+		<li class="wm_case_item"  data-id="5">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case recr yul6" ></i>
+							</span>
+			<h4 class="wm_case_t">金莎国际娱乐会所</h4>
+		</li>
+		<li class="wm_case_item"  data-id="6">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case recr yul7" ></i>
+							</span>
+			<h4 class="wm_case_t">中国K-Show娱乐</h4>
+		</li>
+
+	</ul>
+	<div class="default_wrapper wm_case_desc" data-id="0">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/yul/yl1-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/yul/yl1-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/yul/yl1-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="1">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/yul/yl2-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/yul/yl2-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/yul/yl2-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="2">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/yul/yl3-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/yul/yl3-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/yul/yl3-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="3">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/yul/yl4-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/yul/yl4-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/yul/yl4-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="4">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/yul/yl5-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/yul/yl5-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/yul/yl5-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+	<div class="default_wrapper wm_case_desc" data-id="5">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/yul/yl6-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/yul/yl6-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/yul/yl6-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+	<div class="default_wrapper wm_case_desc" data-id="6">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/yul/yl7-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/yul/yl7-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/yul/yl7-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+</div>
+<!--娱乐结束-->
+
+<!--装潢开始-->
+<div data-index="8" class="wm_case_mod_bd right">
+	<ul class="wm_case_list">
+		<li class="wm_case_item" data-id="0">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case deco on zh1"></i>
+							</span>
+			<h4 class="wm_case_t">科勒成都</h4>
+		</li>
+		<li class="wm_case_item" data-id="1">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case deco zh2"></i>
+							</span>
+			<h4 class="wm_case_t">品川室内设计</h4>
+		</li>
+		<li class="wm_case_item" data-id="2">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case deco zh3"></i>
+							</span>
+			<h4 class="wm_case_t">惠能地暖</h4>
+		</li>
+		<li class="wm_case_item" data-id="3">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case deco zh4"></i>
+							</span>
+			<h4 class="wm_case_t">宁波浪琴屿</h4>
+		</li>
+		<li class="wm_case_item" data-id="4">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case deco zh5"></i>
+							</span>
+			<h4 class="wm_case_t">欧派木门</h4>
+		</li>
+		<li class="wm_case_item" data-id="5">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case deco zh6"></i>
+							</span>
+			<h4 class="wm_case_t">广州三星装饰</h4>
+		</li>
+        <li class="wm_case_item" data-id="6">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case deco zh7"></i>
+							</span>
+			<h4 class="wm_case_t">南阳港湾装饰</h4>
+		</li>
+	</ul>
+	<div class="default_wrapper wm_case_desc" data-id="0">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/zh/zh1-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/zh/zh1-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/zh/zh1-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="1" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/zh/zh2-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/zh/zh2-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/zh/zh2-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="2" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/zh/zh3-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/zh/zh3-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/zh/zh3-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+	<div class="default_wrapper wm_case_desc" data-id="3" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/zh/zh5-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/zh/zh5-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/zh/zh5-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="4" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/zh/zh6-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/zh/zh6-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/zh/zh6-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="5" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/zh/zh7-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/zh/zh7-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/zh/zh7-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+    <div class="default_wrapper wm_case_desc" data-id="6" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/zh/zh4-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/zh/zh4-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/zh/zh4-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+</div>
+<!--装潢结束-->
+
+<!--婚纱开始-->
+<div data-index="9" class="wm_case_mod_bd right">
+	<ul class="wm_case_list">
+		<li class="wm_case_item"  data-id="0">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case wedd hs2 no"></i>
+							</span>
+			<h4 class="wm_case_t">韩国艺匠</h4>
+		</li>
+
+		<li class="wm_case_item" data-id="2">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case wedd hs1"></i>
+							</span>
+			<h4 class="wm_case_t">iweddingstudio</h4>
+		</li>
+
+		<li class="wm_case_item"  data-id="1">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case wedd hs3"></i>
+							</span>
+			<h4 class="wm_case_t">美十摄影</h4>
+		</li>
+		<li class="wm_case_item" data-id="3">
+									<span class="icon_wrapper">
+										<i class="icon_wm_case wedd hs4"></i>
+									</span>
+			<h4 class="wm_case_t">星梦奇缘</h4>
+		</li>
+		<li class="wm_case_item" data-id="4">
+									<span class="icon_wrapper">
+										<i class="icon_wm_case wedd hs5"></i>
+									</span>
+			<h4 class="wm_case_t">拍吧视觉</h4>
+		</li>
+		<li class="wm_case_item" data-id="5">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case wedd hs6"></i>
+							</span>
+			<h4 class="wm_case_t">纽约VIP婚纱</h4>
+		</li>
+		<li class="wm_case_item" data-id="6">
+                                <span class="icon_wrapper">
+                                    <i class="icon_wm_case wedd hs7"></i>
+                                </span>
+			<h4 class="wm_case_t">巴黎春天婚纱</h4>
+		</li>
+
+	</ul>
+	<div class="default_wrapper wm_case_desc" data-id="0">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/hs/hs3-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/hs/hs3-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/hs/hs3-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+	<div class="default_wrapper wm_case_desc" data-id="2" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/hs/hs2-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/hs/hs2-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/hs/hs2-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="1" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/hs/hs4-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/hs/hs4-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/hs/hs4-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180"></p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="3" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/hs/hs5-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/hs/hs5-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/hs/hs5-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="4" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/hs/hs6-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/hs/hs6-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/hs/hs6-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="5" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/hs/hs7-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/hs/hs7-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/hs/hs7-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="6" style="display: none;">
+		<img id="Img388" src="/static/wxgjcn/img/www/index1/hs/hs8-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="Img389" src="/static/wxgjcn/img/www/index1/hs/hs8-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="Img390" src="/static/wxgjcn/img/www/index1/hs/hs8-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+</div>
+<!--婚纱结束-->
+
+<!--通讯开始-->
+<div data-index="10" class="wm_case_mod_bd right">
+	<ul class="wm_case_list">
+		<li class="wm_case_item" data-id="0">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case comm tx1 on"></i>
+							</span>
+			<h4 class="wm_case_t">衡阳金联合通讯</h4>
+		</li>
+		<li class="wm_case_item" data-id="1">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case comm tx2"></i>
+							</span>
+			<h4 class="wm_case_t">洛阳移动</h4>
+		</li>
+
+
+		<li class="wm_case_item" data-id="2">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case comm tx3"></i>
+							</span>
+			<h4 class="wm_case_t">南昌联通</h4>
+		</li>
+
+		<li class="wm_case_item" data-id="3">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case comm tx4"></i>
+							</span>
+			<h4 class="wm_case_t">厦门移动</h4>
+		</li>
+
+		<li class="wm_case_item" data-id="4">
+                                <span class="icon_wrapper">
+                                    <i class="icon_wm_case comm tx5"></i>
+                                </span>
+			<h4 class="wm_case_t">保定宽带</h4>
+		</li>
+		<li class="wm_case_item" data-id="5">
+                                <span class="icon_wrapper">
+                                    <i class="icon_wm_case comm tx6"></i>
+                                </span>
+			<h4 class="wm_case_t">汇川电信</h4>
+		</li>
+
+	</ul>
+	<div class="default_wrapper wm_case_desc" data-id="0">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/tx/tx1-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/tx/tx1-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/tx/tx1-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180"></p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="1" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/tx/tx2-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/tx/tx2-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/tx/tx2-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="2" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/tx/tx5-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/tx/tx5-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/tx/tx5-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="3" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/tx/tx4-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/tx/tx4-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/tx/tx4-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+	<div class="default_wrapper wm_case_desc" data-id="4" style="display: none;">
+		<img id="Img406" src="/static/wxgjcn/img/www/index1/tx/tx7-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="Img407" src="/static/wxgjcn/img/www/index1/tx/tx7-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="Img408" src="/static/wxgjcn/img/www/index1/tx/tx7-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="5" style="display: none;">
+		<img id="Img409" src="/static/wxgjcn/img/www/index1/tx/tx8-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="Img410" src="/static/wxgjcn/img/www/index1/tx/tx8-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="Img411" src="/static/wxgjcn/img/www/index1/tx/tx8-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+</div>
+<!--通讯结束-->
+
+<!--美容开始-->
+<div data-index="11" class="wm_case_mod_bd right">
+	<ul class="wm_case_list">
+
+		<li class="wm_case_item"  data-id="0">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case cosm mr1"></i>
+							</span>
+			<h4 class="wm_case_t">辰嫣国际微刊</h4>
+		</li>
+		<li class="wm_case_item"  data-id="1">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case cosm mr2"></i>
+							</span>
+			<h4 class="wm_case_t">凤凰温泉</h4>
+		</li>
+		<li class="wm_case_item"  data-id="2">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case cosm mr3"></i>
+							</span>
+			<h4 class="wm_case_t">慧之通</h4>
+		</li>
+		<li class="wm_case_item"  data-id="3">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case cosm mr4"></i>
+							</span>
+			<h4 class="wm_case_t">匠人造型</h4>
+		</li>
+
+		<li class="wm_case_item"  data-id="4">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case cosm mr5"></i>
+							</span>
+			<h4 class="wm_case_t">五和养生堂</h4>
+		</li>
+		<li class="wm_case_item" data-id="5">
+                                <span class="icon_wrapper">
+                                    <i class="icon_wm_case cosm tx6"></i>
+                                </span>
+			<h4 class="wm_case_t">怡德御方养生</h4>
+		</li>
+		<li class="wm_case_item" data-id="6">
+                                <span class="icon_wrapper">
+                                    <i class="icon_wm_case cosm tx7"></i>
+                                </span>
+			<h4 class="wm_case_t">元一正脊养生馆</h4>
+		</li>
+	</ul>
+
+
+	</ul>
+
+	<div class="default_wrapper wm_case_desc" data-id="0" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/mr/mr2-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/mr/mr2-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/mr/mr2-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="1" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/mr/mr3-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/mr/mr3-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/mr/mr3-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="2" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/mr/mr4-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/mr/mr4-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/mr/mr4-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="3" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/mr/mr5-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/mr/mr5-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/mr/mr5-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="4" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/mr/mr6-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/mr/mr6-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/mr/mr6-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="5" style="display: none;">
+		<img id="Img412" src="/static/wxgjcn/img/www/index1/mr/mr20-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="Img413" src="/static/wxgjcn/img/www/index1/mr/mr20-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="Img414" src="/static/wxgjcn/img/www/index1/mr/mr20-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="6" style="display: none;">
+		<img id="Img415" src="/static/wxgjcn/img/www/index1/mr/mr21-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="Img416" src="/static/wxgjcn/img/www/index1/mr/mr21-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="Img417" src="/static/wxgjcn/img/www/index1/mr/mr21-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+</div>
+<!--美容结束-->
+
+<!--金融开始-->
+<div data-index="12" class="wm_case_mod_bd right">
+	<ul class="wm_case_list">
+
+		<li class="wm_case_item"  data-id="0">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case bank bk1"></i>
+							</span>
+			<h4 class="wm_case_t">微诺亚</h4>
+		</li>
+		<li class="wm_case_item"  data-id="1">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case bank bk2"></i>
+							</span>
+			<h4 class="wm_case_t">陕西信合</h4>
+		</li>
+		<li class="wm_case_item"  data-id="2">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case bank bk3"></i>
+							</span>
+			<h4 class="wm_case_t">建行重庆分行</h4>
+		</li>
+
+		<li class="wm_case_item"  data-id="3">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case bank bk4"></i>
+							</span>
+			<h4 class="wm_case_t">中国邮政</h4>
+		</li>
+		<li class="wm_case_item" data-id="4">
+                                <span class="icon_wrapper">
+                                    <i class="icon_wm_case bank bk5"></i>
+                                </span>
+			<h4 class="wm_case_t">苏州光大银行</h4>
+		</li>
+		<li class="wm_case_item" data-id="5">
+                                <span class="icon_wrapper">
+                                    <i class="icon_wm_case bank bk6"></i>
+                                </span>
+			<h4 class="wm_case_t">神木农商银行</h4>
+		</li>
+		<li class="wm_case_item" data-id="6">
+                                <span class="icon_wrapper">
+                                    <i class="icon_wm_case bank bk7"></i>
+                                </span>
+			<h4 class="wm_case_t">民生银行</h4>
+		</li>
+
+	</ul>
+
+	<div class="default_wrapper wm_case_desc" data-id="0" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/bk/bk2-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/bk/bk2-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/bk/bk2-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="1" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/bk/bk3-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/bk/bk3-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/bk/bk3-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+	<div class="default_wrapper wm_case_desc" data-id="2" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/bk/bk1-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/bk/bk1-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/bk/bk1-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="3" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/bk/bk4-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/bk/bk4-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/bk/bk4-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="4" style="display: none;">
+		<img id="Img418" src="/static/wxgjcn/img/www/index1/bk/bk20-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="Img419" src="/static/wxgjcn/img/www/index1/bk/bk20-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="Img420" src="/static/wxgjcn/img/www/index1/bk/bk20-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="5" style="display: none;">
+		<img id="Img421" src="/static/wxgjcn/img/www/index1/bk/bk21-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="Img422" src="/static/wxgjcn/img/www/index1/bk/bk21-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="Img423" src="/static/wxgjcn/img/www/index1/bk/bk21-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="6" style="display: none;">
+		<img id="Img424" src="/static/wxgjcn/img/www/index1/bk/bk7-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="Img425" src="/static/wxgjcn/img/www/index1/bk/bk7-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="Img426" src="/static/wxgjcn/img/www/index1/bk/bk7-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+</div>
+<!--金融结束-->
+
+<!--广告开始-->
+<div data-index="13" class="wm_case_mod_bd right">
+	<ul class="wm_case_list">
+		<li class="wm_case_item" data-id="0">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case adert ad1 on"></i>
+							</span>
+			<h4 class="wm_case_t">乐享南平</h4>
+		</li>
+		<li class="wm_case_item"  data-id="1">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case adert ad2"></i>
+							</span>
+			<h4 class="wm_case_t">JM传媒</h4>
+		</li>
+		<li class="wm_case_item"  data-id="2">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case adert ad3"></i>
+							</span>
+			<h4 class="wm_case_t">四川广电星空</h4>
+		</li>
+		<li class="wm_case_item"  data-id="3">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case adert ad4"></i>
+							</span>
+			<h4 class="wm_case_t">车视传媒</h4>
+		</li>
+		<li class="wm_case_item"  data-id="4">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case adert ad5"></i>
+							</span>
+			<h4 class="wm_case_t">彭城晚报</h4>
+		</li>
+		<li class="wm_case_item"  data-id="5">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case adert ad6"></i>
+							</span>
+			<h4 class="wm_case_t">浙江影视娱乐频道</h4>
+		</li>
+		<li class="wm_case_item"  data-id="6">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case adert ad7"></i>
+							</span>
+			<h4 class="wm_case_t">微客</h4>
+		</li>
+
+	</ul>
+	<div class="default_wrapper wm_case_desc" data-id="0">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/ad/ad1-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/ad/ad1-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/ad/ad1-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="4" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/ad/ad2-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/ad/ad2-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/ad/ad2-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="1" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/ad/ad3-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/ad/ad3-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/ad/ad3-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="2" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/ad/ad4-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/ad/ad4-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/ad/ad4-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="3" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/ad/ad5-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/ad/ad5-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/ad/ad5-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="5" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/ad/ad6-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/ad/ad6-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/ad/ad6-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="6" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/ad/ad7-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/ad/ad7-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/ad/ad7-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+</div>
+<!--广告结束-->
+
+<!--零售开始-->
+<div data-index="14" class="wm_case_mod_bd right">
+	<ul class="wm_case_list">
+		<li class="wm_case_item" data-id="0">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case retail lis1 on"></i>
+							</span>
+			<h4 class="wm_case_t">安贝儿童座椅</h4>
+		</li>
+		<li class="wm_case_item"  data-id="1">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case retail lis2"></i>
+							</span>
+			<h4 class="wm_case_t">拜耳水产</h4>
+		</li>
+		<li class="wm_case_item"  data-id="2">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case retail lis3"></i>
+							</span>
+			<h4 class="wm_case_t">超凡计算机</h4>
+		</li>
+		<li class="wm_case_item"  data-id="3">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case retail lis4"></i>
+							</span>
+			<h4 class="wm_case_t">牛牛生态水产</h4>
+		</li>
+		<li class="wm_case_item"  data-id="4">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case retail lis5"></i>
+							</span>
+			<h4 class="wm_case_t">YFAN伊梵</h4>
+		</li>
+		<li class="wm_case_item"  data-id="5">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case retail lis6"></i>
+							</span>
+			<h4 class="wm_case_t">多乐士</h4>
+		</li>
+		<li class="wm_case_item" data-id="6">
+                                <span class="icon_wrapper">
+                                    <i class="icon_wm_case retail lis7"></i>
+                                </span>
+			<h4 class="wm_case_t">便利365</h4>
+		</li>
+
+	</ul>
+	<div class="default_wrapper wm_case_desc" data-id="0">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/lis/ls1-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/lis/ls1-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/lis/ls1-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="1" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/lis/ls2-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/lis/ls2-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/lis/ls2-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="2" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/lis/ls3-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/lis/ls3-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/lis/ls3-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="3" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/lis/ls4-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/lis/ls4-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/lis/ls4-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="4" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/lis/ls5-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/lis/ls5-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/lis/ls5-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+	<div class="default_wrapper wm_case_desc" data-id="5" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/lis/ls6-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/lis/ls6-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/lis/ls6-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="6" style="display: none;">
+		<img id="Img427" src="/static/wxgjcn/img/www/index1/lis/ls7-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="Img428" src="/static/wxgjcn/img/www/index1/lis/ls7-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="Img429" src="/static/wxgjcn/img/www/index1/lis/ls7-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+</div>
+<!--零售结束-->
+
+<!--百货结束-->
+<div data-index="15" class="wm_case_mod_bd right">
+	<ul class="wm_case_list">
+		<li class="wm_case_item"  data-id="0">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case gener bh1 on"></i>
+							</span>
+			<h4 class="wm_case_t">潮流百货</h4>
+		</li>
+		<li class="wm_case_item"  data-id="1">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case gener bh2"></i>
+							</span>
+			<h4 class="wm_case_t">兰州美伦百货</h4>
+		</li>
+		<li class="wm_case_item" name="shdz" data-id="2">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case gener bh3"></i>
+							</span>
+			<h4 class="wm_case_t">廊坊万达广场</h4>
+		</li>
+		<li class="wm_case_item"  data-id="3">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case gener bh4"></i>
+							</span>
+			<h4 class="wm_case_t">知名度服饰</h4>
+		</li>
+		<li class="wm_case_item"  data-id="4">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case gener bh5"></i>
+							</span>
+			<h4 class="wm_case_t">岳阳百货</h4>
+		</li>
+		<li class="wm_case_item"  data-id="5">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case gener bh6"></i>
+							</span>
+			<h4 class="wm_case_t">友好集团</h4>
+		</li>
+		<li class="wm_case_item"  data-id="6">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case gener bh7"></i>
+							</span>
+			<h4 class="wm_case_t">武商亚贸广场</h4>
+		</li>
+
+	</ul>
+	<div class="default_wrapper wm_case_desc" data-id="0">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/bh/bh1-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/bh/bh1-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/bh/bh1-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="1" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/bh/bh2-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/bh/bh2-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/bh/bh2-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="2" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/bh/bh3-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/bh/bh3-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/bh/bh3-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+	<div class="default_wrapper wm_case_desc" data-id="3" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/bh/bh5-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/bh/bh5-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/bh/bh5-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="4" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/bh/bh6-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/bh/bh6-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/bh/bh6-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="5" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/bh/bh4-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/bh/bh4-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/bh/bh4-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="6" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/bh/bh7-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/bh/bh7-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/bh/bh7-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+</div>
+<!--百货场结束-->
+
+<!--法律开始-->
+<div data-index="16" class="wm_case_mod_bd right">
+	<ul class="wm_case_list">
+		<li class="wm_case_item"  data-id="0">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case law fl1 on"></i>
+							</span>
+			<h4 class="wm_case_t">大成律师</h4>
+		</li>
+	</ul>
+	<div class="default_wrapper wm_case_desc" data-id="0">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/ls/ls1-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/ls/ls1-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/ls/ls1-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+</div>
+<!--法律结束-->
+
+<!--婚庆开始-->
+<div data-index="17" class="wm_case_mod_bd right">
+	<ul class="wm_case_list">
+		<li class="wm_case_item" data-id="0">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case wedding hq1"></i>
+							</span>
+			<h4 class="wm_case_t">铂菲婚礼顾问</h4>
+		</li>
+		<li class="wm_case_item" data-id="1">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case wedding hq2"></i>
+							</span>
+			<h4 class="wm_case_t">福州婚庆导航</h4>
+		</li>
+		<li class="wm_case_item" data-id="2">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case wedding hq3"></i>
+							</span>
+			<h4 class="wm_case_t">遇恋诺私人婚礼</h4>
+		</li>
+
+		<li class="wm_case_item" data-id="3">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case wedding hq4 on"></i>
+							</span>
+			<h4 class="wm_case_t">糖果树婚礼定制</h4>
+		</li>
+		<li class="wm_case_item" data-id="4">
+                                <span class="icon_wrapper">
+                                    <i class="icon_wm_case wedding hq5"></i>
+                                </span>
+			<h4 class="wm_case_t">金夫人萝亚婚礼</h4>
+		</li>
+		<li class="wm_case_item" data-id="5">
+                                <span class="icon_wrapper">
+                                    <i class="icon_wm_case wedding hq6"></i>
+                                </span>
+			<h4 class="wm_case_t">乐婚网</h4>
+		</li>
+
+        <li class="wm_case_item" data-id="6">
+                                <span class="icon_wrapper">
+                                    <i class="icon_wm_case wedding hq7"></i>
+                                </span>
+			<h4 class="wm_case_t">无锡爱尔婚庆</h4>
+		</li>
+	</ul>
+	<div class="default_wrapper wm_case_desc" data-id="0" >
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/hq/hq1-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/hq/hq1-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/hq/hq1-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="1" >
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/hq/hq2-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/hq/hq2-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/hq/hq2-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="2" >
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/hq/hq3-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/hq/hq3-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/hq/hq3-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="3" >
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/hq/hq5-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/hq/hq5-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/hq/hq5-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="4" style="display: none;">
+		<img id="Img391" src="/static/wxgjcn/img/www/index1/hq/hq6-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="Img392" src="/static/wxgjcn/img/www/index1/hq/hq6-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="Img393" src="/static/wxgjcn/img/www/index1/hq/hq6-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="5" style="display: none;">
+		<img id="Img394" src="/static/wxgjcn/img/www/index1/hq/hq7-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="Img395" src="/static/wxgjcn/img/www/index1/hq/hq7-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="Img396" src="/static/wxgjcn/img/www/index1/hq/hq7-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+    <div class="default_wrapper wm_case_desc" data-id="5" style="display: none;">
+		<img id="Img394" src="/static/wxgjcn/img/www/index1/hq/hq4-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="Img395" src="/static/wxgjcn/img/www/index1/hq/hq4-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="Img396" src="/static/wxgjcn/img/www/index1/hq/hq4-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+</div>
+<!--婚庆结束-->
+
+<!--it开始-->
+<div data-index="18" class="wm_case_mod_bd right">
+	<ul class="wm_case_list">
+		<li class="wm_case_item" data-id="0">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case tech it1 on"></i>
+							</span>
+			<h4 class="wm_case_t">艾定义互动</h4>
+		</li>
+		<li class="wm_case_item"  data-id="1">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case tech it2"></i>
+							</span>
+			<h4 class="wm_case_t">新疆玖久</h4>
+		</li>
+		<li class="wm_case_item"  data-id="2">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case tech it3"></i>
+							</span>
+			<h4 class="wm_case_t">武夷盛世源码—国内优秀的微信公众服务平台</h4>
+		</li>
+		<li class="wm_case_item" data-id="3">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case tech it4"></i>
+							</span>
+			<h4 class="wm_case_t">深圳盘古开天</h4>
+		</li>
+		<li class="wm_case_item" data-id="4">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case tech it5"></i>
+							</span>
+			<h4 class="wm_case_t">云图信息科技</h4>
+		</li>
+
+		<li class="wm_case_item" data-id="5">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case tech it6"></i>
+							</span>
+			<h4 class="wm_case_t">深圳永图网络</h4>
+		</li>
+		<li class="wm_case_item" data-id="6">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case tech it7"></i>
+							</span>
+			<h4 class="wm_case_t">德宏州朝阳信息</h4>
+		</li>
+	</ul>
+	<div class="default_wrapper wm_case_desc" data-id="0">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/it/it1-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/it/it1-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/it/it1-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="1" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/it/it2-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/it/it2-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/it/it2-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="2" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/it/it3-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/it/it3-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/it/it3-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="3" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/it/it20-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/it/it20-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/it/it20-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="4" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/it/it5-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/it/it5-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/it/it5-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="5" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/it/it6-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/it/it6-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/it/it6-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="6" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/it/it7-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/it/it7-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/it/it7-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+</div>
+<!--it结束-->
+
+<!--教育开始-->
+<div data-index="19" class="wm_case_mod_bd right">
+	<ul class="wm_case_list">
+		<li class="wm_case_item"  data-id="0">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case educ on edu1"></i>
+							</span>
+			<h4 class="wm_case_t">佳音英语</h4>
+		</li>
+		<li class="wm_case_item"  data-id="1">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case educ edu2"></i>
+							</span>
+			<h4 class="wm_case_t">迈蔚树英语</h4>
+		</li>
+		<li class="wm_case_item"  data-id="2">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case educ edu3"></i>
+							</span>
+			<h4 class="wm_case_t">廊坊第六小学</h4>
+		</li>
+
+		<li class="wm_case_item"  data-id="3">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case educ edu4"></i>
+							</span>
+			<h4 class="wm_case_t">愚公移山美术</h4>
+		</li>
+		<li class="wm_case_item"  data-id="4">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case educ edu5"></i>
+							</span>
+			<h4 class="wm_case_t">阿杰发艺</h4>
+		</li>
+		<li class="wm_case_item"  data-id="5">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case educ edu6"></i>
+							</span>
+			<h4 class="wm_case_t">维恩教育</h4>
+		</li>
+
+		<li class="wm_case_item"  data-id="6">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case educ edu7"></i>
+							</span>
+			<h4 class="wm_case_t">学大教育</h4>
+		</li>
+	</ul>
+	<div class="default_wrapper wm_case_desc" data-id="0">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/edu/edu1-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/edu/edu1-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/edu/edu1-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="1" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/edu/edu2-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/edu/edu2-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/edu/edu2-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="2" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/edu/edu3-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/edu/edu3-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/edu/edu3-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+	<div class="default_wrapper wm_case_desc" data-id="4" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/edu/edu4-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/edu/edu4-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/edu/edu4-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="5" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/edu/edu5-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/edu/edu5-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/edu/edu5-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="6" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/edu/edu6-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/edu/edu6-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/edu/edu6-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+
+	</div>
+
+	<div class="default_wrapper wm_case_desc" data-id="7" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/edu/edu7-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/edu/edu7-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/edu/edu7-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+
+	</div>
+</div>
+<!--教育结束-->
+
+<!--生活开始-->
+<div data-index="20" class="wm_case_mod_bd right">
+	<ul class="wm_case_list">
+		<li class="wm_case_item"  data-id="0">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case life on wsh1"></i>
+							</span>
+			<h4 class="wm_case_t">微生活-衡阳</h4>
+		</li>
+
+		<li class="wm_case_item"  data-id="1">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case life wsh2"></i>
+							</span>
+			<h4 class="wm_case_t">通灵珠宝</h4>
+		</li>
+		<li class="wm_case_item"  data-id="2">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case life wsh3"></i>
+							</span>
+			<h4 class="wm_case_t">嘉州生活</h4>
+		</li>
+		<li class="wm_case_item"  data-id="3">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case life wsh4"></i>
+							</span>
+			<h4 class="wm_case_t">大连微生活</h4>
+		</li>
+		<li class="wm_case_item"  data-id="4">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case life wsh5"></i>
+							</span>
+			<h4 class="wm_case_t">太仓南洋广场</h4>
+		</li>
+		<li class="wm_case_item"  data-id="5">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case life wsh6"></i>
+							</span>
+			<h4 class="wm_case_t">新疆公号导航</h4>
+		</li>
+		<li class="wm_case_item"  data-id="6">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case life wsh7"></i>
+							</span>
+			<h4 class="wm_case_t">校园微生活</h4>
+		</li>
+
+	</ul>
+	<div class="default_wrapper wm_case_desc" data-id="0">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/wsh/wsh1-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/wsh/wsh1-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/wsh/wsh1-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="1" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/wsh/wsh3-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/wsh/wsh3-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/wsh/wsh3-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="2" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/wsh/wsh4-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/wsh/wsh4-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/wsh/wsh4-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="3" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/wsh/wsh5-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/wsh/wsh5-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/wsh/wsh5-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="4" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/wsh/wsh6-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/wsh/wsh6-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/wsh/wsh6-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="5" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/wsh/wsh7-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/wsh/wsh7-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/wsh/wsh7-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+	<div class="default_wrapper wm_case_desc" data-id="6" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/wsh/wsh2-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/wsh/wsh2-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/wsh/wsh2-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+
+</div>
+<!--生活结束-->
+
+<!--珠宝开始-->
+<div data-index="21" class="wm_case_mod_bd right">
+	<ul class="wm_case_list">
+		<li class="wm_case_item"  data-id="0">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case jew on zb1"></i>
+							</span>
+			<h4 class="wm_case_t">周大生</h4>
+		</li>
+		<li class="wm_case_item"  data-id="1">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case jew zb2"></i>
+							</span>
+			<h4 class="wm_case_t">玛丽莱珠宝</h4>
+		</li>
+		<li class="wm_case_item" data-id="2">
+                                <span class="icon_wrapper">
+                                    <i class="icon_wm_case jew zb3"></i>
+                                </span>
+			<h4 class="wm_case_t">钻石小鸟</h4>
+		</li>
+		<li class="wm_case_item" data-id="3">
+                                <span class="icon_wrapper">
+                                    <i class="icon_wm_case jew zb4"></i>
+                                </span>
+			<h4 class="wm_case_t">周六福珠宝</h4>
+		</li>
+		<li class="wm_case_item" data-id="4">
+                                <span class="icon_wrapper">
+                                    <i class="icon_wm_case jew zb5"></i>
+                                </span>
+			<h4 class="wm_case_t">佳得翡翠</h4>
+		</li>
+        <li class="wm_case_item" data-id="5">
+                                <span class="icon_wrapper">
+                                    <i class="icon_wm_case jew zb6"></i>
+                                </span>
+			<h4 class="wm_case_t">卡米拉梦之境珠宝</h4>
+		</li>
+		<li class="wm_case_item" data-id="6">
+                                <span class="icon_wrapper">
+                                    <i class="icon_wm_case jew zb7"></i>
+                                </span>
+			<h4 class="wm_case_t">香港传祺国际珠宝</h4>
+		</li>
+
+	</ul>
+	<div class="default_wrapper wm_case_desc" data-id="0">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/zb/zb1-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/zb/zb1-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/zb/zb1-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="1" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/zb/zb2-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/zb/zb2-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/zb/zb2-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+	<div class="default_wrapper wm_case_desc" data-id="2" style="display: none;">
+		<img id="Img433" src="/static/wxgjcn/img/www/index1/zb/zb3-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="Img434" src="/static/wxgjcn/img/www/index1/zb/zb3-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="Img435" src="/static/wxgjcn/img/www/index1/zb/zb3-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="3" style="display: none;">
+		<img id="Img436" src="/static/wxgjcn/img/www/index1/zb/zb4-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="Img437" src="/static/wxgjcn/img/www/index1/zb/zb4-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="Img438" src="/static/wxgjcn/img/www/index1/zb/zb4-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="4" style="display: none;">
+		<img id="Img439" src="/static/wxgjcn/img/www/index1/zb/zb5-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="Img440" src="/static/wxgjcn/img/www/index1/zb/zb5-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="Img441" src="/static/wxgjcn/img/www/index1/zb/zb5-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="5" style="display: none;">
+		<img id="Img442" src="/static/wxgjcn/img/www/index1/zb/zb6-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="Img443" src="/static/wxgjcn/img/www/index1/zb/zb6-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="Img444" src="/static/wxgjcn/img/www/index1/zb/zb6-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+    <div class="default_wrapper wm_case_desc" data-id="5" style="display: none;">
+		<img id="Img442" src="/static/wxgjcn/img/www/index1/zb/zb7-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="Img443" src="/static/wxgjcn/img/www/index1/zb/zb7-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="Img444" src="/static/wxgjcn/img/www/index1/zb/zb7-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+
+</div>
+<!--珠宝结束-->
+
+
+<!--艺术文化-->
+<div data-index="22" class="wm_case_mod_bd right">
+	<ul class="wm_case_list">
+    <li class="wm_case_item"  data-id="0">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case skill art2 on" ></i>
+							</span>
+			<h4 class="wm_case_t">张军昆曲艺术中心</h4>
+		</li>
+		<li class="wm_case_item"  data-id="1">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case skill art1" ></i>
+							</span>
+			<h4 class="wm_case_t">侯马晋国博物馆</h4>
+		</li>
+		
+		<li class="wm_case_item" data-id="2">
+                                <span class="icon_wrapper">
+                                    <i class="icon_wm_case skill art3" ></i>
+                                </span>
+			<h4 class="wm_case_t">库尔勒圣桑</h4>
+		</li>
+		<li class="wm_case_item" data-id="3">
+                                <span class="icon_wrapper">
+                                    <i class="icon_wm_case skill art4" ></i>
+                                </span>
+			<h4 class="wm_case_t">苏州鼎藏文化艺术</h4>
+		</li>
+		<li class="wm_case_item" data-id="4">
+                                <span class="icon_wrapper">
+                                    <i class="icon_wm_case skill art5" ></i>
+                                </span>
+			<h4 class="wm_case_t">万仟堂艺术品</h4>
+		</li>
+		<li class="wm_case_item" data-id="5">
+                                <span class="icon_wrapper">
+                                    <i class="icon_wm_case skill art6" ></i>
+                                </span>
+			<h4 class="wm_case_t">湘谊紫砂艺术</h4>
+		</li>
+		<li class="wm_case_item" data-id="6">
+                                <span class="icon_wrapper">
+                                    <i class="icon_wm_case skill art7" ></i>
+                                </span>
+			<h4 class="wm_case_t">龙中龙环境艺术</h4>
+		</li>
+
+
+	</ul>
+    <div class="default_wrapper wm_case_desc" data-id="0">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/art/art2-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/art/art2-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/art/art2-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="1">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/art/art1-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/art/art1-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/art/art1-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	
+	<div class="default_wrapper wm_case_desc" data-id="2" style="display: none;">
+		<img id="Img445" src="/static/wxgjcn/img/www/index1/art/art20-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="Img446" src="/static/wxgjcn/img/www/index1/art/art20-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="Img447" src="/static/wxgjcn/img/www/index1/art/art20-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="3" style="display: none;">
+		<img id="Img448" src="/static/wxgjcn/img/www/index1/art/art21-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="Img449" src="/static/wxgjcn/img/www/index1/art/art21-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="Img450" src="/static/wxgjcn/img/www/index1/art/art21-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="4" style="display: none;">
+		<img id="Img451" src="/static/wxgjcn/img/www/index1/art/art22-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="Img452" src="/static/wxgjcn/img/www/index1/art/art22-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="Img453" src="/static/wxgjcn/img/www/index1/art/art22-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="5" style="display: none;">
+		<img id="Img454" src="/static/wxgjcn/img/www/index1/art/art23-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="Img455" src="/static/wxgjcn/img/www/index1/art/art23-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="Img456" src="/static/wxgjcn/img/www/index1/art/art23-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="6" style="display: none;">
+		<img id="Img457" src="/static/wxgjcn/img/www/index1/art/art24-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="Img458" src="/static/wxgjcn/img/www/index1/art/art24-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="Img459" src="/static/wxgjcn/img/www/index1/art/art24-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+
+</div>
+<!--其它结束-->
+
+
+<!--酒水-->
+<div data-index="23" class="wm_case_mod_bd right">
+	<ul class="wm_case_list">
+		<li class="wm_case_item"  data-id="0">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case wine on co1"></i>
+							</span>
+			<h4 class="wm_case_t">绿岛咖啡</h4>
+		</li>
+		<li class="wm_case_item" data-id="1">
+                                <span class="icon_wrapper">
+                                    <i class="icon_wm_case wine co2"></i>
+                                </span>
+			<h4 class="wm_case_t">云咖啡</h4>
+		</li>
+		<li class="wm_case_item" data-id="2">
+                                <span class="icon_wrapper">
+                                    <i class="icon_wm_case wine co3"></i>
+                                </span>
+			<h4 class="wm_case_t">上岛咖啡玉祥门</h4>
+		</li>
+		<li class="wm_case_item" data-id="3">
+                                <span class="icon_wrapper">
+                                    <i class="icon_wm_case wine co4"></i>
+                                </span>
+			<h4 class="wm_case_t">南洋风情咖啡</h4>
+		</li>
+		<li class="wm_case_item" data-id="4">
+                                <span class="icon_wrapper">
+                                    <i class="icon_wm_case wine co5"></i>
+                                </span>
+			<h4 class="wm_case_t">可那咖啡</h4>
+		</li>
+        <li class="wm_case_item" data-id="5">
+                                <span class="icon_wrapper">
+                                    <i class="icon_wm_case wine co6"></i>
+                                </span>
+			<h4 class="wm_case_t">angelwithus</h4>
+		</li>
+          <li class="wm_case_item" data-id="6">
+                                <span class="icon_wrapper">
+                                    <i class="icon_wm_case wine co7"></i>
+                                </span>
+			<h4 class="wm_case_t">太原咖啡之翼</h4>
+		</li>
+
+
+
+	</ul>
+	<div class="default_wrapper wm_case_desc" data-id="0">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/co/co1-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/co/co1-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/co/co1-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="1" style="display: none;">
+		<img id="Img460" src="/static/wxgjcn/img/www/index1/co/co2-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="Img461" src="/static/wxgjcn/img/www/index1/co/co2-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="Img462" src="/static/wxgjcn/img/www/index1/co/co2-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+	<div class="default_wrapper wm_case_desc" data-id="2" style="display: none;">
+		<img id="Img463" src="/static/wxgjcn/img/www/index1/co/co3-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="Img464" src="/static/wxgjcn/img/www/index1/co/co3-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="Img465" src="/static/wxgjcn/img/www/index1/co/co3-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="3" style="display: none;">
+		<img id="Img466" src="/static/wxgjcn/img/www/index1/co/co4-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="Img467" src="/static/wxgjcn/img/www/index1/co/co4-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="Img468" src="/static/wxgjcn/img/www/index1/co/co4-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="4" style="display: none;">
+		<img id="Img469" src="/static/wxgjcn/img/www/index1/co/co5-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="Img470" src="/static/wxgjcn/img/www/index1/co/co5-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="Img471" src="/static/wxgjcn/img/www/index1/co/co5-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="5" style="display: none;">
+		<img id="Img472" src="/static/wxgjcn/img/www/index1/co/co6-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="Img473" src="/static/wxgjcn/img/www/index1/co/co6-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="Img474" src="/static/wxgjcn/img/www/index1/co/co6-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+    <div class="default_wrapper wm_case_desc" data-id="5" style="display: none;">
+            <img id="Img472" src="/static/wxgjcn/img/www/index1/co/co7-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+            <img id="Img473" src="/static/wxgjcn/img/www/index1/co/co7-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+            <p class="case_ewm_img">
+                <img id="Img474" src="/static/wxgjcn/img/www/index1/co/co7-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+            </p>
+        </div>
+
+
+
+</div>
+<!--酒水结束-->
+<!--数码家电-->
+<div data-index="24" class="wm_case_mod_bd right">
+	<ul class="wm_case_list">
+		<li class="wm_case_item"  data-id="0">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case device on dig1"></i>
+							</span>
+			<h4 class="wm_case_t">青橙手机</h4>
+		</li>
+		<li class="wm_case_item"  data-id="1">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case device dig2"></i>
+							</span>
+			<h4 class="wm_case_t">华为</h4>
+		</li>
+		<li class="wm_case_item"  data-id="2">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case device dig3"></i>
+							</span>
+			<h4 class="wm_case_t">迪信通商城</h4>
+		</li>
+        <li class="wm_case_item"  data-id="3">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case device dig4"></i>
+							</span>
+			<h4 class="wm_case_t">美的中央空调</h4>
+		</li>
+         <li class="wm_case_item"  data-id="4">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case device dig5"></i>
+							</span>
+			<h4 class="wm_case_t">微创享（海尔）</h4>
+		</li>
+         <li class="wm_case_item"  data-id="5">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case device dig6"></i>
+							</span>
+			<h4 class="wm_case_t">TCL上海电视</h4>
+		</li>
+		<li class="wm_case_item"  data-id="6">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case device dig7"></i>
+							</span>
+			<h4 class="wm_case_t">赛格工厂店</h4>
+		</li>
+	</ul>
+	<div class="default_wrapper wm_case_desc" data-id="0">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/dig/dig1-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/dig/dig1-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/dig/dig1-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="1" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/dig/dig2-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/dig/dig2-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/dig/dig2-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="2" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/dig/dig3-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/dig/dig3-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/dig/dig3-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+    
+    <div class="default_wrapper wm_case_desc" data-id="3" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/dig/dig4-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/dig/dig4-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/dig/dig4-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+    
+      
+    <div class="default_wrapper wm_case_desc" data-id="4" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/dig/dig5-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/dig/dig5-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/dig/dig5-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+    
+      
+    <div class="default_wrapper wm_case_desc" data-id="5" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/dig/dig6-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/dig/dig6-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/dig/dig6-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="6" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/dig/dig7-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/dig/dig7-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/dig/dig7-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+
+</div>
+
+<!--数码家电-->
+
+
+<!--其它开始-->
+<div data-index="30" class="wm_case_mod_bd right">
+	<ul class="wm_case_list">
+		<li class="wm_case_item"  data-id="0">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case other on qt1"></i>
+							</span>
+			<h4 class="wm_case_t">林鼎护栏</h4>
+		</li>
+		<li class="wm_case_item"  data-id="1">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case other qt2"></i>
+							</span>
+			<h4 class="wm_case_t">济南途顺代驾</h4>
+		</li>
+		<li class="wm_case_item"  data-id="2">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case other qt3"></i>
+							</span>
+			<h4 class="wm_case_t">沁阳韵达快递</h4>
+		</li>
+        <li class="wm_case_item"  data-id="3">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case other qt4"></i>
+							</span>
+			<h4 class="wm_case_t">大成律师</h4>
+		</li>
+          <li class="wm_case_item"  data-id="4">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case other qt5"></i>
+							</span>
+			<h4 class="wm_case_t">铁色高原电影</h4>
+		</li>
+          <li class="wm_case_item"  data-id="5">
+							<span class="icon_wrapper">
+								<i class="icon_wm_case other qt6"></i>
+							</span>
+			<h4 class="wm_case_t">米粒影业</h4>
+		</li>
+     
+	</ul>
+	<div class="default_wrapper wm_case_desc" data-id="0">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/qt/qt1-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/qt/qt1-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/qt/qt1-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="1" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/qt/qt2-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/qt/qt2-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/qt/qt2-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+	<div class="default_wrapper wm_case_desc" data-id="2" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/qt/qt3-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/qt/qt3-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/qt/qt3-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+    
+    <div class="default_wrapper wm_case_desc" data-id="3" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/qt/qt4-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/qt/qt4-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/qt/qt4-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+      <div class="default_wrapper wm_case_desc" data-id="4" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/qt/qt5-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/qt/qt5-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/qt/qt5-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+      <div class="default_wrapper wm_case_desc" data-id="5" style="display:none;">
+		<img id="case_img_left" src="/static/wxgjcn/img/www/index1/qt/qt6-1.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img">
+		<img id="case_img_right" src="/static/wxgjcn/img/www/index1/qt/qt6-2.jpg-v=2014-03-07-1.jpg"  class="wm_case_desc_img extra">
+		<p class="case_ewm_img">
+			<img id="case_ewm" src="/static/wxgjcn/img/www/index1/qt/qt6-erwei.jpg-v=2014-03-07-1.jpg"  width="180" height="180">
+		</p>
+	</div>
+
+
+</div>
+<!--其它结束-->
+
+
+</div>
+</div>
+</div>
+
+<div class="erwei" title="微信扫一扫">
+	<span class="hudongzhushou">官方微信</span>
+	<div class="erwei_big" style="display:none;">
+		<p>扫一扫，关注盛世源码—国内优秀的微信公众服务平台官方微信，体验盛世源码—国内优秀的微信公众服务平台智能服务</p>
+	</div>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var erwei_time = null;
+		$(".erwei").hover(function(){
+			$(".erwei_big").show();
+		}).mouseleave(function(){
+				erwei_time = setTimeout(function(){
+					$(".erwei_big").hide();
+				},1000);
+			});
+		$(".erwei_big").mouseenter(function(){
+			if(erwei_time){
+				clearTimeout(erwei_time);
+			}
+		}).mouseleave(function(){
+				erwei_time = setTimeout(function(){
+					$(".erwei_big").hide();
+				},1000);
+			});
+	});
+</script>
+<!-- 意见反馈 -->
+<div class="feedback" id="feedback">
+	<p class="feedsize"><b>亲爱的用户</b><a class="close" href="javascript:;" onclick= "$('#feedback, #feedback_cover').toggleClass('on');">×</a></p>
+	<p class="bbottom">欢迎您访问盛世源码—国内优秀的微信公众服务平台官方网站！您对盛世源码—国内优秀的微信公众服务平台有任何意见和建议，或在使用过程中遇到问题，请在本页面反馈。我们会实时关注您的反馈不断优化，您的建议将帮助我们改进，为您提供更好的服务！</p>
+	<p class="feedsize"><b>请留下您的宝贵意见和建议！（请填写）</b></p>
+	<form>
+		<textarea  id="feedback-text" name="" id="feedback-text" placeholder="输入文本..."></textarea>
+		<p class="feedsize"><b>您常用的电子邮箱是？（请填写）</b></p>
+		<p style="color:#666; text-indent:1em;"><b class="blue">★</b>请尽量填写，以便我们尽快回复您！</p>
+		<input type="text" placeholder="如：@163.com" id="feedback-input" />
+       <p class="feedsize"><b>验证码</b></p>
+        <input type="text" name="captcha" id="feedback-Captcha" maxlength="4" onclick="">
+        <span name="feedback_captcha" id="feedback_captcha">
+				<img title="看不清？点击更换" style="cursor: pointer;" src="captcha-f=feedback&v=3449764.png"  id="yanzhen" width="60" height="20" border="1">
+	    </span>
+	    <br />
+		<input type="button"  class="feed-btn" value="" onclick="feedbackSubmit(); return false;" />
+	</form>
+</div>
+<div id="feedback_cover" class="feedback_cover"></div>
+<!--QQ咨询-->
+<script charset="utf-8" type="text/javascript" src="/static/wxgjcn//static.b.qq.com/account/bizqq/js/wpa.js-wty=1&type=13&kfuin=631989322&ws=http---www.weimob.com-&title=企业QQ售前&cot1=国内最大的盛世源码—国内优秀的微信公众服务平台&btn1=企业QQ咨询&fsty=0&fposX=2&fposY=1&tx=2&aty=1&a=1001.js" ></script>
+
+<div class="footer">
+	<div class="footer-content clearfix">
+		<div class="foot-menu">
+			<p>
+				<a href="/static/wxgjcn/index1.htm"  target="_blank">盛世源码—国内优秀的微信公众服务平台首页</a>&nbsp;|&nbsp;
+				<a href="/reg.html"  target="_blank">申请入驻</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/proxy1.htm"  target="_blank">渠道代理</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/about1.htm"  target="_blank">关于盛世源码</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/agents.htm"  target="_blank">授权认证</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/jobs.htm"  target="_blank">加入盛世源码</a>
+			</p>
+			<p>免费热线：400-000-0000&nbsp;&nbsp;&nbsp;QQ：631989322&nbsp;&nbsp;&nbsp;邮箱：kf@weiqimobile.com</p>
+			<p>地址：
+								湖南省长沙市</p>
+		</div>
+		<div class="copyright">
+			Copyright 

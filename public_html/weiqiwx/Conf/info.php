@@ -1,0 +1,20 @@
+<?php 
+return array (
+  'site_name' => '盛世源码',
+  'site_title' => '盛世源码',
+  'site_url' => '/weiqiwx',
+  'site_my' => '盛世源码',
+  'server_key' => 'D27897844bc35e217de79b30b3567356',
+  'ischeckuser' => 'true',
+  'reg_needmp' => 'false',
+  'reg_groupid' => '4',
+  'reg_validdays' => '7',
+  'ipc' => '',
+  //'site_qq' => '631989322',
+  'baidu_map_api' => '7fTQ4RIgxOr2mXh0ImlVpgjh',
+  //'site_email' => '631989322@qq.com',
+  'keyword' => '盛世源码',
+  'content' => '盛世源码',
+  'counts' => '',
+  'copyright' => '盛世源码',
+);

@@ -1,0 +1,66 @@
+<include file="Public:head"/>
+<div class="content" style="" >
+    <div class="cLineB">
+    <h4>邮箱设置</h4>
+    <span class="FAQ">填写错误将不能发送邮件！</span>
+    </div>
+    <div class="msgWrap">
+    <form method="post"  action="">
+    <table class="userinfoArea" border="0" cellspacing="0" cellpadding="0" width="100%">
+    <thead>
+    <tr>
+    <th width="150"><span class="red"></span>接收邮件邮箱：</th>
+    <td>
+    <input type="text" class="px" value="{ZF:$set.emails}" name="emails"> 一般用于通知商家订单信息，多个用,隔开，可为空。
+    </td>	
+    </tr>
+    <tr>
+    <th width="150"><span class="red">*</span>SMTP服务器：</th>
+    <td>
+    <input type="text" class="px require" value="{ZF:$set.server}" name="server">
+    </td>	
+    </tr>
+    <tr>
+    <th width="150"><span class="red">*</span>SMTP端口：</th>
+    <td>
+    <input type="text" class="px require" value="{ZF:$set.port|default=25}" name="port">
+    </td>	
+    </tr>
+    <tr>
+    <th width="150"><span class="red">*</span>SMTP帐号：</th>
+    <td>
+    <input type="text" class="px require" value="{ZF:$set.account}" name="account">
+    </td>	
+    </tr>
+    <tr>
+    <th><span class="red">*</span>SMTP密码：</th>
+    <td>
+    <input type="password" class="px require" value="{ZF:$set.password}" name="password">
+    </td>	
+    </tr>
+    <tr>
+    <th><span class="red">*</span>是否开启：</th>
+    <td>
+    <label for="statu-1">
+    开启
+    </label>
+    <input type="radio" name="status" <if condition="$set.status eq 1">checked</if> id="statu-1" value="1">
+    &nbsp;&nbsp;
+    <label for="statu-0">
+    关闭
+    </label>
+    <input type="radio" name="status" <if condition="$set.status eq 0">checked</if> id="statu-0" value="0">
+    </td>	
+    </tr>
+    <tr>
+    <td height="50" colspan="2">
+    <input type="submit" value="保存"  name="sbmt"  class="btnGreen"  style="float:left; margin-right:20px;" /> <a href="{ZF::U('Email/send',array('token'=>$token))}" class="btnGray">测试发送邮件</a>
+    </tr>
+    </thead>
+    </table>
+    </form>
+    
+    </div>
+</div>
+
+<include file="Public:footer"/>	

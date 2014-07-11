@@ -1,0 +1,184 @@
+<include file="Public:head"/>
+<script src="{ZF::STATICS}/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="{ZF::STATICS}/artDialog/plugins/iframeTools.js"></script>
+<script>
+
+	KindEditor.ready(function(K){
+
+		var editor = K.editor({
+
+			allowFileManager:true
+
+		});
+</script>
+<div class="content" style="" >
+
+          <div class="cLineB"><h4>微信墙活动设置</h4><a href="javascript:history.go(-1);"  class="right btnGrayS vm" style="margin-top:-27px" >返回</a></div> 
+
+<div class="msgWrap">
+
+  <form class="form" method="post"   action="{ZF::U('Wewall/insert')}"  target="_top" enctype="multipart/form-data" >
+
+<TABLE class="userinfoArea" style=" margin:20px 0 0 0;" border="0" cellSpacing="0" cellPadding="0" width="100%">
+
+  <THEAD>
+
+<TR>
+
+  <TH valign="top"><label for="acttitle">活动名称：</label></TH>
+
+  <TD><input type="input" class="px" id="acttitle"  name="acttitle" style="width:500px"  value="默认活动" >    </TD>
+
+  <TD>&nbsp;</TD>
+
+</TR>
+
+<TR>
+
+  <TH valign="top">是否审核：</TH>
+
+  <TD><label for="radio1"><input id="radio1" class="radio" type="radio" name="ifcheck" value="1" > 需要</label>&nbsp;&nbsp;&nbsp;<label for="radio2"><input class="radio" id="radio2" type="radio" name="ifcheck" value="0" checked="checked"> 不需要</label></TD>
+
+</TR>
+
+<TR>
+
+  <TH valign="top">是否抽奖：</TH>
+
+  <TD><label for="radio1"><input id="radio1" class="radio" type="radio" name="iflottery" value="1"> 需要</label>&nbsp;&nbsp;&nbsp;<label for="radio2"><input class="radio" id="radio2" type="radio" name="iflottery" value="0"  checked="checked"> 不需要</label></TD>
+
+</TR>
+
+</THEAD>
+
+<TBODY>
+
+<TR>
+
+  <TH valign="top"><label for="text">前台页传输间隔：</label></TH>
+
+  <TD><input type="input" class="px" id="showtime"  name="showtime" style="width:50px" value="3" >  数字越大服务器负担越小，但是要考虑客户体验!
+
+ 
+
+
+
+</TD>
+
+  <TD rowspan="2" valign="top"></TD>
+
+</TR> 
+
+<TR>
+
+  <TH valign="top"><label for="text">一等奖数量：</label></TH>
+
+  <TD><input type="input" class="px" id="bonu1"  name="bonu1" style="width:50px" value="1" >  不开启抽奖功能的话无需填写
+
+ 
+
+
+
+</TD>
+
+  <TD rowspan="2" valign="top"></TD>
+
+</TR> 
+
+<TR>
+
+  <TH valign="top"><label for="text">二等奖数量：</label></TH>
+
+  <TD><input type="input" class="px" id="bonu2"  name="bonu2" style="width:50px" value="3" >  不开启抽奖功能的话无需填写
+
+ 
+
+
+
+</TD>
+
+  <TD rowspan="2" valign="top"></TD>
+
+</TR> 
+
+<TR>
+
+  <TH valign="top"><label for="text">三等奖数量：</label></TH>
+
+  <TD><input type="input" class="px" id="bonu3"  name="bonu3" style="width:50px" value="5" >  不开启抽奖功能的话无需填写
+
+ 
+
+
+
+</TD>
+
+  <TD rowspan="2" valign="top"></TD>
+
+</TR>
+
+<TR>
+
+  <TH valign="top"><label for="text">前台页面背景：</label></TH>
+
+  <TD><input type="input" class="px" id="pic" value="" name="background" style="width:250px" value="" ><script src="{ZF::STATICS}/upyun.js"></script><a href="###" onclick="chooseFile('pic','background')" class="a_upload">选择</a>&nbsp;&nbsp;&nbsp;<a href="###" onclick="upyunPicUpload('pic',1500,1000,'{ZF:$token}')" class="a_upload">上传</a>&nbsp;&nbsp;&nbsp;<a href="###" onclick="viewImg('pic')" class="a_upload">预览</a>定义前台页面背景，为URL地址
+
+ 
+
+
+
+</TD>
+
+  <TD rowspan="2" valign="top"></TD>
+
+</TR>
+
+
+
+  
+
+<TR>
+
+  <TH></TH>
+
+  <TD><button type="submit"  name="button"  class="btnGreen left" >保存</button>　
+
+  	</TD>
+
+  </TR>
+
+  </TBODY>
+
+</TABLE>
+
+  </form>
+
+
+
+
+
+
+
+  </div> 
+
+
+
+        </div>
+
+        
+
+        <div class="clr"></div>
+
+      </div>
+
+    </div>
+
+  </div> 
+
+
+
+<!--底部-->
+
+  	</div>
+
+<include file="Public:footer"/>

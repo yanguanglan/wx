@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="Keywords" content="盛世源码—国内优秀的微信公众服务平台中心" />
+        <meta name="Description" content="盛世源码—国内优秀的微信公众服务平台中心" />
+        <link rel="shortcut icon" href="httpimg/favicon.ico?v=2014-03-07-1" />
+        <link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/www/login/style.css-2014-03-07-1.css"  media="all" />
+<link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/www/index1/index.css-2014-03-07-1.css"  media="all" />
+<script type="text/javascript" src="/static/wxgjcn/src/jQuery.js-2014-03-07-1.js" ></script>
+<script type="text/javascript" src="/static/wxgjcn/src/www/placeholder.js-2014-03-07-1.js" ></script>
+<title>登录-盛世源码—国内优秀的微信公众服务平台中心</title>
+        <!--[if IE 7]>
+            <link href="/static/wxgjcn/css/font_awesome_ie7.css-v=2014-03-07-1.css"  rel="stylesheet" />
+        <![endif]-->
+        <!--[if lte IE 8]>
+            <script src="/static/wxgjcn/js/excanvas_min.js-v=2014-03-07-1.js" ></script>
+        <![endif]-->
+        <!--[if lte IE 9]>
+            <script src="/static/wxgjcn/js/watermark.js-v=2014-03-07-1.js" ></script>
+        <![endif]-->
+    </head>
+    <!--[if lte IE 8]>  <script language="javascript">$(function (){$.browser.msie&&$("#ie9-tips").show().find("#stopSuggestA").click(function(){$("#ie9-tips").hide()})})</script><![endif]-->
+<div class="nav clearfix">
+	<div class="nav-content">
+		<h1 class="left"><a href="/"   title="盛世源码—国内优秀的微信公众服务平台官网">盛世源码—国内优秀的微信公众服务平台·微信营销，如此简单！</a></h1>
+		<div class="left city">
+			<h2>上海</h2>
+							<a href="/static/wxgjcn/city1.htm" >
+					切换城市<i class="tri4"></i>
+				</a>
+					</div>
+		<div class="right line-li">
+        
+			 <ul>
+        <li><a href="/" >首页</a></li>
+        <li><a href="/static/wxgjcn/case1.htm"  >经典案例</a></li>
+	    <li class="nav_menu_li_1"><a style="width:70px; text-align:left;" class="_hover">产品中心<i></i></a>
+					 <div class="sub-nav">
+						 <a href="/static/wxgjcn/package.htm"  target="_black">服务套餐</a>
+						 <a href="/static/wxgjcn/guide1.htm" >功能介绍</a>
+						 
+
+					 </div>
+
+	    </li>
+        <li><a href="/static/wxgjcn/proxy1.htm"  >渠道代理</a></li>
+        <li><a href="/static/wxgjcn/help.htm"   target="_black">帮助</a></li>
+    </ul>
+            <div class="account">
+        <a href="/reg.html"  class="btn-reg btn0" target="_black">注册</a>
+          </div>
+		</div>
+	</div>
+</div>
+
+<div id="ie9-tips" class="clearfix">
+	<div id="tipsPanel">
+		<div id="tipsDesc">系统检测到您所使用的浏览器版本较低，推荐使用<a   target="_blank">Firefox</a>或<a   target="_blank">Chrome</a>浏览器打开，否则将无法体验完整产品功能。</div>
+		<a id="stopSuggestA" href="javascript:;">×</a>
+	</div>
+</div>
+
+<script>
+var $do_submit = false;
+
+// 绑定回车键
+$('#loginBox').keydown(function(e){
+	if(13 == event.keyCode){
+		login();
+	}
+});
+
+</script>
+<script>
+	if(top!=self) if(self!=top) top.location=self.location;
+</script>
+
+
+
+<div id="bd" class="quc-clearfix reg-wrapper-quick" onkeydown="bindEnterKey(event)">
+	<div class="content">
+		<div id="loginWrap">
+			<div id="modLoginWrap" class="mod-qiuser-pop">
+				<dl class="login-wrap">
+					<dt><span id="loginTitle">登录</span></dt>
+					<div class="ipbox">
+						<b class="r1"></b>
+						<b class="r2"></b>
+						<b class="r5"></b>
+						<div class="con">
+							<dd class="botborder" style="z-index:10;">
+								<div class="quc-clearfix login-item">
+									<label for="username">帐号：</label>
+									<input type="text" id="username" name="username" tabindex="1" class="ipt tipinput1" placeholder="用户名" autocomplete="off" maxlength="100" suggestwidth="374px" />
+								</div>
+							</dd>
+							<dd class="password">
+								<div class="quc-clearfix login-item">
+									<label for="password">密码：</label>
+									<input type="password" id="password" name="password" tabindex="2" class="ipt tipinput1" placeholder="请输入您的密码" maxlength="20" autocomplete="off" />
+								</div>
+							</dd>
+						</div>
+						<b class="r5"></b>
+						<b class="r3"></b>
+						<b class="r4"></b>
+					</div>
+					<dd class="find">
+						<label onClick="changeCheckbox();">
+							<span id="keepalive" value="1" class="checked checkbox" tabindex="3"></span>自动登录
+						</label>
+						<a href="/static/wxgjcn/forgotpassword/index.html"  target="_blank" class="fac">忘记密码？</a>
+					</dd>
+					<div style="margin:0 0 10px; color:#c35d00;" id="error_box">
+						<span id="error_tips"></span>
+					</div>
+					<dd class="submit">
+						<span><input type="submit" tabindex="4" class="btn-login" id="btn-login" value="" /></span>
+					</dd>
+				</dl>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="erwei" title="微信扫一扫">
+	<span class="hudongzhushou">官方微信</span>
+	<div class="erwei_big" style="display:none;">
+		<p>扫一扫，关注盛世源码—国内优秀的微信公众服务平台官方微信，体验盛世源码—国内优秀的微信公众服务平台智能服务</p>
+	</div>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var erwei_time = null;
+		$(".erwei").hover(function(){
+			$(".erwei_big").show();
+		}).mouseleave(function(){
+				erwei_time = setTimeout(function(){
+					$(".erwei_big").hide();
+				},1000);
+			});
+		$(".erwei_big").mouseenter(function(){
+			if(erwei_time){
+				clearTimeout(erwei_time);
+			}
+		}).mouseleave(function(){
+				erwei_time = setTimeout(function(){
+					$(".erwei_big").hide();
+				},1000);
+			});
+	});
+</script>
+<!-- 意见反馈 -->
+<div class="feedback" id="feedback">
+	<p class="feedsize"><b>亲爱的用户</b><a class="close" href="javascript:;" onclick= "$('#feedback, #feedback_cover').toggleClass('on');">×</a></p>
+	<p class="bbottom">欢迎您访问盛世源码—国内优秀的微信公众服务平台官方网站！您对盛世源码—国内优秀的微信公众服务平台有任何意见和建议，或在使用过程中遇到问题，请在本页面反馈。我们会实时关注您的反馈不断优化，您的建议将帮助我们改进，为您提供更好的服务！</p>
+	<p class="feedsize"><b>请留下您的宝贵意见和建议！（请填写）</b></p>
+	<form>
+		<textarea  id="feedback-text" name="" id="feedback-text" placeholder="输入文本..."></textarea>
+		<p class="feedsize"><b>您常用的电子邮箱是？（请填写）</b></p>
+		<p style="color:#666; text-indent:1em;"><b class="blue">★</b>请尽量填写，以便我们尽快回复您！</p>
+		<input type="text" placeholder="如：@163.com" id="feedback-input" />
+       <p class="feedsize"><b>验证码</b></p>
+        <input type="text" name="captcha" id="feedback-Captcha" maxlength="4" onclick="">
+        <span name="feedback_captcha" id="feedback_captcha">
+				<img title="看不清？点击更换" style="cursor: pointer;" src="captcha-f=feedback&v=2213746.png"  id="yanzhen" width="60" height="20" border="1">
+	    </span>
+	    <br />
+		<input type="button"  class="feed-btn" value="" onclick="feedbackSubmit(); return false;" />
+	</form>
+</div>
+<div id="feedback_cover" class="feedback_cover"></div>
+<!--QQ咨询-->
+<script charset="utf-8" type="text/javascript" src="/static/wxgjcn//static.b.qq.com/account/bizqq/js/wpa.js-wty=1&type=13&kfuin=86013323&ws=http---www.weimob.com-&title=企业QQ售前&cot1=国内最大的盛世源码—国内优秀的微信公众服务平台&btn1=企业QQ咨询&fsty=0&fposX=2&fposY=1&tx=2&aty=1&a=1001.js" ></script>
+
+<div class="footer">
+	<div class="footer-content clearfix">
+		<div class="foot-menu">
+			<p>
+				<a href="/static/wxgjcn/index1.htm"  target="_blank">盛世源码—国内优秀的微信公众服务平台首页</a>&nbsp;|&nbsp;
+				<a href="/reg.html"  target="_blank">申请入驻</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/proxy1.htm"  target="_blank">渠道代理</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/about1.htm"  target="_blank">关于盛世源码</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/agents.htm"  target="_blank">授权认证</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/jobs.htm"  target="_blank">加入盛世源码</a>
+			</p>
+			<p>免费热线：400-800-8888&nbsp;&nbsp;&nbsp;QQ：631989322&nbsp;&nbsp;&nbsp;邮箱：kf@weixin.9upp.com</p>
+			<p>地址：
+								中山市东区中兴广场2座1207</p>
+		</div>
+		<div class="copyright">
+			Copyright (c) 2011-2014 9upp.com. All Rights Reserved 盛世源码团队 粤ICP备13083563号
+		</div>
+	</div>
+</div>
+<a class="feedbackbot" href="javascript:;" onclick= "$('#feedback, #feedback_cover').toggleClass('on');"></a>
+<div style="display:none;"><script type="text/javascript" src="/static/wxgjcn/src/www/index1/huishuo.js-v=2014-03-07-1.js" ></script></div>
+
+<script>
+	$(document).ready(function(){
+		$("#yanzhen").click(function(){
+			var img_src= 'captcha-f=feedback&v=.png'/*tpa=http://www.weimob.com/site/captcha?f=feedback&v=*/;
+			$(this).attr({"src":img_src + Math.random()*100000});
+		});
+	});
+	function feedbackSubmit(){
+		var $data = {
+			feedback: $('#feedback-text').val(),
+			email: $('#feedback-input').val(),
+			captcha: $('#feedback-Captcha').val(),
+			url: self.location.hrefy
+		};
+		$.post('/site/feedback', $data, function(rs){
+			alert(rs.error);
+			if (200 == rs.code)
+			{
+				$('#feedback, #feedback_cover').toggleClass('on');
+			}
+		}, 'json');
+	}
+</script>
+
+
+<script>/*背景图片自适应*/var resolutionHeight=window.screen.height;$("#hd").css("padding-top",(resolutionHeight*0.08)+"px");$("http://www.weimob.com/site/div.info").css("margin-top",(resolutionHeight*0.11)+"px");if(resolutionHeight<770){$("body").css("height","130%");}else if(resolutionHeight<901){$("body").css("height","115%");}else if(resolutionHeight>1200){$("body").addClass("bodybig");}var scrollHeight = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);var clientHeight = document.documentElement.clientHeight || document.body.clientHeight;var maxHeight=Math.max(clientHeight,scrollHeight);$("body").css("min-height",maxHeight+"px");$(window).resize(function(){var scrollHeight1 = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);var clientHeight1 = document.documentElement.clientHeight || document.body.clientHeight;var maxHeight1=Math.max(clientHeight1,scrollHeight1);$("body").css("height",maxHeight1+"px");});/*placeholder*/$('input[placeholder]').placeholder();</script>
+
+<script>
+    $(document).ready(function(){
+        $('#btn-login').click(function(){
+            $('#error_box').hide();
+            var userAgent = window.navigator.userAgent.toLowerCase();
+            var ie6 = $.browser.msie && /msie 6\.0/i.test(userAgent);
+            if (ie6)
+            {
+                alert('请不要使用ie6及以下等低版本浏览器');
+                return false;
+            }
+
+            // 提交前检验
+            if('' == $('#username').val()){
+                $('#username').focus();
+                $('#error_tips').text('请输入账号');
+                $('#error_box').slideDown(400);
+                setTimeout(function(){
+                    $('#error_box').hide();
+                }, 1000);
+                return false;
+            }
+
+            $.post('/login', {username:$('#username').val(), password:$('#password').val(), keepalive:$('#keepalive').attr('value')}, function(rs){
+                $('#error_tips').text(rs.error);
+                $('#error_box').slideDown(400);
+                setTimeout(function(){
+                    $('#error_box').hide();
+                }, 1000);
+                if(rs.errno == 200){
+                    setTimeout(function(){
+                        location.href = rs.url_route;
+                    }, 600);
+                }
+            }, 'json');
+        });
+    });
+
+    function changeCheckbox(){
+        var new_value = (parseInt($('#keepalive').attr('value')) + 1) % 2;
+        $('#keepalive').attr('value', new_value);
+        if(1 == new_value){
+            $('#keepalive').addClass('checked');
+        }else{
+            $('#keepalive').removeClass('checked');
+        }
+    }
+
+    function bindEnterKey(event){
+		if(13 == event.keyCode){
+            $('#btn-login').click();
+        }
+    }
+</script>	<script>
+		window.document.onkeydown = function(e) {
+			if ('' == document.activeElement.id) {
+				var e=e || event;
+　 				var currKey=e.keyCode || e.which || e.charCode;
+				if (8 == currKey) {
+					return false;
+				}
+			}
+		};
+	</script>
+		<script type="text/javascript">
+(function() {
+	var wtj = document.createElement('script'); wtj.type = 'text/javascript'; wtj.async = true;
+	wtj.src = 'http://tj.weimob.com/wtj.js?url=' + encodeURIComponent(location.href);
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wtj, s);
+})();
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd80741dd59de91e1846b2add2c0ad2a2' type='text/javascript'%3E%3C/script%3E"));
+function weimobAfterShare(shareFromWechatId,sendFriendLink,shareToPlatform){
+	var wmShare = document.createElement('script'); wmShare.type = 'text/javascript'; wmShare.async = true;
+    wmShare.src = 'http://' + getShareApiRouter() + '/api-share.js?fromWechatId=' + shareFromWechatId + '&shareToPlatform=';
+	wmShare.src += shareToPlatform + '&pid=&sendFriendLink=' + encodeURIComponent(sendFriendLink);
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wmShare, s);
+}
+function getShareApiRouter(){
+	var str_domain = location.href.split('/',4)[2];
+	var tj_domain = '127.0.0.1';
+	switch(str_domain){
+		case 'http://www.weimob.com/site/www.weimob.com':
+			tj_domain = 'http://www.weimob.com/site/tj.weimob.com';
+			break;
+		case 'http://www.weimob.com/site/112.124.28.82':
+			tj_domain = '112.124.28.82:400';
+			break;
+	}
+	return tj_domain;
+}
+if(typeof(window.shareData) == 'undefined'){
+	window.shareData = {
+				"imgUrl": "", 
+		"timeLineLink": "http://www.weimob.com/site/login?",
+		"sendFriendLink": "http://www.weimob.com/site/login?",
+		"weiboLink": "http://www.weimob.com/site/login?",
+		"tTitle": document.title,
+		"tContent": document.title,
+		"fTitle": document.title,
+		"fContent": document.title,
+		"wContent": document.title
+	}
+}
+document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {	 
+	// 发送给好友
+	WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+		WeixinJSBridge.invoke('sendAppMessage', { 
+			"img_url": window.shareData.imgUrl,
+			"img_width": "640",
+			"img_height": "640",
+			"link": window.shareData.sendFriendLink,
+			"desc": window.shareData.fContent,
+			"title": window.shareData.fTitle
+		}, function (res) {
+			weimobAfterShare("",window.shareData.sendFriendLink,'appmessage');
+			_report('send_msg', res.err_msg);
+		})
+	});
+
+	// 分享到朋友圈
+	WeixinJSBridge.on('menu:share:timeline', function (argv) {
+		WeixinJSBridge.invoke('shareTimeline', {
+			"img_url": window.shareData.imgUrl,
+			"img_width": "640",
+			"img_height": "640",
+			"link": window.shareData.timeLineLink,
+			"desc": window.shareData.tContent,
+			"title": window.shareData.tTitle
+		}, function (res) {
+						//weimobAfterShare("",window.shareData.timeLineLink,'timeline');
+			_report('timeline', res.err_msg);
+		});
+	});
+
+	// 分享到微博
+	WeixinJSBridge.on('menu:share:weibo', function (argv) {
+		WeixinJSBridge.invoke('shareWeibo', {
+			"content": window.shareData.wContent,
+			"url": window.shareData.weiboLink
+		}, function (res) {
+			weimobAfterShare("",window.shareData.weiboLink,'weibo');
+			_report('weibo', res.err_msg);
+		});
+	});
+}, false);
+</script>
+</html>

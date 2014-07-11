@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="uyan_auth" content="04a3f6938d" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="微信营销、微信代运营、微信定制开发、微信托管、微网站、微商城、微营销" name="Keywords">
+	<meta content="盛世源码—国内优秀的微信公众服务平台，国内最大的微信公众智能服务平台，盛世源码—国内优秀的微信公众服务平台八大微体系：微菜单、微官网、微会员、微活动、微商城、微推送、微服务、微统计，企业微营销必备。" name="Description">
+    <script src="/static/wxgjcn/src/html5.js" ></script>
+    <link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/www/index1/index.css-2014-03-07-1.css"  media="all" />
+<script type="text/javascript" src="/static/wxgjcn/src/jQuery.js-2014-03-07-1.js" ></script>
+<script type="text/javascript" src="/static/wxgjcn/src/www/index1/weimob-index.js-2014-03-07-1.js" ></script>
+<title>盛世源码—国内优秀的微信公众服务平台</title>
+	<link rel="shortcut icon" href="httpimg/favicon.ico" />
+</head>
+<body>
+	<!--[if lte IE 8]>  <script language="javascript">$(function (){$.browser.msie&&$("#ie9-tips").show().find("#stopSuggestA").click(function(){$("#ie9-tips").hide()})})</script><![endif]-->
+<div class="nav clearfix">
+	<div class="nav-content">
+		<h1 class="left"><a href="/static/wxgjcn/index.html"   title="盛世源码—国内优秀的微信公众服务平台官网">盛世源码—国内优秀的微信公众服务平台·微信营销，如此简单！</a></h1>
+		<div class="left city">
+			<h2>上海</h2>
+							<a href="/static/wxgjcn/city1.htm" >
+					切换城市<i class="tri4"></i>
+				</a>
+					</div>
+		<div class="right line-li">
+        
+			 <ul>
+        <li><a href="/static/wxgjcn/index.html" >首页</a></li>
+        <li><a href="/static/wxgjcn/case1.htm"  >经典案例</a></li>
+	    <li class="nav_menu_li_1"><a style="width:70px; text-align:left;" class="_hover">产品中心<i></i></a>
+					 <div class="sub-nav">
+						 <a href="/static/wxgjcn/package.htm"  target="_black">服务套餐</a>
+						 <a href="/static/wxgjcn/guide1.htm" >功能介绍</a>
+						 <a href="/static/wxgjcn/topic/weipai.htm"  target="_black">微拍</a>
+
+					 </div>
+
+	    </li>
+        <li><a href="/static/wxgjcn/proxy1.htm"  class="hover">渠道代理</a></li>
+        <li><a href="/static/wxgjcn/help.htm"   target="_black">帮助</a></li>
+    </ul>
+            <div class="account">
+        <a href="/reg.html"  class="btn-reg btn0" target="_black">注册</a>
+                  <a href="javascript:;" class="btn-login btn0" onclick="if(location.hostname.indexOf('.cn')>-1){location.href='/static/wxgjcn/login.htm'/*tpa=http://www.weimob.com/site/login*/; return false;} loginBox.toggle(this, event);">登录</a>
+		</div>
+		</div>
+	</div>
+</div>
+
+	<div id="loginBox">
+		<div class="login-panel">
+			<h3>登录</h3>
+			<div class="login-mod">
+				<div class="login-err-panel dn" id="err_area">
+					<span class="icon-wrapper"><i class="icon24-login err" style="margin-top:-.2em;*margin-top:0;"></i></span>
+					<span id="err_tips"></span>
+				</div>
+				<form class="login-form" id="login-form">
+					<div class="login-un">
+						<span class="icon-wrapper"><i class="icon24-login un"></i></span>
+						<input type="text" id="username" placeholder="盛世源码—国内优秀的微信公众服务平台号">
+					</div>
+					<div class="login-pwd">
+						<span class="icon-wrapper"><i class="icon24-login pwd"></i></span>
+						<input type="password" id="password" placeholder="密码">
+					</div>
+				</form>
+				<div class="login-help-panel">
+					<a id="rememberPwd" class="login-remember-pwd" href="javascript:;">
+						<input type="checkbox" id="rememberPwdIcon">记住帐号
+					</a>
+					<a class="login-forget-pwd" href="/static/wxgjcn/forgotpassword/index.html" >忘记密码？</a>
+                    <a class="login-forget-pwd" href="/reg.html" >新用户注册</a>
+				</div>
+				<div class="login-btn-panel">
+					<a class="login-btn" title="点击登录" href="javascript:;" id="login_button" onclick="login();">登录</a>
+				</div>
+			</div>
+		</div>
+		<div class="login-cover" onclick="loginBox.toggle(this, event);"></div>
+	</div>
+<div id="ie9-tips" class="clearfix">
+	<div id="tipsPanel">
+		<div id="tipsDesc">系统检测到您所使用的浏览器版本较低，推荐使用<a   target="_blank">Firefox</a>或<a   target="_blank">Chrome</a>浏览器打开，否则将无法体验完整产品功能。</div>
+		<a id="stopSuggestA" href="javascript:;">×</a>
+	</div>
+</div>
+
+<script>
+var $do_submit = false;
+
+// 绑定回车键
+$('#loginBox').keydown(function(e){
+	if(13 == event.keyCode){
+		login();
+	}
+});
+
+	function login()
+	{
+		if (true == $do_submit)
+		{
+			return false;
+		}
+
+		var $pre_submit = '登录', $done_submit = '登录中...';
+		var $username = $('#username').val(), $password = $('#password').val(), $keepalive = $('#rememberPwdIcon').val();
+		$('#login_button').text($done_submit);
+		$do_submit = true;
+
+		// check
+		if ('' == $username || '' == $password)
+		{
+			$('#err_tips').text('您输入的盛世源码—国内优秀的微信公众服务平台号或密码错误，请重新输入！');
+			$('#err_area').show();
+			$('#login_button').text($pre_submit);
+			$do_submit = false;
+			return false;
+		}
+
+		var $login_data = {
+			username:$username,
+			password:$password,
+			keepalive:$keepalive
+		};
+		$.post('/login', $login_data, function(rs){
+			if(rs.errno == 200)
+			{
+				location.href = rs.url_route;
+			}
+			else
+			{
+				$('#err_tips').text(rs.error);
+				$('#err_area').show();
+				$('#login_button').text($pre_submit);
+			}
+			$do_submit = false;
+		}, 'json');
+	}
+</script>
+
+<div class="Public-content clearfix">
+	<div class="Public">
+		<h2 class="Public-h2">代理合作</h2>
+		<div class="Public-box">
+			<div class="Proxy" style="position:relative;">
+				<h3>尊敬的各位合作伙伴：</h3>
+				<p>　　首先非常感谢您对盛世源码—国内优秀的微信公众服务平台的认可和支持，信任是合作的基础，这是我们一直强调的核心价值观。</p>
+                
+				<p>　　盛世源码—国内优秀的微信公众服务平台在大家的共同努力下，目前已经成长为在微信第三方平台中拥有较高知名度和用户数量的第三方平台。为了能使更多的用户享受盛世源码—国内优秀的微信公众服务平台提供的高品质的微信营销产品和服务，目前我们正在全国范围内大力发展代理伙伴。我们的目标是：通过发展一批有实力的区域和行业代理商作为稳定的合作伙伴来承担销售业务，建立盛世源码—国内优秀的微信公众服务平台的营销战略合作伙伴体系，共同投身于微信营销的事业。</p>
+				<p>　　盛世源码—国内优秀的微信公众服务平台通过市场与技术支持、各种媒体宣传、促销活动及完善的售后服务，为盛世源码—国内优秀的微信公众服务平台的代理商提供及时的、量身定做的高效特色服务及全面支持。</p>
+				<p>　　无论您在何方，不管您有多远，无论是个人还是团体，我们都欢迎您成为我们的一员，盛世源码—国内优秀的微信公众服务平台希望每个人都能通过盛世源码—国内优秀的微信公众服务平台实现价值，正像微信公众平台提出的一样：“再小的个体，也有自己的品牌。”我们将与您始终保持零距离的接触，提供零距离的服务。欢迎全国各地、各广告商、渠道代理商踊跃加盟，盛世源码—国内优秀的微信公众服务平台对有意成为合作伙伴的朋友致以诚挚的谢意，感谢您对盛世源码—国内优秀的微信公众服务平台的支持和信任。</p>
+				<p>合作及代理联系方式：企业QQ：<span>400</span></p>
+			</div>
+		</div>
+        
+        	<h2 class="Public-h2">总部提供支持</h2>
+		<div class="Public-box">
+			<div class="Proxy">
+				<p>1、总部提供专业的研发团队，优先处理和研发代理商反馈的需求，定制模块开发支持；</p>
+				<p>2、总部对独家代理商所在地区不参与直销，全权交给代理商，充分保护代理商的利益；</p>
+				<p>3、总部通过网络推广得到的资源将全部转交给当地代理商，代理商无需承担推广费用；</p>
+				<p>4、平台提供7×12小时的技术支持，随时提供响应；</p>
+				<p>5、提供平台的产品介绍、活动策划、营销推广、代运营建议；</p>
+				<p>6、免费提供总部微营销课程及代理商大礼包资料；</p>
+				<p>7、总部会定期在代理商所在城市与代理商一起协作举办微营销会议，从而扩大代理商在当地的影响力和盛世源码—国内优秀的微信公众服务平台的品牌知名度</p>
+				<p>8、总部为全国代理商提供统一的行业解决方案PPT；</p>
+				<p>9、渠道经理后期会定期亲临代理商公司给予产品培训，销售技巧培训等，并协助代理商销售客户。</p>
+			</div>
+		</div>
+        
+		<!--<h2 class="Public-h2">联系渠道经理</h2>
+		<div class="Public-box">
+			<div class="Proxy">
+				<p><strong>孟经理：</strong><span>021-36386066-8047　　15021565833</span><br><strong>魏经理：</strong><span>021-36386066-8037　　13472469066</span><br>华东地区：江苏省、浙江省、福建省、上海市。<br</p>
+				<p><strong>施经理：</strong><span>021-36386066-8053　　18217764028</span><br><strong>吴经理：</strong><span>021-36386066-8052　　13818841544</span><br>负责地区：新疆、宁夏、甘肃、陕西、广东省。</p>
+				<p><strong>杨经理：</strong><span>021-36386066-8041　　15021916020</span><br><strong>邱经理：</strong><span>021-36386066-8039　　13817468565</span><br>东北地区：辽宁省、吉林省、黑龙江；<br>华北地区：北京市、天津市、河北省。</p>
+				<p><strong>李经理：</strong><span>021-36386066-8777　　13641863194</span><br><strong>李经理：</strong><span>021-36386066-8040　　13795435637</span><br>华中地区：湖南省、湖北省、河南省、江西省、海外地区。
+</p>
+				<p><strong>韩经理：</strong><span>021-36386066-8038　　18721021849</span><br><strong>王经理：</strong><span>021-36386066-8036　　13524479676</span><br>西南地区：四川省、云南省、贵州省、西藏、重庆市、山东省、香港、澳门、台湾 。</p>
+				<p><strong>周经理：</strong><span>021-36386066-8051　　15900687352</span><br><strong>徐经理：</strong><span>021-36386066-8050　　18317125839</span><br>负责地区：广西、海南省、安徽省、青海、山西省、内蒙古。</p>
+			</div>
+		</div>-->
+	
+	</div>
+</div>
+
+<div class="erwei" title="微信扫一扫">
+	<span class="hudongzhushou">官方微信</span>
+	<div class="erwei_big" style="display:none;">
+		<p>扫一扫，关注盛世源码—国内优秀的微信公众服务平台官方微信，体验盛世源码—国内优秀的微信公众服务平台智能服务</p>
+	</div>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var erwei_time = null;
+		$(".erwei").hover(function(){
+			$(".erwei_big").show();
+		}).mouseleave(function(){
+				erwei_time = setTimeout(function(){
+					$(".erwei_big").hide();
+				},1000);
+			});
+		$(".erwei_big").mouseenter(function(){
+			if(erwei_time){
+				clearTimeout(erwei_time);
+			}
+		}).mouseleave(function(){
+				erwei_time = setTimeout(function(){
+					$(".erwei_big").hide();
+				},1000);
+			});
+	});
+</script>
+<!-- 意见反馈 -->
+<div class="feedback" id="feedback">
+	<p class="feedsize"><b>亲爱的用户</b><a class="close" href="javascript:;" onclick= "$('#feedback, #feedback_cover').toggleClass('on');">×</a></p>
+	<p class="bbottom">欢迎您访问盛世源码—国内优秀的微信公众服务平台官方网站！您对盛世源码—国内优秀的微信公众服务平台有任何意见和建议，或在使用过程中遇到问题，请在本页面反馈。我们会实时关注您的反馈不断优化，您的建议将帮助我们改进，为您提供更好的服务！</p>
+	<p class="feedsize"><b>请留下您的宝贵意见和建议！（请填写）</b></p>
+	<form>
+		<textarea  id="feedback-text" name="" id="feedback-text" placeholder="输入文本..."></textarea>
+		<p class="feedsize"><b>您常用的电子邮箱是？（请填写）</b></p>
+		<p style="color:#666; text-indent:1em;"><b class="blue">★</b>请尽量填写，以便我们尽快回复您！</p>
+		<input type="text" placeholder="如：@163.com" id="feedback-input" />
+       <p class="feedsize"><b>验证码</b></p>
+        <input type="text" name="captcha" id="feedback-Captcha" maxlength="4" onclick="">
+        <span name="feedback_captcha" id="feedback_captcha">
+				<img title="看不清？点击更换" style="cursor: pointer;" src="captcha-f=feedback&v=8098740.png"  id="yanzhen" width="60" height="20" border="1">
+	    </span>
+	    <br />
+		<input type="button"  class="feed-btn" value="" onclick="feedbackSubmit(); return false;" />
+	</form>
+</div>
+<div id="feedback_cover" class="feedback_cover"></div>
+<!--QQ咨询-->
+<script charset="utf-8" type="text/javascript" src="/static/wxgjcn//static.b.qq.com/account/bizqq/js/wpa.js-wty=1&type=13&kfuin=631989322&ws=http---www.weimob.com-&title=企业QQ售前&cot1=国内最大的盛世源码—国内优秀的微信公众服务平台&btn1=企业QQ咨询&fsty=0&fposX=2&fposY=1&tx=2&aty=1&a=1001.js" ></script>
+
+<div class="footer">
+	<div class="footer-content clearfix">
+		<div class="foot-menu">
+			<p>
+				<a href="/static/wxgjcn/index1.htm"  target="_blank">盛世源码—国内优秀的微信公众服务平台首页</a>&nbsp;|&nbsp;
+				<a href="/reg.html"  target="_blank">申请入驻</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/proxy1.htm"  target="_blank">渠道代理</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/about1.htm"  target="_blank">关于盛世源码</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/agents.htm"  target="_blank">授权认证</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/jobs.htm"  target="_blank">加入盛世源码</a>
+			</p>
+			<p>免费热线：400-000-0000&nbsp;&nbsp;&nbsp;QQ：631989322&nbsp;&nbsp;&nbsp;邮箱：kf@weiqimobile.com</p>
+			<p>地址：
+								湖南省长沙市</p>
+		</div>
+		<div class="copyright">
+			Copyright (c) 2011-2014 http://www.9upp.com. All Rights Reserved 盛世源码团队 湘ICP备13225014号
+		</div>
+	</div>
+</div>
+<a class="feedbackbot" href="javascript:;" onclick= "$('#feedback, #feedback_cover').toggleClass('on');"></a>
+<div style="display:none;"><script type="text/javascript" src="/static/wxgjcn/src/www/index1/huishuo.js-v=2014-03-07-1.js" ></script></div>
+
+<script>
+	$(document).ready(function(){
+		$("#yanzhen").click(function(){
+			var img_src= 'captcha-f=feedback&v=.png'/*tpa=http://www.weimob.com/site/captcha?f=feedback&v=*/;
+			$(this).attr({"src":img_src + Math.random()*100000});
+		});
+	});
+	function feedbackSubmit(){
+		var $data = {
+			feedback: $('#feedback-text').val(),
+			email: $('#feedback-input').val(),
+			captcha: $('#feedback-Captcha').val(),
+			url: self.location.hrefy
+		};
+		$.post('/site/feedback', $data, function(rs){
+			alert(rs.error);
+			if (200 == rs.code)
+			{
+				$('#feedback, #feedback_cover').toggleClass('on');
+			}
+		}, 'json');
+	}
+</script>
+
+</body>
+</html>

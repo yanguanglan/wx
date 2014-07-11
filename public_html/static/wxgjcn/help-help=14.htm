@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="uyan_auth" content="04a3f6938d" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="微信营销、微信代运营、微信定制开发、微信托管、微网站、微商城、微营销" name="Keywords">
+	<meta content="盛世源码—国内优秀的微信公众服务平台，国内最大的微信公众智能服务平台，盛世源码—国内优秀的微信公众服务平台八大微体系：微菜单、微官网、微会员、微活动、微商城、微推送、微服务、微统计，企业微营销必备。" name="Description">
+    <script src="/static/wxgjcn/src/html5.js" ></script>
+    <link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/bootstrap_min.css-2014-03-07-1.css"  media="all" />
+<link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/www/index1/index.css-2014-03-07-1.css"  media="all" />
+<link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/www/help/help.css-2014-03-07-1.css"  media="all" />
+<script type="text/javascript" src="/static/wxgjcn/src/jQuery.js-2014-03-07-1.js" ></script>
+<script type="text/javascript" src="/static/wxgjcn/src/www/index1/weimob-index.js-2014-03-07-1.js" ></script>
+<title>盛世源码—国内优秀的微信公众服务平台</title>
+	<link rel="shortcut icon" href="httpimg/favicon.ico" />
+</head>
+<body>
+	<!--595 850-->
+<script language="javascript">
+	$(function () {
+		$("a").click(function () {
+			var rel = $(this).attr("rel");
+			if (rel) {
+				var pos = $(rel).offset().top-60;
+				$("html,body").animate({ scrollTop: pos }, 800);
+			}
+
+		})
+	})
+</script>
+<script>
+	$().ready(function(){
+
+		window.onscroll = window.onresize = function(){
+			showSideBar();
+		}
+	});
+	function showSideBar(){
+		if(!window.sideMenu){
+			window.sideMenu = $("#sideToolbar");
+		}
+		if((document.body.scrollTop||document.documentElement.scrollTop)>500){
+			sideMenu.addClass("on");
+		}else{
+			sideMenu.removeClass("on");
+		}
+	}
+
+
+
+</script>
+<!--[if lte IE 8]>  <script language="javascript">$(function (){$.browser.msie&&$("#ie9-tips").show().find("#stopSuggestA").click(function(){$("#ie9-tips").hide()})})</script><![endif]-->
+<div class="nav clearfix">
+	<div class="nav-content">
+		<h1 class="left" onclick="location.herf='/site/city1'">盛世源码—国内优秀的微信公众服务平台·微信营销，如此简单！</h1>
+		<div class="left city">
+			<h2>上海</h2>
+							<a href="/static/wxgjcn/city1.htm" >
+					切换城市<i class="tri4"></i>
+				</a>
+					</div>
+		<div class="right line-li">
+			<ul>
+				<li><a href="/" >首页</a></li>
+				<li><a href="/static/wxgjcn/case1.htm"  >经典案例</a></li>
+				<li class="nav_menu_li_1"><a style="width:70px; text-align:left;" class="_hover">产品中心<i></i></a>
+					<div class="sub-nav">
+						<a href="/static/wxgjcn/package.htm"  target="_black">微信套餐</a>
+						<a href="/static/wxgjcn/guide1.htm" >功能介绍</a>
+						
+
+					</div>
+
+				</li>
+				<li><a href="/static/wxgjcn/proxy1.htm"  >渠道代理</a></li>
+				<li><a href="/static/wxgjcn/help.htm"  class="navtwo" target="_black">帮助</a></li>
+			</ul>
+			<div class="account">
+				<a href="/reg.html"  class="btn-reg btn0" target="_black">注册</a>
+									<a href="/login.html" class="btn-login btn0" target="_black">登录</a>
+				</div>
+		</div>
+	</div>
+</div>
+
+	
+<div id="ie9-tips" class="clearfix">
+	<div id="tipsPanel">
+		<div id="tipsDesc">系统检测到您所使用的浏览器版本较低，推荐使用<a   target="_blank">Firefox</a>或<a   target="_blank">Chrome</a>浏览器打开，否则将无法体验完整产品功能。</div>
+		<a id="stopSuggestA" href="javascript:;">×</a>
+	</div>
+</div>
+
+<script>
+	var $do_submit = false;
+
+	// 绑定回车键
+	$('#loginBox').keydown(function(e){
+		if(13 == event.keyCode){
+			login();
+		}
+	});
+
+		function login()
+	{
+		if (true == $do_submit)
+		{
+			return false;
+		}
+
+		var $pre_submit = '登录', $do_submit = '登录中...';
+		var $username = $('#username').val(), $password = $('#password').val(), $keepalive = $('#rememberPwdIcon').val();
+		$('#login_button').text($do_submit);
+		$do_submit = true;
+
+		// check
+		if ('' == $username || '' == $password)
+		{
+			$('#err_tips').text('您输入的盛世源码—国内优秀的微信公众服务平台号或密码错误，请重新输入！');
+			$('#err_area').show();
+			$('#login_button').text($pre_submit);
+			$do_submit = false;
+			return false;
+		}
+
+		var $login_data = {
+			username:$username,
+			password:$password,
+			keepalive:$keepalive
+		};
+		$.post('/login', $login_data, function(rs){
+			if(rs.errno == 200)
+			{
+				location.href = rs.url_route;
+			}
+			else
+			{
+				$('#err_tips').text(rs.error);
+				$('#err_area').show();
+				$('#login_button').text($pre_submit);
+			}
+			$do_submit = false;
+		}, 'json');
+	}
+	</script>
+<div id="top"></div>
+<div id="page">
+  <div  id="14_1"  class="title">盛世源码—国内优秀的微信公众服务平台产品（系统接入）使用指南</div>
+  <h3>1、使用微客服的公众账号需符合的条件</h3>
+  <p>必须具备两个条件： 1、公众号为服务号 2、公众号必须经过微信认证 </p>
+  <h3>2、入口对接 </h3>
+  <p>Step1：登陆盛世源码—国内优秀的微信公众服务平台 选择任意公众账号，系统会自动弹出如下界面： </p>
+  <p><img src="/static/wxgjcn/img/webabout/vkefu1.png"  ></p>
+  <p>Step2：点击验证，进入 </p>
+  <p><img src="/static/wxgjcn/img/webabout/vkefu2.png.jpg"  ></p>
+  <p>选择公众号所属类型，进行保存。    选择服务号的商户会出现以下两种情况： </p>
+  <p>a、未进行过授权设置的商家，填写对应的应用 id 及应用秘钥，保存即可，系统会自动绑定微客服系统。 </p>
+  <p>b、进行过授权设置的商家，直接保存系统自动绑定微客服系统。 </p>
+  <p><strong>备注</strong>：此授权设置就是原先自定义菜单内的授权设置，应用 id 及应用秘钥完全相同。 </p>
+  <h3>3、创建工号</p>
+  <p>每位商家限有3个坐席 登录盛世源码—国内优秀的微信公众服务平台，选择左侧菜单栏【客服工号管理】--【添加客服】，进入创建工号流程。 </p>
+  <h3>4、进入微客服系统 </h3>
+  <p>Step1：:点击左侧菜单栏【客服工号管理】--【客服管理平台地址】链接 kf.weimob.com 或直接浏览器打开该链接即可进入登陆界面。</p>
+  <p>Step2：登陆界面输入账号、密码即可登陆。 登陆账号为：工号+@数字，数字为商家 id，请勿遗漏。 </p>
+  <p>注 1：如果商家未进行验证或不属于认证服务号，系统会自动提醒：账号密码不正确。</p>
+  <p>注 2：成功登陆后，商家如果开启“默认无匹配回复”，请关闭，避免与客服系统发生冲突；随后任意用户发送至公众号的内容，商家均可在客服系统收到。 </p>
+<p>注 3：成功登陆的商家如是首次登陆，需耐心等待一段时长，系统需逐步更新公众账号的粉丝，首次更新成功以后，后期登陆系统只会自动同步最新粉丝，同步迅速。 </p>
+
+  <div id="14_2"  class="title">盛世源码—国内优秀的微信公众服务平台产品（微客服）使用指南</div>
+<p>1、微客服系统使用须知：所有可发起会话的客户，只针对 24 小时内联系过公众号的客户。 </p>
+<p>2、聊天窗口：</p>
+<p><img src="/static/wxgjcn/img/webabout/vkefu3.png"  width="900" height="820" ></p>
+<p>2.1 “等待接入”与“工号排名”按钮 无客服接待的客户，则进入等待接入列表，点击可进入详细列表，可批量接入或双击客户接入，也可手动删除。如图：（注：等待接入的客户系统只保留 24 小时，超出时长未接入系统自动移除） </p>
+<p><img src="/static/wxgjcn/img/webabout/vkefu4.png"   width="900" height="520"  ></p>
+<p>点击【第 1 名】，可查询当天对话数量及其他客服情况，系统自动排名。 </p>
+<p><img src="/static/wxgjcn/img/webabout/vkefu5.png"    width="300" height="216" ></p>
+<p>2.2 “正在联系人”与“最近联系人”切换 正在联系人为当天聊天用户，当天凌晨 12:00 系统有一次自动清除列表，转为最近联系人； 最近联系人为 24 小时内联系过商家的客户，超出 24 小时的客户系统自动删除，可在消息记录或微信用户内搜索微信名称查询。</p>
+<p>2.3 “自动回复”与“自动接入”设置 自动回复：默认“无自动回复”，下拉勾选项需通过顶部导航系统设置进行“工号自动回复”添加，添加后下拉即可勾选，一旦设置客户发送任何内容均会自动回复一条； 如图：</p>
+<p><img src="/static/wxgjcn/img/webabout/vkefu6.png"   width="540" height="340"  ></p>
+<p>自动接入：默认“关闭”，可修改为 10、20、30、40、50。一旦修改，等待接入的客户会自动转入“正在联系人”列表。 </p>
+<h3>2.4  当前聊天用户 </h3>
+<p>2.4.1 点击客户微信名称，可查询客户账号、昵称、微信名、地区、性别，设置备注、标签（双击即可），查询接入过客服及最后接入时间。如图 1、2： </p>
+<p><img src="/static/wxgjcn/img/webabout/vkefu7.png"  ></p>
+<p><img src="/static/wxgjcn/img/webabout/vkefu8.png"  ></p>
+<p>如客服不能继续跟当前客户沟通，可通过转接按钮，勾选所需转接客服确定即可，对方客服可接受，也可拒绝。 </p>
+<p><img src="/static/wxgjcn/img/webabout/vkefu9.png"  width="380" height="310" ></p>
+<p>2.4.3 标注会话 </p>
+<p>如果当前对话由于某些原因需要后续跟踪，可对此进行标注会话，以备随后查询，各个客服</p>
+<p>标注的会话，均可在顶部导航标注事件中查询处理。（注：处理人如果未对此次会话进行处理，再次标注该客户对话时，系统自动保留上次标注内容） </p>
+<p><img src="/static/wxgjcn/img/webabout/vkefu10.png"  ></p>
+<p>2.5 聊天对话框 客户及客服双方的发送内容均在框内成列，暂支持文本、表情、图片、语音等文件，客服上传过的文件，系统会自动保存，以备二次发送； 通过“消息记录”按钮，可查询该用户所有聊天记录。</p>
+<p>2.6  “快捷回复”与“客户资料”切换按钮 快捷回复：选中【我的回复】-【添加】设置快捷回复分组，如：常用语，开场语，结束语等；选中【常用语】-【添加】设置快捷回复内容，如：你好，盛世源码—国内优秀的微信公众服务平台官网客服为您服务，双击快捷内容即可使用； 客户资料：为当前聊天中的客户资料，可双击给客户贴上标签。 </p>
+<p><img src="/static/wxgjcn/img/webabout/vkefu11.png"  width="340" height="540" ></p>
+<p><img src="/static/wxgjcn/img/webabout/vkefu12.png"   width="340" height="540"  ></p>
+<p>3、消息记录 可查询所有接入过的客户的消息记录，可筛查某个时间段、某个客服的聊天记录，24 小时的客户可直接双击发起会话。如图： </p>
+ <p><img src="/static/wxgjcn/img/webabout/vkefu13.png"  width="900" height="500" ></p>
+ <p>4、微信用户： 登陆微客服系统的商家，系统会自动同步公众号下所有的微信用户，并获取到客户头像、微信名称、地区、性别等资料，如商户在【盛世源码—国内优秀的微信公众服务平台】-【粉丝管理】-【粉丝列表】中为粉丝设置了标签，微客服系统会一并同步。 </p>
+  <p><img src="/static/wxgjcn/img/webabout/vkefu14.png"  width="900" height="600" ></p>	
+ <p>5、系统设置 工号自动回复：仅针对客服已接入客户，客户发送任何内容均会自动回复一条； 接入语设置：接入语是指在接入客户时自动发送的消息，可关闭或开启； 会话自动关闭设置：在人工接入的状态下，当用户超过一定时间没有回复时，会话则自动关闭；可设置会话自动关闭的时间及会话自动关闭前发送给客户的结束语。 </p>
+<p>6、标注事件 所有客服标注的会话均在标注事件内可查询，也可进行“删除、发起会话、处理事件、批量导出”等操作。（注：发起会话只针对 24 小时内联系过的客户） </p> 
+ <p><img src="/static/wxgjcn/img/webabout/vkefu15.png"  width="890" height="550" ></p> 
+<p>7、个人中心 账号属于登陆状态，点击色块可进行背景皮肤更换，系统自动记录该账号的所有操作，再次登陆所有设置均保留。 </p>
+<p><img src="/static/wxgjcn/img/webabout/vkefu16.png"  width="290" height="150"  ></p> 
+  <div id="sideToolbar" style="display: block; position: fixed; top:150px;  right: 0;">
+    <div id="sideCatalog" class="sideCatalogBg" style="visibility: visible;">
+      <div id="sideCatalog-sidebar"></div>
+      <div id="sideCatalog-catalog">
+        <dl style="width:200px;zoom:1">
+          <dd><span>1</span><a href="javascript:void()" rel="#14_1" title="客服系统接入">客服系统接入</a></dd>
+          <dd><span>2</span><a href="javascript:void()" rel="#14_2" title="客服系统接入">使用指南</a></dd>
+        </dl>
+      </div>
+    </div>
+  <a id="sideCatalogBtn" href="/static/wxgjcn/help.htm"  style="visibility: visible;" title="查看帮助目录"></a>
+    <a id="sideToolbar-up"  href="javascript:void()" rel="#top" title="返回顶部" style="visibility: visible;"></a></div>
+</div>
+<script>
+	$(function () {
+	   if(location.hash){
+			var pos = $(location.hash).offset().top-60;
+			$("html,body").animate({ scrollTop: pos }, 800);
+		}
+	});
+</script>
+<!--QQ咨询-->
+<div class="footer">
+	<div class="footer-content clearfix">
+		<div class="foot-menu">
+			<p>
+				<a href="/static/wxgjcn/index1.htm"  target="_blank">盛世源码—国内优秀的微信公众服务平台首页</a>&nbsp;|&nbsp;
+				<a href="/reg.html"  target="_blank">申请入驻</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/proxy1.htm"  target="_blank">渠道代理</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/about1.htm"  target="_blank">关于盛世源码</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/agents.htm"  target="_blank">授权认证</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/jobs.htm"  target="_blank">加入盛世源码</a>
+			</p>
+			<p>免费热线：400-800-8888&nbsp;&nbsp;&nbsp;QQ：631989322&nbsp;&nbsp;&nbsp;邮箱：kf@weixin.9upp.com</p>
+			<p>地址：
+								上海市市辖区宝山区逸仙路2816号华滋奔腾大厦A幢15楼</p>
+		</div>
+		<div class="copyright">
+			Copyright (c) 2011-2014 9upp.com. All Rights Reserved 盛世源码团队 粤ICP备13083563号
+		</div>
+	</div>
+</div>
+<div style="display:none;"><script type="text/javascript" src="/static/wxgjcn/src/www/index1/huishuo.js-v=2014-03-07-1.js" ></script></div></body>
+</html>

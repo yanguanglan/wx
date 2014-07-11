@@ -1,0 +1,271 @@
+<include file="Public:head"/>
+<div class="content" style=" border:none; border:none; margin-bottom:30px;" >
+<link rel="stylesheet" type="text/css" href="/css/wm/bootstrap_min.css?dddf" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/bootstrap_responsive_min.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/style.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/themes.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/todc_bootstrap.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/inside.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/album.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/uploadify_t.css" media="all" />
+<script src="{ZF::STATICS}/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="{ZF::STATICS}/artDialog/plugins/iframeTools.js"></script>
+<script src="{ZF::RES}/js/cart/jscolor.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="{ZF::RES}/css/cymain.css" />
+<script src="{ZF::STATICS}/upyun.js"></script>
+<style type="text/css">
+.img-preview,.img-preview-bg{border:1px solid #b8b8b8;-webkit-box-shadow:0 2px 2px rgba(0,0,0,0.1);-moz-box-shadow:0 2px 2px rgba(0,0,0,0.1);box-shadow:0 2px 2px rgba(0,0,0,0.1);-webkit-border-radius:5px;-moz-border-radius:5px;-ms-border-radius:5px;-o-border-radius:5px;border-radius:5px;width:350px;float:left}.img-preview .i-img,.img-preview-bg .i-img,.img-preview-bg .i-img-bg{padding:10px;max-height:217px}.img-preview .img-wrapper,.img-preview-bg .img-wrapper{width:330px;height:217px;position:relative}.img-preview .mc-name,.img-preview-bg .mc-name{position:absolute;top:20px;right:10px;text-shadow:0px 1px 3px rgba(255,255,255,0.2);color:#000}.img-preview .mc-number,.img-preview-bg .mc-number{text-align:right;color:#000;text-shadow:0px 1px 3px rgba(255,255,255,0.2);margin-top:-50px;margin-right:10px;font-weight:bold;font-size:20px}.img-preview .mc-number em,.img-preview-bg .mc-number em{display:block;line-height:13px;font-size:10px;font-weight:normal;font-style:normal}.img-preview .mc,.img-preview-bg .mc{position:absolute;max-width:200px;max-height:150px;left:20px;top:20px}.img-preview li a,.img-preview-bg li a{color:gray}.img-preview li a:hover,.img-preview-bg li a:hover{background-color:#fff}.img-preview-bg .mc-title{position:absolute;top:20px;left:40px}.img-preview-bg .mc-content{border:none;background-color:transparent;position:absolute;top:55px;left:40px;height:90px;overflow:hidden}.img-preview-bg .mc-address{position:absolute;top:170px;left:40px}
+.img-wrapper .logo {
+    max-height: 70px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+</style>
+ <script type="text/javascript">
+        $(document).ready(function () {
+        	$("div.mc-name").css("color", $('#cname_color').val());
+        	$("#select_bg").val("/tpl/User/default/common/images/card/card_bg21.png");
+        	$("div.mc-number").css("color", '#000000');
+
+        	$("h4.mc-title").css("color", $('#bg_bg_color').val());
+        	$("pre.mc-content").css("color", $('#bg_bg_color').val());
+        	$("div.mc-address").css("color", $('#bg_bg_color').val());
+        	$("#select_bg_bg").val("/tpl/User/default/common/images/card/card_bg02.png");
+        	
+            $("#cname").keyup(function () {
+                $("div.mc-name").text($(this).val())
+            });
+            $("#cname_color").change(function () {
+                $("div.mc-name").css("color", $(this).val())
+            });
+            $("#numbercolor").change(function () {
+                $("div.mc-number").css("color", $(this).val())
+            });
+            $("#bg_bg_color").change(function () {
+                var v = $(this).val();
+                $("h4.mc-title").css("color", v);
+            	$("div.mc-address").css("color", v);
+                $("div.img-preview-bg").css("color", v)
+                $("pre.mc-content").css("color", v)
+            });
+            $("#select_bg").change(function () {
+                var v = $(this).val();
+                if (v.length > 0) {
+                    $("img.i-img").attr("src", v)
+                    $("#card_bg").val(v);
+                }
+            });
+            $("input[name='kh_type']").click(function () {
+                $("#zdy_kh").toggle($(this).hasClass("zdy_kh"));
+				value = $(this).val();
+				if (value == "1") {
+					 $("#proving_yz0").attr("selected", true);
+					 $("#proving_yz1").attr("disabled", "disabled");
+				} else {
+					 $("#proving_yz1").attr("disabled", false);
+				}
+            });
+            
+            $("#description").keyup(function () {
+                $("pre.mc-content").text($(this).val())
+            })
+            $("#select_bg_bg").change(function () {
+                var v = $(this).val();
+                if (v.length > 0) {
+                    $("img.i-img-bg").attr("src", v)
+                    $("#card_bg_bg").val(v);
+                }
+
+            });
+        });
+    </script>
+<body>
+<div id="main">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="box">
+                    <div class="box-title">
+                        <div class="span10">
+                                <h3><i class="icon-edit"></i>会员卡设置</h3>
+                            </div>
+						<div class="span2">
+                            <a class="btn" href="javascript:history.go(-1);">返回</a> 
+                        </div>
+						</div>
+                        <div class="box-content" >
+						<div  class="alert">在这里可以添加多种级别的会员卡，比如：普通卡、银卡、金卡等，可以设置每个会员卡的最低积分要求，然会员根据不同的积分领取不同的卡<br>备注：Logo宽370px高170px，图案上下左右居中，背景图宽534px高318px，图片类型png。---<a href="/weiqiwx/tpl/User/weiqicc/common/images/cart_info/template.rar" style="color:#FFF;">请点击我下载模板</a>---</div>
+
+<div class="msgWrap">
+    
+				    <form class="form-horizontal form-validate" method="post" action=""  enctype="multipart/form-data">
+                           
+	                                <div class="row-fluid">
+                                    <div class="img-preview">
+                                        <div class="img-wrapper">
+                                            <img id="cardg" class="i-img" src="<if condition="$card.diybg neq ''">{ZF:$card.diybg}<else/>{ZF:$card.bg}</if>">
+											<img id="cardlogo" class="logo" src="{ZF:$card.logo}">
+                                            <div id="vipname" class="mc-name" style="color:{ZF:$card.vipnamecolor};">{ZF:$card.cardname}</div>
+                                            <div class="mc-number" style="color:{ZF:$card.numbercolor}"><em>会员卡号</em>8888888</div>
+                                        </div>
+                                    </div>
+                                    <div class="span7">
+                                        <div class="control-group">
+                                            <label class="control-label">会员卡名称</label>
+                                            <div class="controls inline">
+                                                <input type="text" name="cardname" value="{ZF:$card.cardname}" id="cardname" class="px" style="width:200px;" onkeyup="DivFollowingText()">
+												<script type="text/javascript">
+function DivFollowingText()
+{
+document.getElementById("vipname").innerHTML=document.getElementById("cardname").value;
+}
+</script> 
+                                               
+                                            </div>
+
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="cname_color">会员卡名称颜色</label>
+                                            <div class="controls inline">
+											 <input type="text" name="vipnamecolor" id="vipnamecolor" value="{ZF:$card.vipnamecolor}" class="px color" style="width: 55px; background-image: none; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);" onblur="document.getElementById('vipname').style.color=document.getElementById('vipnamecolor').value;">
+                                            </div>
+
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="select_bg">会员卡的背景</label>
+                                            <div class="controls">
+											<select name="bg" id="select_bg" onchange="document.getElementById(&#39;cardbg&#39;).src=this.options[this.selectedIndex].value;" class="input-large" style="width:210px;"> 
+	<option selected="">请选择会员卡背景图</option>
+		<?php 
+			for($i=1;$i<=23;$i++){
+				$i=$i<10?'0'.$i:$i;
+				$str=__ROOT__.'/tpl/User/default/common/images/card/card_bg'.$i.'.png';
+				if($card['bg']==$str){
+					echo $str='<option value="'.$str.'" selected="selected" >'.$i.'</option>';
+				}else{
+					echo $str='<option value="'.$str.'">'.$i.'</option>';
+				
+				}
+			}
+		?>
+		
+	</select>
+                                                            </div>
+
+                                        </div>
+                                        <div class="control-group">
+                                            <label for="textfield" class="control-label">
+                                                自己设计背景
+                                            </label>
+                                            <div class="controls">
+                                                <div class="input-append">
+                                                    <input type="text" name="diybg" id="bg" class="px" value="{ZF:$card.diybg}" style="width:200px;">&nbsp;
+													&nbsp;
+	 <a href="###" onclick="upyunPicUpload('bg',1000,600,'{ZF:$token}')" class="btn">上传</a>&nbsp;
+	 <button type="button" class="btn insertimage" onclick="document.getElementById(&#39;cardg&#39;).src=document.getElementById(&#39;bg&#39;).value;">显示效果</button>
+                                                </div>
+                                                <span class="help-block">建议尺寸：534像素 × 318像素</span>
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label for="textfield" class="control-label">
+                                                会员卡的图标
+                                            </label>
+                                            <div class="controls">
+                                                <div class="input-append">
+                                                   <input type="text" name="logo" id="logo" value="{ZF:$card.logo}" class="px" style="width:200px;"> 
+<a href="###" onclick="upyunPicUpload('logo',1000,600,'{ZF:$token}')" class="btn">上传</a>
+<button type="button" class="btn insertimage" onclick="document.getElementById(&#39;cardlogo&#39;).src=document.getElementById(&#39;logo&#39;).value;">显示效果</button>
+                                                </div>
+                                                <span class="help-block">建议尺寸：152像素 * 70像素(透明图片)</span>
+                                            </div>
+                                            
+
+                                        </div>
+                                        <div class="control-group">
+                                                <label for="textfield" class="control-label">
+                                                    卡号文字颜色
+                                                </label>
+                                                <div class="controls">
+                                                    <input type="text" name="numbercolor" id="numbercolor" value="{ZF:$card.numbercolor}" class="px color" style="width: 55px; background-image: none; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);" onblur="document.getElementById('number').style.color=document.getElementById('numbercolor').value;">
+                                                </div>
+                                        </div>   
+                                     
+                                        <div class="control-group">
+                                            <label class="control-label">首页提示文字</label>
+                                            <div class="controls inline">
+                                               <input type="text" name="msg" value="{ZF:$card.msg}" id="tishi2" class="px" style="width:200px;" onkeyup="DivFollowingText2()"> 请不要超过20个字。
+                                              <script type="text/javascript">
+                                              function DivFollowingText2()
+                                             {
+                                             document.getElementById("tishi").innerHTML=document.getElementById("tishi2").value;
+                                             }
+                                            </script>
+                                            </div>
+                                        </div>
+
+										<div class="control-group">
+                                            <label class="control-label">最低积分要求</label>
+                                            <div class="controls inline">
+                                               <input type="text" name="miniscore" id="miniscore" value="{ZF:$card.miniscore}" class="px" style="width:200px;">  只有到达(含)这个积分后才可以申领此卡
+                                            </div>
+                                        </div>
+										<div class="control-group">
+                                            <label class="control-label">最新通知头部Benner</label>
+                                            <div class="controls inline">
+											    <textarea name="Lastmsg" class="px" id="news2" style="width:200px; height:36px" onblur="document.getElementById('news2_src').src=document.getElementById('news2').value;">{ZF:$card.Lastmsg}</textarea>&nbsp;<a href="###" onclick="upyunPicUpload('news2',700,420,'{ZF:$token}')" class="btn">上传</a>&nbsp; <a href="###" onclick="viewImg('news2')" class="btn">预览</a>
+                                            </div>
+                                        </div>
+
+										<div class="control-group">
+                                            <label class="control-label">会员特权头部Benner</label>
+                                            <div class="controls inline">
+											    <textarea name="vip" class="px" id="vippower2" style="width:200px; height:36px" onblur="document.getElementById('vippower2_src').src=document.getElementById('vippower2').value;">{ZF:$card.vip}</textarea>&nbsp;<a href="###" onclick="upyunPicUpload('vippower2',700,420,'{ZF:$token}')" class="btn">上传</a>&nbsp; <a href="###" onclick="viewImg('vippower2')" class="btn">预览</a>
+                                            </div>
+                                        </div>
+
+										<div class="control-group">
+                                            <label class="control-label">会员签到头部Benner</label>
+                                            <div class="controls inline">
+											    <textarea name="qiandao" class="px" id="qiandao2" style="width:200px; height:36px" onblur="document.getElementById('qiandao2_scr').src=document.getElementById('qiandao2').value;">{ZF:$card.qiandao}</textarea>&nbsp;<a href="###" onclick="upyunPicUpload('qiandao2',700,420,'{ZF:$token}')" class="btn">上传</a> &nbsp;<a href="###" onclick="viewImg('qiandao2')" class="btn">预览</a>
+                                            </div>
+                                        </div>
+										<div class="control-group">
+                                            <label class="control-label">消费记录头部Benner</label>
+                                            <div class="controls inline">
+											   <textarea name="shopping" class="px" id="shopping2" style="width:200px; height:36px" onblur="document.getElementById('shopping2_src').src=document.getElementById('shopping2').value;">{ZF:$card.shopping}</textarea>&nbsp;<a href="###" onclick="upyunPicUpload('shopping2',700,420,'{ZF:$token}')" class="btn">上传</a> &nbsp;<a href="###" onclick="viewImg('shopping2')" class="btn">预览</a>
+                                            </div>
+                                        </div>
+										<div class="control-group">
+                                            <label class="control-label">个人资料头部Benner</label>
+                                            <div class="controls inline">
+											  <textarea name="memberinfo" class="px" id="user2" style="width:200px; height:36px" onblur="document.getElementById('user2_src').src=document.getElementById('user2').value;">{ZF:$card.memberinfo}</textarea>&nbsp;<a href="###" onclick="upyunPicUpload('user2',700,420,'{ZF:$token}')" class="btn">上传</a>&nbsp; <a href="###" onclick="viewImg('user2')" class="btn">预览</a>
+                                            </div>
+                                        </div>
+										<div class="control-group">
+                                            <label class="control-label">会员卡说明头部Benner</label>
+                                            <div class="controls inline">
+											 <textarea name="membermsg" class="px" id="info2" style="width:200px; height:36px" onblur="document.getElementById('info2_src').src=document.getElementById('info2').value;">{ZF:$card.membermsg}</textarea>&nbsp;<a href="###" onclick="upyunPicUpload('info2',700,420,'{ZF:$token}')" class="btn">上传</a>&nbsp; <a href="###" onclick="viewImg('info2')" class="btn">预览</a>
+                                            </div>
+                                        </div>
+										<div class="control-group">
+                                            <label class="control-label">联系方式头部Benner</label>
+                                            <div class="controls inline">
+											 <textarea name="contact" class="px" id="addr2" style="width:200px; height:36px" onblur="document.getElementById('addr2_src').src=document.getElementById('addr2').value;">{ZF:$card.contact}</textarea>&nbsp;<a href="###" onclick="upyunPicUpload('addr2',700,420,'{ZF:$token}')" class="btn" >上传</a> &nbsp;<a href="###" onclick="viewImg('addr2')" class="btn">预览</a>
+                                            </div>
+                                        </div>
+                               
+                                <div class="row-fluid">
+                                    <div class="form-actions">
+                                        <button type="submit" name="button" class="btn btn-primary">保存</button>&nbsp;
+                                        <button type="button" class="btn" onclick="location.reload()">取消</button>
+                                    </div>
+                                </div>
+                            </form>
+                       
+        <div class="clr"></div>
+		<include file="Public:footer"/>
+      </div>
+    </div>
+  </div> 

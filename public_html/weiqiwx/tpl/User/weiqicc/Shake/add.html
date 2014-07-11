@@ -1,0 +1,231 @@
+<include file="Public:head"/>
+<html>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<!-- Apple devices fullscreen -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<!-- Apple devices fullscreen -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<base target="mainFrame" />
+<script src="{ZF::STATICS}/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="{ZF::STATICS}/artDialog/plugins/iframeTools.js"></script>
+<script src="/weiqiwx/tpl/static/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="/weiqiwx/tpl/static/artDialog/plugins/iframeTools.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/wm/index.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/bootstrap_min.css?dddf" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/bootstrap_responsive_min.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/style.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/themes.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/todc_bootstrap.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/inside.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/album.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/uploadify_t.css" media="all" />
+<title>{$_SERVER['WEB_NAME']}—国内最大的微信公众服务平台</title>
+<script src="/weiqiwx/tpl/static/jquery-1.4.2.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="/@system/js/yyucadapter.js"></script>
+<script type="text/javascript" src="/res/mbaudio/inc/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="/res/mbaudio/inc/jquery.mb.miniPlayer.js"></script>
+<link rel="stylesheet" type="text/css" href="/uploadify/uploadify.css">
+<script type="text/javascript" src="/uploadify/jquery.uploadify.js"></script>
+<link rel="stylesheet" type="text/css" href="/res/mbaudio/css/miniplayer.css" title="style" media="screen"/>
+<script>
+//图片设置
+function setpic(o){
+	window.piccbk = function(m){
+		$(o).parent().find('input[type="text"]').val(m);
+		window.piccbk = null;
+	}
+	window.curpic = null;
+	openpicset();	
+} 
+function openpicset(){
+	pophtml('<iframe src="/admin/businessModule/wspicif.html" style="width:630px;height:470px;border:none;background-color: #dfdfdf;" width="630px" height="475px"></iframe>',670,510,true);
+}
+</script>
+<body class="{Session::get('maintheme')}">
+<div id="main">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="box">
+                    <div class="box-title">
+                        <div class="span10">
+                            <h3><i class="icon-edit"></i>摇一摇活动设置</h3>
+                        </div>
+                        <div class="span2">
+                            <a class="btn" href="javascript:history.go(-1);">返回</a> 
+                        </div>
+                    </div>
+                <div class="box-content">
+             <form class='form-horizontal form-validate' method="post" action="" enctype="multipart/form-data"> 
+			 				<div class="control-group">
+                                <label for="name" class="control-label">活动名称：</label>
+                                <div class="controls">
+                                <input type="text" name="acttitle" value="默认活动" class="input-large"  />
+                                <span class="maroon">*</span><span class="help-inline"></span>
+                                </div>
+                            </div>
+			 				<div class="control-group">
+                                <label for="name" class="control-label">摇一摇类型：</label>
+                                <div class="controls">
+                                <label for="radio1"><input id="radio1" checked type="radio" name="shaketype"  value="1" >以手机竖直中轴线垂直地面的为临界点，左右摇省力</label><input id="radio2" type="radio" name="shaketype" value="2"> 以手机摇晃时达到一定的加速度值为一次来计算，较费力，但不用考虑方向</label>
+                                <span class="maroon">*</span><span class="help-inline"></span>
+                                </div>
+                            </div>
+                       <div class="control-group">
+                                <label for="keyword" class="control-label">客户端传输间隔：</label>
+                                <div class="controls">
+                                   <input type="text" id="clienttime" name="clienttime" value="3" class="input-large"  />
+                                    <span class="maroon">*</span><span class="help-inline">数字越大服务器负担越小，但是要考虑客户体验!</span>
+                                </div>
+                       </div>
+                       
+                       <div class="control-group">
+                                <label for="keyword" class="control-label">前台页面传输间隔：</label>
+                                <div class="controls">
+                                   <input type="text" id="showtime" name="showtime" value="3" class="input-large"  />
+                                    <span class="maroon">*</span><span class="help-inline">数字越大服务器负担越小，但是要考虑客户体验!</span>
+                                </div>
+                       </div>    
+
+                       <div class="control-group">
+                                <label for="keyword" class="control-label">游戏开始倒数计时：</label>
+                                <div class="controls">
+                                   <input type="text" id="starttime" name="starttime" value="3" class="input-large"  />
+                                    <span class="maroon">*</span><span class="help-inline">倒数计时开始游戏</span>
+                                </div>
+                       </div>
+                       <div class="control-group">
+                                <label for="keyword" class="control-label">截止摇晃数：</label>
+                                <div class="controls">
+                                   <input type="text" id="endshake" name="endshake" value="133" class="input-large"  />
+                                    <span class="maroon">*</span><span class="help-inline">当有用户达到此数值时，游戏结束。</span>
+                                </div>
+                       </div>
+                       <div class="control-group">
+                                <label for="keyword" class="control-label">前台页面展示人数：</label>
+                                <div class="controls">
+                                   <input type="text" id="shownum" name="shownum" value="10" class="input-large"  />
+                                    <span class="maroon">*</span><span class="help-inline">成绩将以进度条形式显示在前台页面上的N个人</span>
+                                </div>
+                       </div>
+
+							 <div class="control-group">
+		                                <label for="logourl" class="control-label">前台页面背景：</label>
+		                                <div class="controls">
+  <input type="input" class="px" id="pass" value="" name="pass" class="input-large" value="" >
+  <script src="{ZF::STATICS}/upyun.js"></script>
+  <a href="###" onclick="chooseFile('pass','background')" class="a_upload">选择</a>&nbsp;&nbsp;&nbsp;
+  <a href="###" onclick="upyunPicUpload('pass',1500,1000,'{ZF:$token}')" class="a_upload">上传</a>&nbsp;&nbsp;&nbsp;
+  <a href="###" onclick="viewImg('pass')" class="a_upload">预览</a> 定义前台页面背景，为URL地址
+
+		                                    <span class="maroon"></span><span class="help-inline">定义前台页面背景，为URL地址</span>
+		                                </div>
+		                            </div>
+
+		                     	   <div class="control-group">
+                                    <label class="control-label" for="brief">前台背景音乐：</label>
+                                    <div class="controls">
+                                    <table>
+                                    <tr>
+                                     <td class="audiotd">
+									 <input type="input" class="px" id="pass2" value="" name="pass2" style="width:250px" value="" >  </td>
+                                      <td> 
+   <a href="###" onclick="chooseFile('pass2','music')" class="a_upload">选择</a>
+	</td>
+                                    </tr>                                 
+                                    <span class="help-inline">定义前台背景音乐，为URL地址</span>
+                                    </table>                       
+                                    </div>
+                                </div>        
+		                        <div class="control-group">
+                                    <label class="control-label" for="brief">客户端起始音效：</label>
+                                    <div class="controls">
+                                    <table>
+                                    <tr>
+                                     <td class="audiotd">
+									 <input type="input" class="px" id="pass3" value="" name="pass3" style="width:250px" value="" ></td>
+									 <td>
+									  <a href="###" onclick="chooseFile('pass3','music')" class="a_upload">选择</a>
+                                      </td>
+                                    </tr>                                 
+                                    
+                                    </table>                       
+                                    </div>
+                                </div>
+                      <!--          <div class="control-group">
+                                    <label class="control-label" for="brief">手机开始音效：</label>
+                                    <div class="controls">
+                                    <table>
+                                    <tr>
+                                     <td class="audiotd"><input type="text" value = "" name="pass4" id="pass4" rel="pass4"/></td>
+                                      <td> <button id="file_upload-pass4" class="btn pl_add btn-primary"><span class="uploadify-button-text"><i class="icon-plus-sign"></i> 音乐</span></button></td>
+                                    </tr>                                 
+                                    
+                                    </table>                       
+                                    </div>
+                                </div> -->
+		                        <div class="control-group">
+		                                <label for="logourl" class="control-label">二维码图片地址：</label>
+		                                <div class="controls">
+  <input type="input" class="px" id="qrcode" value="" name="qrcode" class="input-large" value="" > 
+<a href="###" onclick="chooseFile('qrcode','my')" class="a_upload">选择</a>&nbsp;&nbsp;&nbsp;<a href="###" onclick="upyunPicUpload('qrcode',1500,1000,'{ZF:$token}')" class="a_upload">上传</a>&nbsp;&nbsp;&nbsp;<a href="###" onclick="viewImg('qrcode')" class="a_upload">预览</a>
+		                                    <span class="maroon">*</span><span class="help-inline">前台显示二维码</span>
+		                                </div>
+		                            </div>
+                           <div class="form-actions">
+                           <!--零-度微-助-手-w x-0 d u-c c   -->
+                            <button  name="button" type="submit"  data-loading-text="提交中..." class="btn btn-primary">保存</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button type="button" class="btn" onclick="window.history.go(-1)">取消</button>
+                            </div>
+							</form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+$(function(){
+	$('#file_upload-button').uploadify({
+        height        : 20,
+        swf           : '/uploadify/uploadify.swf',
+        uploader      : '/uploadify.html',
+        width         : 70,
+        multi         : true ,
+        buttonText	  : '<span class="uploadify-button-text"><i class="icon-plus-sign"></i>上传音乐</span>',
+        buttonClass   : 'btn pl_add btn-primary',
+        onUploadSuccess    : function (a, b, c, d, e){
+        	$('input[rel="music"]').val(b);
+        }
+    });
+	$('#file_upload-pass3').uploadify({
+        height        : 20,
+        swf           : '/uploadify/uploadify.swf',
+        uploader      : '/uploadify.html',
+        width         : 70,
+        multi         : true ,
+        buttonText	  : '<span class="uploadify-button-text"><i class="icon-plus-sign"></i>上传音乐</span>',
+        buttonClass   : 'btn pl_add btn-primary',
+        onUploadSuccess    : function (a, b, c, d, e){
+        	$('input[rel="pass3"]').val(b);
+        }
+    });
+	$('#file_upload-pass4').uploadify({
+        height        : 20,
+        swf           : '/uploadify/uploadify.swf',
+        uploader      : '/uploadify.html',
+        width         : 70,
+        multi         : true ,
+        buttonText	  : '<span class="uploadify-button-text"><i class="icon-plus-sign"></i>上传音乐</span>',
+        buttonClass   : 'btn pl_add btn-primary',
+        onUploadSuccess    : function (a, b, c, d, e){
+        	$('input[rel="pass4"]').val(b);
+        }
+    });
+	
+});
+</script>
+</body>
+</html>

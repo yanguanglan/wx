@@ -1,0 +1,52 @@
+<include file="Public:head"/>  
+<link rel="stylesheet" type="text/css" href="{ZF::RES}/css/cymain.css" />
+<script src="{ZF::STATICS}/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="{ZF::STATICS}/artDialog/plugins/iframeTools.js"></script>
+
+<div class="content" style="" >
+<div class="cLineB" >
+<h4 class="left">分店信息</h4>
+<div class="clr"></div>
+</div>
+<include file="Company:menu"/>  
+<!--tab end-->
+<div class="msgWrap">
+<div class="cLine">
+<div class="pageNavigator left"> <a href="{ZF::U('Company/index',array('token'=>$token,'isBranch'=>1))}" title="" class="btnGrayS vm bigbtn"><img src="{ZF::RES}/images/icons/add.png" class="vm">添加</a></div>
+<div class="clr"></div>
+</div>
+
+<table class="ListProduct" border="0" cellspacing="0" cellpadding="0" width="100%">
+<thead>
+<tr>
+<th width="200">名称</th>
+<th width="120">电话</th>
+<th>地址</th>
+<th width="80">状态</th>
+<th width="150" class="norightborder">操作</th>
+</tr>
+</thead>
+<tbody style="text-align:center;">
+<tr></tr>
+<volist name="branches" id="c"> 
+<tr>
+<td>{ZF:$c.name}</td>
+<td>{ZF:$c.tel}</td>
+<td>{ZF:$c.address}</td>
+<td><if condition="$c.status eq 1"><font color="green">启用</font><else />禁用</if></td>
+<td class="norightborder">
+<a href="{ZF::U('Company/index',array('token'=>$token,'id'=>$c['id'],'isBranch'=>1))}">修改</a> 
+<a href="javascript:drop_confirm('您确定要删除吗?', '{ZF::U('Company/delete',array('token'=>$token,'id'=>$c['id'],'isBranch'=>1))}');">删除</a></td>
+</tr>
+</volist>
+</tbody>
+</table>
+</div>
+<div class="cLine">
+<div class="pageNavigator right">
+<div class="pages">{ZF:$page}</div>
+</div>
+<div class="clr"></div>
+</div>
+</div>
+<include file="Public:footer"/>

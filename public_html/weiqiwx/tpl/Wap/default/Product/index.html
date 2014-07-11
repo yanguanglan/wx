@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8" />
+	<title>{ZF:$thisdu.shopname}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" />
+	<meta name="format-detection" content="telephone=no" />
+	<link type="text/css" rel="stylesheet" href="{ZF::$staticFilePath}/css/style.css" />
+	<script src="{ZF::$staticFilePath}/js/jquery.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="{ZF::$staticFilePath}/js/main.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/mwm/home-38.css" media="all" />
+<script type="text/javascript" src="../js/mwm/maivl.js"></script>
+<script type="text/javascript" src="../js/mwm/swipe.js"></script>
+<script type="text/javascript" src="../js/mwm/zepto.js"></script>
+<style type="text/css">
+.du_list { margin-top: 5px; margin-left: 5px;margin-right: 5px; background: #666; border: #ddd solid 1px; border-radius: 5px; font-family: 'Microsoft YaHei'; }
+.du_foot { margin-top: 20px; font-family: 'Microsoft YaHei'; width:96.5%;height:40px; color:#000;line-height: 40px;bottom: 0;text-align: center;}
+.du_1 { margin-top: 5px; margin-left: 5px;margin-right: 1px; background: #FC5F56; border: #ddd solid 1px; border-radius: 5px; font-family: 'Microsoft YaHei'; width:30%;height:105px; float:left; font-weight: normal;font-size: 35px;}
+.du_2 { margin-top: 5px; margin-left: 1px;margin-right: 5px; background: #0CF; border: #ddd solid 1px; border-radius: 5px; font-family: 'Microsoft YaHei'; width:63%;height:105px; float:right;}
+.du_3 { margin-top: 5px; margin-left: 5px;margin-right: 5px; background: #FFA333; border: #ddd solid 1px; border-radius: 5px; font-family: 'Microsoft YaHei'; width:52%;height:105px; float:left;}
+.du_4 { margin-top: 5px; margin-left: 5px;margin-right: 5px; background: #CE77C1; border: #ddd solid 1px; border-radius: 5px; font-family: 'Microsoft YaHei'; width:40%;height:105px; float:right;}
+.du_5 { margin-top: 5px; margin-left: 5px;margin-right: 5px; background: #3F67C0; border: #ddd solid 1px; border-radius: 5px; font-family: 'Microsoft YaHei'; width:96.5%;height:105px; float:left;}
+
+.du_1 h2 {height: 35px;line-height: 35px;bottom: 0;text-align: center;width: 100%;background: rgba(0,0,0,.1);font-size: 13px;font-weight: normal;color:#fff;}
+.du_2 h2 {height: 35px;line-height: 35px;bottom: 0;text-align: center;width: 100%;background: rgba(0,0,0,.1);font-size: 13px;font-weight: normal;color:#fff;}
+.du_3 h2 {height: 35px;line-height: 35px;bottom: 0;text-align: center;width: 100%;background: rgba(0,0,0,.1);font-weight: normal;font-size: 13px;color:#fff;}
+.du_4 h2 {height: 35px;line-height: 35px;bottom: 0;text-align: center;width: 100%;background: rgba(0,0,0,.1);font-weight: normal;font-size: 13px;color:#fff;}
+.du_5 h2 {height: 35px;line-height: 35px;bottom: 0;text-align: center;width: 100%;background: rgba(0,0,0,.1);font-weight: normal;font-size: 13px;color:#fff;}
+
+.du_1 a img {height: 40px;padding: 10px 0 0 0;}
+.du_2 a img {height: 40px;padding: 18px 0 0 0;}
+.du_3 a img {height: 40px;padding: 18px 0 0 0;}
+.du_4 a img {height: 40px;padding: 18px 0 0 0;}
+.du_5 a img {height: 40px;padding: 18px 0 0 0;}
+
+
+.dub { margin: 5px; background: #666; color:#fff;  font-family: 'Microsoft YaHei';  }
+.box_swipe{
+	overflow:hidden;
+	position:relative;
+}
+.box_swipe>ol{
+	height:20px;
+	position: relative;
+	z-index:10;
+	margin-top:-25px;
+	text-align:right;
+	padding-right:20px;
+	background-color:rgba(0,0,0,0.5);
+}
+.box_swipe>ol>li{
+	display:inline-block;
+	margin:5px;
+	width:10px;
+	height:10px;
+	background-color:#757575;
+	border-radius: 10px;
+}
+.box_swipe>ol>li.on{
+	background-color:#ffffff;
+}
+</style>
+</head>
+
+<body>
+<div class="du_list">
+<div style="-webkit-transform:translate3d(0,0,0);">
+		<div id="banner_box" class="box_swipe">
+			<ul class="mainul">
+					<li><a href="{ZF:$thisdu.pic1url}" >
+					<img src="{ZF:$thisdu.pic1}" alt="2" style="width:100%;height:150px;" /><div class="dub">{ZF:$thisdu.pic1name}</div></a>
+					</li>
+					<li><a href="{ZF:$thisdu.pic2url}" >
+					<img src="{ZF:$thisdu.pic2}" alt="3" style="width:100%;height:150px;" /><div class="dub">{ZF:$thisdu.pic2name}</div></a>
+					</li>
+                    <li><a href="{ZF:$thisdu.pic3url}" onclick="return false;">
+					<img src="{ZF:$thisdu.pic3}" alt="4" style="width:100%;height:150px;" /><div class="dub">{ZF:$thisdu.pic3name}</div></a>
+					</li>
+					<li><a href="{ZF:$thisdu.pic4url}" onclick="return false;">
+					<img src="{ZF:$thisdu.pic4}" alt="5" style="width:100%;height:150px;" /><div class="dub">{ZF:$thisdu.pic4name}</div></a>
+					</li>
+					</ul><ol id="indtagol" style="top:88%"><li class="on"></li><li ></li><li ></li><li ></li><li ></li>
+						</ol>
+			        </div>
+		</div>
+		<script>
+		$(function(){			
+			new Swipe(document.getElementById('banner_box'), {
+				speed:500,
+				auto:{ZF:$thisdu.pictime},
+				callback: function(index, elem){
+					var lis = $('#indtagol').children();
+					lis.removeClass("on").eq(index).addClass("on");
+				}
+			});
+			
+		});
+	</script>
+</div>
+<div class="du_1"><center><a href="{ZF::U('Product/products',array('token'=>$_GET['token'],'wecha_id'=>$_GET['wecha_id'],'dining'=>$isDining))}&order=salecount&menthod=ASC"><img src="/res/weiqiico/iTzpxpcLdt.png" style="width:50px;height:50px;"><h2>热销产品</h2></a></center></div>
+<div class="du_2"><center><a href="{ZF::U('Product/cats',array('token'=>$_GET['token'],'wecha_id'=>$_GET['wecha_id'],'dining'=>$isDining))}"><img src="/res/weiqiico/klOcvEU5Ol.png" style="width:50px;height:50px;"><h2>商品分类</h2></a></center></div>
+<div class="du_3"><center><a href="{ZF::U('Product/cart',array('token'=>$_GET['token'],'wecha_id'=>$_GET['wecha_id'],'dining'=>$isDining))}"><img src="/res/weiqiico/xFH8C6O9Ok.png" style="width:50px;height:50px;"><h2>购物车</h2></a></center></div>
+<div class="du_4"><center><a href="{ZF::U('Product/products',array('token'=>$_GET['token'],'wecha_id'=>$_GET['wecha_id'],'dining'=>$isDining))}&order=discount&menthod=DESC"><img src="/res/weiqiico/c7kCJoE3ut.png" style="width:50px;height:50px;"><h2>聚划算</h2></a></center></div>
+<div class="du_5"><center><a href="{ZF::U('Product/my',array('token'=>$_GET['token'],'wecha_id'=>$_GET['wecha_id'],'dining'=>$isDining))}"><img src="/res/weiqiico/7rIznPyShS.png" style="width:50px;height:50px;"><h2>我的订单</h2></a></center></div>
+<br><br><div class="du_foot"><center>@{ZF:$thisdu.shopname}</center></div>
+</body>
+</html>

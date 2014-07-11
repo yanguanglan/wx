@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="uyan_auth" content="04a3f6938d" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="微信营销、微信代运营、微信定制开发、微信托管、微网站、微商城、微营销" name="Keywords">
+	<meta content="盛世源码—国内优秀的微信公众服务平台，国内最大的微信公众智能服务平台，盛世源码—国内优秀的微信公众服务平台八大微体系：微菜单、微官网、微会员、微活动、微商城、微推送、微服务、微统计，企业微营销必备。" name="Description">
+    <script src="/static/wxgjcn/src/html5.js" ></script>
+    <link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/bootstrap_min.css-2014-03-07-1.css"  media="all" />
+<link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/www/index1/index.css-2014-03-07-1.css"  media="all" />
+<link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/www/help/help.css-2014-03-07-1.css"  media="all" />
+<script type="text/javascript" src="/static/wxgjcn/src/jQuery.js-2014-03-07-1.js" ></script>
+<script type="text/javascript" src="/static/wxgjcn/src/www/index1/weimob-index.js-2014-03-07-1.js" ></script>
+<title>盛世源码—国内优秀的微信公众服务平台</title>
+	<link rel="shortcut icon" href="httpimg/favicon.ico" />
+</head>
+<body>
+	
+<!--595 850-->
+<script language="javascript">
+	$(function () {
+		$("a").click(function () {
+			var rel = $(this).attr("rel");
+			if (rel) {
+				var pos = $(rel).offset().top-60;
+				$("html,body").animate({ scrollTop: pos }, 800);
+			}
+
+		})
+	})
+</script>
+<script>
+	$().ready(function(){
+
+		window.onscroll = window.onresize = function(){
+			showSideBar();
+		}
+	});
+	function showSideBar(){
+		if(!window.sideMenu){
+			window.sideMenu = $("#sideToolbar");
+		}
+		if((document.body.scrollTop||document.documentElement.scrollTop)>500){
+			sideMenu.addClass("on");
+		}else{
+			sideMenu.removeClass("on");
+		}
+	}
+
+
+
+</script>
+<!--[if lte IE 8]>  <script language="javascript">$(function (){$.browser.msie&&$("#ie9-tips").show().find("#stopSuggestA").click(function(){$("#ie9-tips").hide()})})</script><![endif]-->
+<div class="nav clearfix">
+	<div class="nav-content">
+		<h1 class="left" onclick="location.herf='/site/city1'">盛世源码—国内优秀的微信公众服务平台·微信营销，如此简单！</h1>
+		<div class="left city">
+			<h2>上海</h2>
+							<a href="/static/wxgjcn/city1.htm" >
+					切换城市<i class="tri4"></i>
+				</a>
+					</div>
+		<div class="right line-li">
+			<ul>
+				<li><a href="/" >首页</a></li>
+				<li><a href="/static/wxgjcn/case1.htm"  >经典案例</a></li>
+				<li class="nav_menu_li_1"><a style="width:70px; text-align:left;" class="_hover">产品中心<i></i></a>
+					<div class="sub-nav">
+						<a href="/static/wxgjcn/package.htm"  target="_black">微信套餐</a>
+						<a href="/static/wxgjcn/guide1.htm" >功能介绍</a>
+						
+
+					</div>
+
+				</li>
+				<li><a href="/static/wxgjcn/proxy1.htm"  >渠道代理</a></li>
+				<li><a href="/static/wxgjcn/help.htm"  class="navtwo" target="_black">帮助</a></li>
+			</ul>
+			<div class="account">
+				<a href="/reg.html"  class="btn-reg btn0" target="_black">注册</a>
+									<a href="/login.html" class="btn-login btn0" target="_black">登录</a>
+				</div>
+		</div>
+	</div>
+</div>
+
+	
+<div id="ie9-tips" class="clearfix">
+	<div id="tipsPanel">
+		<div id="tipsDesc">系统检测到您所使用的浏览器版本较低，推荐使用<a   target="_blank">Firefox</a>或<a   target="_blank">Chrome</a>浏览器打开，否则将无法体验完整产品功能。</div>
+		<a id="stopSuggestA" href="javascript:;">×</a>
+	</div>
+</div>
+
+<script>
+	var $do_submit = false;
+
+	// 绑定回车键
+	$('#loginBox').keydown(function(e){
+		if(13 == event.keyCode){
+			login();
+		}
+	});
+
+		function login()
+	{
+		if (true == $do_submit)
+		{
+			return false;
+		}
+
+		var $pre_submit = '登录', $do_submit = '登录中...';
+		var $username = $('#username').val(), $password = $('#password').val(), $keepalive = $('#rememberPwdIcon').val();
+		$('#login_button').text($do_submit);
+		$do_submit = true;
+
+		// check
+		if ('' == $username || '' == $password)
+		{
+			$('#err_tips').text('您输入的盛世源码—国内优秀的微信公众服务平台号或密码错误，请重新输入！');
+			$('#err_area').show();
+			$('#login_button').text($pre_submit);
+			$do_submit = false;
+			return false;
+		}
+
+		var $login_data = {
+			username:$username,
+			password:$password,
+			keepalive:$keepalive
+		};
+		$.post('/login', $login_data, function(rs){
+			if(rs.errno == 200)
+			{
+				location.href = rs.url_route;
+			}
+			else
+			{
+				$('#err_tips').text(rs.error);
+				$('#err_area').show();
+				$('#login_button').text($pre_submit);
+			}
+			$do_submit = false;
+		}, 'json');
+	}
+	</script>
+<div id="top"></div><div id="page">
+   
+       <div class="title">盛世源码—国内优秀的微信公众服务平台产品（基础建设）使用指南</div>
+      <h3 id="2_1">1、如何注册微信公众号？</h3>
+       <p>登录mp.weixin.qq.com，点击注册填写相关信息即可申请微信公众号，微信公众号只能在PC端登录，不能用手机端，公众号分服务号和订阅号，企业可申请服务号，个人、自媒体申请订阅号，服务号每个月限制群发一条，而订阅号每天可发送一次，但消息会折叠起来放在一个订阅号的消息盒子里，服务号仍然是放在聊天列表。</p>
+    	 <p><img src="/static/wxgjcn/img/webabout/zhuce.png"  width="912" height="540"></p>
+         <h3 id="2_2">2、如何注册盛世源码—国内优秀的微信公众服务平台？</h3>
+         <p>直接网址输入www.weimob.com或者百度输入盛世源码—国内优秀的微信公众服务平台，点击进入盛世源码—国内优秀的微信公众服务平台官方网站，点击免费试用填写用户名、密码、手机、邮箱、QQ即可进行在线注册，前期邀请码开放，后期功能稳定则需要邀请码，所以大家珍惜机会，赶紧注册。</p>
+          <p><img src="/static/wxgjcn/img/webabout/wmzhuce.png"  width="743" height="584"></p>
+    	<h3 id="2_3">3、如何添加公众号？</h3>
+           <p>盛世源码—国内优秀的微信公众服务平台对不同版本添加公众号的数量作相应的限制，除至尊版可以同时添加2个公众号，试用版、体验版、增强版、黄金版、行业版都只能添加一个公众号。添加点击公众号按钮，进入添加公众号界面，如果有什么问题都可以随时咨询微助手。</p>
+          <p><img src="/static/wxgjcn/img/webabout/zh1.png"  width="355" height="111"></p>
+          <p><img src="/static/wxgjcn/img/webabout/zh2.png"  width="914" height="527"></p>
+          <p>1、公众号名称与微信公众平台公众号名称保持一致。</p>
+          <p>2、公众号原始id，这个很重要，公众平台进行通讯就靠这个ID，所以不能填错，如果在填的时候遇到问题可以点不懂就问我或者直接联系在线客服。</p>
+          <p>a. 登录微信公众平台mp.weixin.qq.com，点设置，查看帐号信息</p>
+          <p><img src="/static/wxgjcn/img/webabout/zh3.gif.jpg"  width="780" height="593"></p>
+          <p>3、点击帐号信息查看原始id</p>
+            <h5>4、微信号：公众号的英文名称，这个是唯一的。</h5>
+            <h5>5、图文统计代码：用来统计图文浏览的相关数据，目前是可以添加第三方统计平台，如百度统计、CNZZ，后期盛世源码—国内优秀的微信公众服务平台会加入对图文的统计。填好表单如下：</h5>
+            <p><img src="/static/wxgjcn/img/webabout/zh5.png"  width="858" height="538"></p>
+            <p>点击保存，提示将接口地址和TOKEN绑定到腾讯公众平台;</p>
+    	  <p><img src="/static/wxgjcn/img/webabout/zh6.png"  width="532" height="240"></p>
+           <h5>6、绑定URL和TOKEN。</h5>
+            <p>a. 登录微信公众平台mp.weixin.qq.com(注意需提前注册好公众号)</p>
+            <p>b. 点击高级功能，进入开发模式。（注：如果没有高级功能说明你注册的账号还在审核中，审核通过后会有高级功能）</p>
+            <p>c. 开启开发模式（注：开启开发模式编辑模式则不能用，两者只能选其一）</p>
+            <p><img src="/static/wxgjcn/img/webabout/zh7.png"  width="941" height="332"></p>
+            <p>d. 填写接口URL和对应TOKEN，点击提交。如果提示提交成功，说明公众号绑定成功，如果出现服务器无法正确响应TOKEN验证，说明URL或者TOKEN有问题，请仔细检查。如果遇到问题可以随时咨询盛世源码—国内优秀的微信公众服务平台客服。</p>
+    	   <p><img src="/static/wxgjcn/img/webabout/zh8.png"  width="914" height="579"></p>
+            <p>在公众号绑定完URL和TOKEN，整个添加公众号的操作完毕，可以看到如下界面。</p>
+            <p><img src="/static/wxgjcn/img/webabout/zh9.png"  width="900" height="259"></p>
+         <h3 id="2_4">4、账户信息参数详解</h4>
+    	  <p><img src="/static/wxgjcn/img/webabout/cs1.png"  width="900" height="203"></p>
+          <p><strong>套餐有效期 ：</strong>指套餐到期的时间，套餐结束后公众号将会被冻洁，所有功能将不能使用。</p>
+          <p><strong>文本自定义：</strong>文本自定义是指回复设置里面关键词回复里定义文本回复的条数。</p>
+          <p><strong>图文自定义：</strong>图文自定义是指回复设置里面关键词回复里定义图语言回复的条数。</p>
+          <p><strong>语音自定义：</strong>语音自定义是指回复设置里面关键词回复里定义语音回复的条数。</p>
+          <p><strong>请求数：</strong>请求是指粉丝通过公众号发起一次互动，比如输入一个关键词、发送一个位置都记为一次请求。不同版本请求数不一样，行业版不限请求数。</p>
+          <p><strong>请求数剩余：</strong>指当月还剩下的请求数。</p>
+          <p><strong>总请求数：</strong>指从账号创建到现在总的请求数。</p>
+          <p><strong>本月请求数：</strong>指本月内总的请求数。</p>
+          <p><strong>每月可请求总数：</strong>指每月限制的请求总数，黄金版不限。</p>
+          <h3 id="2_5">5、运营图表</h3>
+          <p>目前盛世源码—国内优秀的微信公众服务平台主要是统计公众号每天文本、图文、语音请求数和总的请求数：</p>
+
+    	 <p><img src="/static/wxgjcn/img/webabout/yy1.png"  width="900" height="408"></p>
+         <h3 id="2_6">6、默认设置</h3>
+          <p><img src="/static/wxgjcn/img/webabout/mr1.png"  width="665" height="297"></p>
+          <p><strong>默认关注回复：</strong>是指当用户关注公众号后发送的第一条信息，目前盛世源码—国内优秀的微信公众服务平台支持关注时文字回复和图文回复（支持多图文）。</p>
+          <p><strong>默认无匹配回复：</strong>是指当用户触发关键词无内容匹配时自动回复的内容，这边需要填写已经定义好的关键词，这个关键词在文本回复和图文回复里定义。</p>
+           <h3 id="2_7">7、关注时回复</h3>
+    	  <p><img src="/static/wxgjcn/img/webabout/hf1.png"  width="795" height="325"></p>
+           <p><strong>关注时回复：</strong>指粉丝关注微信公众号后推送的第一条信息，可以是文本，也可以是图文，如果需要图文回复，点击切换到图文模式。</p>
+           <p><img src="/static/wxgjcn/img/webabout/hf2.png"  width:450px; height:265px;></p>
+           <p>TIPS：如果想关注时默认进到微网站，可以不填写图文内容，然后在图文外链地址里面填写微官网首页地址，微官网首页地址在微官网设置里可以看见。</p>    	<p><img src="/static/wxgjcn/img/webabout/hf3.png"  width="959" height="315"></p>
+        <h3 id="2_8">8、文本回复</h3>
+         <p>文本回复指添加关键后回复的内容是文本。点击添加按钮</p>
+       <p><img src="/static/wxgjcn/img/webabout/mr1.png"  width="665" height="297"></p>
+       <p> 如上示例：定义了关键词你好，当用户在公众号发送“你好”的时候，将会回复“哈哈”</p>
+       <p> 如果想定义多个关键词用空格隔开，如：你好 在吗 哈哈</p>
+       <p> 匹配类型分完全匹配和包含匹配，考虑到包括匹配出现的情况太多，目前只支持完全匹配。</p>
+       <h3 id="2_9">9、图文回复</h3>
+       <p>点击添加图文按钮进入图文编辑页面</p>
+      <p><img src="/static/wxgjcn/img/webabout/tw1.png"  width="823" height="510"></p>
+
+    	<p>填写触发关键词，图文标题、图文简介，上传图文封面。</p>
+      <p><img src="/static/wxgjcn/img/webabout/tw2.png"  width="934" height="491"></p>
+       <p><strong> 所属类型</strong>是指图片所属分类，默认可以不选择分类，如果需要定义分类，需要在微官网—分类管理，添加对应分类。</p>
+      <p><strong>详细页是否显示封面</strong>就是详情的内容页头部是否会将图文的封面显示在顶部，如下图。</p>
+      <p><strong>图文详细内容</strong>即是添加图文的完整内容。</p>
+      <p>多图文是指在触发关键词的时候显示多条图文。目前多图文最多支持9条。</p>
+      <p>点击添加弹出多图文选择框</p>
+
+    	<p><img src="/static/wxgjcn/img/webabout/tw3.png"  width="622" height="483"></p>
+         <p>在这里多图文并不是同时创建9条图文，而是一条一条创建，如果想选择多图文，只是在要显示多图文勾选之前添加的图文，即可进行关联，实现多图文。</p>
+        <p><strong>推荐阅读</strong>也是同样的道理，在这里就不多说，推荐阅读会显示在详情页的下面。</p>
+        <p><strong>图文外链地址</strong>是指当用户点击图文消息框的时候，不进入对应的图文详情页，而是直接进行已有的网站链接，这个功能可以很好的整合自身的一些资源。如果企业本身有移动3G站，可以直接链到3G站。</p>
+         <p><img src="/static/wxgjcn/img/webabout/tw4.png"  width="975" height="87"></p>
+         <p>添加完之后点击保存，即完成图文回复创建。</p>
+        <p>下面是回复效果展示，我们在民营医疗那些事公众号输入关键词”营销”“盛世源码—国内优秀的微信公众服务平台资源” “盛世源码—国内优秀的微信公众服务平台团队测试一下效果。</p>
+
+    	<p><img src="/static/wxgjcn/img/webabout/tw5.png"  width="206" height="336"><img src="/static/wxgjcn/img/webabout/tw6.png"  width="206" height="336"><img src="/static/wxgjcn/img/webabout/tw7.png"  width="206" height="336"></p>
+         <p>注：图文回复是整个盛世源码—国内优秀的微信公众服务平台的素材库，里面定义的内容在微官网里会用到，所在在定义前最好创建好分类，之前在微官网里就可以直接显示。</p>
+        <h3 id="2_10">10、自定义菜单</h3>
+         <p>自定义菜单是企业微信公众号消息框底部的导航菜单，可以很方便用户进行交互，相当于一个轻量级的APP。</p>
+         <p>目前自定义菜单只对服务号开放，服务号认证需要企业认证，所以如果是订阅号这个功能是用不了的，如果服务号还没有申请自定义菜单，可以点击-高级功能-开发模式，会有一栏会话界面自定义菜单，点击申请就可以了，申请成功后的界面如下：</p>
+          <p><img src="/static/wxgjcn/img/webabout/cd1.png"  width="954" height="421"></p>
+     <p><img src="/static/wxgjcn/img/webabout/cd2.png"  width="723" height="286"></p>
+      <p>将AppId 和AppSecret填写在盛世源码—国内优秀的微信公众服务平台自定义菜单-授权设置 应用ID和应用密匙里</p>
+      <p><img src="/static/wxgjcn/img/webabout/cd3.png"  width="870" height="310">></p>
+      <p><strong> 菜单设置:</strong>自定义菜单目前限制只能3个一级菜单，5个二级菜单，盛世源码—国内优秀的微信公众服务平台后台也对添加菜单作了相应的限制，只允许同时启用三个一级菜单，五个二级菜单。 并且只有保存主菜单后才能添加子菜单。</p>
+       <p><img src="/static/wxgjcn/img/webabout/cd4.png"  width="900" height="400"></p>
+
+    	<p><strong>主菜单</strong>名称就是显示在消息框的一级菜单，触发关键词表示点击这个菜单后触发的关键词，这个关键词需提前在回复设置里定义好，可以是文字回复、也可以是图文回复、还可以是活动关键词等。勾选启用表示当前菜单会被显示。</p>
+        <p><strong>添加二级菜单</strong>，直接点击一级菜单后面的+即可以创建二级菜单，二级菜单只能同时启用5个。</p>
+        <p><strong>显示顺序</strong>表示菜单的显示的先后顺序，数字越小越排在前面。点击保存，保存自定义菜单设置，注意这时候并未生成自定义菜单，需要点生成自定义菜单。</p>
+       <p> 如果出现以下情况：</p>
+       <p><img src="/static/wxgjcn/img/webabout/cd5.png"  width="900" height="401"></p>
+       <p> 说明没有填写自定义菜单的appid，这个需要去微信公众平台去申请，而且必须要服务号。申请后好填在授权设置里。</p>
+       <p>生成自定义菜单后会在24小时内生效，如果想立即生效，取消关注后重新关注就可以看到了。</p>
+        <h3 id="2_11">11、LBS回复</h3>
+         <p>开启此功能,用户点击“+”→位置→发送，就可回复您自定义的LBS数据，了解到周边是否有您的商铺，并进行一键导航、一键拨号，如果店铺当前有进行的活动（如：优惠券、刮刮卡），也可把活动显示出来。</p>
+       <h5>使用方法：</h5>
+
+         <p><img src="/static/wxgjcn/img/webabout/lbs.jpg"  width="565" height="503"></p>
+         <p>1、	自定义LBS数据：设置商铺的地理位置（在“经纬度”输入）即可；</p>
+         <p><img src="/static/wxgjcn/img/webabout/lbs2.jpg"  width="839" height="416"></p>
+         <p>2、	填写标题、图文封面、电话、简介、详细页内容，并且可设置外链跳转到其他网址；</p>
+         <p>3、	当前商铺有活动可进行活动融合 添加，勾选已经开始的活动，保存，生成LBS回复。</p>
+         
+   
+  <div id="sideToolbar" style="display: block; position: fixed; top:150px;  right: 0;">
+  <div id="sideCatalog" class="sideCatalogBg" style="visibility: visible;">
+    <div id="sideCatalog-sidebar"></div>
+    <div id="sideCatalog-catalog">
+      <dl style="width:200px;zoom:1">
+        <dd><span>1</span><a href="javascript:void()" rel="#2_1" title="注册微信公众号">注册微信公众号</a></dd>
+        <dd><span>2</span><a href="javascript:void()" rel="#2_2" title="注册盛世源码—国内优秀的微信公众服务平台">注册盛世源码—国内优秀的微信公众服务平台</a></dd>
+        <dd><span>3</span><a href="javascript:void()" rel="#2_3" title="添加公众号">添加公众号</a></dd>
+        <dd><span>4</span><a href="javascript:void()" rel="#2_4" title="账户信息参数详解">账户参数详解</a></dd>
+        <dd><span>5</span><a href="javascript:void()" rel="#2_5" title="运营图表">运营图表</a></dd>
+        <dd><span>6</span><a href="javascript:void()" rel="#2_6" title="默认设置">默认设置</a></dd>
+        <dd><span>7</span><a href="javascript:void()" rel="#2_7" title="关注时回复">关注时回复</a></dd>
+        <dd><span>8</span><a href="javascript:void()" rel="#2_8" title="文本回复">文本回复</a></dd>
+        <dd><span>9</span><a href="javascript:void()" rel="#2_9" title="图文回复">图文回复</a></dd>
+        <dd><span>10</span><a href="javascript:void()" rel="#2_10" title="自定义菜单">自定义菜单</a></dd>
+        <dd><span>11</span><a href="javascript:void()" rel="#2_11" title="LBS回复">LBS回复</a></dd>
+      </dl>
+    </div>
+  </div>
+    <a id="sideCatalogBtn" href="/static/wxgjcn/help.htm"  style="visibility: visible;" title="查看帮助目录"></a>
+  <a id="sideToolbar-up"  href="javascript:void()" rel="#top" title="返回顶部" style="visibility: visible;"></a></div>
+     
+</div>
+<script>
+	$(function () {
+	   if(location.hash){
+			var pos = $(location.hash).offset().top-60;
+			$("html,body").animate({ scrollTop: pos }, 800);
+		}
+	});
+</script>
+
+<!--QQ咨询-->
+<div class="footer">
+	<div class="footer-content clearfix">
+		<div class="foot-menu">
+			<p>
+				<a href="/static/wxgjcn/index1.htm"  target="_blank">盛世源码—国内优秀的微信公众服务平台首页</a>&nbsp;|&nbsp;
+				<a href="/reg.html"  target="_blank">申请入驻</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/proxy1.htm"  target="_blank">渠道代理</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/about1.htm"  target="_blank">关于盛世源码</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/agents.htm"  target="_blank">授权认证</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/jobs.htm"  target="_blank">加入盛世源码</a>
+			</p>
+			<p>免费热线：400-800-8888&nbsp;&nbsp;&nbsp;QQ：631989322&nbsp;&nbsp;&nbsp;邮箱：kf@weixin.9upp.com</p>
+			<p>地址：
+								上海市市辖区宝山区逸仙路2816号华滋奔腾大厦A幢15楼</p>
+		</div>
+		<div class="copyright">
+			Copyright (c) 2011-2014 9upp.com. All Rights Reserved 盛世源码团队 粤ICP备13083563号
+		</div>
+	</div>
+</div>
+<div style="display:none;"><script type="text/javascript" src="/static/wxgjcn/src/www/index1/huishuo.js-v=2014-03-07-1.js" ></script></div></body>
+</html>

@@ -1,0 +1,104 @@
+document.writeln("<style type=\"text/css\">");
+document.writeln("body { margin-bottom:60px !important; }");
+document.writeln("a, button, input { -webkit-tap-highlight-color:rgba(255, 0, 0, 0); }");
+document.writeln("ul, li { list-style:none; margin:0; padding:0 }");
+document.writeln(".top_bar { position: fixed; z-index: 900; bottom: 0; left: 0; right: 0; margin: auto; font-family: Helvetica, Tahoma, Arial, Microsoft YaHei, sans-serif; }");
+document.writeln(".top_menu { display:-webkit-box; border-top: 1px solid #3D3D46; display: block; width: 100%; background: rgba(255, 255, 255, 0.7); height: 48px; display: -webkit-box; display: box; margin:0; padding:0; -webkit-box-orient: horizontal; background: -webkit-gradient(linear, 0 0, 0 100%, from(#524945), to(#48403c), color-stop(60%, #524945)); box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1) inset; }");
+document.writeln(".top_bar .top_menu>li { -webkit-box-flex:1; position:relative; text-align:center; }");
+document.writeln(".top_menu li:first-child { background:none; }");
+document.writeln(".top_bar .top_menu>li>a { height:48px; margin-right: 1px; display:block; text-align:center; color:#FFF; text-decoration:none; text-shadow: 0 1px rgba(0, 0, 0, 0.3); -webkit-box-flex:1; }");
+document.writeln(".top_bar .top_menu>li.home { max-width:70px }");
+document.writeln(".top_bar .top_menu>li.home a { height: 60px; width: 60px; margin: auto; border-radius: 60px; position: relative; top: -14px; left: 5px; background: url(../../weiqiimg/weiqimenu/KRRvB8Lure.png) no-repeat center center; background-size: 100% 100%; }");
+document.writeln(".top_bar .top_menu>li>a label { overflow:hidden; margin: 0 0 0 0; font-size: 12px; display: block !important; line-height: 18px; text-align: center; }");
+document.writeln(".top_bar .top_menu>li>a img { padding: 3px 0 0 0; height: 24px; width: 24px; color: #fff; line-height: 48px; vertical-align:middle; }");
+document.writeln(".top_bar li:first-child a { display: block; }");
+document.writeln(".menu_font { text-align:left; position:absolute; right:10px; z-index:500; background: -webkit-gradient(linear, 0 0, 0 100%, from(#524945), to(#48403c), color-stop(60%, #524945)); border-radius: 5px; width: 120px; margin-top: 10px; padding: 0; box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3); }");
+document.writeln(".menu_font.hidden { display:none; }");
+document.writeln(".menu_font { top:inherit !important; bottom:60px; }");
+document.writeln(".menu_font li a { height:40px; margin-right: 1px; display:block; text-align:center; color:#FFF; text-decoration:none; text-shadow: 0 1px rgba(0, 0, 0, 0.3); -webkit-box-flex:1; }");
+document.writeln(".menu_font li a { text-align: left !important; }");
+document.writeln(".top_menu li:last-of-type a { background: none; }");
+document.writeln(".menu_font:after { top: inherit!important; bottom: -6px; border-color: #48403c rgba(0, 0, 0, 0) rgba(0, 0, 0, 0); border-width: 6px 6px 0; position: absolute; content: \"\"; display: inline-block; width: 0; height: 0; border-style: solid; left: 80%; }");
+document.writeln(".menu_font li { border-top: 1px solid rgba(255, 255, 255, 0.1); border-bottom: 1px solid rgba(0, 0, 0, 0.2); }");
+document.writeln(".menu_font li:first-of-type { border-top: 0; }");
+document.writeln(".menu_font li:last-of-type { border-bottom: 0; }");
+document.writeln(".menu_font li a { height: 40px; line-height: 40px !important; position: relative; color: #fff; display: block; width: 100%; text-indent: 10px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }");
+document.writeln(".menu_font li a img { width: 20px; height:20px; display: inline-block; margin-top:-2px; color: #fff; line-height: 40px; vertical-align:middle; }");
+document.writeln(".menu_font>li>a label { padding:3px 0 0 3px; font-size:14px; overflow:hidden; margin: 0; }");
+document.writeln("#sharemcover { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); display: none; z-index: 20000; }");
+document.writeln("#sharemcover img { position: fixed; right: 18px; top: 5px; width: 260px; height: 180px; z-index: 20001; border:0; }");
+document.writeln(".top_bar .top_menu>li>a:hover, .top_bar .top_menu>li>a:active { background-color:#333; }");
+document.writeln(".menu_font li a:hover, .menu_font li a:active{ background-color:#333; }");
+document.writeln(".menu_font li:first-of-type a { border-radius:5px 5px 0 0; }");
+document.writeln(".menu_font li:last-of-type a { border-radius:0 0 5px 5px; }");
+document.writeln("#plug-wrap { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0); z-index:800; }");
+document.writeln("#cate18 .device {bottom: 49px;}");
+document.writeln("#cate18 #indicator {bottom: 240px;}");
+document.writeln("#cate19 .device {bottom: 49px;}");
+document.writeln("#cate19 #indicator {bottom: 330px;}");
+document.writeln("#cate19 .pagination {bottom: 60px;}");
+document.writeln("</style>");
+document.writeln("<div id=\"sharemcover\" onClick=\"document.getElementById(\'sharemcover\').style.display=\'\';\" style=\" display:none\"><img src=\"../../weiqiimg/weiqimenu/MgnnofmleM.png\"></div>");
+document.writeln("<div class=\"top_bar\" style=\"-webkit-transform:translate3d(0,0,0)\">");
+document.writeln("  <nav>");
+document.writeln("    <ul id=\"top_menu\"  class=\"top_menu\">");
+document.writeln("<li class=\"home\"><a href=\"/weiweb/<?php echo Request::get(1); ?>/\"></a></li>");
+<?php
+$i=0;
+foreach((array)$s as $b){
+if($b->erji){
+echo 'document.writeln("    	<li> <a   onClick=\"javascript:displayit('.$i.')\" ><img src=\"'.$b->img.'\"><label>'.$b->name.'</label></a>");';
+echo 'document.writeln("        	<ul id=\"menu_list'.$i.'\" class=\"menu_font\" style=\" display:none\">");';
+if(!empty($b->name1) && !empty($b->url1)){echo 'document.writeln("                <li> <a href=\"'.$b->url1.'\"><img src=\"'.$b->img1.'\" ><label>'.$b->name1.'</label></a></li>");';}
+if(!empty($b->name2) && !empty($b->url2)){echo 'document.writeln("                <li> <a href=\"'.$b->url2.'\"><img src=\"'.$b->img2.'\" ><label>'.$b->name2.'</label></a></li>");';}
+if(!empty($b->name3) && !empty($b->url3)){echo 'document.writeln("                <li> <a href=\"'.$b->url3.'\"><img src=\"'.$b->img3.'\" ><label>'.$b->name3.'</label></a></li>");';}
+if(!empty($b->name4) && !empty($b->url4)){echo 'document.writeln("                <li> <a href=\"'.$b->url4.'\"><img src=\"'.$b->img4.'\" ><label>'.$b->name4.'</label></a></li>");';}
+if(!empty($b->name5) && !empty($b->url5)){echo 'document.writeln("                <li> <a href=\"'.$b->url5.'\"><img src=\"'.$b->img5.'\" ><label>'.$b->name5.'</label></a></li>");';}
+if(!empty($b->name6) && !empty($b->url6)){echo 'document.writeln("                <li> <a href=\"'.$b->url6.'\"><img src=\"'.$b->img6.'\" ><label>'.$b->name6.'</label></a></li>");';}
+if(!empty($b->name7) && !empty($b->url7)){echo 'document.writeln("                <li> <a href=\"'.$b->url7.'\"><img src=\"'.$b->img7.'\" ><label>'.$b->name7.'</label></a></li>");';}
+if(!empty($b->name8) && !empty($b->url8)){echo 'document.writeln("                <li> <a href=\"'.$b->url8.'\"><img src=\"'.$b->img8.'\" ><label>'.$b->name8.'</label></a></li>");';}
+if(!empty($b->name9) && !empty($b->url9)){echo 'document.writeln("                <li> <a href=\"'.$b->url9.'\"><img src=\"'.$b->img9.'\" ><label>'.$b->name9.'</label></a></li>");';}
+if(!empty($b->name10) && !empty($b->url10)){echo 'document.writeln("                <li> <a href=\"'.$b->url10.'\"><img src=\"'.$b->img10.'\" ><label>'.$b->name10.'</label></a></li>");';}
+
+
+}else{
+echo 'document.writeln("    	<li> <a   href=\"'.$b->url.'\" ><img src=\"'.$b->img.'\"><label>'.$b->name.'</label></a>");';
+echo 'document.writeln("        	<ul id=\"menu_list0\" class=\"menu_font\" style=\" display:none\">");';
+}
+echo 'document.writeln("          </ul>");
+document.writeln("        </li>");';
+$i++;
+}
+?>
+document.writeln("    </ul>");
+document.writeln("  </nav>");
+document.writeln("</div>");
+document.writeln("<div id=\"plug-wrap\" onClick=\"closeall()\" style=\"display: none;\"></div>");
+document.writeln("<script>");
+document.writeln("function displayit(n){");
+document.writeln("	var count = document.getElementById(\"top_menu\").getElementsByTagName(\"ul\").length;	");
+document.writeln("	for(i=0;i<count;i++){");
+document.writeln("		if(i==n){");
+document.writeln("		 if(document.getElementById(\"top_menu\").getElementsByTagName(\"ul\").item(n).style.display==\'none\'){");
+document.writeln("			 document.getElementById(\"top_menu\").getElementsByTagName(\"ul\").item(n).style.display=\'\';");
+document.writeln("			 document.getElementById(\"plug-wrap\").style.display=\'\';");
+document.writeln("			}else{");
+document.writeln("				 document.getElementById(\"top_menu\").getElementsByTagName(\"ul\").item(n).style.display=\'none\';");
+document.writeln("				  document.getElementById(\"plug-wrap\").style.display=\'none\';");
+document.writeln("			}");
+document.writeln("		}else{");
+document.writeln("			document.getElementById(\"top_menu\").getElementsByTagName(\"ul\").item(i).style.display=\'none\';");
+document.writeln("		}");
+document.writeln("	}");
+document.writeln("}");
+document.writeln("function closeall(){");
+document.writeln("	var count = document.getElementById(\"top_menu\").getElementsByTagName(\"ul\").length;	");
+document.writeln("	for(i=0;i<count;i++){");
+document.writeln("		 document.getElementById(\"top_menu\").getElementsByTagName(\"ul\").item(i).style.display=\'none\';");
+document.writeln("	}");
+document.writeln("	 document.getElementById(\"plug-wrap\").style.display=\'none\';");
+document.writeln("}");
+document.writeln("document.addEventListener(\'WeixinJSBridgeReady\', function onBridgeReady() {");
+document.writeln("WeixinJSBridge.call(\'hideToolbar\');");
+document.writeln("});");
+document.writeln("</script>");

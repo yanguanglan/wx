@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="微信营销、微信代运营、微信定制开发、微信托管、微网站、微商城、微营销" name="Keywords">
+	<meta content="盛世源码—国内优秀的微信公众服务平台，国内最大的微信公众智能服务平台，盛世源码—国内优秀的微信公众服务平台八大微体系：微菜单、微官网、微会员、微活动、微商城、微推送、微服务、微统计，企业微营销必备。" name="Description">
+    <link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/wall/core2.css-2014-03-07-1.css"  media="all" />
+<link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/wall/main2.css-2014-03-07-1.css"  media="all" />
+<script type="text/javascript" src="/static/wxgjcn/src/jQuery.js-2014-03-07-1.js" ></script>
+<script type="text/javascript" src="/static/wxgjcn/src/wall/helper_min.js-2014-03-07-1.js" ></script>
+<script type="text/javascript" src="/static/wxgjcn/src/wall/main.js-2014-03-07-1.js" ></script>
+<script type="text/javascript" src="/static/wxgjcn/src/wall/jquery_flexslider.js-2014-03-07-1.js" ></script>
+<title>微信墙</title>
+	<link rel="shortcut icon" href="httpimg/favicon.ico" />
+    <!--[if lte IE 9]><script src="/static/wxgjcn/src/watermark.js" ></script><![endif]-->
+	<!--[if IE 7]><link href="/static/wxgjcn/css/font_awesome_ie7.css"  rel="stylesheet" /><![endif]-->
+</head>
+<body>
+	<script type="text/javascript">
+	$(function(){
+			$.ajax({
+				url:"/Webwall/getDataLuck",
+				type:"post",
+				data:{id:3693, pid:1071, bid:5, v:'64af32560f3dca5391ace4768b675391'},
+				dataType:"JSON",
+				success: function(res){
+					if(res.result){
+						$("#total_all").html(res.data.all.length);
+						window.picWaller = picWall(res.data.all||[]);
+						
+					}else{
+						alert(res.message);
+					}
+				}
+			});
+			
+		});
+
+
+		window.picWall=(function(){var a="http://www.weimob.com/Webwall/Eric_wu, wkf39988@gmail.com";var b=function(c){return new b.fn.init(c)};b.fn=b.prototype={init:function(c){var d=this;d.playIng=false;d.timer=null;d.all=c;d.lucker=[];d.show();return d},play:function(){$("#pic_wall").removeClass("moreOne");var c=this;if(c.playIng){c.stop()}else{c.playIng=true;c.timer=setInterval(function(){c.show(true)},500)}return c}};b.fn.init.prototype=b.prototype;b.extend=function(d){for(var c in d){b.fn[c]=d[c]}};return b})();
+		//
+		picWall.extend({
+			show: function(lucker, res){
+				lucker = lucker||{};
+				var that = this;
+				that.lucker = [];
+				that.all = that.all.sort(function(a,b){
+					return Math.random()>0.5?1:-1;
+				});
+				
+				while(that.all.length<15){
+					that.all.push({"wechatId":"-1", "img":"/img/wall/6.jpg"/*tpa=httpimg/wall/6.jpg*/, "nickName":""});
+				}
+				//抽奖中
+				var thatAll = res?that.all:that.all.slice(0, 15);
+				var TPL = '<li><span class="{luck}"><img src="{img}" class="{luck}" /></span></li>';
+				var html = iTemplate.makeList(TPL, thatAll, function(k,v){
+					if(true == lucker){
+						//show all
+						return {luck:"on"};
+					}else{
+						return {
+							luck: (v.wechatId in lucker) && ([that.lucker.push(v), true][1])?"on":""
+						}
+					}
+				});
+				$("#pic_wall").html(html);
+			},
+			stop:function(){
+				var that = this;
+				that.playIng = false;
+				$("#pic_wall").addClass("moreOne");
+				$.ajax({
+					url:"/Webwall/getWinUser",
+					type:"post",
+					data:{id:3693, pid:1071, bid:5, v:'64af32560f3dca5391ace4768b675391'},
+					dataType:"JSON",
+					success: function(res){
+						if(res.result){
+							clearTimeout(that.timer);
+							that.show(res.data, true);
+							setTimeout(function(){
+								showResult(that.lucker);
+							}, 500);
+						}else{
+							clearTimeout(that.timer);
+							that.show();
+							alert(res.message);
+						}
+					}
+				});
+
+				function showResult(){
+					var TPL = '<ol class="ol3 ol_common tbox">\
+									<li class="l1">{k}</li>\
+									<li class="l2">\
+										<span>\
+											<img src="{img}" />\
+										</span>\
+									</li>\
+									<li class="l3">{nickName}</li>\
+								</ol>';
+
+					$("#lucky_users").html(iTemplate.makeList(TPL, that.lucker, function(k,v){
+						return {
+							k:parseInt(k)+1
+						}
+					}));
+					$("#total_lucker").html(that.lucker.length);
+				}
+				return that;
+			}
+
+		});
+
+</script>
+<body class="luck">
+	<div class="fbody" >
+		<div class="main_body">
+			<section class="tbox">
+				<article class="a1">
+					<header class="header">
+						<ul class="ofh">
+							<li><h4 class="h4">现场抽奖</h4></li>
+							<li><label class="label_prize" onclick="$('#prize').addClass('on');">奖项</label></li>
+							<li class="fr"><label class="label_count">参加抽奖人数<span id="total_all">0</span></label></li>
+						</ul>
+					</header>
+					<section>
+						<ul id="pic_wall" class="pic_wall"><!----></ul>
+					</section>
+					<footer>
+						<a href="javascript:;" onclick="window.picWaller.play();$(this).toggleClass('on');return;" class="btn_luck">&nbsp;</a>
+					</footer>
+				</article>
+				<article class="a2">
+					<div class="div_list_lucker">
+						<ul>
+							<ol class="ol1 oll_common tbox">
+								<li class="l1"><h3>获奖名单 </h3></li>
+								<li class="l2 align_right"><label>获奖人数<span id="total_lucker">31</span></label></li>
+							</ol>
+							<ol class="ol2 ol_common tbox">
+								<li class="l1">序号</li>
+								<li class="l2">头像</li>
+								<li class="l3">获奖昵称</li>
+							</ol>
+							<div id="lucky_users" class="list_lucker">
+																<ol class="ol3 ol_common tbox">
+									<li class="l1">1</li>
+									<li class="l2"><span><img src="/static/wxgjcn//hs-net-img.oss-cn-hangzhou.aliyuncs.com/1071/Talking/1071sdKzIiDRvVLrAHBrIhEzWb2uIfFILtsvq72-a4Z2XuzMAsWUyk1ZwQ72WAEBdcln.jpg"  /></span></li>
+									<li class="l3">彭</li>
+								</ol>
+																<ol class="ol3 ol_common tbox">
+									<li class="l1">2</li>
+									<li class="l2"><span><img src="/static/wxgjcn//hs-net-img.oss-cn-hangzhou.aliyuncs.com/1071/Talking/1071lZCQIkyU2O0QGCbedS6V7JIjd-aEDoM4igaBVJlICQFtAQofeAm_VY0bULK8jWuO.jpg"  /></span></li>
+									<li class="l3">mia</li>
+								</ol>
+																<ol class="ol3 ol_common tbox">
+									<li class="l1">3</li>
+									<li class="l2"><span><img src="/static/wxgjcn//hs-net-img.oss-cn-hangzhou.aliyuncs.com/1071/Talking/1071L7qV-CKCb3fEiewDl_H8nKuQp_LZkExKA1us81cU61Gy8oBnB80hjF5YGPrQpyCi.jpg"  /></span></li>
+									<li class="l3">跑马</li>
+								</ol>
+																<ol class="ol3 ol_common tbox">
+									<li class="l1">4</li>
+									<li class="l2"><span><img src="/static/wxgjcn//hs-net-img.oss-cn-hangzhou.aliyuncs.com/1071/Talking/10716gOMYzZJX0MwxMVe95JISG-ZgqaEJUbj_ocLSSwgYjBxX1zRdoHv6DBUmDAnhqBn.jpg"  /></span></li>
+									<li class="l3">阿杜</li>
+								</ol>
+																<ol class="ol3 ol_common tbox">
+									<li class="l1">5</li>
+									<li class="l2"><span><img src="/static/wxgjcn//hs-net-img.oss-cn-hangzhou.aliyuncs.com/1071/Talking/10713Y1-_8zWUawXWMWilvgrpDsE2g3z3FmEGExhdo-aYH6MBHAppMeA1Cj8hmMSkZYG.jpg"  /></span></li>
+									<li class="l3">小波</li>
+								</ol>
+																<ol class="ol3 ol_common tbox">
+									<li class="l1">6</li>
+									<li class="l2"><span><img src="/static/wxgjcn//hs-net-img.oss-cn-hangzhou.aliyuncs.com/1071/Talking/10713QGBQphtA6m1a77R0xALYKsVFHzSOB_Thwg8AFoA_vlVVOVzv6UAMt-Z4lz6Deb5.jpg"  /></span></li>
+									<li class="l3">冯</li>
+								</ol>
+																<ol class="ol3 ol_common tbox">
+									<li class="l1">7</li>
+									<li class="l2"><span><img src="/static/wxgjcn//hs-net-img.oss-cn-hangzhou.aliyuncs.com/1071/Talking/1071FXeBqi6BYRmNoF5uBm7e3vyeEV6mLZib-X6gtSCsE_bYlKWBTYyit35O_YkXfeYs.jpg"  /></span></li>
+									<li class="l3">may</li>
+								</ol>
+																<ol class="ol3 ol_common tbox">
+									<li class="l1">8</li>
+									<li class="l2"><span><img src="/static/wxgjcn//hs-net-img.oss-cn-hangzhou.aliyuncs.com/1071/Talking/1071i5B7vxOJdf4-YkvRA8_MNhewFQCfeA-Qrt9s5Az64WxSXT1f9KMh1ye7Ieu6VpGa.jpg"  /></span></li>
+									<li class="l3">石头哥</li>
+								</ol>
+																<ol class="ol3 ol_common tbox">
+									<li class="l1">9</li>
+									<li class="l2"><span><img src="/static/wxgjcn//hs-net-img.oss-cn-hangzhou.aliyuncs.com/1071/Talking/10717wqXXBfsR7wLXB2PRpLf3WFjvDGbKxUKQtKxI8EC898-IWa-6_9PSo05wFsV0J3_.jpg"  /></span></li>
+									<li class="l3">Alfred</li>
+								</ol>
+																<ol class="ol3 ol_common tbox">
+									<li class="l1">10</li>
+									<li class="l2"><span><img src="/static/wxgjcn//hs-net-img.oss-cn-hangzhou.aliyuncs.com/1071/Talking/10719WmlkWWepaACJYfjXyZjFtDZ1L_XXjtxKi9ktPIcXy6zyS2AUksH0lglDaHM6I15.jpg"  /></span></li>
+									<li class="l3">红米</li>
+								</ol>
+																<ol class="ol3 ol_common tbox">
+									<li class="l1">11</li>
+									<li class="l2"><span><img src="/static/wxgjcn//hs-net-img.oss-cn-hangzhou.aliyuncs.com/1071/Talking/1071ZCICADyCOfgJlHG4JxzaY9kVEoCyDslioVdfsDl72TrwNJ6kz4ieQwiBsXfkwVot.jpg"  /></span></li>
+									<li class="l3">佳佳</li>
+								</ol>
+																<ol class="ol3 ol_common tbox">
+									<li class="l1">12</li>
+									<li class="l2"><span><img src="/static/wxgjcn//hs-net-img.oss-cn-hangzhou.aliyuncs.com/1071/Talking/1071RaB3YMYiNq1csf64QevVhJRymJAf0Muy0YpYX7Rd11YIw5JkeJgCh5pYSs7G2xD8.jpg"  /></span></li>
+									<li class="l3">李益</li>
+								</ol>
+																<ol class="ol3 ol_common tbox">
+									<li class="l1">13</li>
+									<li class="l2"><span><img src="/static/wxgjcn//hs-net-img.oss-cn-hangzhou.aliyuncs.com/1071/Talking/1071Nh_8hCiilKBERyrUEmVyjsdcVlEkT52ClyOLJkdDXgzq-6sI-3qW6wzx-Zf4e4WX.jpg"  /></span></li>
+									<li class="l3">516</li>
+								</ol>
+																<ol class="ol3 ol_common tbox">
+									<li class="l1">14</li>
+									<li class="l2"><span><img src="/static/wxgjcn//hs-net-img.oss-cn-hangzhou.aliyuncs.com/1071/Talking/1071DzuL1-pQV-B_Tqg_7_zmw3fBUwrIe2KaYCmUQOax6l-CUWBwezIsZjCUYjhtwDHV.jpg"  /></span></li>
+									<li class="l3">跑马</li>
+								</ol>
+																<ol class="ol3 ol_common tbox">
+									<li class="l1">15</li>
+									<li class="l2"><span><img src="/static/wxgjcn//hs-net-img.oss-cn-hangzhou.aliyuncs.com/1071/Talking/1071SWAfz1SSH3vjx-HsiJF-rWi9OSpDdRGlj-bnUuifWZX0kV4QHmC5UKe5_yZzn7zk.jpg"  /></span></li>
+									<li class="l3">简单</li>
+								</ol>
+																<ol class="ol3 ol_common tbox">
+									<li class="l1">16</li>
+									<li class="l2"><span><img src="/static/wxgjcn//hs-net-img.oss-cn-hangzhou.aliyuncs.com/1071/Talking/1071-Oo8KX-kPjpCnL1jmm09fjT26TFqaezH8RKQsMuqArG_cODYcV_yNdJtY3d_K3IP.jpg"  /></span></li>
+									<li class="l3">跑马</li>
+								</ol>
+																<ol class="ol3 ol_common tbox">
+									<li class="l1">17</li>
+									<li class="l2"><span><img src="/static/wxgjcn//hs-net-img.oss-cn-hangzhou.aliyuncs.com/1071/Talking/1071ijAwYMBFQ6_L9Styhn7axU9MqtDIJIwNVrl33cVD_0dYSXDizbmWGxqosj2MtoPD.jpg"  /></span></li>
+									<li class="l3">跑马</li>
+								</ol>
+																<ol class="ol3 ol_common tbox">
+									<li class="l1">18</li>
+									<li class="l2"><span><img src="/static/wxgjcn//hs-net-img.oss-cn-hangzhou.aliyuncs.com/1071/Talking/1071dQ1sWS4u76UFycOmLcx2C9m02TvAWj2jAPvutSo-x2gwqcZ0aYP6RqmBbtDhnvm7.jpg"  /></span></li>
+									<li class="l3">上墙</li>
+								</ol>
+																<ol class="ol3 ol_common tbox">
+									<li class="l1">19</li>
+									<li class="l2"><span><img src="/static/wxgjcn//hs-net-img.oss-cn-hangzhou.aliyuncs.com/1071/Talking/1071SpQAzCd6qasBESAA4J565MqE64D3krIE5OnP_shN_TDwXYNyhg2JVsFC0q0QhjfI.jpg"  /></span></li>
+									<li class="l3">跑马</li>
+								</ol>
+																<ol class="ol3 ol_common tbox">
+									<li class="l1">20</li>
+									<li class="l2"><span><img src="/static/wxgjcn//hs-net-img.oss-cn-hangzhou.aliyuncs.com/1071/Talking/1071YsN0C8kF-C_i_XJE9eCimO6i9MXs-NY0vaxRZzopoBjiNE-kBQAbaV8OSO_LUslc.jpg"  /></span></li>
+									<li class="l3">哈哈</li>
+								</ol>
+																<ol class="ol3 ol_common tbox">
+									<li class="l1">21</li>
+									<li class="l2"><span><img src="/static/wxgjcn//hs-net-img.oss-cn-hangzhou.aliyuncs.com/1071/Talking/107131FTYxLrspGPeCVTgHJWSz67GOIWN1FpP9QHzIp-_4S7FKYAtWELUeo4IFvim4l5.jpg.bmp"  /></span></li>
+									<li class="l3">跑马</li>
+								</ol>
+																<ol class="ol3 ol_common tbox">
+									<li class="l1">22</li>
+									<li class="l2"><span><img src="/static/wxgjcn//hs-net-img.oss-cn-hangzhou.aliyuncs.com/1071/Talking/107133LuPvTJyrDPKPQUT9WCdbmI7aB9Qj4DKfDYpjEAaHPgDbDW6-_sAdQ7mpDESUtH.jpg"  /></span></li>
+									<li class="l3">哥哥</li>
+								</ol>
+																<ol class="ol3 ol_common tbox">
+									<li class="l1">23</li>
+									<li class="l2"><span><img src="/static/wxgjcn//hs-net-img.oss-cn-hangzhou.aliyuncs.com/1071/Talking/1071usNC2RWHyyluke4h3vUyHRb_7vTp1DLyLzD9srbeuVFJKwHapGK-atw6PJm9JRVw.jpg"  /></span></li>
+									<li class="l3">张小兵</li>
+								</ol>
+																<ol class="ol3 ol_common tbox">
+									<li class="l1">24</li>
+									<li class="l2"><span><img src="/static/wxgjcn//hs-net-img.oss-cn-hangzhou.aliyuncs.com/1071/Talking/1071i5M1Y1ZL3UtHLQvzHRJqg_UWqBR2ub0U6Z4Y6HRX6TDFI1zhD5wKJQo-FrAeTCit.jpg"  /></span></li>
+									<li class="l3">郑雄</li>
+								</ol>
+																<ol class="ol3 ol_common tbox">
+									<li class="l1">25</li>
+									<li class="l2"><span><img src="/static/wxgjcn//hs-net-img.oss-cn-hangzhou.aliyuncs.com/1071/Talking/1071iRZB8VdsMRfuQ-1NX3y06qwO9os1t8MVUPovzJl4FM9TgVP4GG_x8NlSNCucuowU.jpg"  /></span></li>
+									<li class="l3">晴天</li>
+								</ol>
+																<ol class="ol3 ol_common tbox">
+									<li class="l1">26</li>
+									<li class="l2"><span><img src="/static/wxgjcn//hs-net-img.oss-cn-hangzhou.aliyuncs.com/1071/Talking/1071PtKXbRo0LgQl_At9_6iKX1g5XWvb6Itci4JvCNEVPJ7E1Cgfd9W9wwAIFlzo-ZIW.jpg"  /></span></li>
+									<li class="l3">小娅</li>
+								</ol>
+																<ol class="ol3 ol_common tbox">
+									<li class="l1">27</li>
+									<li class="l2"><span><img src="/static/wxgjcn//hs-net-img.oss-cn-hangzhou.aliyuncs.com/1071/Talking/10711OmtEVlEVZjmHGVeT6yP-UpVmwOrqfts4jnYArFUKtALpVFiSA6I4VMMiZqtvXAH.jpg.png"  /></span></li>
+									<li class="l3">海天盛筵2014总代</li>
+								</ol>
+																<ol class="ol3 ol_common tbox">
+									<li class="l1">28</li>
+									<li class="l2"><span><img src="/static/wxgjcn//hs-net-img.oss-cn-hangzhou.aliyuncs.com/1071/Talking/1071G40pdtU9xcFquDyRjE6zVTPNJy8_q6WQT73kdTinNOS1PX7DFDa9Y7l3MPcckyyL.jpg"  /></span></li>
+									<li class="l3">张岩</li>
+								</ol>
+																<ol class="ol3 ol_common tbox">
+									<li class="l1">29</li>
+									<li class="l2"><span><img src="/static/wxgjcn//hs-net-img.oss-cn-hangzhou.aliyuncs.com/1071/Talking/10712iRorhYX9gKiZgQk2aN04YnJ9mWwi38GqjnqOcvvd0hS5wEeAiNS4o1j73adkFjT.jpg"  /></span></li>
+									<li class="l3">老艾</li>
+								</ol>
+																<ol class="ol3 ol_common tbox">
+									<li class="l1">30</li>
+									<li class="l2"><span><img src="/static/wxgjcn//hs-net-img.oss-cn-hangzhou.aliyuncs.com/1071/Talking/1071Demra-kI7iw7f0ho2zmvCEaXQ8KG4JhnBy6cGCCo9uhGrBO34LviO4bZTEGjIWDL.jpg"  /></span></li>
+									<li class="l3">卢</li>
+								</ol>
+																<ol class="ol3 ol_common tbox">
+									<li class="l1">31</li>
+									<li class="l2"><span><img src="/static/wxgjcn//hs-net-img.oss-cn-hangzhou.aliyuncs.com/1071/Talking/1071zZ3__P-om5ILMRMIOWY0qhwtPA7mFuW7fZayJB_acMyZyEF7Ns1J48zgfppYlHcC.jpg"  /></span></li>
+									<li class="l3">冯超</li>
+								</ol>
+															</div>
+						</ul>
+					</div>
+				</article>
+			</section>
+		</div>
+	</div>
+	<!------------------>
+	<div id="prize" class="window_prize">
+		<ul class="header">
+			<li class="fl"><h5 class="h5">抽奖奖项</h5></li>
+			<li class="fr">
+				<span class="close" onclick="$('#prize').removeClass('on');" >&nbsp;</span>
+			</li>
+		</ul>
+		<div class="hbody">
+			<table>
+				<tr>					<td>
+						<span><img src="/static/wxgjcn//img.weimob.com/static/1c/38/3c/image/20131212/20131212223117_45631.png"  /></span>
+						<div><label>特等奖 盛世源码—国内优秀的微信公众服务平台增强版体验1个月【演示】</label></div>
+					</td>
+									<td>
+						<span><img src="/static/wxgjcn//img.weimob.com/static/1c/38/3c/image/20131212/20131212223117_45631.png"  /></span>
+						<div><label>一等奖 盛世源码—国内优秀的微信公众服务平台增强版体验1个月【演示】</label></div>
+					</td>
+									<td>
+						<span><img src="/static/wxgjcn//img.weimob.com/static/1c/38/3c/image/20131212/20131212223117_45631.png"  /></span>
+						<div><label>二等奖 盛世源码—国内优秀的微信公众服务平台增强版体验1个月【演示】</label></div>
+					</td>
+				</tr><tr>					<td>
+						<span><img src="/static/wxgjcn//img.weimob.com/static/1c/38/3c/image/20131212/20131212223117_45631.png"  /></span>
+						<div><label>三等奖 盛世源码—国内优秀的微信公众服务平台增强版体验1个月【演示】</label></div>
+					</td>
+									<td>
+						<span><img src="/static/wxgjcn//img.weimob.com/static/1c/38/3c/image/20131212/20131212223117_45631.png"  /></span>
+						<div><label>四等奖 盛世源码—国内优秀的微信公众服务平台增强版体验1个月【演示】</label></div>
+					</td>
+									<td>
+						<span><img src="/static/wxgjcn//img.weimob.com/static/1c/38/3c/image/20131212/20131212223117_45631.png"  /></span>
+						<div><label>五等奖 盛世源码—国内优秀的微信公众服务平台增强版体验1个月【演示】</label></div>
+					</td>
+				</tr><tr>					<td>
+						<span><img src="/static/wxgjcn//img.weimob.com/static/1c/38/3c/image/20131212/20131212223117_45631.png"  /></span>
+						<div><label>六等奖 盛世源码—国内优秀的微信公众服务平台增强版体验1个月【演示】</label></div>
+					</td>
+									<td>
+						<span><img src="/static/wxgjcn//img.weimob.com/static/1c/38/3c/image/20131212/20131212223117_45631.png"  /></span>
+						<div><label>七等奖 盛世源码—国内优秀的微信公众服务平台增强版体验1个月【演示】</label></div>
+					</td>
+									<td>
+						<span><img src="/static/wxgjcn//img.weimob.com/static/1c/38/3c/image/20131212/20131212223117_45631.png"  /></span>
+						<div><label>八等奖 盛世源码—国内优秀的微信公众服务平台增强版体验1个月【演示】</label></div>
+					</td>
+				</tr><tr>					<td>
+						<span><img src="/static/wxgjcn//img.weimob.com/static/1c/38/3c/image/20131212/20131212223117_45631.png"  /></span>
+						<div><label>九等奖 盛世源码—国内优秀的微信公众服务平台增强版体验1个月【演示】</label></div>
+					</td>
+									<td>
+						<span><img src="/static/wxgjcn//img.weimob.com/static/1c/38/3c/image/20131212/20131212223117_45631.png"  /></span>
+						<div><label>十等奖 盛世源码—国内优秀的微信公众服务平台增强版体验1个月【演示】</label></div>
+					</td>
+									<td>
+						<span><img src="/static/wxgjcn//img.weimob.com/static/1c/38/3c/image/20131212/20131212223117_45631.png"  /></span>
+						<div><label>阳光普照奖 盛世源码—国内优秀的微信公众服务平台增强版体验1个月【演示】</label></div>
+					</td>
+				</tr><tr>					<td>
+						<span><img src="/static/wxgjcn//img.weimob.com/static/1c/38/3c/image/20131212/20131212223117_45631.png"  /></span>
+						<div><label>阳光普照奖 盛世源码—国内优秀的微信公众服务平台增强版体验1个月【演示】</label></div>
+					</td>
+									<td>
+						<span><img src="/static/wxgjcn//img.weimob.com/static/1c/38/3c/image/20131212/20131212223117_45631.png"  /></span>
+						<div><label>阳光普照奖 盛世源码—国内优秀的微信公众服务平台增强版体验1个月【演示】</label></div>
+					</td>
+									<td>
+						<span><img src="/static/wxgjcn//img.weimob.com/static/1c/38/3c/image/20131212/20131212223117_45631.png"  /></span>
+						<div><label>阳光普照奖 盛世源码—国内优秀的微信公众服务平台增强版体验1个月【演示】</label></div>
+					</td>
+				</tr><tr>					<td>
+						<span><img src="/static/wxgjcn//img.weimob.com/static/1c/38/3c/image/20131212/20131212223117_45631.png"  /></span>
+						<div><label>阳光普照奖 盛世源码—国内优秀的微信公众服务平台增强版体验1个月【演示】</label></div>
+					</td>
+									<td>
+						<span><img src="/static/wxgjcn//img.weimob.com/static/1c/38/3c/image/20131212/20131212223117_45631.png"  /></span>
+						<div><label>阳光普照奖 盛世源码—国内优秀的微信公众服务平台增强版体验1个月【演示】</label></div>
+					</td>
+									<td>
+						<span><img src="/static/wxgjcn//img.weimob.com/static/1c/38/3c/image/20131212/20131212223117_45631.png"  /></span>
+						<div><label>阳光普照奖 盛世源码—国内优秀的微信公众服务平台增强版体验1个月【演示】</label></div>
+					</td>
+				</tr><tr>					<td>
+						<span><img src="/static/wxgjcn//img.weimob.com/static/1c/38/3c/image/20131212/20131212223117_45631.png"  /></span>
+						<div><label>阳光普照奖 盛世源码—国内优秀的微信公众服务平台增强版体验1个月【演示】</label></div>
+					</td>
+									<td>
+						<span><img src="/static/wxgjcn//img.weimob.com/static/1c/38/3c/image/20131212/20131212223117_45631.png"  /></span>
+						<div><label>阳光普照奖 盛世源码—国内优秀的微信公众服务平台增强版体验1个月【演示】</label></div>
+					</td>
+							</table>
+		</div>
+	</div>
+</body>
+</html></body>
+<script type="text/javascript">
+(function() {
+	var wtj = document.createElement('script'); wtj.type = 'text/javascript'; wtj.async = true;
+	wtj.src = 'http://tj.weimob.com/wtj.js?url=' + encodeURIComponent(location.href);
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wtj, s);
+})();
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd80741dd59de91e1846b2add2c0ad2a2' type='text/javascript'%3E%3C/script%3E"));
+function weimobAfterShare(shareFromWechatId,sendFriendLink,shareToPlatform){
+	var wmShare = document.createElement('script'); wmShare.type = 'text/javascript'; wmShare.async = true;
+    wmShare.src = 'http://' + getShareApiRouter() + '/api-share.js?fromWechatId=' + shareFromWechatId + '&shareToPlatform=';
+	wmShare.src += shareToPlatform + '&pid=1071&sendFriendLink=' + encodeURIComponent(sendFriendLink);
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wmShare, s);
+}
+function getShareApiRouter(){
+	var str_domain = location.href.split('/',4)[2];
+	var tj_domain = '127.0.0.1';
+	switch(str_domain){
+		case 'http://www.weimob.com/Webwall/www.weimob.com':
+			tj_domain = 'http://www.weimob.com/Webwall/tj.weimob.com';
+			break;
+		case 'http://www.weimob.com/Webwall/112.124.28.82':
+			tj_domain = '112.124.28.82:400';
+			break;
+	}
+	return tj_domain;
+}
+if(typeof(window.shareData) == 'undefined'){
+	window.shareData = {
+				"imgUrl": "", 
+		"timeLineLink": "luck-id=3693&bid=5&pid=1071&v=64af32560f3dca5391ace4768b675391.htm"/*tpa=http://www.weimob.com/Webwall/luck?id=3693&bid=5&pid=1071&v=64af32560f3dca5391ace4768b675391*/,
+		"sendFriendLink": "luck-id=3693&bid=5&pid=1071&v=64af32560f3dca5391ace4768b675391.htm"/*tpa=http://www.weimob.com/Webwall/luck?id=3693&bid=5&pid=1071&v=64af32560f3dca5391ace4768b675391*/,
+		"weiboLink": "luck-id=3693&bid=5&pid=1071&v=64af32560f3dca5391ace4768b675391.htm"/*tpa=http://www.weimob.com/Webwall/luck?id=3693&bid=5&pid=1071&v=64af32560f3dca5391ace4768b675391*/,
+		"tTitle": document.title,
+		"tContent": document.title,
+		"fTitle": document.title,
+		"fContent": document.title,
+		"wContent": document.title
+	}
+}
+document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {	 
+	// 发送给好友
+	WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+		WeixinJSBridge.invoke('sendAppMessage', { 
+			"img_url": window.shareData.imgUrl,
+			"img_width": "640",
+			"img_height": "640",
+			"link": window.shareData.sendFriendLink,
+			"desc": window.shareData.fContent,
+			"title": window.shareData.fTitle
+		}, function (res) {
+			weimobAfterShare("",window.shareData.sendFriendLink,'appmessage');
+			_report('send_msg', res.err_msg);
+		})
+	});
+
+	// 分享到朋友圈
+	WeixinJSBridge.on('menu:share:timeline', function (argv) {
+		WeixinJSBridge.invoke('shareTimeline', {
+			"img_url": window.shareData.imgUrl,
+			"img_width": "640",
+			"img_height": "640",
+			"link": window.shareData.timeLineLink,
+			"desc": window.shareData.tContent,
+			"title": window.shareData.tTitle
+		}, function (res) {
+							//alert("android-share-test-000001",10000);
+						//weimobAfterShare("",window.shareData.timeLineLink,'timeline');
+			_report('timeline', res.err_msg);
+		});
+	});
+
+	// 分享到微博
+	WeixinJSBridge.on('menu:share:weibo', function (argv) {
+		WeixinJSBridge.invoke('shareWeibo', {
+			"content": window.shareData.wContent,
+			"url": window.shareData.weiboLink
+		}, function (res) {
+			weimobAfterShare("",window.shareData.weiboLink,'weibo');
+			_report('weibo', res.err_msg);
+		});
+	});
+}, false);
+</script>
+</html>

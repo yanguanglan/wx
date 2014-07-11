@@ -1,0 +1,9 @@
+
+<!--tab start-->
+<div class="tab">
+<ul>
+<li class="<if condition="ACTION_NAME EQ 'index' and $isBranch neq 1">current</if> tabli" id="tab0"><a href="{ZF::U('Company/index',array('token'=>$token))}">总店信息</a></li>
+<li class="<if condition="ACTION_NAME EQ 'branches' OR $isBranch eq 1"> current</if> tabli" id="tab2"><a href="{ZF::U('Company/branches',array('token'=>$token,'isBranch'=>1))}">分店信息</a></li>
+</ul>
+</div>
+<!--tab end-->

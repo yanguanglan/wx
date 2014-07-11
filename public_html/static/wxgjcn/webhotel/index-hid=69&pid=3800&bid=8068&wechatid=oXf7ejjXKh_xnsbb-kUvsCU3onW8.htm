@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/webhotel/main.css-2014-03-07-1.css"  media="all" />
+<link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/webhotel/dialog.css-2014-03-07-1.css"  media="all" />
+<script type="text/javascript" src="/static/wxgjcn/src/webhotel/lib/jquery_min.js-2014-03-07-1.js" ></script>
+<script type="text/javascript" src="/static/wxgjcn/src/webhotel/js/main.js-2014-03-07-1.js" ></script>
+<script type="text/javascript" src="/static/wxgjcn/src/webhotel/lib/iscroll.js-2014-03-07-1.js" ></script>
+<title>微酒店</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+		<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+        <meta name="Keywords" content="微信营销、微信代运营、微信定制开发、微信托管、微网站、微商城、微营销" />
+        <meta name="Description" content="盛世源码—国内优秀的微信公众服务平台，国内最大的微信公众智能服务平台，盛世源码—国内优秀的微信公众服务平台八大微体系：微菜单、微官网、微会员、微活动、微商城、微推送、微服务、微统计，企业微营销必备。" />
+        <!-- Mobile Devices Support @begin -->
+            <meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+            <meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+            <meta content="no-cache" http-equiv="pragma">
+            <meta content="0" http-equiv="expires">
+            <meta content="telephone=no, address=no" name="format-detection">
+            <meta name="apple-mobile-web-app-capable" content="yes" /> <!-- apple devices fullscreen -->
+            <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <!-- Mobile Devices Support @end -->
+        <link rel="shortcut icon" href="httpimg/favicon.ico" />
+        <style>
+            img{max-width:100%!important;}
+        </style>
+    </head>
+    <body onselectstart="return true;" ondragstart="return false;">
+        	<style>
+		#scroll_pic_view_ul img{
+			max-height:180px;
+		}
+	</style>
+	<script>
+
+			function closeRoomView(thi, evt, show){
+				var view_detail = document.getElementById("view_detail");
+				if(show){
+					view_detail.classList.add("on");
+				}else{
+					view_detail.classList.remove("on");
+				}
+			}
+			
+			function bookRoom(thi, evt){
+				var href = thi.href;
+				location.href = href;
+				closeRoomView(null, null, false);
+				return false;
+			}
+
+
+			var bookObj = {
+	 			startDate: "2014/04/03"
+	 		}
+	 		var curObj = {
+		 		crosNextMonth: 0,
+		 		crosPrevMonth: 0,
+		 		crosPrevDay:0,
+		 		crosMonth: 0
+		 	}
+			//eg: 18日0:00-5:00入住，入住日期请选择17日
+	 		var validPrevDay = (function(){
+	 			var obj = {
+	 				tipHTML : null,
+	 				si:null
+	 			}
+	 			var now = new Date();
+				var nowDate = new Date(now.getFullYear() + "/" + (now.getMonth()+1) + "/" + now.getDate()).valueOf();
+				if((nowDate == new Date(bookObj.startDate).valueOf() ) && (now.getHours()<= 5) ){
+					curObj.crosPrevDay = -1;//allow select prev day
+					obj.si = nowDate;
+					obj.tipHTML = '<section><p class="friend_tip friend_tip1">'+now.getDate()+'日0:00-5:00入住，入住日期请选择'+(now.getDate()-1)+'日</p></section>';
+					if(1 == now.getDate()){
+						var prevDate = new Date(now.getFullYear(), now.getMonth(), 0);
+						obj.tipHTML = '<section><p class="friend_tip friend_tip1">'+now.getDate()+'日0:00-5:00入住，入住日期请选择'+(prevDate.getMonth()+1)+"月"+(prevDate.getDate())+'日</p></section>';
+						//if(0 == now.getDay()){
+							curObj.crosPrevMonth = -1;
+						//}
+					}
+				}
+				return obj;
+	 		})();
+		</script>
+		<div id="container" class="container hotel_index">
+			<header></header>
+			<div class="body">
+				<section id="scroll_pic_view" class="scroll_pic_view">
+					<div id="scroll_pic_view_div">
+						<ul id="scroll_pic_view_ul">
+													</ul>
+					</div>
+					<div>
+						<ol id="scroll_pic_nav" class="scroll_pic_nav">
+							<script>
+							 	(function(d, $){
+							 		var scrollPicView = d.getElementById("scroll_pic_view"),
+								 	scrollPicViewDiv = d.getElementById("scroll_pic_view_div"),
+						            lis = scrollPicViewDiv.querySelectorAll("li"),
+						            w = scrollPicView.offsetWidth,
+						            len = lis.length;
+						            for(var i=0; i<len; i++){
+						            	lis[i].style.width = w+"px";
+						            	if(i == len-1){
+						            		scrollPicViewDiv.style.width = w * len + "px";
+						            	}
+						            }
+
+						            var scroll_pic_view = new iScroll('scroll_pic_view', { 
+						            	snap: true,
+						                momentum: false,
+						                hScrollbar: false,
+						                useTransition: true,
+						                onScrollEnd: function() {
+						                	$("#scroll_pic_nav li").removeClass("on").eq(this.currPageX).addClass("on");
+						                }
+						            });
+						            //
+								 	var nav_lis = new Array(lis.length);
+								 	nav_lis[0] = '<li class="on"></li>';
+								 	d.write(nav_lis.join('<li></li>') );
+							 	})(document, $);
+					        </script>
+						</ol>
+					</div>
+				</section>
+				<section>
+					<ul class="list_detail">
+						<li>
+							<a   class="tbox arrow">
+								<div>
+									<span class="icons icons_addr">&nbsp;</span>
+								</div>
+								<div>
+									<label></label>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="tel:" class="tbox arrow">
+								<div>
+									<span class="icons icons_tel">&nbsp;</span>
+								</div>
+								<div>
+									<label></label>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a   class="tbox arrow room_config">
+								<div style="width:100%;" class="icons2_2">
+																																																																																									</div>
+								<div>
+									<label class="pre block" >设施详情</label>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</section>
+				<script type="text/javascript">
+					if(validPrevDay.si){
+						document.write(validPrevDay.tipHTML);
+					}
+				</script>
+				<section>
+					<header>
+						<ul class="common_header header1 tbox" onclick="location.href = 'http://www.weimob.com/Webhotel/selectdate?pid=3800&wechatid=oXf7ejjXKh_xnsbb-kUvsCU3onW8&hid=69';">
+							<li>
+								<label>入住04-03</label>
+								<label>离店04-04</label>
+								<label>1晚</label>
+							</li>
+							<li>
+								<a href="javascript:;" class="icons icons_edit">&nbsp;</a>
+							</li>
+						</ul>
+					</header>
+					<ul class="list_room">
+												<li>
+							<a   target="view_detail" onclick="closeRoomView(this, event, true);" class="tbox arrow">
+								<div>
+									<span class="wimg">
+										<img src="/static/wxgjcn//img.weimob.com/static/89/2a/2d/image/20130918/20130918091727_54156.jpg"  />
+									</span>
+								</div>
+								<div>
+									<label class="l1">时尚大床房</label>
+									<label class="l2">￥460.00</label>
+									<label class="l3">请点击“查看房间详情”</label>
+								</div>
+								<div>
+
+								<input type="button" class="btn_state state1" value="预定" onclick="location.href='http://www.weimob.com/Webhotel/Book?pid=3800&wechatid=oXf7ejjXKh_xnsbb-kUvsCU3onW8&rid=54'; event.stopPropagation();" />
+								 
+								</div>
+							</a>
+						</li>
+												<li>
+							<a   target="view_detail" onclick="closeRoomView(this, event, true);" class="tbox arrow">
+								<div>
+									<span class="wimg">
+										<img src="/static/wxgjcn//img.weimob.com/static/89/2a/2d/image/20130918/20130918093307_13357.jpg"  />
+									</span>
+								</div>
+								<div>
+									<label class="l1">全球标准品质双人房</label>
+									<label class="l2">￥580.00</label>
+									<label class="l3">请点击“查看房间详情”</label>
+								</div>
+								<div>
+
+								<input type="button" class="btn_state state1" value="预定" onclick="location.href='http://www.weimob.com/Webhotel/Book?pid=3800&wechatid=oXf7ejjXKh_xnsbb-kUvsCU3onW8&rid=59'; event.stopPropagation();" />
+								 
+								</div>
+							</a>
+						</li>
+												<li>
+							<a   target="view_detail" onclick="closeRoomView(this, event, true);" class="tbox arrow">
+								<div>
+									<span class="wimg">
+										<img src="/static/wxgjcn//img.weimob.com/static/89/2a/2d/image/20130918/20130918094229_66206.jpg"  />
+									</span>
+								</div>
+								<div>
+									<label class="l1">全球品质标准大床房</label>
+									<label class="l2">￥580.00</label>
+									<label class="l3">请点击“查看房间详情”</label>
+								</div>
+								<div>
+
+								<input type="button" class="btn_state state1" value="预定" onclick="location.href='http://www.weimob.com/Webhotel/Book?pid=3800&wechatid=oXf7ejjXKh_xnsbb-kUvsCU3onW8&rid=60'; event.stopPropagation();" />
+								 
+								</div>
+							</a>
+						</li>
+												<li>
+							<a   target="view_detail" onclick="closeRoomView(this, event, true);" class="tbox arrow">
+								<div>
+									<span class="wimg">
+										<img src="/static/wxgjcn//img.weimob.com/static/89/2a/2d/image/20130918/20130918094525_94860.jpg"  />
+									</span>
+								</div>
+								<div>
+									<label class="l1">国际商务房</label>
+									<label class="l2">￥650.00</label>
+									<label class="l3">请点击“查看房间详情”</label>
+								</div>
+								<div>
+
+								<input type="button" class="btn_state state1" value="预定" onclick="location.href='http://www.weimob.com/Webhotel/Book?pid=3800&wechatid=oXf7ejjXKh_xnsbb-kUvsCU3onW8&rid=58'; event.stopPropagation();" />
+								 
+								</div>
+							</a>
+						</li>
+												<li>
+							<a   target="view_detail" onclick="closeRoomView(this, event, true);" class="tbox arrow">
+								<div>
+									<span class="wimg">
+										<img src="/static/wxgjcn//img.weimob.com/static/89/2a/2d/image/20130918/20130918095205_99995.jpg"  />
+									</span>
+								</div>
+								<div>
+									<label class="l1">财富套房</label>
+									<label class="l2">￥980.00</label>
+									<label class="l3">请点击“查看房间详情”</label>
+								</div>
+								<div>
+
+								<input type="button" class="btn_state state1" value="预定" onclick="location.href='http://www.weimob.com/Webhotel/Book?pid=3800&wechatid=oXf7ejjXKh_xnsbb-kUvsCU3onW8&rid=62'; event.stopPropagation();" />
+								 
+								</div>
+							</a>
+						</li>
+												<li>
+							<a   target="view_detail" onclick="closeRoomView(this, event, true);" class="tbox arrow">
+								<div>
+									<span class="wimg">
+										<img src="/static/wxgjcn//img.weimob.com/static/89/2a/2d/image/20130918/20130918094932_67935.jpg"  />
+									</span>
+								</div>
+								<div>
+									<label class="l1">国际商务套房</label>
+									<label class="l2">￥1480.00</label>
+									<label class="l3">请点击“查看房间详情”</label>
+								</div>
+								<div>
+
+								<input type="button" class="btn_state state1" value="预定" onclick="location.href='http://www.weimob.com/Webhotel/Book?pid=3800&wechatid=oXf7ejjXKh_xnsbb-kUvsCU3onW8&rid=61'; event.stopPropagation();" />
+								 
+								</div>
+							</a>
+						</li>
+												<li>
+							<a   target="view_detail" onclick="closeRoomView(this, event, true);" class="tbox arrow">
+								<div>
+									<span class="wimg">
+										<img src="/static/wxgjcn//img.weimob.com/static/89/2a/2d/image/20130918/20130918095508_79402.jpg"  />
+									</span>
+								</div>
+								<div>
+									<label class="l1">国际大使套房</label>
+									<label class="l2">￥2900.00</label>
+									<label class="l3">请点击“查看房间详情”</label>
+								</div>
+								<div>
+
+								<input type="button" class="btn_state state1" value="预定" onclick="location.href='http://www.weimob.com/Webhotel/Book?pid=3800&wechatid=oXf7ejjXKh_xnsbb-kUvsCU3onW8&rid=63'; event.stopPropagation();" />
+								 
+								</div>
+							</a>
+						</li>
+												
+													
+						<ol class="showAll" onclick="this.parentNode.classList.toggle('on');">
+							<label class="pre slideDown">展开全部房型</label>
+							<label class="pre slideUp">收  起</label>
+						</ol>
+					</ul>
+				</section>
+				<section class="hotel_desc">
+					<header>
+						<h5><span class="icons icons_document">&nbsp;</span>订房说明</h5>
+					</header>
+					<article>
+											</article>
+				</section>
+			</div>
+			<footer>
+				<div class="copy"><a  >(c)</a></div>
+				<section class="nav_footer">
+					<ul class="tbox">
+						<li>
+							<a   class="tbox arrow">
+								<div style="width:100%;"><label>我的订单</label></div>
+								<div class="pre pr_10">
+																	</div>
+							</a>
+						</li>
+					</ul>
+				</section>
+			</footer>
+		</div>
+	</body>
+	<iframe id="view_detail" class="view_detail" src=""></iframe>
+	<div class="view_detail_cover" ontouchmove="return false;"></div>
+	<script>
+		window.scrollTo(0,0);
+	</script>
+        		<div mark="stat_code" style="width:0px; height:0px; display:none;">
+					</div>
+	</body>
+		<script type="text/javascript">
+(function() {
+	var wtj = document.createElement('script'); wtj.type = 'text/javascript'; wtj.async = true;
+	wtj.src = 'http://tj.weimob.com/wtj.js?url=' + encodeURIComponent(location.href);
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wtj, s);
+})();
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd80741dd59de91e1846b2add2c0ad2a2' type='text/javascript'%3E%3C/script%3E"));
+function weimobAfterShare(shareFromWechatId,sendFriendLink,shareToPlatform){
+	var wmShare = document.createElement('script'); wmShare.type = 'text/javascript'; wmShare.async = true;
+    wmShare.src = 'http://' + getShareApiRouter() + '/api-share.js?fromWechatId=' + shareFromWechatId + '&shareToPlatform=';
+	wmShare.src += shareToPlatform + '&pid=3800&sendFriendLink=' + encodeURIComponent(sendFriendLink);
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wmShare, s);
+}
+function getShareApiRouter(){
+	var str_domain = location.href.split('/',4)[2];
+	var tj_domain = '127.0.0.1';
+	switch(str_domain){
+		case 'http://www.weimob.com/webhotel/www.weimob.com':
+			tj_domain = 'http://www.weimob.com/webhotel/tj.weimob.com';
+			break;
+		case 'http://www.weimob.com/webhotel/112.124.28.82':
+			tj_domain = '112.124.28.82:400';
+			break;
+	}
+	return tj_domain;
+}
+if(typeof(window.shareData) == 'undefined'){
+	window.shareData = {
+				"imgUrl": "", 
+		"timeLineLink": "http://www.weimob.com/webhotel/index?hid=69&pid=3800&bid=8068&wechatid=fromUsername",
+		"sendFriendLink": "http://www.weimob.com/webhotel/index?hid=69&pid=3800&bid=8068&wechatid=fromUsername",
+		"weiboLink": "http://www.weimob.com/webhotel/index?hid=69&pid=3800&bid=8068&wechatid=fromUsername",
+		"tTitle": document.title,
+		"tContent": document.title,
+		"fTitle": document.title,
+		"fContent": document.title,
+		"wContent": document.title
+	}
+}
+document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {	 
+	// 发送给好友
+	WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+		WeixinJSBridge.invoke('sendAppMessage', { 
+			"img_url": window.shareData.imgUrl,
+			"img_width": "640",
+			"img_height": "640",
+			"link": window.shareData.sendFriendLink,
+			"desc": window.shareData.fContent,
+			"title": window.shareData.fTitle
+		}, function (res) {
+			weimobAfterShare("oXf7ejjXKh_xnsbb-kUvsCU3onW8",window.shareData.sendFriendLink,'appmessage');
+			_report('send_msg', res.err_msg);
+		})
+	});
+
+	// 分享到朋友圈
+	WeixinJSBridge.on('menu:share:timeline', function (argv) {
+		WeixinJSBridge.invoke('shareTimeline', {
+			"img_url": window.shareData.imgUrl,
+			"img_width": "640",
+			"img_height": "640",
+			"link": window.shareData.timeLineLink,
+			"desc": window.shareData.tContent,
+			"title": window.shareData.tTitle
+		}, function (res) {
+						//weimobAfterShare("oXf7ejjXKh_xnsbb-kUvsCU3onW8",window.shareData.timeLineLink,'timeline');
+			_report('timeline', res.err_msg);
+		});
+	});
+
+	// 分享到微博
+	WeixinJSBridge.on('menu:share:weibo', function (argv) {
+		WeixinJSBridge.invoke('shareWeibo', {
+			"content": window.shareData.wContent,
+			"url": window.shareData.weiboLink
+		}, function (res) {
+			weimobAfterShare("oXf7ejjXKh_xnsbb-kUvsCU3onW8",window.shareData.weiboLink,'weibo');
+			_report('weibo', res.err_msg);
+		});
+	});
+}, false);
+</script>
+<script type="text/javascript" src="/static/wxgjcn//kf.weimob.com/js/ChatFloat.js" ></script>
+<script type="text/javascript">
+var str_domain = location.href.split('/',4)[2];
+var boolIsTest = true;
+if(str_domain == 'http://www.weimob.com/webhotel/www.weimob.com'){
+	boolIsTest = false;
+}
+new ChatFloat({
+        AId: '3800',
+        openid: "oXf7ejjXKh_xnsbb-kUvsCU3onW8",
+		top:150,
+		right:0,
+		IsTest:boolIsTest
+});
+</script>
+</html>

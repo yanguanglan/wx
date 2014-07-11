@@ -1,0 +1,87 @@
+<include file="Dining:header"/>
+<style type="text/css">
+/*.round .dandanb ul { border-top:1px solid #ddd;}
+.round .dandanb ul li{width:30%; height:36px; line-height:36px; float:left; text-indent:25px;}*/
+.round .dandanb .kjj { border-top:1px solid #ddd;}
+.round .dandanb .kjj span {width:30%; height:30px; line-height:32px; float:left; text-indent:25px; padding:0;margin:0;}
+.round .dandanb .kjj span.tell{width:40%; background:url({ZF::RES}/weidingcan/index/images/card/themes/1/icon_order.png) left 5px no-repeat; background-size:24px;}
+.round .dandanb .kjj span.reserve{background:url({ZF::RES}/weidingcan/index/images/card/themes/1/icon_reserve.png) left 5px no-repeat; background-size:24px;}
+.round .dandanb .kjj span.lbs{background:url({ZF::RES}/weidingcan/index/images/card/themes/1/icon_lbs.png) left 5px no-repeat; background-size:24px;}
+.round .dandanb .kjj span a{color:#36B35F; text-decoration:none;}
+.round .dandanb.sx span{display:inline-block;}
+.dandanb span{ margin:0.2em 0.5em;text-shadow: 0 0 #FFFFFF; line-height:1.2em}
+.round .dandanb span.flactive{border-radius:5px;background-color: #1CC200; color:#fff;padding:0.1em 0.8em 0;}
+.round .dandanb span.qyactive{border-radius:5px;background-color: #1CC200; color:#fff;padding:0.1em 0.8em 0;}
+</style>
+</head>
+<body id="diancaiindex">
+<div class="cardexplain"> 
+<!--热门商家-->
+<ul class="round">
+<li class="title"><span class="none smallspan">店铺信息({ZF:$StoreCount}个)</span></li>
+<li class="dandanb sx fl"><span class="flactive" data-cate="all">全部分类</span><volist name="category" id='fl'><span data-cate="{ZF:$fl.id}">{ZF:$fl.name}</span></volist><div class="clr"></div></li>
+<li class="dandanb sx qy"><span class="qyactive" data-quyu="all">全部区域</span><volist name="storearea" id='qy'><span data-quyu="{ZF:$qy.id}">{ZF:$qy.name}</span></volist><div class="clr"></div></li>
+</ul>
+<ul class="round">
+<volist id="b" name="stores">
+<li class="dandanb dd data-cate{ZF:$b.category} data-quyu{ZF:$b.areaid}">
+<if condition="$dtype eq 3">
+<a href="{ZF::U('Dining/tables',array('token'=>$token,'wecha_id'=>$wecha_id,'storeid'=>$b['id'],'dtype'=>$dtype))}" data-quyu='{ZF:$b.areaid}' data-cate='{ZF:$b.category}'>
+<else />
+<a href="{ZF::U('Dining/cats',array('token'=>$token,'wecha_id'=>$wecha_id,'storeid'=>$b['id'],'dtype'=>$dtype))}"  data-quyu='{ZF:$b.areaid}' data-cate='{ZF:$b.category}'>
+</if>
+    <span class="none shangjia"><img src="{ZF:$b.logourl}"><h2>{ZF:$b.name}</h2>
+    <p>区域：{ZF:$b.scope}</p><p>起送价：￥{ZF:$b.money}</p>
+    <if condition="$b.status eq 1"><em class="ok">营业中</em><else/><em class="no">未营业</em></if></span>
+</a>
+    <div class="kjj">
+    <span class="tell"><a href="tel:{ZF:$b.tel}">电话预订</a></span>
+    <span class="reserve"><a href="{ZF::U('Dining/about',array('token'=>$_GET['token'],'wecha_id'=>$_GET['wecha_id'],'storeid'=>$b['id']))}">店铺信息</a></span>
+    <span class="lbs"><a href="http://api.map.baidu.com/marker?location={ZF:$b.latitude},{ZF:$b.longitude}&title={ZF:$b.name}&content={ZF:$b.address}&output=html">导航</a></span>
+    </div>
+<div class="clr"></div>
+</li>
+</volist>
+</ul>
+</div>
+<script type="text/javascript">	
+           $(".fl span").click(function(){				
+               $(".fl span").removeClass("flactive");
+                $(this).addClass("flactive");
+				var flid=$(this).attr('data-cate');
+				var qyid=$('.qyactive').attr('data-quyu');
+				listshow(flid,qyid);
+            });
+			 			
+			 $(".qy span").click(function(){
+               $(".qy span").removeClass("qyactive");
+                $(this).addClass("qyactive");
+				var qyid=$(this).attr('data-quyu');
+				var flid=$('.flactive').attr('data-cate')
+				listshow(flid,qyid);
+            });
+			function listshow(flid,qyid){
+				$("li.dd").hide();
+				if(qyid=='all'){
+					if(flid=='all'){
+						List='li.dd';
+					}else{
+						List='li.dd.data-cate'+flid;
+					}			
+				}else{
+					if(flid=='all'){
+						List='li.dd.data-quyu'+qyid;
+					}else{
+						List='li.dd.data-cate'+flid+'.data-quyu'+qyid;
+					}
+				}
+				$(List).show('slow');
+			}
+</script>
+<script type="text/javascript">
+document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+	WeixinJSBridge.call('hideToolbar');
+});
+</script>
+</body>
+</html>

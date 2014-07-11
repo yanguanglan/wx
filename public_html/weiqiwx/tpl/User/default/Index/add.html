@@ -1,0 +1,96 @@
+<include file="Index:header"/>
+<link rel="stylesheet" href="{ZF::STATICS}/kindeditor/themes/default/default.css" />
+<link rel="stylesheet" href="{ZF::STATICS}/kindeditor/plugins/code/prettify.css" />
+<script src="{ZF::STATICS}/kindeditor/kindeditor.js" type="text/javascript"></script>
+<script src="{ZF::STATICS}/kindeditor/lang/zh_CN.js" type="text/javascript"></script>
+<script src="{ZF::STATICS}/kindeditor/plugins/code/prettify.js" type="text/javascript"></script>
+
+<script src="{ZF::STATICS}/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="{ZF::STATICS}/artDialog/plugins/iframeTools.js"></script>
+<script src="{ZF::STATICS}/upyun.js"></script>
+<link rel="stylesheet" type="text/css" href="{ZF::RES}/css/cymain.css" />  
+<div class="content" style="" >
+<!--tab start-->
+<div class="tab">
+<ul>
+<li class='<if condition="(ACTION_NAME eq \'autobind_add\')">current </if> tabli' id="tab5"><a href="{ZF::U('Index/autobind_add')}">一键绑定</a></li>
+<li class='<if condition="(ACTION_NAME eq \'add\')">current </if> tabli' id="tab5"><a href="{ZF::U('Index/add')}">手动绑定</a></li>
+</ul>
+</div>
+<div class="cLineB"><h4>添加微信公众号</h4></div>
+<form method="post" action="{ZF::U('User/Index/insert')}" enctype="multipart/form-data">
+<div class="msgWrap">
+<table class="userinfoArea" border="0" cellspacing="0" cellpadding="0" width="100%">
+  <thead>
+    <tr>
+      <th><span class="red">*</span>公众号名称：</th>
+      <td><input type="text" required="" class="px" name="wxname" value="" tabindex="1" size="25">
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><span class="red">*</span>公众号原始id：</th>
+      <td><input type="text" required="" name="wxid" value="" onmouseup="this.value=this.value.replace('_430','')" class="px" tabindex="1" size="25">　<span class="red">请认真填写，错了不能修改。</span>比如：gh_123456</td>
+    </tr>
+    <tr>
+      <th><span class="red">*</span>微信号：</th>
+      <td><input type="text" required="" name="weixin" value="" class="px" tabindex="1" size="25">　比如：weiwin </td>
+    </tr>
+      <tr>
+<th>头像地址（url）:</th>
+<td><input class="px" name="headerpic" id="headerpic" value="{ZF:$info.headerpic}" size="60"> <a href="###" onclick="upyunPicUpload('headerpic',700,420,'{ZF:$info['token']}')" class="btnGray">上传</a> <a href="###" onclick="viewImg('picurl')">预览</a></td>
+</tr>
+     <tr style="display:none">
+      <th><span class="red">*</span>TOKEN</th>
+      <td><input type="text" name="token" value="{ZF:$tokenvalue}" class="px" tabindex="1" size="40">(填写你的公众号)例：wephoneweixin,请勿填写文,或者其它特殊字符，此处token和腾讯平台必须一致!</td>
+    </tr>
+    
+    <tr>
+      <th><span class="red">*</span>地区</th>
+      <td>
+      <input type="text" class="px" id="province" value="{ZF:$province}" name="province" tabindex="1" size="20"> 省  <input id="city" value="{ZF:$city}" type="text" name="city" class="px" tabindex="1" size="20"> 市
+   （此处关联公交等本地化查询）
+      </td>
+    </tr>
+    <tr style="display:none">
+      <th><span class="red">*</span>公众号邮箱：</th>
+      <td><input type="text" required="" class="px" tabindex="1" value="{ZF:$email}" name="qq" size="25"></td>
+    </tr>
+     <tr style="display:none">
+      <th><span class="red">*</span>粉丝数：</th>
+      <td><input type="text" required="" name="wxfans" value="0" class="px" tabindex="1" size="25"></td>
+    </tr>
+ 
+    <tr>
+      <th>类型：</th>
+      <td><select id="type" name="type">                  
+      <option value="1,情感">情感</option>
+      <option value="2,数码">数码</option>
+      <option value="3,娱乐">娱乐</option>
+      <option value="4,IT">IT</option>
+      <option value="5,数码">数码</option>
+      <option value="6,购物">购物</option>
+      <option value="7,生活">生活</option>
+      <option value="8,服务">服务</option>
+      </select></td>
+    </tr>
+  
+    <tr>
+      <th></th>
+      <td><button type="submit" class="btnGreen" id="saveSetting">保存</button></td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+</form>
+</div>
+
+<div class="clr"></div>
+</div>
+</div>
+</div>
+<!--底部-->
+</div>
+<include file="Public:footer"/>	

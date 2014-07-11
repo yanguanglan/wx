@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="uyan_auth" content="04a3f6938d" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="微信营销、微信代运营、微信定制开发、微信托管、微网站、微商城、微营销" name="Keywords">
+	<meta content="盛世源码—国内优秀的微信公众服务平台，国内最大的微信公众智能服务平台，盛世源码—国内优秀的微信公众服务平台八大微体系：微菜单、微官网、微会员、微活动、微商城、微推送、微服务、微统计，企业微营销必备。" name="Description">
+    <script src="/static/wxgjcn/src/html5.js" ></script>
+    <link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/bootstrap_min.css-2014-03-07-1.css"  media="all" />
+<link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/www/index1/index.css-2014-03-07-1.css"  media="all" />
+<link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/www/help/help.css-2014-03-07-1.css"  media="all" />
+<script type="text/javascript" src="/static/wxgjcn/src/jQuery.js-2014-03-07-1.js" ></script>
+<script type="text/javascript" src="/static/wxgjcn/src/www/index1/weimob-index.js-2014-03-07-1.js" ></script>
+<title>盛世源码—国内优秀的微信公众服务平台</title>
+	<link rel="shortcut icon" href="httpimg/favicon.ico" />
+</head>
+<body>
+	
+<!--595 850-->
+<script language="javascript">
+	$(function () {
+		$("a").click(function () {
+			var rel = $(this).attr("rel");
+			if (rel) {
+				var pos = $(rel).offset().top-60;
+				$("html,body").animate({ scrollTop: pos }, 800);
+			}
+
+		})
+	})
+</script>
+<script>
+	$().ready(function(){
+
+		window.onscroll = window.onresize = function(){
+			showSideBar();
+		}
+	});
+	function showSideBar(){
+		if(!window.sideMenu){
+			window.sideMenu = $("#sideToolbar");
+		}
+		if((document.body.scrollTop||document.documentElement.scrollTop)>500){
+			sideMenu.addClass("on");
+		}else{
+			sideMenu.removeClass("on");
+		}
+	}
+
+
+
+</script>
+<!--[if lte IE 8]>  <script language="javascript">$(function (){$.browser.msie&&$("#ie9-tips").show().find("#stopSuggestA").click(function(){$("#ie9-tips").hide()})})</script><![endif]-->
+<div class="nav clearfix">
+	<div class="nav-content">
+		<h1 class="left" onclick="location.herf='/site/city1'">盛世源码—国内优秀的微信公众服务平台·微信营销，如此简单！</h1>
+		<div class="left city">
+			<h2>上海</h2>
+							<a href="/static/wxgjcn/city1.htm" >
+					切换城市<i class="tri4"></i>
+				</a>
+					</div>
+		<div class="right line-li">
+			<ul>
+				<li><a href="/" >首页</a></li>
+				<li><a href="/static/wxgjcn/case1.htm"  >经典案例</a></li>
+				<li class="nav_menu_li_1"><a style="width:70px; text-align:left;" class="_hover">产品中心<i></i></a>
+					<div class="sub-nav">
+						<a href="/static/wxgjcn/package.htm"  target="_black">微信套餐</a>
+						<a href="/static/wxgjcn/guide1.htm" >功能介绍</a>
+						
+
+					</div>
+
+				</li>
+				<li><a href="/static/wxgjcn/proxy1.htm"  >渠道代理</a></li>
+				<li><a href="/static/wxgjcn/help.htm"  class="navtwo" target="_black">帮助</a></li>
+			</ul>
+			<div class="account">
+				<a href="/reg.html"  class="btn-reg btn0" target="_black">注册</a>
+									<a href="/login.html" class="btn-login btn0" target="_black">登录</a>
+				</div>
+		</div>
+	</div>
+</div>
+
+	
+<div id="ie9-tips" class="clearfix">
+	<div id="tipsPanel">
+		<div id="tipsDesc">系统检测到您所使用的浏览器版本较低，推荐使用<a   target="_blank">Firefox</a>或<a   target="_blank">Chrome</a>浏览器打开，否则将无法体验完整产品功能。</div>
+		<a id="stopSuggestA" href="javascript:;">×</a>
+	</div>
+</div>
+
+<script>
+	var $do_submit = false;
+
+	// 绑定回车键
+	$('#loginBox').keydown(function(e){
+		if(13 == event.keyCode){
+			login();
+		}
+	});
+
+		function login()
+	{
+		if (true == $do_submit)
+		{
+			return false;
+		}
+
+		var $pre_submit = '登录', $do_submit = '登录中...';
+		var $username = $('#username').val(), $password = $('#password').val(), $keepalive = $('#rememberPwdIcon').val();
+		$('#login_button').text($do_submit);
+		$do_submit = true;
+
+		// check
+		if ('' == $username || '' == $password)
+		{
+			$('#err_tips').text('您输入的盛世源码—国内优秀的微信公众服务平台号或密码错误，请重新输入！');
+			$('#err_area').show();
+			$('#login_button').text($pre_submit);
+			$do_submit = false;
+			return false;
+		}
+
+		var $login_data = {
+			username:$username,
+			password:$password,
+			keepalive:$keepalive
+		};
+		$.post('/login', $login_data, function(rs){
+			if(rs.errno == 200)
+			{
+				location.href = rs.url_route;
+			}
+			else
+			{
+				$('#err_tips').text(rs.error);
+				$('#err_area').show();
+				$('#login_button').text($pre_submit);
+			}
+			$do_submit = false;
+		}, 'json');
+	}
+	</script>
+<div id="top"></div><div id="page">
+   
+       <div class="title">盛世源码—国内优秀的微信公众服务平台产品（微活动）使用指南</div>
+         <h3 id="3_1">1、优惠券</h4>
+          <p>优惠券是用于微信上与顾客互动的一种营销方式，不仅可以展现自己的产品，更能让顾客在使用此项功能时感受到更多的乐趣。</p>
+          <p>1、新建优惠券活动；</p>
+          <p>2、填写活动开始的内容；</p>
+          <p>3、填写活动结束的内容；</p>
+          <p>4、设置奖项，设定活动时间、中奖几率、触发关键词和相应的奖品，确定设置后系统会根据设定的中奖几率产生相应的SN码，保存活动；</p>
+          <p>5、设置活动开始；（点击开始活动后，就不能再修改活动奖项，但可以修改其他活动内容,活动开启会自动生成SN码，也就是兑奖码）</p>
+          <p>6、设置活动结束；（你设置的活动结束时间到了会自动结束活动，你也可以时间没有到直接结束活动）</p>
+          <p>7、兑奖，查看活动粉丝中奖详情；（点击SN码管理查看详情）通过设置SN码状态，可以将一等奖先不放出！要内部人员中奖，只要对着公众号，输入：刮奖 SN码 即可！</p>
+          <p>8、删除活动（最好是在最后兑奖时间过了，再删除活动）</p>　
+          <p><img src="/static/wxgjcn/img/webabout/yhq1.png"  width="250" height="374"><img src="/static/wxgjcn/img/webabout/yhq2.png"  width="250" height="374"><img src="/static/wxgjcn/img/webabout/yhq3.png"   width="250" height="374"></p>
+    	<h3 id="3_2">2、刮刮卡</h3>
+        <p>该模块可为商家提供刮刮卡抽奖服务，全网第一个可以通过微信玩刮刮卡，用户通过手机屏幕进行刮奖的游戏！</p>
+        <p>1、设置抽奖前需要先编辑一条图文消息，提前一天或者当天推送给所有粉丝，告知在某个时间段发某个关键词可以参与刮奖；</p>
+        <p>2、进入抽奖设置，设定活动时间、中奖几率、触发关键词和相应的奖品，确定设置后系统会根据设定的中奖几率产生相应的SN码；</p>
+        <p>3、活动设定后，在规定时间到时，网友发送关键词如“我要抽奖”，就会发送给他一张刮刮卡，粉丝通过屏幕进行刮奖，中奖后会得到一个SN码，网友到店时向商家出示SN码，商家根据系统产生的SN码进行比对，确认无误后即可兑换奖品。</p>
+        <p><img src="/static/wxgjcn/img/webabout/ggk1.png"  width="240" height="360"><img src="/static/wxgjcn/img/webabout/ggk2.png"  width="240" height="360"><img src="/static/wxgjcn/img/webabout/ggk3.png"    width="240" height="360"></p>
+        <h3 id="3_3">3、大转盘</h3>
+      <p>该模块可为商家提供转盘抽奖服务，商家通过设置活动时间，预计参加抽奖人数，相应奖项和触发关键词，由网友在线参与抽奖。</p>
+      <p>1、设置抽奖前需要先编辑一条图文消息，提前一天或者当天推送给所有粉丝，告知在某个时间段发某个关键词可以参与抽奖；
+       <p>2、进入抽奖设置，设定活动的类别，设定活动的预热时间，已经活动的开始和结束时间，设置活动回复关键词“我要抽奖”，确定设置后系统会根据设定的中奖几率产生相应的SN码；</p>
+    	       <p>3、活动设定后，在规定时间到时，网友发送关键词如“我要抽奖”，就可以参与三次转盘，中奖后会得到一个SN码，网友到店时向商家出示SN码，商家根据系统产生的SN码进行比对，确认无误后即可兑换奖品。</p>
+                <p><img src="/static/wxgjcn/img/webabout/dzp1.jpg"  width="637" height="363" ></p>
+                <h3 id="3_4">4、微投票</h3>
+                 <p>商家采用投票的活动来吸引用户，与用户之间产生互动，从而促进企业营销的一种手段。</p>
+                <h5>使用方法：</h5>
+                <p>1、商家发布一个活动名称，例如：“您愿意把盛世源码—国内优秀的微信公众服务平台介绍给您的朋友吗？”商家还可以为本次活动上传封面，吸引更多的用户来参加；</p>
+                 <p>2、商家可以设置两个选项：愿意、不愿意，每个用户只能选择一个选项；</p>
+                 <p>3、设置活动的回复关键词为“我要投票”；</p>
+                 <p>4、编辑活动说明，例如：“每位参与投票的朋友都将获得商家送出的尊贵礼品，同时你还将参加抽奖，有机会获得iphone5等大奖。”；</p>
+                 <p>5、设置活动的起开始时间和活动的结束时间。</p>
+    	        <p><img src="/static/wxgjcn/img/webabout/tp1.jpg"   width="671" height="329"></p>
+                <h3 id="3_5">5、一战到底</h3>
+                <p>全新微活动“一战到底”重磅上线，有丰富的题库系统；想提高用户粘性吗？想跟用户激情互动吗？想提高用户对于商户的认知吗？这一切，尽在“一战到底”。开启此功能，直接发布一战到底活动，设置活动内容、奖项及考题，可带给用户刺激的挑战。</p>
+                 <p> 1、	新增，进入“新建一战到底活动”页，编辑活动名称，活动时间，触发关键词（如：一战到底），图文封面，活动说明，活动规则，每道系统题目分值、每道自定义题目分值（均可使用默认图片及内容，也可上传图片及自定义内容）；</p>
+                <p> 2、	奖品设置、数量设置，根据商家需求填写，会在用户答题完毕显示；</p>
+                <p> 3、	保存并设置考题，进入题目设置页面，可自定义添加题目，插入行业相关问题提高用户的认知，答题时间也可自定义（默认20秒/题），如不设置直接保存，则系统默认使用原有题库。 </p>
+                <p> 4. 积分累计到活动结束后根据排名顺序派发相应奖项。</p>
+                <p>（1）每天每个用户只能参加一次答题，每次10道,答对加分，答错不扣分；</p>
+                <p>（2）用户参加答题需提交姓名及手机号码，商家可查询；</p>
+                <p>（3）同样积分者，答题速度优先的用户排名为先；</p>
+                <p>（4）积分累计到活动结束后，可在统计图表内查询排名顺序参与人数、答题率及用户信息。</p>
+ 
+  <div id="sideToolbar" style="display: block; position: fixed; top:150px;  right: 0;">
+  <div id="sideCatalog" class="sideCatalogBg" style="visibility: visible;">
+    <div id="sideCatalog-sidebar"></div>
+    <div id="sideCatalog-catalog">
+      <dl style="width:200px;zoom:1">
+        <dd><span>1</span><a href="javascript:void()" rel="#3_1" title="优惠券">优惠券</a></dd>
+        <dd><span>2</span><a href="javascript:void()" rel="#3_2" title="刮刮卡">刮刮卡</a></dd>
+        <dd><span>3</span><a href="javascript:void()" rel="#3_3" title="大转盘">大转盘</a></dd>
+        <dd><span>4</span><a href="javascript:void()" rel="#3_4" title="微投票">微投票</a></dd>
+        <dd><span>5</span><a href="javascript:void()" rel="#3_5" title="一战到底">一战到底</a></dd>
+      </dl>
+    </div>
+  </div>
+    <a id="sideCatalogBtn" href="/static/wxgjcn/help.htm"  style="visibility: visible;" title="查看帮助目录"></a>
+  <a id="sideToolbar-up"  href="javascript:void()" rel="#top" title="返回顶部" style="visibility: visible;"></a></div>
+     
+</div>
+<script>
+	$(function () {
+	   if(location.hash){
+			var pos = $(location.hash).offset().top-60;
+			$("html,body").animate({ scrollTop: pos }, 800);
+		}
+	});
+</script>
+<!--QQ咨询-->
+<div class="footer">
+	<div class="footer-content clearfix">
+		<div class="foot-menu">
+			<p>
+				<a href="/static/wxgjcn/index1.htm"  target="_blank">盛世源码—国内优秀的微信公众服务平台首页</a>&nbsp;|&nbsp;
+				<a href="/reg.html"  target="_blank">申请入驻</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/proxy1.htm"  target="_blank">渠道代理</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/about1.htm"  target="_blank">关于盛世源码</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/agents.htm"  target="_blank">授权认证</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/jobs.htm"  target="_blank">加入盛世源码</a>
+			</p>
+			<p>免费热线：400-800-8888&nbsp;&nbsp;&nbsp;QQ：631989322&nbsp;&nbsp;&nbsp;邮箱：kf@weixin.9upp.com</p>
+			<p>地址：
+								上海市市辖区宝山区逸仙路2816号华滋奔腾大厦A幢15楼</p>
+		</div>
+		<div class="copyright">
+			Copyright (c) 2011-2014 9upp.com. All Rights Reserved 盛世源码团队 粤ICP备13083563号
+		</div>
+	</div>
+</div>
+<div style="display:none;"><script type="text/javascript" src="/static/wxgjcn/src/www/index1/huishuo.js-v=2014-03-07-1.js" ></script></div></body>
+</html>

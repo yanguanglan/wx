@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	
+	<link rel="stylesheet" type="text/css" href="/css/wm/bootstrap_min.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="/css/wm/bootstrap_responsive_min.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="/css/wm/style.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="/css/wm/themes.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="/css/wm/todc_bootstrap.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="/css/wm/inside.css" media="all" />
+	<title><?php echo $_SERVER['WEB_NAME']; ?>—国内最大的微信公众服务平台</title><script type="text/javascript">var yyuc_jspath = "/@system/";</script><script type="text/javascript" src="/@system/js/jquery.js"></script><script type="text/javascript" src="/@system/js/yyucadapter.js"></script>
+
+	<script src="/js/bootstrap_min.js" type="text/javascript"></script>
+	<script src="/js/jquery_validate_min.js" type="text/javascript"></script>
+	<script src="/js/jquery_validate_methods.js" type="text/javascript"></script>
+	<script src="/js/jquery_form_min.js" type="text/javascript"></script>
+	<script src="/js/jscolor.js" type="text/javascript"></script>
+	<script src="/js/inside.js" type="text/javascript"></script>
+	<script src="/js/weiqi/0-du-bz.js" type="text/javascript"></script>
+</head>
+
+<style type="text/css">
+.plug-menu
+{
+	width:36px;
+	height:36px;
+	border-radius:36px;
+	-moz-box-shadow:0 0 0 4px #FFFFFF, 0 2px 5px 4px rgba(0, 0, 0, 0.25);
+	-webkit-box-shadow:0 0 0 4px #FFFFFF, 0 2px 5px 4px rgba(0, 0, 0, 0.25);
+	box-shadow:0 0 0 4px #FFFFFF, 0 2px 5px 4px rgba(0, 0, 0, 0.25);
+	position:relative;
+}
+.plug-menu span
+{
+	display:block;
+	width:28px;
+	height:28px;
+	background:url(/media/images/wm/plugmenu.png) no-repeat;
+	-moz-background-size:28px 28px;
+	-o-background-size:28px 28px;
+	-webkit-background-size:28px 28px;
+	background-size:28px 28px;
+	text-indent:-999px;
+	position:absolute;
+	top:4px;
+	left:4px;
+	overflow:hidden;
+}
+.ico-views
+{
+	font-size:30px;
+	color:#fff;
+	padding:5px;
+}
+</style>
+
+<script>
+$(document).ready(function(){
+			
+});
+
+function beifei(){
+	if(confirm('确定备份最新的微网站数据吗？')){
+		location.href = 'beifen-tobe.html';
+	}
+}
+function delview(tm){
+	if(confirm('确定删除该备份数据吗？')){
+		location.href = 'beifen-del-'+tm+'.html';
+	}
+}
+function useview(tm){
+	if(confirm('确定要恢复该备份数据吗？')){
+		location.href = 'beifen-use-'+tm+'.html';
+	}
+}
+function bakview(tm){
+									window.open("<?php echo Conf::$http_path; ?>weiweb/weiqiw-"+tm+".html", "我的微官网", "height=650,width=450,toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no");
+}
+</script>
+
+<body>
+    <div id="main">
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="box">
+                        <div class="box-title">
+                            <div class="span12">
+                                <h3><i class="icon-table"></i>微官网备份 <small>	</h3>	
+								<span class="jiaocheng">
+		                       <a class="btn preview pull-right btn-success" id="yul" onclick="javascript:aaa();">微官网预览</a>
+								<script type="text/javascript">
+									function aaa() {
+									window.open("<?php echo Conf::$http_path; ?>weiweb/yulan.html?wid=<?php echo $wid; ?>", "我的微官网", "height=650,width=450,toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no");
+									}
+								</script>
+								</span>
+                            </div>
+                        </div>
+                        <div class="box-content">
+                            <div class="tab-content">
+                                <div class="tab-pane in active" id="menu">
+                                    <div class="span12 control-group">
+                                        <a class="btn" href="javascript:;" onclick="beifei();"><i class="icon-plus"></i>备份当前微官网</a>
+                                    </div>
+                                    <table id="listTable" class="table table-bordered table-hover dataTable ajax-checkbox" >
+                                        <thead>
+                                            <tr>
+                                                <th>备份时间</th>
+                                                <th>操作 </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            
+											<?php foreach((array)$m as $d){ ?>
+                                              <tr>  <td>
+                                                  此次微网站备份时间：<?php echo date('Y-m-d H:i:s',$d->time)?>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;					 </td>                                                
+                                                <td>
+                                                    <a href="javascript:;" onclick="bakview('<?php echo $d->time;?>')" class="btn" rel="tooltip" title="编辑"><i class="icon-edit"></i>预览该版本内容</a>
+                                                    <a href="javascript:;" onclick="delview('<?php echo $d->time;?>')" class="btn" rel="tooltip" title="删除"><i class="icon-remove"></i>删除此条备份</a>
+                                                    <a href="javascript:;" onclick="useview('<?php echo $d->time;?>')" class="btn" rel="tooltip" title="删除"><i class="icon-table"></i>还原备份至微官网</a>
+                                                </td>
+                                            </tr>
+											<?php } ?>
+                                                                             </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

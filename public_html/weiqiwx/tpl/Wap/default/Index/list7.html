@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+       <link rel="stylesheet" type="text/css" href="{ZF::RES}/Index/public/css/weimob-ui-1-1.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{ZF::RES}/Index/public/css/common.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{ZF::RES}/Index/list/list-7.css" media="all" />
+<if condition="$menuid gt 0"><link rel="stylesheet" type="text/css" href="{ZF::RES}/css/menu-{ZF:$menuid}.css?2013-10-21-2" media="all" /></if>
+
+<script type="text/javascript" src="{ZF::RES}/Index/public/js/jQuery.js"></script>
+<script type="text/javascript" src="{ZF::RES}/Index/public/js/swipe.js"></script>
+<script type="text/javascript" src="{ZF::RES}/Index/public/js/zepto.js"></script>
+<title>{ZF:$tpl.wxname}</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+        <meta name="keywords" content="{ZF::C('keyword')}" />
+        <meta name="description" content="{ZF::C('content')}" />
+	<!-- Mobile Devices Support @begin -->
+            <meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+            <meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+            <meta content="no-cache" http-equiv="pragma">
+            <meta content="0" http-equiv="expires">
+            <meta content="telephone=no, address=no" name="format-detection">
+            <meta content="width=device-width, initial-scale=1.0" name="viewport">
+            <meta name="apple-mobile-web-app-capable" content="yes" /> <!-- apple devices fullscreen -->
+            <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <!-- Mobile Devices Support @end -->
+        <link rel="shortcut icon" href="/tpl/static/favicon.ico" />
+        <style>
+            img{width:100%!important;}
+        </style>
+    </head>
+    <body onselectstart="return true;" ondragstart="return false;">
+        <link rel="stylesheet" type="text/css" href="{ZF::STATICS}/font-awesome/font-awesome.css?v=2013-08-17" media="all" />
+<div class="weimob-page">
+ 
+ <div class="top_bar"> 
+ 
+        <nav>
+            <ul class="top_menu">
+                <li onclick="window.history.go(-1);"><span class="icon-chevron-sign-left"></span></li>
+                <li onclick="location.href='{ZF::U('Index/index',array('token'=>$tpl['token']))}'"><span class="icon-home"></span></li>
+				<li><a href="tel:<if condition="$homeInfo.dianhua neq false">{ZF:$homeInfo.dianhua}<else/>没有留电话</if>"><span class="icon-phone"></span></a></li>
+				<li onclick="$('#menu_font').toggleClass('hidden');">
+					<span class="icon-list-ul"></span>
+					<ul id="menu_font" class="menu_font hidden" onclick="$('#menu_font').toggleClass('hidden');">
+					<volist name="info" id="vo">
+						<li><a href="<if condition="$vo['url'] eq ''">{ZF::U('Wap/Index/lists',array('classid'=>$vo['id'],'token'=>$vo['token']))}<else/>{ZF:$vo.url|htmlspecialchars_decode}</if>" class="icon-smile">
+						{ZF:$vo.name}</a></li>
+					</volist> 
+					</ul>
+				</li>
+            </ul>
+        </nav>
+    </div>
+	        <div class="weimob-content">
+            <div class="weimob-list">
+	    <div align="center" >{ZF:$notice}</div>
+	      <volist name="res" id="so">  
+
+<if condition="$so['url']">
+<a  href="{ZF:$so.url}" class="weimob-list-item">
+<else />
+<a  href="{ZF::U('Index/content',array('id'=>$so['id'],'token'=>$so['token'],'wecha_id'=>$wecha_id))}" class="weimob-list-item">
+</if>
+	    
+
+		        <div class="weimob-list-item-image" style="background-image:url({ZF:$so.pic})"></div>
+                        <div class="weimob-list-item-line">
+                            <div class="weimob-list-item-title">{ZF:$so.title}</div>
+                            <div class="weimob-list-item-summary">{ZF:$so.text}</div>
+                        </div>
+                        <div class="weimob-list-item-icon icon-arrow-r"></div>
+                    </a>
+
+		    
+	             
+                       </volist>  
+                            
+			    
+			    </div>
+        </div>
+    </div>        			<footer>
+				<div class="weimob-copyright">
+					{ZF:$copyright}
+				</div>
+									<span class="weimob-support" style="display:none;">{ZF::C('site_name')} 技术支持zf:wzh</span>
+							</footer>
+				<div mark="stat_code" style="width:0px; height:0px; display:none;">{ZF:$home.stat_code|htmlspecialchars_decode}
+					</div>
+	</body>
+</html>

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="uyan_auth" content="04a3f6938d" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="微信营销、微信代运营、微信定制开发、微信托管、微网站、微商城、微营销" name="Keywords">
+	<meta content="盛世源码—国内优秀的微信公众服务平台，国内最大的微信公众智能服务平台，盛世源码—国内优秀的微信公众服务平台八大微体系：微菜单、微官网、微会员、微活动、微商城、微推送、微服务、微统计，企业微营销必备。" name="Description">
+    <script src="/static/wxgjcn/src/html5.js" ></script>
+    <link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/www/index1/index.css-2014-03-07-1.css"  media="all" />
+<script type="text/javascript" src="/static/wxgjcn/src/jQuery.js-2014-03-07-1.js" ></script>
+<script type="text/javascript" src="/static/wxgjcn/src/www/index1/weimob-index.js-2014-03-07-1.js" ></script>
+<title>盛世源码—国内优秀的微信公众服务平台</title>
+	<link rel="shortcut icon" href="httpimg/favicon.ico" />
+</head>
+<body>
+	<!--[if lte IE 8]>  <script language="javascript">$(function (){$.browser.msie&&$("#ie9-tips").show().find("#stopSuggestA").click(function(){$("#ie9-tips").hide()})})</script><![endif]-->
+<div class="nav clearfix">
+	<div class="nav-content">
+		<h1 class="left"><a href="/"   title="盛世源码—国内优秀的微信公众服务平台官网">盛世源码—国内优秀的微信公众服务平台·微信营销，如此简单！</a></h1>
+		<div class="left city">
+			<h2>上海</h2>
+					</div>
+		<div class="right line-li">
+        
+			 <ul>
+        <li><a href="/" >首页</a></li>
+        <li><a href="/static/wxgjcn/case1.htm"  >经典案例</a></li>
+	    <li class="nav_menu_li_1"><a style="width:70px; text-align:left;" class="_hover">产品中心<i></i></a>
+					 <div class="sub-nav">
+						 <a href="/static/wxgjcn/package.htm"  target="_black">服务套餐</a>
+						 <a href="/static/wxgjcn/guide1.htm" >功能介绍</a>
+						 
+
+					 </div>
+
+	    </li>
+        <li><a href="/static/wxgjcn/proxy1.htm"  >渠道代理</a></li>
+        <li><a href="/static/wxgjcn/help.htm"   target="_black">帮助</a></li>
+    </ul>
+            <div class="account">
+        <a href="/reg.html"  class="btn-reg btn0" target="_black">注册</a>
+                  <a href="/login.html" class="btn-login btn0" target="_black">登录</a>
+		</div>
+		</div>
+	</div>
+</div>
+
+	
+<div id="ie9-tips" class="clearfix">
+	<div id="tipsPanel">
+		<div id="tipsDesc">系统检测到您所使用的浏览器版本较低，推荐使用<a   target="_blank">Firefox</a>或<a   target="_blank">Chrome</a>浏览器打开，否则将无法体验完整产品功能。</div>
+		<a id="stopSuggestA" href="javascript:;">×</a>
+	</div>
+</div>
+
+<script>
+var $do_submit = false;
+
+// 绑定回车键
+$('#loginBox').keydown(function(e){
+	if(13 == event.keyCode){
+		login();
+	}
+});
+
+	function login()
+	{
+		if (true == $do_submit)
+		{
+			return false;
+		}
+
+		var $pre_submit = '登录', $done_submit = '登录中...';
+		var $username = $('#username').val(), $password = $('#password').val(), $keepalive = $('#rememberPwdIcon').val();
+		$('#login_button').text($done_submit);
+		$do_submit = true;
+
+		// check
+		if ('' == $username || '' == $password)
+		{
+			$('#err_tips').text('您输入的盛世源码—国内优秀的微信公众服务平台号或密码错误，请重新输入！');
+			$('#err_area').show();
+			$('#login_button').text($pre_submit);
+			$do_submit = false;
+			return false;
+		}
+
+		var $login_data = {
+			username:$username,
+			password:$password,
+			keepalive:$keepalive
+		};
+		$.post('/login', $login_data, function(rs){
+			if(rs.errno == 200)
+			{
+				location.href = rs.url_route;
+			}
+			else
+			{
+				$('#err_tips').text(rs.error);
+				$('#err_area').show();
+				$('#login_button').text($pre_submit);
+			}
+			$do_submit = false;
+		}, 'json');
+	}
+</script>
+
+<div class="Public-content clearfix">
+	<div class="Public">
+		<h1 class="Public-h1">切换城市</h1>
+		<div class="Public-box">
+			<div class="changecity">
+				<div class="citys-list">
+																		<dl>
+								<dt>华东</dt>
+								<dd>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5LiK5rW35LiK5rW3">上海</a>-->
+										<a href="javascript:void(0);">上海</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rGf6IuP5b6Q5bee">徐州</a>-->
+										<a href="javascript:void(0);">徐州</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rGf6IuP6L+e5LqR5riv">连云港</a>-->
+										<a href="javascript:void(0);">连云港</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rGf6IuP6IuP5bee">苏州</a>-->
+										<a href="javascript:void(0);">苏州</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rGf6IuP55uQ5Z+O">盐城</a>-->
+										<a href="javascript:void(0);">盐城</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5a6J5b695ZCI6IKl">合肥</a>-->
+										<a href="javascript:void(0);">合肥</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rWZ5rGf6YeR5Y2O">金华</a>-->
+										<a href="javascript:void(0);">金华</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rWZ5rGf5rmW5bee">湖州</a>-->
+										<a href="javascript:void(0);">湖州</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rWZ5rGf5a6B5rOi">宁波</a>-->
+										<a href="javascript:void(0);">宁波</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rWZ5rGf57uN5YW0">绍兴</a>-->
+										<a href="javascript:void(0);">绍兴</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rWZ5rGf6KGi5bee">衢州</a>-->
+										<a href="javascript:void(0);">衢州</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rWZ5rGf5rip5bee">温州</a>-->
+										<a href="javascript:void(0);">温州</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rWZ5rGf5Y+w5bee">台州</a>-->
+										<a href="javascript:void(0);">台州</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5bGx5Lic5r2N5Z2K">潍坊</a>-->
+										<a href="javascript:void(0);">潍坊</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5bGx5Lic6Z2S5bKb">青岛</a>-->
+										<a href="javascript:void(0);">青岛</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=56aP5bu65rOJ5bee">泉州</a>-->
+										<a href="javascript:void(0);">泉州</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=56aP5bu66I6G55Sw">莆田</a>-->
+										<a href="javascript:void(0);">莆田</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=56aP5bu656aP5bee">福州</a>-->
+										<a href="javascript:void(0);">福州</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=56aP5bu65ryz5bee">漳州</a>-->
+										<a href="javascript:void(0);">漳州</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=56aP5bu65a6B5b63">宁德</a>-->
+										<a href="javascript:void(0);">宁德</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5bGx5Lic5Li05rKC">临沂</a>-->
+										<a href="javascript:void(0);">临沂</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5bGx5Lic5rWO5Y2X">济南</a>-->
+										<a href="javascript:void(0);">济南</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rGf6IuP5Y2X5Lqs">南京</a>-->
+										<a href="javascript:void(0);">南京</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rGf6IuP5peg6ZSh">无锡</a>-->
+										<a href="javascript:void(0);">无锡</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rGf6IuP5bi45bee">常州</a>-->
+										<a href="javascript:void(0);">常州</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rWZ5rGf5p2t5bee">杭州</a>-->
+										<a href="javascript:void(0);">杭州</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=56aP5bu65Y2X5bmz">南平</a>-->
+										<a href="javascript:void(0);">南平</a>
+																	</dd>
+							</dl>
+													<dl>
+								<dt>西北</dt>
+								<dd>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=6ZmV6KW/6KW/5a6J">西安</a>-->
+										<a href="javascript:void(0);">西安</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5a6B5aSP6ZO25bed">银川</a>-->
+										<a href="javascript:void(0);">银川</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=55SY6IKD5YWw5bee">兰州</a>-->
+										<a href="javascript:void(0);">兰州</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=6Z2S5rW36KW/5a6B">西宁</a>-->
+										<a href="javascript:void(0);">西宁</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5paw55aG5LmM6bKB5pyo6b2Q">乌鲁木齐</a>-->
+										<a href="javascript:void(0);">乌鲁木齐</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5paw55aG5LyK5a6B">伊宁</a>-->
+										<a href="javascript:void(0);">伊宁</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5paw55aG5ZOI5a+G">哈密</a>-->
+										<a href="javascript:void(0);">哈密</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=6ZmV6KW/5ZK46Ziz">咸阳</a>-->
+										<a href="javascript:void(0);">咸阳</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=6ZmV6KW/5qaG5p6X">榆林</a>-->
+										<a href="javascript:void(0);">榆林</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=6ZmV6KW/5a6d6bih">宝鸡</a>-->
+										<a href="javascript:void(0);">宝鸡</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=55SY6IKD6YeR5piM">金昌</a>-->
+										<a href="javascript:void(0);">金昌</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=55SY6IKD5byg5o6W">张掖</a>-->
+										<a href="javascript:void(0);">张掖</a>
+																	</dd>
+							</dl>
+													<dl>
+								<dt>华南</dt>
+								<dd>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5bm/5Lic5rex5Zyz">深圳</a>-->
+										<a href="javascript:void(0);">深圳</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5bm/5Lic54+g5rW3">珠海</a>-->
+										<a href="javascript:void(0);">珠海</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5bm/5Lic5bm/5bee">广州</a>-->
+										<a href="javascript:void(0);">广州</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5bm/5Lic5oOg5bee">惠州</a>-->
+										<a href="javascript:void(0);">惠州</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5bm/5Lic5rKz5rqQ">河源</a>-->
+										<a href="javascript:void(0);">河源</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5bm/5Lic5rGV5aS0">汕头</a>-->
+										<a href="javascript:void(0);">汕头</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5bm/5Lic5r2u5bee">潮州</a>-->
+										<a href="javascript:void(0);">潮州</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5bm/5Lic5o+t6Ziz">揭阳</a>-->
+										<a href="javascript:void(0);">揭阳</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5bm/5Lic5Lit5bGx">中山</a>-->
+										<a href="javascript:void(0);">中山</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5bm/5Lic5L2b5bGx">佛山</a>-->
+										<a href="javascript:void(0);">佛山</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5bm/5Lic5rGf6Zeo">江门</a>-->
+										<a href="javascript:void(0);">江门</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5bm/5Lic6Z+25YWz">韶关</a>-->
+										<a href="javascript:void(0);">韶关</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5bm/5Lic6IKH5bqG">肇庆</a>-->
+										<a href="javascript:void(0);">肇庆</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5bm/5Lic5qKF5bee">梅州</a>-->
+										<a href="javascript:void(0);">梅州</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5bm/5Lic5Lic6I6e">东莞</a>-->
+										<a href="javascript:void(0);">东莞</a>
+																	</dd>
+							</dl>
+													<dl>
+								<dt>华北</dt>
+								<dd>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5YyX5Lqs5YyX5Lqs">北京</a>-->
+										<a href="javascript:void(0);">北京</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5aSp5rSl5aSp5rSl">天津</a>-->
+										<a href="javascript:void(0);">天津</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rKz5YyX55+z5a625bqE">石家庄</a>-->
+										<a href="javascript:void(0);">石家庄</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rKz5YyX5L+d5a6a">保定</a>-->
+										<a href="javascript:void(0);">保定</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rKz5YyX5buK5Z2K">廊坊</a>-->
+										<a href="javascript:void(0);">廊坊</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rKz5YyX6YKv6YO4">邯郸</a>-->
+										<a href="javascript:void(0);">邯郸</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rKz5YyX6YKi5Y+w">邢台</a>-->
+										<a href="javascript:void(0);">邢台</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rKz5YyX5ZSQ5bGx">唐山</a>-->
+										<a href="javascript:void(0);">唐山</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rKz5YyX56em55qH5bKb">秦皇岛</a>-->
+										<a href="javascript:void(0);">秦皇岛</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rKz5YyX5om/5b63">承德</a>-->
+										<a href="javascript:void(0);">承德</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rKz5YyX5byg5a625Y+j">张家口</a>-->
+										<a href="javascript:void(0);">张家口</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rKz5YyX5rKn5bee">沧州</a>-->
+										<a href="javascript:void(0);">沧州</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5bGx6KW/5aSq5Y6f">太原</a>-->
+										<a href="javascript:void(0);">太原</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5YaF6JKZ5Y+k6LWk5bOw">赤峰</a>-->
+										<a href="javascript:void(0);">赤峰</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5bGx6KW/5ZCV5qKB">吕梁</a>-->
+										<a href="javascript:void(0);">吕梁</a>
+																	</dd>
+							</dl>
+													<dl>
+								<dt>华中</dt>
+								<dd>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rKz5Y2X6YOR5bee">郑州</a>-->
+										<a href="javascript:void(0);">郑州</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rKz5Y2X5a6J6Ziz">安阳</a>-->
+										<a href="javascript:void(0);">安阳</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rKz5Y2X5r+u6Ziz">濮阳</a>-->
+										<a href="javascript:void(0);">濮阳</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rKz5Y2X5ZWG5LiY">商丘</a>-->
+										<a href="javascript:void(0);">商丘</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rKz5Y2X5L+h6Ziz">信阳</a>-->
+										<a href="javascript:void(0);">信阳</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rKz5Y2X6am76ams5bqX">驻马店</a>-->
+										<a href="javascript:void(0);">驻马店</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rKz5Y2X54Sm5L2c">焦作</a>-->
+										<a href="javascript:void(0);">焦作</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rKz5Y2X5rWO5rqQ">济源</a>-->
+										<a href="javascript:void(0);">济源</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rKz5Y2X5paw5Lmh">新乡</a>-->
+										<a href="javascript:void(0);">新乡</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rKz5Y2X5Y2X6Ziz">南阳</a>-->
+										<a href="javascript:void(0);">南阳</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rKz5Y2X5byA5bCB">开封</a>-->
+										<a href="javascript:void(0);">开封</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rKz5Y2X6K645piM">许昌</a>-->
+										<a href="javascript:void(0);">许昌</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rKz5Y2X5LiJ6Zeo5bOh">三门峡</a>-->
+										<a href="javascript:void(0);">三门峡</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rKz5Y2X5bmz6aG25bGx">平顶山</a>-->
+										<a href="javascript:void(0);">平顶山</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rKz5Y2X5ZGo5Y+j">周口</a>-->
+										<a href="javascript:void(0);">周口</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rGf6KW/5Y2X5piM">南昌</a>-->
+										<a href="javascript:void(0);">南昌</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rGf6KW/6LWj5bee">赣州</a>-->
+										<a href="javascript:void(0);">赣州</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rGf6KW/5LiK6aW2">上饶</a>-->
+										<a href="javascript:void(0);">上饶</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rGf6KW/5ZCJ5a6J">吉安</a>-->
+										<a href="javascript:void(0);">吉安</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rGf6KW/5Lmd5rGf">九江</a>-->
+										<a href="javascript:void(0);">九江</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rmW5YyX5q2m5rGJ">武汉</a>-->
+										<a href="javascript:void(0);">武汉</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rmW5YyX6buE55+z">黄石</a>-->
+										<a href="javascript:void(0);">黄石</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rmW5YyX5a6c5piM">宜昌</a>-->
+										<a href="javascript:void(0);">宜昌</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rmW5YyX6KWE6Ziz">襄阳</a>-->
+										<a href="javascript:void(0);">襄阳</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rmW5YyX6I2G5bee">荆州</a>-->
+										<a href="javascript:void(0);">荆州</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rmW5YyX6ZqP5bee">随州</a>-->
+										<a href="javascript:void(0);">随州</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rmW5YyX5Y2B5aCw">十堰</a>-->
+										<a href="javascript:void(0);">十堰</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rmW5YyX5a2d5oSf">孝感</a>-->
+										<a href="javascript:void(0);">孝感</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rmW5Y2X6ZW/5rKZ">长沙</a>-->
+										<a href="javascript:void(0);">长沙</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rmW5Y2X6KGh6Ziz">衡阳</a>-->
+										<a href="javascript:void(0);">衡阳</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rmW5Y2X6YO05bee">郴州</a>-->
+										<a href="javascript:void(0);">郴州</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rmW5Y2X5bKz6Ziz">岳阳</a>-->
+										<a href="javascript:void(0);">岳阳</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rmW5Y2X6YK16Ziz">邵阳</a>-->
+										<a href="javascript:void(0);">邵阳</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rmW5Y2X5rmY5r2t">湘潭</a>-->
+										<a href="javascript:void(0);">湘潭</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rmW5Y2X5ZCJ6aaW">吉首</a>-->
+										<a href="javascript:void(0);">吉首</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rmW5Y2X6bmw5r2t">鹰潭</a>-->
+										<a href="javascript:void(0);">鹰潭</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rmW5Y2X5rC45bee">永州</a>-->
+										<a href="javascript:void(0);">永州</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rmW5Y2X5byg5a6255WM">张家界</a>-->
+										<a href="javascript:void(0);">张家界</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rmW5Y2X5qCq5rSy">株洲</a>-->
+										<a href="javascript:void(0);">株洲</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rmW5Y2X5bi45b63">常德</a>-->
+										<a href="javascript:void(0);">常德</a>
+																	</dd>
+							</dl>
+													<dl>
+								<dt>西南</dt>
+								<dd>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5LqR5Y2X5piG5piO">昆明</a>-->
+										<a href="javascript:void(0);">昆明</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5Zub5bed5oiQ6YO9">成都</a>-->
+										<a href="javascript:void(0);">成都</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5LqR5Y2X57qi5rKz5bee">红河州</a>-->
+										<a href="javascript:void(0);">红河州</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5LqR5Y2X5paH5bGx5bee">文山州</a>-->
+										<a href="javascript:void(0);">文山州</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5Zub5bed6Ieq6LSh">自贡</a>-->
+										<a href="javascript:void(0);">自贡</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=6LS15bee6LS16Ziz">贵阳</a>-->
+										<a href="javascript:void(0);">贵阳</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5Zub5bed6YeN5bqG">重庆</a>-->
+										<a href="javascript:void(0);">重庆</a>
+																	</dd>
+							</dl>
+													<dl>
+								<dt>东北</dt>
+								<dd>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=6L695a6B5rKI6Ziz">沈阳</a>-->
+										<a href="javascript:void(0);">沈阳</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=6L695a6B5aSn6L+e">大连</a>-->
+										<a href="javascript:void(0);">大连</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=6L695a6B5Li55Lic">丹东</a>-->
+										<a href="javascript:void(0);">丹东</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=6L695a6B6JCl5Y+j">营口</a>-->
+										<a href="javascript:void(0);">营口</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=6L695a6B6Zic5paw">阜新</a>-->
+										<a href="javascript:void(0);">阜新</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=6L695a6B6ZOB5bKt">铁岭</a>-->
+										<a href="javascript:void(0);">铁岭</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=6L695a6B55uY6ZSm">盘锦</a>-->
+										<a href="javascript:void(0);">盘锦</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=6L695a6B6Z6N5bGx">鞍山</a>-->
+										<a href="javascript:void(0);">鞍山</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=6buR6b6Z5rGf5ZOI5bCU5ruo">哈尔滨</a>-->
+										<a href="javascript:void(0);">哈尔滨</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=6buR6b6Z5rGf5aSn5bqG">大庆</a>-->
+										<a href="javascript:void(0);">大庆</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=6buR6b6Z5rGf6bih6KW/">鸡西</a>-->
+										<a href="javascript:void(0);">鸡西</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5ZCJ5p6X6ZW/5pil">长春</a>-->
+										<a href="javascript:void(0);">长春</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5ZCJ5p6X6YCa5YyW">通化</a>-->
+										<a href="javascript:void(0);">通化</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5ZCJ5p6X55m95Z+O">白城</a>-->
+										<a href="javascript:void(0);">白城</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5ZCJ5p6X5p2+5Y6f">松原</a>-->
+										<a href="javascript:void(0);">松原</a>
+																	</dd>
+							</dl>
+													<dl>
+								<dt>海外</dt>
+								<dd>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5paw6KW/5YWw">新西兰</a>-->
+										<a href="javascript:void(0);">新西兰</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5r6z5aSn5Yip5Lqa">澳大利亚</a>-->
+										<a href="javascript:void(0);">澳大利亚</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5Yqg5ou/5aSn">加拿大</a>-->
+										<a href="javascript:void(0);">加拿大</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=5rOV5Zu9">法国</a>-->
+										<a href="javascript:void(0);">法国</a>
+																			<!--<a href="javascript:void(0); return false; /site/index1?c=576O5Zu9">美国</a>-->
+										<a href="javascript:void(0);">美国</a>
+																	</dd>
+							</dl>
+															</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="erwei" title="微信扫一扫">
+	<span class="hudongzhushou">官方微信</span>
+	<div class="erwei_big" style="display:none;">
+		<p>扫一扫，关注盛世源码—国内优秀的微信公众服务平台官方微信，体验盛世源码—国内优秀的微信公众服务平台智能服务</p>
+	</div>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var erwei_time = null;
+		$(".erwei").hover(function(){
+			$(".erwei_big").show();
+		}).mouseleave(function(){
+				erwei_time = setTimeout(function(){
+					$(".erwei_big").hide();
+				},1000);
+			});
+		$(".erwei_big").mouseenter(function(){
+			if(erwei_time){
+				clearTimeout(erwei_time);
+			}
+		}).mouseleave(function(){
+				erwei_time = setTimeout(function(){
+					$(".erwei_big").hide();
+				},1000);
+			});
+	});
+</script>
+<!-- 意见反馈 -->
+<div class="feedback" id="feedback">
+	<p class="feedsize"><b>亲爱的用户</b><a class="close" href="javascript:;" onclick= "$('#feedback, #feedback_cover').toggleClass('on');">×</a></p>
+	<p class="bbottom">欢迎您访问盛世源码—国内优秀的微信公众服务平台官方网站！您对盛世源码—国内优秀的微信公众服务平台有任何意见和建议，或在使用过程中遇到问题，请在本页面反馈。我们会实时关注您的反馈不断优化，您的建议将帮助我们改进，为您提供更好的服务！</p>
+	<p class="feedsize"><b>请留下您的宝贵意见和建议！（请填写）</b></p>
+	<form>
+		<textarea  id="feedback-text" name="" id="feedback-text" placeholder="输入文本..."></textarea>
+		<p class="feedsize"><b>您常用的电子邮箱是？（请填写）</b></p>
+		<p style="color:#666; text-indent:1em;"><b class="blue">★</b>请尽量填写，以便我们尽快回复您！</p>
+		<input type="text" placeholder="如：@163.com" id="feedback-input" />
+       <p class="feedsize"><b>验证码</b></p>
+        <input type="text" name="captcha" id="feedback-Captcha" maxlength="4" onclick="">
+        <span name="feedback_captcha" id="feedback_captcha">
+				<img title="看不清？点击更换" style="cursor: pointer;" src="captcha-f=feedback&v=8115004.png"  id="yanzhen" width="60" height="20" border="1">
+	    </span>
+	    <br />
+		<input type="button"  class="feed-btn" value="" onclick="feedbackSubmit(); return false;" />
+	</form>
+</div>
+<div id="feedback_cover" class="feedback_cover"></div>
+<!--QQ咨询-->
+<script charset="utf-8" type="text/javascript" src="/static/wxgjcn//static.b.qq.com/account/bizqq/js/wpa.js-wty=1&type=13&kfuin=86013323&ws=http---www.weimob.com-&title=企业QQ售前&cot1=国内最大的盛世源码—国内优秀的微信公众服务平台&btn1=企业QQ咨询&fsty=0&fposX=2&fposY=1&tx=2&aty=1&a=1001.js" ></script>
+
+<div class="footer">
+	<div class="footer-content clearfix">
+		<div class="foot-menu">
+			<p>
+				<a href="/static/wxgjcn/index1.htm"  target="_blank">盛世源码—国内优秀的微信公众服务平台首页</a>&nbsp;|&nbsp;
+				<a href="/reg.html"  target="_blank">申请入驻</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/proxy1.htm"  target="_blank">渠道代理</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/about1.htm"  target="_blank">关于盛世源码</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/agents.htm"  target="_blank">授权认证</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/jobs.htm"  target="_blank">加入盛世源码</a>
+			</p>
+			<p>免费热线：400-800-8888&nbsp;&nbsp;&nbsp;QQ：631989322&nbsp;&nbsp;&nbsp;邮箱：kf@weixin.9upp.com</p>
+			<p>地址：
+								中山市东区中兴广场2座1207</p>
+		</div>
+		<div class="copyright">
+			Copyright  2011-2014 9upp.com. All Rights Reserved 盛世源码团队 粤ICP备13083563号
+		</div>
+	</div>
+</div>
+<a class="feedbackbot" href="javascript:;" onclick= "$('#feedback, #feedback_cover').toggleClass('on');"></a>
+<div style="display:none;"><script type="text/javascript" src="/static/wxgjcn/src/www/index1/huishuo.js-v=2014-03-07-1.js" ></script></div>
+
+<script>
+	$(document).ready(function(){
+		$("#yanzhen").click(function(){
+			var img_src= 'captcha-f=feedback&v=.png'/*tpa=http://www.weimob.com/site/captcha?f=feedback&v=*/;
+			$(this).attr({"src":img_src + Math.random()*100000});
+		});
+	});
+	function feedbackSubmit(){
+		var $data = {
+			feedback: $('#feedback-text').val(),
+			email: $('#feedback-input').val(),
+			captcha: $('#feedback-Captcha').val(),
+			url: self.location.hrefy
+		};
+		$.post('/site/feedback', $data, function(rs){
+			alert(rs.error);
+			if (200 == rs.code)
+			{
+				$('#feedback, #feedback_cover').toggleClass('on');
+			}
+		}, 'json');
+	}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+/*焦点图*/
+.focus{height:290px;margin:15px auto 15px}
+/* 服务列表页 */
+.main{overflow:auto;margin-bottom:20px}
+.sidebar{padding:15px 20px;background:#fff;border-radius:5px;width:180px}
+.sidebar ul{width:180px}
+.sidebar ul li{float:left;width:90px;height:26px}
+	.newsevr{padding:7px 0 0}
+.listbox{width:765px}
+.listbox ul li{padding:0 0 5px 15px;width:240px;float:left;display:inline-block}
+.listbox ul li h3{text-align:center;font-size:14px;line-height:28px}
+/* 内容页 */
+.sidebar ul a.on{font-weight:bold;color:#004097}
+/* 关于页面 */
+.aboutCnt{width:820px;background:#fff;border-radius:5px;overflow:hidden}
+.aboutCnt h1{font-size:26px;line-height:40px;padding:15px 25px 15px;background:url(../../images/green/h1bg.png) no-repeat;}
+#aboutCntBox{padding:20px 25px 40px;background:#fff;border-top:solid 1px #70d063}
+.sidNav{width:120px}
+.sidNav li{line-height:30px;height:30px;padding:0 0 0 15px}
+.sidNav li.on{background:url(../../images/green/lion.png) no-repeat;margin:5px 0}
+.sidNav li.on a{color:#fff}
+.sidNav li h3{font-size:14px}
+
+/* 新闻-列表 */
+.list {}
+	.list li { position:relative;margin:0 0 20px 220px;height:120px;*margin-bottom:16px }
+	.list li h3 { font-size:18px;line-height:32px }
+	.list li h3 span { font-size:12px;font-weight:normal;color:#ccc;margin-right:10px }
+	.list li p { margin:5px 10px 0 0;text-align:justify;text-justify:inter-ideograph;color:#999;font-size:12px }
+	.list li .imgbox { position:absolute;top:0;left:-220px;height:120px;width:200px }
+/* 分页 */
+.pages { padding:0 20px}
+	.pages a, .pages span,#prt_pages a, #prt_pages span { padding:0 7px 0;line-height:30px }
+	.pages span,#prt_pages span { font-weight:bold }
+	.pages .num,#prt_pages .num { float:right;padding:0 }
+
+/*联系我们*/
+.cnttList{overflow:auto}
+.cnttList li{float:left;width:380px;padding:0 0 30px}
+.cnttList h3{font-size:20px;line-height:36px;color:#55d13f}
+

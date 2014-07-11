@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/template/reset.css-2014-03-07-1.css"  media="all" />
+<link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/template/snower.css-2014-03-07-1.css"  media="all" />
+<link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/template/common.css-2014-03-07-1.css"  media="all" />
+<link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/template/font-awesome.css-2014-03-07-1.css"  media="all" />
+<link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/template/home-61.css-2014-03-07-1.css"  media="all" />
+<link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/template/home-menu-4.css-2014-03-07-1.css"  media="all" />
+<script type="text/javascript" src="/static/wxgjcn/src/template/maivl.js-2014-03-07-1.js" ></script>
+<script type="text/javascript" src="/static/wxgjcn/src/jQuery.js-2014-03-07-1.js" ></script>
+<script type="text/javascript" src="/static/wxgjcn/src/template/zepto.js-2014-03-07-1.js" ></script>
+<script type="text/javascript" src="/static/wxgjcn/src/template/swipe.js-2014-03-07-1.js" ></script>
+<script type="text/javascript" src="/static/wxgjcn/src/template/player_min.js-2014-03-07-1.js" ></script>
+<title>云南迦南美地国际旅行社</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+		<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+        <meta name="Keywords" content="微信营销、微信代运营、微信定制开发、微信托管、微网站、微商城、微营销" />
+        <meta name="Description" content="盛世源码—国内优秀的微信公众服务平台，国内最大的微信公众智能服务平台，盛世源码—国内优秀的微信公众服务平台八大微体系：微菜单、微官网、微会员、微活动、微商城、微推送、微服务、微统计，企业微营销必备。" />
+        <!-- Mobile Devices Support @begin -->
+            <meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+            <meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+            <meta content="no-cache" http-equiv="pragma">
+            <meta content="0" http-equiv="expires">
+            <meta content="telephone=no, address=no" name="format-detection">
+            <meta name="apple-mobile-web-app-capable" content="yes" /> <!-- apple devices fullscreen -->
+            <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <!-- Mobile Devices Support @end -->
+        <link rel="shortcut icon" href="httpimg/favicon.ico" />
+    </head>
+    <body onselectstart="return true;" ondragstart="return false;">
+        <script>
+    $(function(){
+        window.swiper_2 = new Swipe(document.getElementById('list_uls'), {
+            speed:500,
+           // auto:3000,
+            callback: function(){
+               var lis = $(".nav_for_list_ul ul:first-of-type li");
+               lis.removeClass("on").eq(this.index).addClass("on");
+               var las = $(".nav_for_list_ul ul:nth-of-type(2) a");
+               las.removeClass("on").eq(this.index).addClass("on");
+
+               var minIndex = 0;
+               var maxIndex = Math.max(0, nav_uls.length - 3);
+               var range = [this.index-1, minIndex, maxIndex];
+               //
+
+               range = range.sort(function(a, b){
+                       	return a>b?1:-1;
+                       });
+               window.nav_uls.slide(range[1]);
+            }
+        });
+    });
+</script>
+<script>
+	 $().ready(function(){
+		playbox.init("playbox");
+	});
+</script>
+<div class="body">
+	<section>
+		<div>
+			<header>
+        <div class="snower">
+            <script type="text/javascript">var urls = ['/img/template/lib/v56_petal.png'/*tpa=httpimg/template/lib/v56_petal.png*/]</script>
+            <script type="text/javascript" src="/static/wxgjcn/src/template/snower1.js" ></script>
+        </div>
+    </header> 			<div class="header2">
+													<a href="javascript:;" id="playbox" class="btn_music" data-type="2" onclick="playbox.init(this).play();" ontouchstart="event.stopPropagation();"></a><audio id="audio" loop src="/static/wxgjcn//video.weimob.com/video/c3/ad/43/mp3/20130920/盟音乐.mp3"  style="pointer-events:none;display:none;width:0!important;height:0!important;"></audio>
+													<img src="/static/wxgjcn//img.weimob.com/static/c3/ad/43/image/20131023/20131023123500_74913.jpg"  alt="Club Med" style="width:100%;" />
+				
+												<a href="tel:0871-63818398" class="tel">电话:0871-63818398<span class="icon-phone">&nbsp;</span></a>
+							</div>
+			<div>
+				<nav class="nav_for_list_ul">
+					<div class="ofh">
+						<ul>
+							<li class="on"><li ><li >						</ul>
+						<ul>
+							<div id="nav_uls" style="width:33.3%;">
+								<ol>
+							<li><a href="javascript:swiper_2.slide(0);" class="on">迦南美地</a></li><li><a href="javascript:swiper_2.slide(1);" >度假专区</a></li><li><a href="javascript:swiper_2.slide(2);" >美地门店</a></li>								</ol>	
+							</div>
+						</ul>
+						<script>
+							window.nav_uls = new Swipe(document.getElementById('nav_uls'), {
+			                    speed:500,
+			                    callback: function(){
+			                    	if(this.index>(this.length-3)){
+			                    		this.slide(this.length-3);
+			                    	}
+			                    }
+			                });
+						</script>
+					</div>
+				</nav>
+			</div>
+			<div id="list_uls" class="list_uls box_swipe">
+	            <ul >
+	            		                <li>
+	                	<dl>
+	                			                		<dd>
+	                															<a  >
+													                			<figure>
+		                				<div><img src="/static/wxgjcn//img.weimob.com/static/c3/ad/43/image/20140317/20140317164241_27006.jpg"  /></div>
+		                				<figcaption>
+		                					<label>关于美地</label>
+		                				</figcaption>
+		                			</figure>
+	                			</a>
+	                		</dd>
+	                			                		<dd>
+	                															<a  >
+													                			<figure>
+		                				<div><img src="/static/wxgjcn//img.weimob.com/static/c3/ad/43/image/20131022/20131022133023_63868.jpg"  /></div>
+		                				<figcaption>
+		                					<label>团队介绍</label>
+		                				</figcaption>
+		                			</figure>
+	                			</a>
+	                		</dd>
+	                			                		<dd>
+	                															<a  >
+													                			<figure>
+		                				<div><img src="/static/wxgjcn//img.weimob.com/static/c3/ad/43/image/20131220/20131220095947_98437.jpg"  /></div>
+		                				<figcaption>
+		                					<label>美景美图</label>
+		                				</figcaption>
+		                			</figure>
+	                			</a>
+	                		</dd>
+	                			                		<dd>
+	                															<a  >
+													                			<figure>
+		                				<div><img src="/static/wxgjcn//img.weimob.com/static/c3/ad/43/image/20130823/20130823180941_91380.jpg"  /></div>
+		                				<figcaption>
+		                					<label>美地俱乐部</label>
+		                				</figcaption>
+		                			</figure>
+	                			</a>
+	                		</dd>
+	                			                		<dd>
+	                															<a  >
+													                			<figure>
+		                				<div><img src="/static/wxgjcn//img.weimob.com/static/c3/ad/43/image/20131213/20131213175909_72787.gif"  /></div>
+		                				<figcaption>
+		                					<label>美地留言板</label>
+		                				</figcaption>
+		                			</figure>
+	                			</a>
+	                		</dd>
+	                		                		</dl>
+	                </li>
+	                	                <li>
+	                	<dl>
+	                			                		<dd>
+	                															<a  >
+													                			<figure>
+		                				<div><img src="/static/wxgjcn//img.weimob.com/static/c3/ad/43/image/20140326/20140326172638_21113.png"  /></div>
+		                				<figcaption>
+		                					<label>CM度假村</label>
+		                				</figcaption>
+		                			</figure>
+	                			</a>
+	                		</dd>
+	                			                		<dd>
+	                															<a  >
+													                			<figure>
+		                				<div><img src="/static/wxgjcn//img.weimob.com/static/c3/ad/43/image/20140327/20140327141556_16056.jpg"  /></div>
+		                				<figcaption>
+		                					<label>悦榕庄</label>
+		                				</figcaption>
+		                			</figure>
+	                			</a>
+	                		</dd>
+	                			                		<dd>
+	                															<a  >
+													                			<figure>
+		                				<div><img src="/static/wxgjcn//img.weimob.com/static/c3/ad/43/image/20131220/20131220100043_28408.jpg"  /></div>
+		                				<figcaption>
+		                					<label>club med动画</label>
+		                				</figcaption>
+		                			</figure>
+	                			</a>
+	                		</dd>
+	                			                		<dd>
+	                															<a  >
+													                			<figure>
+		                				<div><img src="/static/wxgjcn//img.weimob.com/static/c3/ad/43/image/20140317/20140317175419_14825.jpg"  /></div>
+		                				<figcaption>
+		                					<label>美地游记</label>
+		                				</figcaption>
+		                			</figure>
+	                			</a>
+	                		</dd>
+	                		                		</dl>
+	                </li>
+	                	                <li>
+	                	<dl>
+	                			                		<dd>
+	                															<a  >
+													                			<figure>
+		                				<div><img src="/static/wxgjcn//img.weimob.com/static/c3/ad/43/image/20130828/20130828225133_84008.jpg"  /></div>
+		                				<figcaption>
+		                					<label>悠悠的自由行</label>
+		                				</figcaption>
+		                			</figure>
+	                			</a>
+	                		</dd>
+	                			                		<dd>
+	                															<a  >
+													                			<figure>
+		                				<div><img src="/static/wxgjcn//img.weimob.com/static/c3/ad/43/image/20130823/20130823182315_80694.jpg"  /></div>
+		                				<figcaption>
+		                					<label>美地门店360度全景图</label>
+		                				</figcaption>
+		                			</figure>
+	                			</a>
+	                		</dd>
+	                			                		<dd>
+	                															<a  >
+													                			<figure>
+		                				<div><img src="/static/wxgjcn//img.weimob.com/static/c3/ad/43/image/20140317/20140317175941_93761.jpg"  /></div>
+		                				<figcaption>
+		                					<label>精品线路</label>
+		                				</figcaption>
+		                			</figure>
+	                			</a>
+	                		</dd>
+	                			                		<dd>
+	                															<a  >
+													                			<figure>
+		                				<div><img src="/static/wxgjcn//img.weimob.com/static/c3/ad/43/image/20140214/20140214160938_76028.jpg"  /></div>
+		                				<figcaption>
+		                					<label>签证查询</label>
+		                				</figcaption>
+		                			</figure>
+	                			</a>
+	                		</dd>
+	                		                		</dl>
+	                </li>
+	                	            </ul>
+			</div>
+		</div>
+	</section>
+</div>
+<!--
+导航菜单
+   后台设置的快捷菜单
+-->
+					<script>
+		window.addEventListener("DOMContentLoaded", function(){
+			var nav = document.querySelectorAll(".nav_8")[0];
+			
+			var evts = {
+				handleEvent: function(evt){
+					if("A" == evt.target.nodeName){
+						evt.target.classList.toggle("active");
+					}
+				}
+			}
+			nav.addEventListener("mousedown", evts, false);
+			nav.addEventListener("mouseup", evts, false);
+			nav.addEventListener("touchstart", evts, false);
+			nav.addEventListener("touchend", evts, false);
+		});
+		</script>
+		<div class="top_bar footer_bar">
+			<section>
+					<div class="nav_8">
+						<ul class="box">
+							
+							<li>
+																	<a href="tel:0871-63818398" >
+										<p class="icon-phone"></p>
+										<span>电话</span>
+									</a>
+															</li>
+							
+							<li>
+																	<a   >
+										<p class="icon-comments-alt "></p>
+										<span>客服</span>
+									</a>
+															</li>
+							
+							<li>
+																	<a   >
+										<p class="icon-globe "></p>
+										<span>主页</span>
+									</a>
+															</li>
+							
+							<li>
+																	<a   >
+										<p class="icon-location-arrow"></p>
+										<span>导航</span>
+									</a>
+															</li>
+													</ul>
+					</div>
+			</section>
+		</div>
+	
+<!--
+分享前控制
+-->
+	<script type="text/javascript">
+		window.shareData = {
+			"imgUrl": "//img.weimob.com/static/c3/ad/43/image/20130823/20130823180941_91380.jpg"/*tpa=http://www.weimob.com/templates/kindeditor/attached/c3/ad/43/image/20130823/20130823180941_91380.jpg*/,
+			"timeLineLink": "http://www.weimob.com/weisite/home?pid=708&bid=1609&wechatid=fromUsername&wxref=mp.weixin.qq.com",
+			"sendFriendLink": "http://www.weimob.com/weisite/home?pid=708&bid=1609&wechatid=fromUsername&wxref=mp.weixin.qq.com",
+			"weiboLink": "http://www.weimob.com/weisite/home?pid=708&bid=1609&wechatid=fromUsername&wxref=mp.weixin.qq.com",
+			"tTitle": "「美地度假」微官网",
+			"tContent": "欢迎光临美地度假，我们倡导简单阳光的度假方式，为您提供最全面的度假资讯。",
+			"fTitle": "「美地度假」微官网",
+			"fContent": "欢迎光临美地度假，我们倡导简单阳光的度假方式，为您提供最全面的度假资讯。",
+			"wContent": "欢迎光临美地度假，我们倡导简单阳光的度假方式，为您提供最全面的度假资讯。"
+		};
+			</script>
+        			<footer style="overflow:visible;">
+				<div class="weimob-copyright" style="padding-bottom:50px;">
+					<a  >(c) 美地度假</a>
+				</div>
+									<span class="weimob-support" style="display:none;">(c)盛世源码—国内优秀的微信公众服务平台提供</span>
+							</footer>
+				<div mark="stat_code" style="width:0px; height:0px; display:none;">
+					</div>
+	</body>
+		<script type="text/javascript">
+(function() {
+	var wtj = document.createElement('script'); wtj.type = 'text/javascript'; wtj.async = true;
+	wtj.src = 'http://tj.weimob.com/wtj.js?url=' + encodeURIComponent(location.href);
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wtj, s);
+})();
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd80741dd59de91e1846b2add2c0ad2a2' type='text/javascript'%3E%3C/script%3E"));
+function weimobAfterShare(shareFromWechatId,sendFriendLink,shareToPlatform){
+	var wmShare = document.createElement('script'); wmShare.type = 'text/javascript'; wmShare.async = true;
+    wmShare.src = 'http://' + getShareApiRouter() + '/api-share.js?fromWechatId=' + shareFromWechatId + '&shareToPlatform=';
+	wmShare.src += shareToPlatform + '&pid=708&sendFriendLink=' + encodeURIComponent(sendFriendLink);
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wmShare, s);
+}
+function getShareApiRouter(){
+	var str_domain = location.href.split('/',4)[2];
+	var tj_domain = '127.0.0.1';
+	switch(str_domain){
+		case 'http://www.weimob.com/weisite/www.weimob.com':
+			tj_domain = 'http://www.weimob.com/weisite/tj.weimob.com';
+			break;
+		case 'http://www.weimob.com/weisite/112.124.28.82':
+			tj_domain = '112.124.28.82:400';
+			break;
+	}
+	return tj_domain;
+}
+if(typeof(window.shareData) == 'undefined'){
+	window.shareData = {
+				"imgUrl": "", 
+		"timeLineLink": "http://www.weimob.com/weisite/home?pid=708&bid=1609&wechatid=fromUsername",
+		"sendFriendLink": "http://www.weimob.com/weisite/home?pid=708&bid=1609&wechatid=fromUsername",
+		"weiboLink": "http://www.weimob.com/weisite/home?pid=708&bid=1609&wechatid=fromUsername",
+		"tTitle": document.title,
+		"tContent": document.title,
+		"fTitle": document.title,
+		"fContent": document.title,
+		"wContent": document.title
+	}
+}
+document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {	 
+	// 发送给好友
+	WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+		WeixinJSBridge.invoke('sendAppMessage', { 
+			"img_url": window.shareData.imgUrl,
+			"img_width": "640",
+			"img_height": "640",
+			"link": window.shareData.sendFriendLink,
+			"desc": window.shareData.fContent,
+			"title": window.shareData.fTitle
+		}, function (res) {
+			weimobAfterShare("oFTcMj0vErNiKyYg_KUjobExRk7k",window.shareData.sendFriendLink,'appmessage');
+			_report('send_msg', res.err_msg);
+		})
+	});
+
+	// 分享到朋友圈
+	WeixinJSBridge.on('menu:share:timeline', function (argv) {
+		WeixinJSBridge.invoke('shareTimeline', {
+			"img_url": window.shareData.imgUrl,
+			"img_width": "640",
+			"img_height": "640",
+			"link": window.shareData.timeLineLink,
+			"desc": window.shareData.tContent,
+			"title": window.shareData.tTitle
+		}, function (res) {
+						//weimobAfterShare("oFTcMj0vErNiKyYg_KUjobExRk7k",window.shareData.timeLineLink,'timeline');
+			_report('timeline', res.err_msg);
+		});
+	});
+
+	// 分享到微博
+	WeixinJSBridge.on('menu:share:weibo', function (argv) {
+		WeixinJSBridge.invoke('shareWeibo', {
+			"content": window.shareData.wContent,
+			"url": window.shareData.weiboLink
+		}, function (res) {
+			weimobAfterShare("oFTcMj0vErNiKyYg_KUjobExRk7k",window.shareData.weiboLink,'weibo');
+			_report('weibo', res.err_msg);
+		});
+	});
+}, false);
+</script>
+<script type="text/javascript" src="/static/wxgjcn//kf.weimob.com/js/ChatFloat.js" ></script>
+<script type="text/javascript">
+var str_domain = location.href.split('/',4)[2];
+var boolIsTest = true;
+if(str_domain == 'http://www.weimob.com/weisite/www.weimob.com'){
+	boolIsTest = false;
+}
+new ChatFloat({
+        AId: '708',
+        openid: "oFTcMj0vErNiKyYg_KUjobExRk7k",
+		top:150,
+		right:0,
+		IsTest:boolIsTest
+});
+</script>
+</html>
+

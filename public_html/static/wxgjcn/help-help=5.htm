@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="uyan_auth" content="04a3f6938d" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="微信营销、微信代运营、微信定制开发、微信托管、微网站、微商城、微营销" name="Keywords">
+	<meta content="盛世源码—国内优秀的微信公众服务平台，国内最大的微信公众智能服务平台，盛世源码—国内优秀的微信公众服务平台八大微体系：微菜单、微官网、微会员、微活动、微商城、微推送、微服务、微统计，企业微营销必备。" name="Description">
+    <script src="/static/wxgjcn/src/html5.js" ></script>
+    <link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/bootstrap_min.css-2014-03-07-1.css"  media="all" />
+<link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/www/index1/index.css-2014-03-07-1.css"  media="all" />
+<link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/www/help/help.css-2014-03-07-1.css"  media="all" />
+<script type="text/javascript" src="/static/wxgjcn/src/jQuery.js-2014-03-07-1.js" ></script>
+<script type="text/javascript" src="/static/wxgjcn/src/www/index1/weimob-index.js-2014-03-07-1.js" ></script>
+<title>盛世源码—国内优秀的微信公众服务平台</title>
+	<link rel="shortcut icon" href="httpimg/favicon.ico" />
+</head>
+<body>
+	
+<!--595 850-->
+<script language="javascript">
+	$(function () {
+		$("a").click(function () {
+			var rel = $(this).attr("rel");
+			if (rel) {
+				var pos = $(rel).offset().top-60;
+				$("html,body").animate({ scrollTop: pos }, 800);
+			}
+
+		})
+	})
+</script>
+<script>
+	$().ready(function(){
+
+		window.onscroll = window.onresize = function(){
+			showSideBar();
+		}
+	});
+	function showSideBar(){
+		if(!window.sideMenu){
+			window.sideMenu = $("#sideToolbar");
+		}
+		if((document.body.scrollTop||document.documentElement.scrollTop)>500){
+			sideMenu.addClass("on");
+		}else{
+			sideMenu.removeClass("on");
+		}
+	}
+
+
+
+</script>
+<!--[if lte IE 8]>  <script language="javascript">$(function (){$.browser.msie&&$("#ie9-tips").show().find("#stopSuggestA").click(function(){$("#ie9-tips").hide()})})</script><![endif]-->
+<div class="nav clearfix">
+	<div class="nav-content">
+		<h1 class="left" onclick="location.herf='/site/city1'">盛世源码—国内优秀的微信公众服务平台·微信营销，如此简单！</h1>
+		<div class="left city">
+			<h2>上海</h2>
+							<a href="/static/wxgjcn/city1.htm" >
+					切换城市<i class="tri4"></i>
+				</a>
+					</div>
+		<div class="right line-li">
+			<ul>
+				<li><a href="/" >首页</a></li>
+				<li><a href="/static/wxgjcn/case1.htm"  >经典案例</a></li>
+				<li class="nav_menu_li_1"><a style="width:70px; text-align:left;" class="_hover">产品中心<i></i></a>
+					<div class="sub-nav">
+						<a href="/static/wxgjcn/package.htm"  target="_black">微信套餐</a>
+						<a href="/static/wxgjcn/guide1.htm" >功能介绍</a>
+						
+
+					</div>
+
+				</li>
+				<li><a href="/static/wxgjcn/proxy1.htm"  >渠道代理</a></li>
+				<li><a href="/static/wxgjcn/help.htm"  class="navtwo" target="_black">帮助</a></li>
+			</ul>
+			<div class="account">
+				<a href="/reg.html"  class="btn-reg btn0" target="_black">注册</a>
+									<a href="/login.html" class="btn-login btn0" target="_black">登录</a>
+				</div>
+		</div>
+	</div>
+</div>
+
+	
+<div id="ie9-tips" class="clearfix">
+	<div id="tipsPanel">
+		<div id="tipsDesc">系统检测到您所使用的浏览器版本较低，推荐使用<a   target="_blank">Firefox</a>或<a   target="_blank">Chrome</a>浏览器打开，否则将无法体验完整产品功能。</div>
+		<a id="stopSuggestA" href="javascript:;">×</a>
+	</div>
+</div>
+
+<script>
+	var $do_submit = false;
+
+	// 绑定回车键
+	$('#loginBox').keydown(function(e){
+		if(13 == event.keyCode){
+			login();
+		}
+	});
+
+		function login()
+	{
+		if (true == $do_submit)
+		{
+			return false;
+		}
+
+		var $pre_submit = '登录', $do_submit = '登录中...';
+		var $username = $('#username').val(), $password = $('#password').val(), $keepalive = $('#rememberPwdIcon').val();
+		$('#login_button').text($do_submit);
+		$do_submit = true;
+
+		// check
+		if ('' == $username || '' == $password)
+		{
+			$('#err_tips').text('您输入的盛世源码—国内优秀的微信公众服务平台号或密码错误，请重新输入！');
+			$('#err_area').show();
+			$('#login_button').text($pre_submit);
+			$do_submit = false;
+			return false;
+		}
+
+		var $login_data = {
+			username:$username,
+			password:$password,
+			keepalive:$keepalive
+		};
+		$.post('/login', $login_data, function(rs){
+			if(rs.errno == 200)
+			{
+				location.href = rs.url_route;
+			}
+			else
+			{
+				$('#err_tips').text(rs.error);
+				$('#err_area').show();
+				$('#login_button').text($pre_submit);
+			}
+			$do_submit = false;
+		}, 'json');
+	}
+	</script>
+<div id="top"></div><div id="page">
+   
+       <div class="title">盛世源码—国内优秀的微信公众服务平台产品（微信会员卡）使用指南</div>
+      <h3 id="5_1">1、基础建设</h3>
+      <h4>1.1商家设置</h4>
+      <p>对应填写各项，生成完整的图文消息，用户通过关键词即可触发进入会员卡，电话、地址也将在手机端对应展示，支持一键拨号、一键导航；</p>
+      <p><img src="/static/wxgjcn/img/webabout/mcard001.jpg" ></p>
+      <h4>1.2会员卡设置</h4>
+      <p>Step1：卡片设置</p>
+      <p>包含卡片名称、背景、logo、卡号、领卡是否验证、消费密码、使用说明及字体颜色等，设置后可生成完整的微信电子会员卡；</p>
+      <p style="color:#F00;">注：如需手机号作为卡号，用户领卡则必须验证，会员卡号设置修改后，之前产生的会员卡号不变，修改后产生的会员卡号才有效。</p>
+      <p>Step2：会员资料设置</p>
+      <p>系统定义5个默认项，分别为：姓名、手机号、生日、性别、地址，可根据不同需求添加其他填写项，在用户领卡或完善资料时供用户填写；</p>
+      <p style="color:#F00;">注：如用户领卡时经过手机验证，则为绑定状态，手机号不可随意修改； 新版会员卡系统，用户领卡时需验证手机号码，填写验证码，如不需要该功能，请在后台取消。</p>
+      <p>Step3：会员卡特权</p>
+      <p>对于会员卡当前所拥有的权限做文字说明，可创建多条，但手机端仅可展示一条；</p>
+      <p>Step4：业务关联</p>
+      <p>通过添加不同业务，让用户在会员卡界面就可去到任意模块；</p>
+      <p style="color:#F00;">注：尽量避免使用链接，以免获取不到用户身份。</p>
+      <p><img src="/static/wxgjcn/img/webabout/mcard003.jpg" ><img src="/static/wxgjcn/img/webabout/mcard004.jpg" ></p>
+      <p>Step5：等级设置</p>
+      <p>a、	根据需求添加会员等级的名称，及对应的折扣率，让不同会员享有不同优惠；</p>
+      <p>b、	设置等级的规则及额度；</p>
+      <p>c、	填写成功后，需点击“更新等级”后再保存，等级才生效。</p>
+      <p style="color:#F00;">注：再次修改时，如果【等级设置规则】或【额度设置】需修改，修改后需点击“更新等级”再保存，否则修改不生效，如果修改不包含这两项内容，点击“保存”即可。</p>
+      <p><img src="/static/wxgjcn/img/webabout/mcard005.jpg" ></p>
+      <h3 id="5_2">2、会员CRM</h3>
+      <h4>2.1微信会员管理</h4>
+      <p>a、微信会员列表：可直接为某个会员充值、消费、修改积分、编辑信息、冻结会员卡，并可查看各会员的消费统计表；</p>
+      <p>b、导出会员：能够导出所有会员及相关的姓名、手机号、余额、积分、等级、自定义项等所有信息，并可根据需要导出不同等级的会员人群。</p>
+      <p><img src="/static/wxgjcn/img/webabout/mcard006.jpg" ></p>
+      <h4>2.2实体店会员管理</h4>
+      <p>Step1：通过【导入会员】下载模板文件；</p>
+      <p><img src="/static/wxgjcn/img/webabout/mcard007.jpg" ></p>
+      <p>Step2：对应文件内的各项栏目填写会员信息，不可自定义添加栏目，以免导入有误；</p>
+      <p>Step3：填写成功，通过【导入会员】-【选择文件】-【提交】；</p>
+      <p><img src="/static/wxgjcn/img/webabout/mcard008.jpg" ></p>
+      <p>Step4：线上线下结合：导入的会员关注您的微信公众号后，进入会员卡，无需进行繁琐的领卡步骤，只需填写手机号+验证码即可成为您的微信会员。</p>
+      <p style="color:#F00;">注：导入的会员以手机号作为唯一身份，不可重复，重复手机号的会员则无法导入。</p>
+      <h3 id="5_3">3、会员交易</h3>
+      <p><img src="/static/wxgjcn/img/webabout/mcard009.jpg" ></p>
+      <h4>3.1快捷交易</h4>
+      <p>a、仅需输入会员手机号或会员卡号即可为任意会员进行消费（支持使用券消费）、充值、手动修改积分；</p>
+      <p>b、需兑换礼品的用户，可直接输入礼品券SN码即可兑换（兑换记录请在该券的派发列表内查看）。</p>
+      <h4>3.2交易统计</h4>
+      <p>可查询微信公众号各个年月的总交易统计（包含消费、积分）；</p>
+      <h4>3.3交易明细查询</h4>
+      <p>可通过不同搜索条件查询任意会员的交易明细（包含消费、充值、积分），如：</p>
+       <p><img src="/static/wxgjcn/img/webabout/mcard010.jpg" ></p>
+       <h3 id="5_4">4、会员营销</h3>
+       <h4>4.1优惠券</h4>
+       <p>优惠券分为3个属性</p>
+       <p>属性1：普通券——商家发布后，适用人群在会员优惠列表即可领取、使用；</p>
+       <p>属性2：营销券——仅可营销时勾选使用，包含：开卡即送、充值赠送、消费赠送；</p>
+       <p>属性3：关怀券——仅可用于客户关怀，在节日或会员生日时使用；</p>
+       <p>券有3种类型——优惠券、代金券、礼品券</p>
+       <p style="color:#F00;">注：普通券仅可创建优惠券和代金券，用户通过【会员卡】-【会员优惠】即可点击领取；营销券和关怀券3种类型的券均可创建，但是用户只可通过营销活动或节日关怀获得。</p>
+       <p>Step1：编辑优惠券名称、属性、适用人群、有效期、适用门店、类型、发放总数、每个用户可领取数、图片及说明等信息，生成完整的优惠券。</p>
+       <p><img src="/static/wxgjcn/img/webabout/mcard012.jpg" ></p>
+       <p>Step2：【优惠券管理】列表→【派发列表】，可查看优惠券派发状况以及使用状况；</p>
+       <p><img src="/static/wxgjcn/img/webabout/mcard013.jpg" ></p>
+       <p style="color:#F00;">注：优惠券、代金券用户可通过手机使用，礼品券仅支持用户手机获得序列号，工作人员通过盛世源码—国内优秀的微信公众服务平台后台【会员交易】-【兑换礼品】-【输入礼品券SN码】进行兑换。</p>
+       <h4>4.2开卡即送</h4>
+       <p>Step1：【添加开卡即送】→设置活动名称、时间、赠送策略、是否手机端展示、是否发送短信通知用户，即可生成一个完整的开卡即送活动；</p>
+       <p><img src="/static/wxgjcn/img/webabout/mcard014.jpg" ></p>
+       <p>Step2：如果赠送的是券，【开卡即送】列表→【使用管理】，可查看发放的券，以及使用状况；</p>
+       <p>Step3：如需让用户知道当前有开卡活动，可勾选“在用户领卡界面展示”，所有开卡活动仅可开启一条，开启后可展示。</p>
+       <p style="color:#F00;">注：赠送积分或券仅可选择一种，赠送券的数量最大上限是3张券，需优先在优惠券内编辑好【营销券】才可勾选；</p>
+       <p style="color:#F00;">【券的开始时间】必须在【开卡赠送开始时间】之后，【券的结束时间】必须在【开卡赠送结束时间】之后，此类券才符合条件，可勾选赠送。</p>
+       <h4>4.3签到分享</h4>
+       <p>Step1：编辑签到分享赠送积分的额度，用户通过签到或分享则可获得对应的积分；</p>
+       <p><img src="/static/wxgjcn/img/webabout/mcard015.jpg" ></p>
+       <p style="color:#F00;">注：签到一天仅可一次，分享得积分一天仅可5次，第6次及之后分享则不再获得积分，避免用户出现刷分行为。</p>
+       <p>Step2：编辑积分攻略，告诉用户整个站内有哪些方式可获得积分，及积分有何作用，增加用户粘性及趣味；</p>
+       <p><img src="/static/wxgjcn/img/webabout/mcard016.jpg" ></p>
+       <p>Step3：创建每日推荐，在会员卡分享界面展示，可引导用户去到其他版块，并进行分享。</p>
+       <p><img src="/static/wxgjcn/img/webabout/mcard017.jpg" ></p>
+       <h4>4.4积分兑换</h4>
+       <p>Step1：添加积分兑换，可设置名称、允许兑换时间、可兑换的人群、兑换所需积分、可兑换次数、兑换的内容、是否需要短信通知用户；</p>
+       <p><img src="/static/wxgjcn/img/webabout/mcard018.jpg" ></p>
+       <p>Step2：如果兑换的内容是券，可在【积分兑换管理】-列表-【派发列表】，查看兑换的券及使用状况。</p>
+       <p style="color:#F00;">注：兑换活动需优先在微活动内编辑好会员卡活动，暂支持：刮刮卡、大转盘、砸金蛋；</p>
+       <p><img src="/static/wxgjcn/img/webabout/mcard019.jpg" ></p>
+       <p>兑换券需优先在优惠券内编辑好营销券才可勾选兑换；</p>
+       <p>【活动或券的开始时间】必须在【兑换开始时间】之后，【活动或券的结束时间】必须在【兑换结束时间】之后，此类活动或券才符合条件，可勾选兑换。</p>
+       <h4>4.5充值赠送</h4>
+       <p>Step1：添加充值赠送，可设置名称、允许赠送时间、可赠送的人群、可赠送条件、赠送的内容、是否在手机端展示、是否需要短信通知用户；</p>
+       <p><img src="/static/wxgjcn/img/webabout/mcard020.jpg" ></p>
+       <p>Step2：如果赠送的内容是券，可在【充值赠送管理】-列表-【派发列表】，查看赠送的券及使用状况。</p>
+       <p style="color:#F00;">注：赠送券需优先在优惠券内编辑好营销券才可勾选赠送；<br /> 
+【券的开始时间】必须在【充值赠送开始时间】之后，【券的结束时间】必须在【充值赠送结束时间】之后，此类券才符合条件，可勾选赠送。<br />
+释：线上充值为手机充值，线下充值为工作人员后台充值。<br /></p>
+      <h4>4.6消费赠送</h4>
+      <p>Step1：添加消费赠送，可设置名称、允许赠送时间、可赠送的人群、可赠送条件、可赠送的门店，赠送的内容、赠送权限、是否在手机端展示、是否需要短信通知用户；</p>
+      <p><img src="/static/wxgjcn/img/webabout/mcard021.jpg" ></p>
+      <p>Step2：如果赠送的内容是券，可在【消费赠送管理】-列表-【派发列表】，查看赠送的券及使用状况。</p>
+      <p>注：赠送券需优先在优惠券内编辑好营销券才可勾选赠送；<br /> 
+【券的开始时间】必须在【消费赠送开始时间】之后，【券的结束时间】必须在【消费赠送结束时间】之后，此类券才符合条件，可勾选赠送。</p>
+    <p style="color:#F00;">释：消费即送——如消费1元送1积分，则消费65元送65积分，消费100元送100积分；</p>
+    <p style="color:#F00;">单次消费满送——如单次消费100元送10元，则用户单次消费150送10元，用户单次消费210送10元；</p>
+    <p style="color:#F00;">累计消费满送——如累计消费满1000送10元，则用户累计为1500送10元，再次消费600元，累计为2100，则再送10元；</p>
+    <p>一个月未消费送——如一个月未消费送代金券，活动时间1.8-1.10：1.8前一个月未消费用户系统送券，1.9前一个月未消费用户送券，1.10前一个月未消费用户送券。</p>
+    <h4>4.7客户关怀</h4>
+    <p> 主要分为两种关怀：节日关怀  生日关怀</p>
+    <p>Step1：添加客户关怀，勾选节日关怀，可编辑节日名称、类型、活动人群、节日时间、赠送的内容、短信通知用户的内容及时间、是否在手机端展示；</p>
+     <p><img src="/static/wxgjcn/img/webabout/mcard023.jpg" ></p>
+     <p>Step2：添加客户关怀，勾选生日关怀，可编辑活动人群、赠送内容、赠送及消息方式时间、短信通知用户的内容、是否在手机端展示；</p>
+      <p><img src="/static/wxgjcn/img/webabout/mcard024.jpg" ></p>
+      <p style="color:#F00;">注：赠送券需优先在优惠券内编辑好营销券才可勾选赠送；<br /> 
+节日关怀：【券的开始时间】必须在【赠送时间】之后才可勾选赠送；<br />
+生日关怀：建议赠送券的时间设置较长，避免券到期后，系统将不再赠送；<br />
+如需让用户知道该节日赠送活动，则可勾选【在会员卡界面展示】。</p>
+    <h3 id="5_5">5、通知管理</h3>
+    <p>商家有最新的优惠或其他活动消息想告诉用户，可发布通知，在【会员卡】-【消息】-【广播】界面供用户查看。</p>
+    <p>Step1：添加通知，编辑标题、通知图片及内容生成一个完整的通知；</p>
+    <p>Step2：选择需要针对的人群发布通知。</p>
+    <p><img src="/static/wxgjcn/img/webabout/mcard025.jpg" ></p>
+    <h3 id="5_6">6、会员数据统计</h3>
+    <p>通过筛选不同年月查询微信公众号的会员增长状况。</p>
+    <p><img src="/static/wxgjcn/img/webabout/mcard026.jpg" ></p>
+          
+     
+       
+      <div id="sideToolbar" style="display: block; position: fixed; top:150px;  right: 0;">
+      <div id="sideCatalog" class="sideCatalogBg" style="visibility: visible;">
+        <div id="sideCatalog-sidebar"></div>
+        <div id="sideCatalog-catalog">
+          <dl style="width:200px;zoom:1">
+            <dd><span>1</span><a href="javascript:void()" rel="#5_1" title="基础建设">基础建设</a></dd>
+            <dd><span>2</span><a href="javascript:void()" rel="#5_2" title="会员CRM">会员CRM</a></dd>
+            <dd><span>3</span><a href="javascript:void()" rel="#5_3" title="会员交易">会员交易</a></dd>
+            <dd><span>4</span><a href="javascript:void()" rel="#5_4" title="会员营销">会员营销</a></dd>
+            <dd><span>5</span><a href="javascript:void()" rel="#5_5" title="通知管理">通知管理</a></dd>
+            <dd><span>6</span><a href="javascript:void()" rel="#5_6" title="会员数据统计">会员数据统计</a></dd>
+           
+    
+          </dl>
+        </div>
+      </div>
+       <a id="sideCatalogBtn" href="/static/wxgjcn/help.htm"  style="visibility: visible;" title="查看帮助目录"></a>
+      <a id="sideToolbar-up"  href="javascript:void()" rel="#top" title="返回顶部" style="visibility: visible;"></a></div>
+     
+</div>
+<script>
+	$(function () {
+	   if(location.hash){
+			var pos = $(location.hash).offset().top-60;
+			$("html,body").animate({ scrollTop: pos }, 800);
+		}
+	});
+</script>
+<!--QQ咨询-->
+<div class="footer">
+	<div class="footer-content clearfix">
+		<div class="foot-menu">
+			<p>
+				<a href="/static/wxgjcn/index1.htm"  target="_blank">盛世源码—国内优秀的微信公众服务平台首页</a>&nbsp;|&nbsp;
+				<a href="/reg.html"  target="_blank">申请入驻</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/proxy1.htm"  target="_blank">渠道代理</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/about1.htm"  target="_blank">关于盛世源码</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/agents.htm"  target="_blank">授权认证</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/jobs.htm"  target="_blank">加入盛世源码</a>
+			</p>
+			<p>免费热线：400-800-8888&nbsp;&nbsp;&nbsp;QQ：631989322&nbsp;&nbsp;&nbsp;邮箱：kf@weixin.9upp.com</p>
+			<p>地址：
+								上海市市辖区宝山区逸仙路2816号华滋奔腾大厦A幢15楼</p>
+		</div>
+		<div class="copyright">
+			Copyright (c) 2011-2014 9upp.com. All Rights Reserved 盛世源码团队 粤ICP备13083563号
+		</div>
+	</div>
+</div>
+<div style="display:none;"><script type="text/javascript" src="/static/wxgjcn/src/www/index1/huishuo.js-v=2014-03-07-1.js" ></script></div></body>
+</html>

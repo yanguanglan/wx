@@ -1,0 +1,591 @@
+<html xmlns="/www.w3.org/1999/xhtml">
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>
+            盛世源码—微信营销专家，微信公众号开发，微官网制作，微信自定义菜单，为企业提供专业的微信营销解决方案。
+        </title>
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <meta name="keywords" content="盛世源码，微信营销，移动营销，微信营销软件，微信营销方案，微信营销技巧，微信营销案例，微信营销平台，微信营销公司，微信公众平台开发，微信公众平台营销，微官网制作"
+        />
+        <meta name="Description" content="盛世源码微信营销平台，为你提供最专业的微信营销解决方案，你可以通过盛世源码，制作属于自己的微信官网，向众多微信用户展示自己的产品信息。并且通过盛世源码平台，为自己的微信公众账号设置优惠劵，大转盘，会员卡等各种微信营销功能，来吸引用户，提升用户二次消费几率。"
+        />
+        <link href="/wx_index/css/vdlzx.css?ver=3" rel="stylesheet" type="text/css"
+        />
+        <link href="/wx_css/css/flexslider.css" rel="stylesheet" type="text/css"
+        />
+        <script type="text/javascript" src="/wx_css/js/jquery-1.9.1.min.js">
+        </script>
+        <script type="text/javascript" src="/wx_css/js/jcarousellite_1.0.1.min.js">
+        </script>
+        <script type="text/javascript" src="/wx_css/js/jquery.flexslider-min.js">
+        </script>
+    </head>
+    
+    <body>
+        <div class="top" style="height:54px; background:#333333; position:fixed; top:0; z-index:9999;">
+            <div class="top-cont0">
+                <div class="logo fl">
+                    <img src="/wx_index/images/vdl_zxsy_02.png" width="350" height="50">
+                </div>
+                <div class="fr yhdl0">
+                    <a href="/login.html">
+                        用户登录
+                    </a>
+                </div>
+                <div class="top-nav0 fr">
+                    <ul>
+                        <li>
+                            <a href="/index.html">
+                                首页
+                            </a>
+                        </li>
+						 <li>
+                                    <a href="/wx_case_index/caseFunction.htm">
+                                        产品功能
+                                    </a>
+                                </li>
+                        <li id="f3" onmouseover="proOver(3);" onMouseOut="proOut(3);">
+                            <a id="l3" href="javascript:;">
+                                产品中心
+                            </a>
+                            <ul id="proList3" style="display: none;">
+                               
+                                <li>
+                                    <a href="/wx_case_index/ticket.htm">
+                                        无线打印
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/wx_case_index/wifi.htm">
+                                        微信wifi
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="teshu">
+                            <a href="/wx_case_index/caseIndex2.htm">
+                                案例展示
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/wx_case_index/agencyIndex1.htm">
+                                加盟合作
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/wx_case_index/contactIndex.htm">
+                                联系我们
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="clr">
+                    </div>
+                </div>
+                <div class="clr">
+                </div>
+            </div>
+            <div class="top-color ">
+            </div>
+        </div>
+        <div style="height:50px; widows:100%;">
+        </div>
+        <script type="text/javascript">
+            function proOver(flag) {
+                $("#proList" + flag).show();
+                //if($("#f"+flag).css("background")!="rgb(255, 132, 0) none repeat scroll 0% 0% / auto padding-box border-box"){
+                //$("#l"+flag).css("background","#FF8400");
+                //}
+                $("#f" + flag).attr("class", "teshu");
+            }
+            function proOut(flag) {
+                $("#proList" + flag).hide();
+                /*if($("#f"+flag).css("background")!="rgb(255, 132, 0) none repeat scroll 0% 0% / auto padding-box border-box"){
+		    $("#l"+flag).css("background","");
+			$("#l"+flag).css("color","#3e3e3e");
+			
+	}*/
+                $("#f" + flag).removeClass("teshu");
+            }
+        </script>
+        <div class="content content1">
+            <div class="banner1-1">
+                <div class="banner11">
+                    <img src="/wx_index/images/alzs_banner.jpg" width="1000" height="204"
+                    />
+                </div>
+            </div>
+            <div class="content-d content-f">
+                <div class="lf-lb fl" id="divH1">
+                    <ul>
+                        <div class="lf-lb fl">
+                            <!-- /wx_case_index/caseIndex2.htm?typeId=14 -->
+                            <a href="javascript:void(0);" onMouseOver="typeInfo(14);">
+                                <li id="li14" name="lis" class="teshu-2">
+                                    教育/培训
+                                </li>
+                            </a>
+                            <!-- /wx_case_index/caseIndex2.htm?typeId=10 -->
+                            <a href="javascript:void(0);" onMouseOver="typeInfo(10);">
+                                <li id="li10" name="lis">
+                                    餐饮/咖啡
+                                </li>
+                            </a>
+                            <!-- /wx_case_index/caseIndex2.htm?typeId=8 -->
+                            <a href="javascript:void(0);" onMouseOver="typeInfo(8);">
+                                <li id="li8" name="lis">
+                                    婚庆/摄影
+                                </li>
+                            </a>
+                            <!-- /wx_case_index/caseIndex2.htm?typeId=2 -->
+                            <a href="javascript:void(0);" onMouseOver="typeInfo(2);">
+                                <li id="li2" name="lis">
+                                    汽车服务
+                                </li>
+                            </a>
+                            <!-- /wx_case_index/caseIndex2.htm?typeId=11 -->
+                            <a href="javascript:void(0);" onMouseOver="typeInfo(11);">
+                                <li id="li11" name="lis">
+                                    美容/美发
+                                </li>
+                            </a>
+                            <!-- /wx_case_index/caseIndex2.htm?typeId=7 -->
+                            <a href="javascript:void(0);" onMouseOver="typeInfo(7);">
+                                <li id="li7" name="lis">
+                                    宾馆/酒店
+                                </li>
+                            </a>
+                            <!-- /wx_case_index/caseIndex2.htm?typeId=5 -->
+                            <a href="javascript:void(0);" onMouseOver="typeInfo(5);">
+                                <li id="li5" name="lis">
+                                    整形/医院
+                                </li>
+                            </a>
+                            <!-- /wx_case_index/caseIndex2.htm?typeId=1 -->
+                            <a href="javascript:void(0);" onMouseOver="typeInfo(1);">
+                                <li id="li1" name="lis">
+                                    贸易/电商
+                                </li>
+                            </a>
+                            <!-- /wx_case_index/caseIndex2.htm?typeId=3 -->
+                            <a href="javascript:void(0);" onMouseOver="typeInfo(3);">
+                                <li id="li3" name="lis">
+                                    零售/百货
+                                </li>
+                            </a>
+                            <!-- /wx_case_index/caseIndex2.htm?typeId=4 -->
+                            <a href="javascript:void(0);" onMouseOver="typeInfo(4);">
+                                <li id="li4" name="lis">
+                                    娱乐/酒吧/KTV
+                                </li>
+                            </a>
+                            <!-- /wx_case_index/caseIndex2.htm?typeId=18 -->
+                            <a href="javascript:void(0);" onMouseOver="typeInfo(18);">
+                                <li id="li18" name="lis">
+                                    金融/机构/会议
+                                </li>
+                            </a>
+                            <!-- /wx_case_index/caseIndex2.htm?typeId=9 -->
+                            <a href="javascript:void(0);" onMouseOver="typeInfo(9);">
+                                <li id="li9" name="lis">
+                                    房产/建筑/装修
+                                </li>
+                            </a>
+                            <!-- /wx_case_index/caseIndex2.htm?typeId=6 -->
+                            <a href="javascript:void(0);" onMouseOver="typeInfo(6);">
+                                <li id="li6" name="lis">
+                                    家居/建材/旅游
+                                </li>
+                            </a>
+                            <!-- /wx_case_index/caseIndex2.htm?typeId=17 -->
+                            <a href="javascript:void(0);" onMouseOver="typeInfo(17);">
+                                <li id="li17" name="lis">
+                                    家政服务/休闲养生
+                                </li>
+                            </a>
+                            <!-- /wx_case_index/caseIndex2.htm?typeId=16 -->
+                            <a href="javascript:void(0);" onMouseOver="typeInfo(16);">
+                                <li id="li16" name="lis">
+                                    其他
+                                </li>
+                            </a>
+                        </div>
+                    </ul>
+                </div>
+                <div class="rt-lb0 fr rt-lb1" id="divInfo" style="width:810px;">
+                    <div class=" alzs_pic" style="width:830px;" id="caseInfo1">
+                        <div class="fl jt_jj">
+                            <a href="javascript:void(0);" onClick="scrolDiy(1);">
+                                <img src="/wx_index/images/10_03.png" width="20" height="35">
+                            </a>
+                        </div>
+                        <ul style="width:700px; height:100px; overflow:hidden; float:left;">
+                            <li name="eType" class="xzys">
+                                <a href="javascript:void(0);" onMouseOver="showCase(2,this);">
+                                    <img src="/uploads/company/6968481932871792400.jpg">
+                                    <div class="hsmb">
+                                    </div>
+                                </a>
+                            </li>
+                            <li name="eType">
+                                <a href="javascript:void(0);" onMouseOver="showCase(3,this);">
+                                    <img src="/uploads/company/6968481932871878257.jpg">
+                                    <div class="hsmb">
+                                    </div>
+                                </a>
+                            </li>
+                            <li name="eType">
+                                <a href="javascript:void(0);" onMouseOver="showCase(48,this);">
+                                    <img src="/uploads/company/6968481946610737208.jpg">
+                                    <div class="hsmb">
+                                    </div>
+                                </a>
+                            </li>
+                            <li name="eType">
+                                <a href="javascript:void(0);" onMouseOver="showCase(46,this);">
+                                    <img src="/uploads/company/6968481946605657890.png">
+                                    <div class="hsmb">
+                                    </div>
+                                </a>
+                            </li>
+                            <li name="eType">
+                                <a href="javascript:void(0);" onMouseOver="showCase(12,this);">
+                                    <img src="/uploads/company/6968481935712335847.jpg">
+                                    <div class="hsmb">
+                                    </div>
+                                </a>
+                            </li>
+                            <li name="eType">
+                                <a href="javascript:void(0);" onMouseOver="showCase(65,this);">
+                                    <img src="/uploads/company/6968481949777757800.jpg">
+                                    <div class="hsmb">
+                                    </div>
+                                </a>
+                            </li>
+                            <li name="eType">
+                                <a href="javascript:void(0);" onMouseOver="showCase(68,this);">
+                                    <img src="/uploads/company/6968481949779856379.jpg">
+                                    <div class="hsmb">
+                                    </div>
+                                </a>
+                            </li>
+                            <li name="eType">
+                                <a href="javascript:void(0);" onMouseOver="showCase(78,this);">
+                                    <img src="/uploads/company/6968481951620594631.jpg">
+                                    <div class="hsmb">
+                                    </div>
+                                </a>
+                            </li>
+                            <li name="eType">
+                                <a href="javascript:void(0);" onMouseOver="showCase(79,this);">
+                                    <img src="/uploads/company/6968481951703859835.jpg">
+                                    <div class="hsmb">
+                                    </div>
+                                </a>
+                            </li>
+                            <li name="eType">
+                                <a href="javascript:void(0);" onMouseOver="showCase(80,this);">
+                                    <img src="/uploads/company/6968481951704861003.jpg">
+                                    <div class="hsmb">
+                                    </div>
+                                </a>
+                            </li>
+                            <li name="eType">
+                                <a href="javascript:void(0);" onMouseOver="showCase(20,this);">
+                                    <img src="/uploads/company/6968481942448155269.jpg">
+                                    <div class="hsmb">
+                                    </div>
+                                </a>
+                            </li>
+                            <li name="eType">
+                                <a href="javascript:void(0);" onMouseOver="showCase(64,this);">
+                                    <img src="/uploads/company/6968481949722149726.jpg">
+                                    <div class="hsmb">
+                                    </div>
+                                </a>
+                            </li>
+                            <li name="eType">
+                                <a href="javascript:void(0);" onMouseOver="showCase(66,this);">
+                                    <img src="/uploads/company/6968481949778409577.jpg">
+                                    <div class="hsmb">
+                                    </div>
+                                </a>
+                            </li>
+                            <li name="eType">
+                                <a href="javascript:void(0);" onMouseOver="showCase(95,this);">
+                                    <img src="/uploads/company/6968481958597456740.jpg">
+                                    <div class="hsmb">
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="fl jt_jj">
+                            <a href="javascript:void(0);" onClick="scrolDiy(2);">
+                                <img src="/wx_index/images/10_05.png" width="20" height="35">
+                            </a>
+                        </div>
+                        <div class="clr">
+                        </div>
+                    </div>
+                    <div class="rt-lb" style="width:810px;">
+                        <ul id="caseInfo">
+                            <li style="background:#36a16d; width:810px;" id="caseInfo2">
+                                <div class="top-title top-title0" style=" background:rgba(0,0,0,0.4); width:100%;">
+                                    <div class="top-title1 fl">
+                                        <span style="font-size:30px;">
+                                            盛世源码
+                                        </span>
+                                        <span style="font-size:18px; padding-left:5px;">
+                                            (公众号：WeiqiMobile）
+                                        </span>
+                                    </div>
+                                    <div class="top-title2 fr">
+                                        盛世源码，微信营销专家
+                                    </div>
+                                    <div class="clr">
+                                    </div>
+                                </div>
+                                <div class="ct-pic">
+                                    <div class=" alzs_cont fl fdc_cont">
+                                        <div class="fl qh prev">
+                                            <a href="javascript:void(0);">
+                                                <img src="/wx_index/images/jt_03.png" width="16" height="29" />
+                                            </a>
+                                        </div>
+                                        <div class="alzs fl jCarouselLite" style="margin:0;">
+                                            <ul>
+                                                <li>
+                                                    <img src="/uploads/company/6968481948224455667.jpg" width="236" height="352"
+                                                    />
+                                                </li>
+                                                <li>
+                                                    <img src="/uploads/company/6968481948224467522.jpg" width="236" height="352"
+                                                    />
+                                                </li>
+                                                <li>
+                                                    <img src="/uploads/company/6968481948224469333.jpg" width="236" height="352"
+                                                    />
+                                                </li>
+                                                <li>
+                                                    <img src="/uploads/company/6968481948224492177.jpg" width="236" height="352"
+                                                    />
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="fl qh qh0 next">
+                                            <a href="javascript:void(0);">
+                                                <img src="/wx_index/images/jt_04.png" width="16" height="29" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="ct-pic2 fr">
+                                        <img src="http://open.weixin.qq.com/qr/code/?username=WeiqiMobile" />
+                                        <p style="font-weight:bold;">
+                                            通过盛世源码实现功能
+                                        </p>
+                                        <p>
+                                            微官网，报名服务,营销活动,微会员卡
+                                        </p>
+                                    </div>
+                                    <div class="fl">
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clr">
+                </div>
+            </div>
+            <div style="width:1000px; margin:0 auto;" id="2">
+                <div class="clr">
+                </div>
+            </div>
+            <div class="hzal">
+            </div>
+        </div>
+        <!--bottom-->
+        <div class="botttom">
+            <div class="botttom0">
+                <div class="botttom1">
+                    <div class=botttom2 "fl">
+                        <ul>
+                            <li>
+                                <p class="teshu-0">
+                                    <a href="#">
+                                        了解产品
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="#">
+                                        微官网
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="#">
+                                        微会员卡
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="#">
+                                        微活动
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="#">
+                                        微喜帖
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="#">
+                                        行业解决方案
+                                    </a>
+                                </p>
+                            </li>
+                            <li>
+                                <p class="teshu-0">
+                                    <a href="#">
+                                        案例展示
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="/wx_case_index/caseIndex2.htm">
+                                        全部
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="/wx_case_index/caseIndex2.htm">
+                                        分类
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="/wx_case_index/caseIndex2.htm">
+                                        更多案例
+                                    </a>
+                                </p>
+                            </li>
+                            <li>
+                                <p class="teshu-0">
+                                    <a href="#">
+                                        联系我们
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="/wx_case_index/contactIndex.htm">
+                                        公司介绍
+                                    </a>
+                                </p>
+                        </ul>
+                    </div>
+                    <div class="fl" style="margin:28px 0 0 30px;">
+                    </div>
+                    <div class="evm fr">
+                        <ul>
+                            <li>
+                                <p>
+                                    <img src="/wx_index/images/vdlevm.jpg" />
+                                </p>
+                                <p>
+                                    扫描关注我们
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clr">
+                    </div>
+                </div>
+                <div class="gsq" style="margin-top:26px;">
+                    <span style="float:left;">
+                        Copyright(c)2012-2014 盛世源码团队
+                    </span>
+                    <span style="float:right;">
+                        本站关键词：盛世源码/盛世源码
+                    </span>
+                    本站关键词：盛世源码/微信营销
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="/js/fancybox/jquery.fancybox.pack.js">
+        </script>
+        <link rel="stylesheet" href="/js/fancybox/jquery.fancybox.css" type="text/css"
+        media="screen" />
+    </body>
+    <script type="text/javascript" src="/wx_css/js/jquery.flexslider-min.js">
+    </script>
+    <script>
+        $(function() {
+            $(".fdc_cont .jCarouselLite").jCarouselLite({
+                btnNext: ".fdc_cont .next",
+                btnPrev: ".fdc_cont .prev",
+                scroll: 1,
+                visible: 2
+            });
+            var h1 = Number($("#divH1").height());
+            var h2 = Number($("#caseInfo2").height()) + Number($("#caseInfo1").height()) + 40;
+            if (h1 >= h2) {
+                $("#divInfo").attr("style", "height: " + h1 + "px");
+            } else {
+                $("#divH1").attr("style", "height: " + h2 + "px");
+                $("#divInfo").attr("style", "height: " + h2 + "px");
+            }
+        });
+
+        function scrolDiy(flag) {
+            var fst = $("#caseInfo1 ul li:first");
+            var lst = $("#caseInfo1 ul li:last-child");
+            if (flag == 1) { //向前滚动
+                $("#caseInfo1 ul li:last").remove();
+                $("#caseInfo1 ul").prepend(lst);
+            }
+            if (flag == 2) { //向后滚动
+                $("#caseInfo1 ul li:first").remove();
+                $("#caseInfo1 ul").append(fst);
+            }
+        }
+
+        function typeInfo(typeId) {
+            var lis = $("li[name=lis]");
+            for (i = 0; i < lis.length; i++) {
+                $(lis[i]).removeClass("teshu-2");
+            }
+            $("#li" + typeId).addClass("teshu-2");
+            $.post("/wx_case_index/case_t" + typeId + ".html", null,
+            function(d) {
+                $("#divInfo").html(d);
+                $(".fdc_cont .jCarouselLite").jCarouselLite({
+                    btnNext: ".fdc_cont .next",
+                    btnPrev: ".fdc_cont .prev",
+                    scroll: 1,
+                    visible: 2
+                });
+                var h1 = Number($("#divH1").height());
+                var h2 = Number($("#caseInfo2").height()) + Number($("#caseInfo1").height()) + 40;
+                if (h1 >= h2) {
+                    $("#divInfo").attr("style", "height: " + h1 + "px");
+                } else {
+                    $("#divH1").attr("style", "height: " + h2 + "px");
+                    $("#divInfo").attr("style", "height: " + h2 + "px");
+                }
+            });
+        }
+
+        function showCase(exampleId, o) {
+            var info = $("li[name=eType]");
+            for (i = 0; i < info.length; i++) {
+                $(info[i]).attr("class", "");
+            }
+            $(o).parent(0).attr("class", "xzys");
+            $.post("/wx_case_index/case_" + exampleId + ".html", null,
+            function(d) {
+                $("#caseInfo").html(d);
+                $(".fdc_cont .jCarouselLite").jCarouselLite({
+                    btnNext: ".fdc_cont .next",
+                    btnPrev: ".fdc_cont .prev",
+                    scroll: 1,
+                    visible: 2
+                });
+            });
+        }
+    </script>
+
+</html>

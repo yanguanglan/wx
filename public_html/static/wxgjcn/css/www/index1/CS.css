@@ -1,0 +1,158 @@
+html,body,div,span,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td,button {
+	margin:0;
+	padding:0;
+	border:0;
+	font-family:"Microsoft YaHei","Î¢ÈíÑÅºÚ","ËÎÌå";
+	font-size:12px;
+	line-height:1.5;
+	outline:0;
+	color:#333;
+}
+a {
+	text-decoration:none;
+	color:#444;
+	outline:none;
+}
+a,button {
+	cursor:pointer;
+}
+html,body {
+	overflow:hidden;
+}
+ul {
+	padding:0;
+	margin:0;
+}
+li {
+	list-style:none;
+}
+img {
+	border:0;
+}
+
+.fn-clear:after {
+	visibility:hidden;
+	display:block;
+	font-size:0;
+	content:" ";
+	clear:both;
+	height:0;
+}
+.fn-clear {
+	zoom:1;
+}
+.loading {
+	position:absolute;
+	top:50%;
+	left:0;
+	z-index:1;
+	width:100%;
+	margin:20px auto;
+	text-align:center;
+	margin-top:-8px;
+}
+.loading .load {
+	background:url(load.gif) no-repeat right center;
+	display:block;
+	font-size:22px;
+	line-height:25px;
+	margin:0 auto;
+	width:68px;
+}
+.bgwrap {
+	position:absolute;
+	z-index:2;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	overflow:hidden;
+}
+.bgwrap #bg {
+	display:none;
+	width:100%;
+	height:auto;
+}
+.wrap .navwrap {
+	display:none;
+}
+
+.main .item.item_1 {
+	background-color:#000;
+}
+
+.main .item_1 .header {
+	padding:0;
+	position:relative;
+}
+.main .item_1 .header .wjj_tm {
+	display:block;
+	margin:0 auto;
+	width:585px;
+	height:138px;
+	background:url(start_v5.png) repeat 0 -1px;
+}
+.main .item_1 .header img.xmas_hat {
+	position:absolute;
+	top:5px;
+	left:50%;
+	margin-left:72px;
+}
+.main .item_1 .sub_header {
+	color:#fff;
+	font-size:22px;
+	letter-spacing:7px;
+	text-shadow:0 1px 1px rgba(0,0,0,0.6);
+	font-weight:normal;
+	text-align:center;
+	margin-top:20px;
+}
+.main .item.item_1 .content {
+	margin-top:-151px;
+	z-index:10;
+	display:none;
+	position:absolute;
+	left:0;
+	top:40%;
+	width:100%;
+	padding:0;
+}
+.main .item_1 .btn_wrap {
+	margin:70px auto 0;
+	width:618px;
+	position:relative;
+}
+.main .item_1 .btn_wrap .xmas_snow1 {
+	position:absolute;
+	top:-8px;
+	left:5px;
+}
+.main .item_1 .btn_wrap .xmas_snow2 {
+	position:absolute;
+	left:211px;
+	top:-8px;
+}
+.main .item_1 .btn_wrap .xmas_snow3 {
+	position:absolute;
+	left:416px;
+	top:-8px;
+}
+.main .item_1 .btn_wrap a {
+	display:block;
+	float:left;
+	margin:0 7px;
+	width:184px;
+	padding-left:8px;
+	height:52px;
+	font-size:21px;
+	letter-spacing:8px;
+	text-align:center;
+	line-height:52px;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	border-radius:2px;
+	text-decoration:none;
+	outline:none;
+	cursor:pointer;
+	background:#2c2c2c;
+}

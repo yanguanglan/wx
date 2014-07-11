@@ -1,0 +1,50 @@
+<include file="Public:head"/>  
+<div class="content" style="" >
+<div class="cLine">
+<div class="pageNavigator left">
+<a href="{ZF::U('Api/add')}" title="新增接口" class="btnGrayS vm bigbtn"><img src="{ZF::RES}/images/api.png" class="vm">新增接口</a>　
+</div>
+<div class="clr"></div>
+</div>
+<div class="msgWrap">
+<table class="ListProduct" border="0" cellspacing="0" cellpadding="0" width="100%">
+<thead>
+<tr>
+<th class="select">ID</th>
+<th class="keywords">关键词</th>
+<th class="keywords">接口地址</th>
+<th class="time">接口类型</th>
+<th class="time">状态</th>
+
+<th class="time">时间</th>
+<th class="edit norightborder">操作</th>
+</tr>
+</thead>
+<tbody>
+<volist id="api" name="api">
+<tr>
+<td>{ZF:$api.id}</td>
+<td>{ZF:$api.keyword}</td>
+<td>{ZF:$api.url}</td>
+<td><if condition="$api['type'] eq 1">标准xml<else/>文本格式</if></td>
+<td><if condition="$api['status'] eq 1">启用<else/>关闭</if></td>
+<td>{ZF:$api.time|date='Y-m-d',###}</td>
+<td class="norightborder"> 
+<if condition="$api['status'] eq 1">
+<a href="{ZF::U('Api/setInc',array('id'=>$api['id'],'type'=>2))}">关闭</a>
+<else/>
+<a href="{ZF::U('Api/setInc',array('id'=>$api['id'],'type'=>1))}">启用</a> 
+</if>
+ <a href="{ZF::U('Api/edit',array('id'=>$api['id']))}">编辑</a> 
+ <a href="{ZF::U('Api/del',array('id'=>$api['id']))}">删除</a></td>
+</tr>
+</volist>
+
+</tbody>
+</table>
+</div>
+<div class="cLine">
+</div>
+</div>  <!--底部-->
+</div>
+<include file="Public:footer"/>  

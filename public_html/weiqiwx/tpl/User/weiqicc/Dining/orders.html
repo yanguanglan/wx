@@ -1,0 +1,115 @@
+<include file="Public:head"/>
+<html>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<!-- Apple devices fullscreen -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<!-- Apple devices fullscreen -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<base target="mainFrame" />
+<link rel="stylesheet" type="text/css" href="{ZF::RES}/css/cymain.css" />
+<div class="content" style="width:80%; border:none; border:none; margin-bottom:30px;" >
+<link rel="stylesheet" type="text/css" href="/css/wm/bootstrap_min.css?dddf" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/bootstrap_responsive_min.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/style.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/themes.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/todc_bootstrap.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/inside.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/album.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/uploadify_t.css" media="all" />
+<title>{$_SERVER['WEB_NAME']}—国内最大的微信公众服务平台</title>
+ <script type="text/javascript" src="/@system/js/yyucadapter.js"></script>
+<script type="text/javascript" src="/res/mbaudio/inc/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="/res/mbaudio/inc/jquery.mb.miniPlayer.js"></script>
+<link rel="stylesheet" type="text/css" href="/uploadify/uploadify.css">
+<script type="text/javascript" src="/uploadify/jquery.uploadify.js"></script>
+<link rel="stylesheet" type="text/css" href="/res/mbaudio/css/miniplayer.css" title="style" media="screen"/>
+<script src="{ZF::STATICS}/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="{ZF::STATICS}/artDialog/plugins/iframeTools.js"></script>
+<body class="{Session::get('maintheme')}">
+<div id="main">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="box">
+                    <div class="box-title">
+                        <div class="span10">
+                            <h3><i class="icon-edit"></i>订单管理({ZF:$page})</h3>
+                        </div>
+                        <div class="span2">
+                            <a class="btn" href="javascript:history.go(-1);">返回</a> 
+                        </div>
+                    </div>
+                <div class="box-content">
+<form method="post" action="" id="info">
+<div class="cLine">
+<div class="pageNavigator left"> <a href="###" onclick="$('#info').submit()" title="" class="btn">处理订单</a></div>
+<div class="clr"></div>
+</div>
+
+<table class="table table-bordered table-hover dataTable">
+<thead>
+<tr>
+<th class="select"><input type="checkbox" value="" id="check_box" onclick="selectall('id[]');"></th>
+<th>订单号</th>
+<th>类型</th>
+<th>姓名</th>
+<th>电话</th>
+<th>数量</th>
+<th>总价</th>
+<th>付款/派送</th>
+<th>状态</th>
+<th>时间</th>
+<th>操作</th>
+</tr>
+</thead>
+<tbody style=" text-align:center;">
+<volist name="orders" id="o"> 
+<tr>
+<td><input type="checkbox" value="{ZF:$o.id}" class="cbitem" name="id_{ZF:$i}"></td>
+<td>{ZF:$o.orderid}</td>
+<td>
+<if condition="$o.diningtype eq 1"><font color="blue">点餐</font><elseif condition="$o.diningtype eq 2" /><font color="#a300a9">外卖</font><elseif condition="$o.diningtype eq 3" /><font color="green">预定</font><else /></if>
+</td>
+<td>{ZF:$o.truename}</td>
+<td>{ZF:$o.tel}</td>
+<td>{ZF:$o.total}</td>
+<td>{ZF:$o.price}元</td>
+<td><if condition="$o.paid eq 1"><span style="color:green">已付款</span><else/><span style="color:red">未付款</span></if> / <if condition="$o.sent eq 1"><span style="color:green">已派单</span><else/><span style="color:red">未派单</span></if></td>
+<td><if condition="$o.handled eq 1"><span style="color:green">已处理</span><else/><span style="color:red">未处理</span></if></td>
+<td>{ZF:$o.time|date="Y-m-d H:i:s",###}</td> 
+<td class="norightborder"><a href="###" onclick="showIntroDetail({ZF:$o.id})" class="btn">详细</a>&nbsp;
+<a href="javascript:drop_confirm('您确定要删除吗?', '{ZF::U('Dining/deleteOrder',array('token'=>$token,'id'=>$o['id'],'storeid'=>$storeid))}');" class="btn">删除</a></td>
+</tr>
+</volist>
+</tbody>
+</table>
+<input type="hidden" name="token" value="{ZF:$_GET['token']}" />
+</form>
+<script>
+function selectall(name) {
+	var checkItems=$('.cbitem');
+	if ($("#check_box").attr('checked')==false) {
+		$.each(checkItems, function(i,val){
+			val.checked=false;
+		});
+		
+	} else {
+		$.each(checkItems, function(i,val){
+			val.checked=true;
+		});
+	}
+}
+function showIntroDetail(id){
+	art.dialog.open("{ZF::U('Dining/orderInfo',array('token'=>$token,'storeid'=>$storeid))}&id="+id,{lock:false,title:'订单详情',width:700,height:420,yesText:'关闭',background: '#000',opacity: 1});
+}
+</script>
+</div>
+<div class="cLine">
+<div class="pageNavigator right">
+</div>
+<div class="clr"></div>
+</div>
+</div>
+<include file="Public:footer"/>

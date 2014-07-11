@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<!-- Apple devices fullscreen -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<!-- Apple devices fullscreen -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<base target="mainFrame" />
+<link rel="stylesheet" type="text/css" href="{$CSS}wm/index.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{$CSS}wm/bootstrap_min.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{$CSS}wm/bootstrap_responsive_min.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{$CSS}wm/style.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{$CSS}wm/themes.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{$CSS}wm/todc_bootstrap.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{$CSS}wm/inside.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{$CSS}wm/album.css" media="all" />
+<title>{$_SERVER['WEB_NAME']}—国内最大的微信公众服务平台</title>
+<link rel="shortcut icon" href="/favicon.ico" />
+</head>
+<body class="{Session::get('maintheme')}">
+    <div id="main">
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="box">
+                        <div class="box-title">
+                            <div class="span12">
+                                <h3><i class="icon-cog"></i>短信接口配置</h3>
+                            </div>
+                        </div>
+                        <div class="box-content">
+                            <form action="" method="post" class="form-horizontal form-validate">{tk()}{$set->hidden('id')}
+								<input type="hidden" name="aid" id="aid" value="33260"/>
+                              
+                                <div class="control-group">
+                                    <label class="control-label" for="title">SMTP服务器：</label>
+                                    <div class="controls">
+		 							 {$set->text('server','class="input-xlarge" required="required"')}
+                                     <span class="maroon">*</span>
+									<span class="help-block"> 服务器地址 例腾讯企业邮箱地址smtp.exmail.qq.com</span>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="brief">SMTP端口: </label>
+                                    <div class="controls">
+										{$set->textarea('port','class="input-large" style="height:80px;width:380px;"')}	
+                                        <span class="maroon">*</span>
+                                        <span class="help-block">SMTP服务器端口。例腾讯企业邮箱端口 25<br>
+                                        </span>
+                                    </div>
+                                </div>
+								 <div class="control-group">
+                                    <label class="control-label" for="title">SMTP账号：</label>
+                                    <div class="controls">
+		 							 {$set->text('account','class="input-xlarge" required="required"')}
+                                     <span class="maroon">*</span>
+									<span class="help-block">邮箱账号 例kf@weiqimobile.com</span>
+                                    </div>
+                                </div>
+								<div class="control-group">
+                                    <label class="control-label" for="title">SMTP密码：</label>
+                                    <div class="controls">
+		 							 {$set->text('password','class="input-xlarge" required="required"')}
+                                     <span class="maroon">*</span>
+									<span class="help-block">登陆邮箱密码</span>
+                                    </div>
+                                </div>
+								<div class="control-group">
+                                    <label class="control-label" for="title">接收邮件邮箱：</label>
+                                    <div class="controls">
+		 							 {$set->text('emails','class="input-xlarge" required="required"')}
+                                     <span class="maroon">*</span>
+									<span class="help-block">订单通知收件邮箱地址</span>
+                                    </div>
+                                </div>
+								<div class="control-group">
+                                    <label class="control-label" for="title">是否开启邮件通知：</label>
+                                    <div class="controls">
+		 							 {$set->text('status','class="input-xlarge" required="required"')}
+                                     <span class="maroon">*</span>
+									<span class="help-block">注 ：1开启 0关闭 其它值无效</span>
+                                    </div>
+                                </div>
+                                <input type="hidden" name="id" value="47">
+                                <div class="form-actions">
+                                    <button id="bsubmit" type="submit" data-loading-text="提交中..." class="btn btn-primary">保存</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="{$JS}comm.js"></script>

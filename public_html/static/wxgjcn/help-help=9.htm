@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="uyan_auth" content="04a3f6938d" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="微信营销、微信代运营、微信定制开发、微信托管、微网站、微商城、微营销" name="Keywords">
+	<meta content="盛世源码—国内优秀的微信公众服务平台，国内最大的微信公众智能服务平台，盛世源码—国内优秀的微信公众服务平台八大微体系：微菜单、微官网、微会员、微活动、微商城、微推送、微服务、微统计，企业微营销必备。" name="Description">
+    <script src="/static/wxgjcn/src/html5.js" ></script>
+    <link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/bootstrap_min.css-2014-03-07-1.css"  media="all" />
+<link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/www/index1/index.css-2014-03-07-1.css"  media="all" />
+<link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/www/help/help.css-2014-03-07-1.css"  media="all" />
+<script type="text/javascript" src="/static/wxgjcn/src/jQuery.js-2014-03-07-1.js" ></script>
+<script type="text/javascript" src="/static/wxgjcn/src/www/index1/weimob-index.js-2014-03-07-1.js" ></script>
+<title>盛世源码—国内优秀的微信公众服务平台</title>
+	<link rel="shortcut icon" href="httpimg/favicon.ico" />
+</head>
+<body>
+	
+<!--595 850-->
+<script language="javascript">
+	$(function () {
+		$("a").click(function () {
+			var rel = $(this).attr("rel");
+			if (rel) {
+				var pos = $(rel).offset().top-60;
+				$("html,body").animate({ scrollTop: pos }, 800);
+			}
+
+		})
+	})
+</script>
+<script>
+	$().ready(function(){
+
+		window.onscroll = window.onresize = function(){
+			showSideBar();
+		}
+	});
+	function showSideBar(){
+		if(!window.sideMenu){
+			window.sideMenu = $("#sideToolbar");
+		}
+		if((document.body.scrollTop||document.documentElement.scrollTop)>500){
+			sideMenu.addClass("on");
+		}else{
+			sideMenu.removeClass("on");
+		}
+	}
+
+
+
+</script>
+<!--[if lte IE 8]>  <script language="javascript">$(function (){$.browser.msie&&$("#ie9-tips").show().find("#stopSuggestA").click(function(){$("#ie9-tips").hide()})})</script><![endif]-->
+<div class="nav clearfix">
+	<div class="nav-content">
+		<h1 class="left" onclick="location.herf='/site/city1'">盛世源码—国内优秀的微信公众服务平台·微信营销，如此简单！</h1>
+		<div class="left city">
+			<h2>上海</h2>
+							<a href="/static/wxgjcn/city1.htm" >
+					切换城市<i class="tri4"></i>
+				</a>
+					</div>
+		<div class="right line-li">
+			<ul>
+				<li><a href="/" >首页</a></li>
+				<li><a href="/static/wxgjcn/case1.htm"  >经典案例</a></li>
+				<li class="nav_menu_li_1"><a style="width:70px; text-align:left;" class="_hover">产品中心<i></i></a>
+					<div class="sub-nav">
+						<a href="/static/wxgjcn/package.htm"  target="_black">微信套餐</a>
+						<a href="/static/wxgjcn/guide1.htm" >功能介绍</a>
+						
+
+					</div>
+
+				</li>
+				<li><a href="/static/wxgjcn/proxy1.htm"  >渠道代理</a></li>
+				<li><a href="/static/wxgjcn/help.htm"  class="navtwo" target="_black">帮助</a></li>
+			</ul>
+			<div class="account">
+				<a href="/reg.html"  class="btn-reg btn0" target="_black">注册</a>
+									<a href="/login.html" class="btn-login btn0" target="_black">登录</a>
+				</div>
+		</div>
+	</div>
+</div>
+
+	
+<div id="ie9-tips" class="clearfix">
+	<div id="tipsPanel">
+		<div id="tipsDesc">系统检测到您所使用的浏览器版本较低，推荐使用<a   target="_blank">Firefox</a>或<a   target="_blank">Chrome</a>浏览器打开，否则将无法体验完整产品功能。</div>
+		<a id="stopSuggestA" href="javascript:;">×</a>
+	</div>
+</div>
+
+<script>
+	var $do_submit = false;
+
+	// 绑定回车键
+	$('#loginBox').keydown(function(e){
+		if(13 == event.keyCode){
+			login();
+		}
+	});
+
+		function login()
+	{
+		if (true == $do_submit)
+		{
+			return false;
+		}
+
+		var $pre_submit = '登录', $do_submit = '登录中...';
+		var $username = $('#username').val(), $password = $('#password').val(), $keepalive = $('#rememberPwdIcon').val();
+		$('#login_button').text($do_submit);
+		$do_submit = true;
+
+		// check
+		if ('' == $username || '' == $password)
+		{
+			$('#err_tips').text('您输入的盛世源码—国内优秀的微信公众服务平台号或密码错误，请重新输入！');
+			$('#err_area').show();
+			$('#login_button').text($pre_submit);
+			$do_submit = false;
+			return false;
+		}
+
+		var $login_data = {
+			username:$username,
+			password:$password,
+			keepalive:$keepalive
+		};
+		$.post('/login', $login_data, function(rs){
+			if(rs.errno == 200)
+			{
+				location.href = rs.url_route;
+			}
+			else
+			{
+				$('#err_tips').text(rs.error);
+				$('#err_area').show();
+				$('#login_button').text($pre_submit);
+			}
+			$do_submit = false;
+		}, 'json');
+	}
+	</script>
+<div id="top"></div><div id="page">
+   
+       <div class="title">盛世源码—国内优秀的微信公众服务平台产品（微房产）使用指南</div>
+     	 <p>微房产是利用盛世源码—国内优秀的微信公众服务平台打造的一款全新超炫酷房产官方网站，其功能非常强大，包含了楼盘介绍、子楼盘管理、楼盘相册、房友印象以及专家点评等功能，更有360度全景看房超强大功能震撼登场！现在就花几分钟时间来看一下如何打造您的微房产官网吧。</p>
+         <H3 id="9_1">1、楼盘简介</H3>
+           <p>1、就像您使用我们其他功能模块一样，设置一个打开微房产首页的触发关键字，以及图文回复的消息标题，选择完全匹配模式，上传图文消息封面和楼盘顶部图片，设置相册的名称；</p>
+           <p><img src="/static/wxgjcn/img/webabout/wfc1.png"  width="756" height="521"></p>
+           <p>2.上传户型头部图片，在地图上设置标识；</p>
+     	 <p><img src="/static/wxgjcn/img/webabout/wfc2.png"  width="931" height="520"></p>
+           <p>3、编辑楼盘简介、项目简介、交通配套，点击保存即可。</p>
+           <p><img src="/static/wxgjcn/img/webabout/wfc3.png"  width="896" height="465"></p>
+     	<p><img src="/static/wxgjcn/img/webabout/wfc3.png"  width="896" height="465"></p>
+        <h3 id="9_2">2、子楼盘</h3>
+          <p>“子楼盘”：如果您的楼盘是由多种楼盘类型组成的，比如既有别墅群，又有公寓、商品房等，那我们建议您在子楼盘内进行分类添加相应的子楼盘。</p>
+         <p>1、点击“添加子楼盘”，设置子楼盘名称，显示顺序、子楼盘介绍，点击保存；</p>
+         <p><img src="/static/wxgjcn/img/webabout/wfc5.png"  width="781" height="275"></p>
+     	  <p>2、点击“操作”板块的两个按钮，分别可以进行编辑和删除操作。</p>
+         <p><img src="/static/wxgjcn/img/webabout/wfc6.png"  width="900" height="250"></p>   
+         <h3 id="9_3">3、楼盘户型</h3>
+         <p>详细添加您的户型内容，特别请您注意的是我们可以为您提供制作360度全景户型展示功能，如果您需要此功能，请联系我们的客服。</p>
+         <p>1、点击“添加户型”，设置户型名称、选择子楼盘、楼层设置、建筑面积、房屋户型、显示顺序、户型介绍，添加户型图片，点击保存；</p>
+         <p><img src="/static/wxgjcn/img/webabout/wfc7.png"  width="766" height="481"></p>
+         <p>2、点击“管理全景图”，进入管理全景图界面，继续点击“添加全景图”，设置全景图标题，上传图片。（为了能更好的展现360度全景图效果，全景图所需要的规格请向客服咨询）</p>
+     	<p><img src="/static/wxgjcn/img/webabout/wfc8.png"  width="900" height="220"></p>  
+       <p><img src="/static/wxgjcn/img/webabout/wfc9.png"  width="513" height="293"></p>  
+       <p style="color:#FF0000;">注意：360度全景图制作要点：</p>
+       <p>（1）硬件配备</p>
+       <p>数码单反相机,鱼眼镜头,全景云台,三脚架,硬件设备推荐表</p>
+       <p>（2）如何制作一个360度全景？</p>
+       <p>360全景不是凭空生成的，要制作一个360全景，我们需要有原始的图像素材，原始图像素材的来源可以是： </p>
+       <p>A、在现实的场景中，使用相机的全景拍摄功能得到的鱼眼图像 </p>
+       <p>B、通过建模渲染得到的虚拟图像 </p>
+       <p>下文中的表格对比了在不同的设备、拍摄机位、拼合模式、拍摄难度下所能获得到的鱼眼图像：</p>
+     	 <p><img src="/static/wxgjcn/img/webabout/wfc10.png"  width="900" height="350"></p>
+         <p><img src="/static/wxgjcn/img/webabout/wfc11.png"  width="900" height="450"></p> 
+         <p>C、如何使用图片素材来生成360全景图片？</p>
+         <p>您可以使用pano2vr这款专业的全景图片生成软件，也可以将全景图片素材发送给盛世源码—国内优秀的微信公众服务平台的客服来替您处理。</p>
+         <p>pano2vr下载地址：http://gardengnomesoftware.com/object2vr.php </p>
+         <p>pano2vr使用教程：http://gardengnomesoftware.com/tutorial.php?movid=start</p>
+      <p>D、上传6张全景图切片</p>
+      <p>将pano2vr生成的6张全景图切上传到微房产楼盘户型添加的页面上，您就可以在手机端看到精美大气的微房产全景图片。</p>
+      <p>3、在“操作“栏目，点击这两个按钮，分别可以进行编辑和删除操作。</p>
+      <p><img src="/static/wxgjcn/img/webabout/wfc12.png"  width="900" height="210"></p> 
+      <h3 id="9_4">4、楼盘相册</h3>
+       <p>“楼盘相册”：用于添加和您楼盘相关的各种精美图片，在前台我们会用独特的方式进行图片展示。</p>
+       <p>1、点击“添加相册“，进入”添加楼盘相册“界面，设置相册名称、显示顺序、相册介绍、添加相册图片，点击保存；</p>
+       <p><img src="/static/wxgjcn/img/webabout/wfc13.png"  width="806" height="545"></p>
+     	 <p>2、在“楼盘相册管理“界面，点击以下两个按钮，分别进行编辑和删除操作；）</p>
+       <p><img src="/static/wxgjcn/img/webabout/wfc14.png"  width="900" height="380"></p>  
+       <h3 id="9_5">5、房友印象</h3>
+        <p>1、进入“房友印象”管理界面，点击“添加印象”，添加标题：添加能代表您楼盘特点的印象短语，如“无敌海景”、“美轮美奂”、“成熟学区”等，为保证显示效果完美，请您添加6条印象短语并且每天短语字数相同（4个字最好）。</p>
+       <p><img src="/static/wxgjcn/img/webabout/wfc15.png"  width="654" height="304"></p>
+       <p>2、在“房友印象管理里面，点击以下两个按钮，可以进行编辑和删除操作。</p>
+     	  <p><img src="/static/wxgjcn/img/webabout/wfc16.png"  width="900" height="380"></p>  
+          <h3 id="9_6">6、专家点评</h3>
+           <p>1、进入“专家点评“管理界面，点击”添加点评“，添加标题、设置显示顺序、专家姓名、专家职位、上传专家照片、编辑专家介绍和专家点评，点击保存；</p>
+           <p><img src="/static/wxgjcn/img/webabout/wfc17.png"  width="785" height="576"></p>
+     		<p>2、进入“专家点评管理“界面，点击以下两个按钮，可以进行编辑和删除操作。</p> 
+           <p><img src="/static/wxgjcn/img/webabout/wfc18.png"  width="900" height="220"></p> 
+           <p>当您完成了以上内容设置之后，您的微房产官网的内容就都添加完成了，接下来去设置一下前台页面吧。</p>
+           <p> a、“微官网”--“分类管理”：请至少建立4个状态为“显示”的分类（楼盘简介、精美相册、楼盘印象、360全景图），依次在“回复类型”中选择调用“微房产”下的4个功能模块；</p>
+            <p><img src="/static/wxgjcn/img/webabout/wfc19.png"  width="548" height="542"></p> 
+            <p>b、在“分类管理“界面，可以进行”编辑“和”删除“的操作；</p>
+     		 <p><img src="/static/wxgjcn/img/webabout/wfc21.png"  width="900" height="250"></p>
+             <p> c、“微官网”--“模板管理”中选择我们为您精心设计的微房产模板“首页0”或者“首页1”。</p>
+           <p><img src="/static/wxgjcn/img/webabout/wfc22.png"  width="470" height="524"></p>
+           <p>d、“微官网“- -”微官网设置“,选择官网背景或者上传自定义官网背景，点击保存。</p>
+     	  <p><img src="/static/wxgjcn/img/webabout/wfc23.png"  width="677" height="509"></p>
+           <p>这样一个完整的“微房产“官网就全部完成了，用您的手机触发关键字来看看您的“微房产”官网吧！</p>
+  <div id="sideToolbar" style="display: block; position: fixed; top:150px;  right: 0;">
+  <div id="sideCatalog" class="sideCatalogBg" style="visibility: visible;">
+    <div id="sideCatalog-sidebar"></div>
+    <div id="sideCatalog-catalog">
+      <dl style="width:200px;zoom:1">
+        <dd><span>1</span><a href="javascript:void()" rel="#9_1" title="楼盘简介">楼盘简介</a></dd>
+        <dd><span>2</span><a href="javascript:void()" rel="#9_2" title="子楼盘">子楼盘</a></dd>
+        <dd><span>3</span><a href="javascript:void()" rel="#9_3" title="楼盘户型">楼盘户型</a></dd>
+        <dd><span>4</span><a href="javascript:void()" rel="#9_4" title="楼盘相册">楼盘相册</a></dd>
+        <dd><span>5</span><a href="javascript:void()" rel="#9_5" title="房友印象">房友印象</a></dd>
+        <dd><span>6</span><a href="javascript:void()" rel="#9_6" title="专家点评">专家点评</a></dd>
+      </dl>
+    </div>
+  </div>
+  <a id="sideCatalogBtn" href="/static/wxgjcn/help.htm"  style="visibility: visible;" title="查看帮助目录"></a>
+  <a id="sideToolbar-up"  href="javascript:void()" rel="#top" title="返回顶部" style="visibility: visible;"></a></div>
+     
+</div>
+<script>
+	$(function () {
+	   if(location.hash){
+			var pos = $(location.hash).offset().top-60;
+			$("html,body").animate({ scrollTop: pos }, 800);
+		}
+	});
+</script>
+<!--QQ咨询-->
+<div class="footer">
+	<div class="footer-content clearfix">
+		<div class="foot-menu">
+			<p>
+				<a href="/static/wxgjcn/index1.htm"  target="_blank">盛世源码—国内优秀的微信公众服务平台首页</a>&nbsp;|&nbsp;
+				<a href="/reg.html"  target="_blank">申请入驻</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/proxy1.htm"  target="_blank">渠道代理</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/about1.htm"  target="_blank">关于盛世源码</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/agents.htm"  target="_blank">授权认证</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/jobs.htm"  target="_blank">加入盛世源码</a>
+			</p>
+			<p>免费热线：400-800-8888&nbsp;&nbsp;&nbsp;QQ：631989322&nbsp;&nbsp;&nbsp;邮箱：kf@weixin.9upp.com</p>
+			<p>地址：
+								上海市市辖区宝山区逸仙路2816号华滋奔腾大厦A幢15楼</p>
+		</div>
+		<div class="copyright">
+			Copyright (c) 2011-2014 9upp.com. All Rights Reserved 盛世源码团队 粤ICP备13083563号
+		</div>
+	</div>
+</div>
+<div style="display:none;"><script type="text/javascript" src="/static/wxgjcn/src/www/index1/huishuo.js-v=2014-03-07-1.js" ></script></div></body>
+</html>

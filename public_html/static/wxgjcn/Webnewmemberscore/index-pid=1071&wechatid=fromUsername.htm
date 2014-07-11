@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/member/main.css-2014-03-07-1.css"  media="all" />
+<title>会员卡</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+		<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+        <meta name="Keywords" content="微信营销、微信代运营、微信定制开发、微信托管、微网站、微商城、微营销" />
+        <meta name="Description" content="盛世源码—国内优秀的微信公众服务平台，国内最大的微信公众智能服务平台，盛世源码—国内优秀的微信公众服务平台八大微体系：微菜单、微官网、微会员、微活动、微商城、微推送、微服务、微统计，企业微营销必备。" />
+        <!-- Mobile Devices Support @begin -->
+            <meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+            <meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+            <meta content="no-cache" http-equiv="pragma">
+            <meta content="0" http-equiv="expires">
+            <meta content="telephone=no, address=no" name="format-detection">
+            <meta name="apple-mobile-web-app-capable" content="yes" /> <!-- apple devices fullscreen -->
+            <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <!-- Mobile Devices Support @end -->
+        <link rel="shortcut icon" href="httpimg/favicon.ico" />
+    </head>
+    <body onselectstart="return true;" ondragstart="return false;">
+        <div class="container page_404">
+	<div class="body">
+		<label>
+			很抱歉，未获取到您的身份，请先关注微信号【hsweimob】，并从【盛世源码—国内优秀的微信公众服务平台】的微信聊天窗触发关键词【会员卡 会员】进入会员卡吧~		</label>
+			</div>
+	<footer></footer>
+</div>        		<div mark="stat_code" style="width:0px; height:0px; display:none;">
+					</div>
+	</body>
+		<script type="text/javascript">
+(function() {
+	var wtj = document.createElement('script'); wtj.type = 'text/javascript'; wtj.async = true;
+	wtj.src = 'http://tj.weimob.com/wtj.js?url=' + encodeURIComponent(location.href);
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wtj, s);
+})();
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd80741dd59de91e1846b2add2c0ad2a2' type='text/javascript'%3E%3C/script%3E"));
+function weimobAfterShare(shareFromWechatId,sendFriendLink,shareToPlatform){
+	var wmShare = document.createElement('script'); wmShare.type = 'text/javascript'; wmShare.async = true;
+    wmShare.src = 'http://' + getShareApiRouter() + '/api-share.js?fromWechatId=' + shareFromWechatId + '&shareToPlatform=';
+	wmShare.src += shareToPlatform + '&pid=1071&sendFriendLink=' + encodeURIComponent(sendFriendLink);
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wmShare, s);
+}
+function getShareApiRouter(){
+	var str_domain = location.href.split('/',4)[2];
+	var tj_domain = '127.0.0.1';
+	switch(str_domain){
+		case 'http://www.weimob.com/Webnewmemberscore/www.weimob.com':
+			tj_domain = 'http://www.weimob.com/Webnewmemberscore/tj.weimob.com';
+			break;
+		case 'http://www.weimob.com/Webnewmemberscore/112.124.28.82':
+			tj_domain = '112.124.28.82:400';
+			break;
+	}
+	return tj_domain;
+}
+if(typeof(window.shareData) == 'undefined'){
+	window.shareData = {
+				"imgUrl": "", 
+		"timeLineLink": "index-pid=1071&wechatid=fromUsername.htm"/*tpa=http://www.weimob.com/Webnewmemberscore/index?pid=1071&wechatid=fromUsername*/,
+		"sendFriendLink": "index-pid=1071&wechatid=fromUsername.htm"/*tpa=http://www.weimob.com/Webnewmemberscore/index?pid=1071&wechatid=fromUsername*/,
+		"weiboLink": "index-pid=1071&wechatid=fromUsername.htm"/*tpa=http://www.weimob.com/Webnewmemberscore/index?pid=1071&wechatid=fromUsername*/,
+		"tTitle": document.title,
+		"tContent": document.title,
+		"fTitle": document.title,
+		"fContent": document.title,
+		"wContent": document.title
+	}
+}
+document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {	 
+	// 发送给好友
+	WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+		WeixinJSBridge.invoke('sendAppMessage', { 
+			"img_url": window.shareData.imgUrl,
+			"img_width": "640",
+			"img_height": "640",
+			"link": window.shareData.sendFriendLink,
+			"desc": window.shareData.fContent,
+			"title": window.shareData.fTitle
+		}, function (res) {
+			weimobAfterShare("",window.shareData.sendFriendLink,'appmessage');
+			_report('send_msg', res.err_msg);
+		})
+	});
+
+	// 分享到朋友圈
+	WeixinJSBridge.on('menu:share:timeline', function (argv) {
+		WeixinJSBridge.invoke('shareTimeline', {
+			"img_url": window.shareData.imgUrl,
+			"img_width": "640",
+			"img_height": "640",
+			"link": window.shareData.timeLineLink,
+			"desc": window.shareData.tContent,
+			"title": window.shareData.tTitle
+		}, function (res) {
+							//alert("android-share-test-000001",10000);
+						//weimobAfterShare("",window.shareData.timeLineLink,'timeline');
+			_report('timeline', res.err_msg);
+		});
+	});
+
+	// 分享到微博
+	WeixinJSBridge.on('menu:share:weibo', function (argv) {
+		WeixinJSBridge.invoke('shareWeibo', {
+			"content": window.shareData.wContent,
+			"url": window.shareData.weiboLink
+		}, function (res) {
+			weimobAfterShare("",window.shareData.weiboLink,'weibo');
+			_report('weibo', res.err_msg);
+		});
+	});
+}, false);
+</script>
+<script type="text/javascript" src="/static/wxgjcn//kf.weimob.com/js/ChatFloat.js" ></script>
+<script type="text/javascript">
+var str_domain = location.href.split('/',4)[2];
+var boolIsTest = true;
+if(str_domain == 'http://www.weimob.com/Webnewmemberscore/www.weimob.com'){
+	boolIsTest = false;
+}
+new ChatFloat({
+        AId: '1071',
+        openid: "",
+		top:150,
+		right:0,
+		IsTest:boolIsTest
+});
+</script>
+</html>
+

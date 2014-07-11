@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{$model->title}</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/statics/bootstarp/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
+        <style type="text/css">
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h4><p class="text-center">{$model->title}</p></h4>
+                    <p><a href="{$adlink}"><img src="{$model->adimg}" class="img-responsive"/></a></p>
+                    <p class="text-info">
+                        {$model->msg}
+                    </p>
+                    <a href="{$wxlink}"><img src="{$model->wximg}" class="img-responsive"/></a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

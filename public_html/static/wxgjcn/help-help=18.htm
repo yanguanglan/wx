@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="uyan_auth" content="04a3f6938d" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="微信营销、微信代运营、微信定制开发、微信托管、微网站、微商城、微营销" name="Keywords">
+	<meta content="盛世源码—国内优秀的微信公众服务平台，国内最大的微信公众智能服务平台，盛世源码—国内优秀的微信公众服务平台八大微体系：微菜单、微官网、微会员、微活动、微商城、微推送、微服务、微统计，企业微营销必备。" name="Description">
+    <script src="/static/wxgjcn/src/html5.js" ></script>
+    <link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/bootstrap_min.css-2014-03-07-1.css"  media="all" />
+<link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/www/index1/index.css-2014-03-07-1.css"  media="all" />
+<link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/www/help/help.css-2014-03-07-1.css"  media="all" />
+<script type="text/javascript" src="/static/wxgjcn/src/jQuery.js-2014-03-07-1.js" ></script>
+<script type="text/javascript" src="/static/wxgjcn/src/www/index1/weimob-index.js-2014-03-07-1.js" ></script>
+<title>盛世源码—国内优秀的微信公众服务平台</title>
+	<link rel="shortcut icon" href="httpimg/favicon.ico" />
+</head>
+<body>
+	<!--595 850-->
+<script language="javascript">
+	$(function () {
+		$("a").click(function () {
+			var rel = $(this).attr("rel");
+			if (rel) {
+				var pos = $(rel).offset().top-60;
+				$("html,body").animate({ scrollTop: pos }, 800);
+			}
+
+		})
+	})
+</script>
+<script>
+	$().ready(function(){
+
+		window.onscroll = window.onresize = function(){
+			showSideBar();
+		}
+	});
+	function showSideBar(){
+		if(!window.sideMenu){
+			window.sideMenu = $("#sideToolbar");
+		}
+		if((document.body.scrollTop||document.documentElement.scrollTop)>500){
+			sideMenu.addClass("on");
+		}else{
+			sideMenu.removeClass("on");
+		}
+	}
+
+
+
+</script>
+<!--[if lte IE 8]>  <script language="javascript">$(function (){$.browser.msie&&$("#ie9-tips").show().find("#stopSuggestA").click(function(){$("#ie9-tips").hide()})})</script><![endif]-->
+<div class="nav clearfix">
+	<div class="nav-content">
+		<h1 class="left" onclick="location.herf='/site/city1'">盛世源码—国内优秀的微信公众服务平台·微信营销，如此简单！</h1>
+		<div class="left city">
+			<h2>上海</h2>
+							<a href="/static/wxgjcn/city1.htm" >
+					切换城市<i class="tri4"></i>
+				</a>
+					</div>
+		<div class="right line-li">
+			<ul>
+				<li><a href="/" >首页</a></li>
+				<li><a href="/static/wxgjcn/case1.htm"  >经典案例</a></li>
+				<li class="nav_menu_li_1"><a style="width:70px; text-align:left;" class="_hover">产品中心<i></i></a>
+					<div class="sub-nav">
+						<a href="/static/wxgjcn/package.htm"  target="_black">微信套餐</a>
+						<a href="/static/wxgjcn/guide1.htm" >功能介绍</a>
+						
+
+					</div>
+
+				</li>
+				<li><a href="/static/wxgjcn/proxy1.htm"  >渠道代理</a></li>
+				<li><a href="/static/wxgjcn/help.htm"  class="navtwo" target="_black">帮助</a></li>
+			</ul>
+			<div class="account">
+				<a href="/reg.html"  class="btn-reg btn0" target="_black">注册</a>
+									<a href="/login.html" class="btn-login btn0" target="_black">登录</a>
+				</div>
+		</div>
+	</div>
+</div>
+
+	
+<div id="ie9-tips" class="clearfix">
+	<div id="tipsPanel">
+		<div id="tipsDesc">系统检测到您所使用的浏览器版本较低，推荐使用<a   target="_blank">Firefox</a>或<a   target="_blank">Chrome</a>浏览器打开，否则将无法体验完整产品功能。</div>
+		<a id="stopSuggestA" href="javascript:;">×</a>
+	</div>
+</div>
+
+<script>
+	var $do_submit = false;
+
+	// 绑定回车键
+	$('#loginBox').keydown(function(e){
+		if(13 == event.keyCode){
+			login();
+		}
+	});
+
+		function login()
+	{
+		if (true == $do_submit)
+		{
+			return false;
+		}
+
+		var $pre_submit = '登录', $do_submit = '登录中...';
+		var $username = $('#username').val(), $password = $('#password').val(), $keepalive = $('#rememberPwdIcon').val();
+		$('#login_button').text($do_submit);
+		$do_submit = true;
+
+		// check
+		if ('' == $username || '' == $password)
+		{
+			$('#err_tips').text('您输入的盛世源码—国内优秀的微信公众服务平台号或密码错误，请重新输入！');
+			$('#err_area').show();
+			$('#login_button').text($pre_submit);
+			$do_submit = false;
+			return false;
+		}
+
+		var $login_data = {
+			username:$username,
+			password:$password,
+			keepalive:$keepalive
+		};
+		$.post('/login', $login_data, function(rs){
+			if(rs.errno == 200)
+			{
+				location.href = rs.url_route;
+			}
+			else
+			{
+				$('#err_tips').text(rs.error);
+				$('#err_area').show();
+				$('#login_button').text($pre_submit);
+			}
+			$do_submit = false;
+		}, 'json');
+	}
+	</script>
+<div id="top"></div>
+<div id="page">
+  <div class="title"  id="17_1">盛世源码—国内优秀的微信公众服务平台产品（微团购）使用指南</div>
+  <h3>管理后台：</h3>
+  <h4 id="18_1">1.团购管理</h4>
+  <p>1)	添加团购：设置团购基本信息、详细信息及团购券信息。可通过复制团购链接地址获取该团购详情页链接
+基本信息设置：用户最大购买量数量为用户参团时，累计购买数量的最大值。团购警戒值为库存判断界限，未达到警戒值时，以提交订单判断库存量，达到警戒值后，将以订单支付判断库存量。虚拟参团数量为参团人数初始值</p>
+ <p><img src="/static/wxgjcn/img/webabout/cust1.jpg"  width="900" ></p>
+ <p>详细信息设置：团购详情设置建议50字以上，已保证页面效果。团购图片最多可上传3张，大小请依照页面提示</p>
+ <p><img src="/static/wxgjcn/img/webabout/cust2.jpg"  width="900" ></p>
+ <p>团购券信息设置：退款设置分为随时退款和过期退款。随时退款是值团购券在过期前都可以随时退款，过期退款指团购券有效期过后依然可以退款。适用门店为团购券可以使用的门店，门店管理系统中将可以验证已设置该门店为适用门店的团购券。适用门店查看全部订单时，门店管理系统验证查询密码后可以查看该团购的全部团购券信息</p>
+ <p><img src="/static/wxgjcn/img/webabout/cust3.jpg"  width="900" ></p>
+ <p>2)	复制团购：复制团购时所有团购信息不变，可以通过修改基本信息和团购券信息中时间、价格、数量等内容快速发布团购信息</p>
+ <p>3)	添加通知：可以对已在上架销售中的团购进行信息补充，或其他变更信息。通知内容可重复修改</p>
+ <p>4)	编辑团购：可对当前退款内容进行修改，对于上架销售中的团购不建议进行修改，而使用添加通知的方式进行变更</p>
+ <p>5)	预览团购：可对当前团购内容进行PC端预览，目前仅支持谷歌chrome浏览器</p>
+  <p><img src="/static/wxgjcn/img/webabout/cust4.jpg"  width="900" ></p>
+ <h3 id="18_2">2.订单管理</h3>
+ <p>1)	支持订单基本信息查看，包括订单状态、商品信息、支付信息及团购券信息</p>
+ <p>2)	支持订单编号和买家手机号查询，支持订单状态和订单时间筛选，支持订单信息导出</p>
+ <p><img src="/static/wxgjcn/img/webabout/cust5.jpg"  width="900" ></p>
+ <h3  id="18_3">3.团购券管理</h3>
+ <p>1)	支持团购券数量概览，支持团购券详细信息查看，包括使用/禁用（已退款）时间，使用门店，关联订单等</p> 
+ <p>2)	支持团购券SN码和会员手机号查询，支持团购券状态及消费门店筛选，支持团购券信息导出</p>
+  <p><img src="/static/wxgjcn/img/webabout/cust6.jpg"  width="900" ></p>
+ <h3  id="18_4">4.退款管理</h3> 
+ <p>1)	支持退款基本信息查看，包括团购券信息、会员手机号、退款金额、退款时间等，会员支付帐号只有申请退款时才可看到，当前退款不支持自动退款，需手动退款</p>
+ <p>2)	支持退款团购券SN码和会员手机号查询，支持退款状态筛选，支持退款记录导出</p>
+ <h3  id="18_5">5.会员管理</h3>
+ <p>1)	支持会员基本信息查看，包括会员手机号、会员微信码（即会员opid）、订单数量、订单总金额、最近交易时间</p>
+ <p>2)	支持会员手机号查询，支持会员信息导出</p>
+  <p><img src="/static/wxgjcn/img/webabout/cust7.jpg"  width="900" ></p>
+  
+  <h2>门店管理后台</h2>
+  <h3  id="18_6">1.消费验证</h3>
+  <p>1)	支持团购券SN码验证使用、团购券信息查看</p>
+  <p>2)	支持门店团购券使用记录导出</p>
+  <p><img src="/static/wxgjcn/img/webabout/cust8.jpg"  width="900" ></p>
+  <h3  id="18_7">2.团购券管理</h3>
+  <p>支持被授权团购的团购券管理，管理功能与管理后台相同：</p>
+  <p>1)	支持团购券信息查看，包括使用/禁用（已退款）时间，使用门店，关联订单等</p>
+  <p>2)	支持团购券SN码和会员手机号查询，支持团购券状态及消费门店筛选，支持团购券信息导出</p>
+  <p><img src="/static/wxgjcn/img/webabout/cust9.jpg"  width="900" ></p>
+ 
+
+  
+
+ 
+  <div id="sideToolbar" style="display: block; position: fixed; top:150px;  right: 0;">
+    <div id="sideCatalog" class="sideCatalogBg" style="visibility: visible;">
+      <div id="sideCatalog-sidebar"></div>
+      <div id="sideCatalog-catalog">
+        <dl style="width:200px;zoom:1">
+          <dd><span>1</span><a href="javascript:void()" rel="#18_1" title="团购管理">团购管理</a></dd>
+          <dd><span>2</span><a href="javascript:void()" rel="#18_2" title="订单管理">订单管理</a></dd>
+          <dd><span>3</span><a href="javascript:void()" rel="#18_3" title="团购券管理">团购券管理</a></dd>
+          <dd><span>4</span><a href="javascript:void()" rel="#18_4" title="退款管理">退款管理</a></dd>
+          <dd><span>5</span><a href="javascript:void()" rel="#18_5" title="会员管理">会员管理</a></dd>
+          <dd><span></span><a href="javascript:void()" title="门店管理后台">门店管理后台</a></dd>
+          <dd><span>6</span><a href="javascript:void()" rel="#18_6" title="消费验证">消费验证</a></dd>
+          <dd><span>7</span><a href="javascript:void()" rel="#18_7" title="团购券管理">团购券管理</a></dd>
+        </dl>
+      </div>
+    </div>
+  <a id="sideCatalogBtn" href="/static/wxgjcn/help.htm"  style="visibility: visible;" title="查看帮助目录"></a>
+    <a id="sideToolbar-up"  href="javascript:void()" rel="#top" title="返回顶部" style="visibility: visible;"></a></div>
+</div>
+<script>
+	$(function () {
+	   if(location.hash){
+			var pos = $(location.hash).offset().top-60;
+			$("html,body").animate({ scrollTop: pos }, 800);
+		}
+	});
+</script>
+<!--QQ咨询-->
+<div class="footer">
+	<div class="footer-content clearfix">
+		<div class="foot-menu">
+			<p>
+				<a href="/static/wxgjcn/index1.htm"  target="_blank">盛世源码—国内优秀的微信公众服务平台首页</a>&nbsp;|&nbsp;
+				<a href="/reg.html"  target="_blank">申请入驻</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/proxy1.htm"  target="_blank">渠道代理</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/about1.htm"  target="_blank">关于盛世源码</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/agents.htm"  target="_blank">授权认证</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/jobs.htm"  target="_blank">加入盛世源码</a>
+			</p>
+			<p>免费热线：400-800-8888&nbsp;&nbsp;&nbsp;QQ：631989322&nbsp;&nbsp;&nbsp;邮箱：kf@weixin.9upp.com</p>
+			<p>地址：
+								上海市市辖区宝山区逸仙路2816号华滋奔腾大厦A幢15楼</p>
+		</div>
+		<div class="copyright">
+			Copyright (c) 2011-2014 9upp.com. All Rights Reserved 盛世源码团队 粤ICP备13083563号
+		</div>
+	</div>
+</div>
+<div style="display:none;"><script type="text/javascript" src="/static/wxgjcn/src/www/index1/huishuo.js-v=2014-03-07-1.js" ></script></div></body>
+</html>

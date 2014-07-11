@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="Keywords" content="盛世源码—国内优秀的微信公众服务平台中心" />
+        <meta name="Description" content="盛世源码—国内优秀的微信公众服务平台中心" />
+        <link rel="shortcut icon" href="httpimg/favicon.ico?v=2014-03-07-1" />
+        <link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/www/login/style.css-2014-03-07-1.css"  media="all" />
+<link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/www/index1/index.css-2014-03-07-1.css"  media="all" />
+<script type="text/javascript" src="/static/wxgjcn/src/jQuery.js-2014-03-07-1.js" ></script>
+<script type="text/javascript" src="/static/wxgjcn/src/www/placeholder.js-2014-03-07-1.js" ></script>
+<title>登录-盛世源码—国内优秀的微信公众服务平台中心</title>
+        <!--[if IE 7]>
+            <link href="/static/wxgjcn/css/font_awesome_ie7.css-v=2014-03-07-1.css"  rel="stylesheet" />
+        <![endif]-->
+        <!--[if lte IE 8]>
+            <script src="/static/wxgjcn/js/excanvas_min.js-v=2014-03-07-1.js" ></script>
+        <![endif]-->
+        <!--[if lte IE 9]>
+            <script src="/static/wxgjcn/js/watermark.js-v=2014-03-07-1.js" ></script>
+        <![endif]-->
+    </head>
+    <!--[if lte IE 8]>  <script language="javascript">$(function (){$.browser.msie&&$("#ie9-tips").show().find("#stopSuggestA").click(function(){$("#ie9-tips").hide()})})</script><![endif]-->
+<div class="nav clearfix">
+	<div class="nav-content">
+		<h1 class="left"><a href="/static/wxgjcn/index.html"   title="盛世源码—国内优秀的微信公众服务平台官网">盛世源码—国内优秀的微信公众服务平台·微信营销，如此简单！</a></h1>
+		<div class="left city">
+			<h2>上海</h2>
+							<a href="/static/wxgjcn/city1.htm" >
+					切换城市<i class="tri4"></i>
+				</a>
+					</div>
+		<div class="right line-li">
+        
+			 <ul>
+        <li><a href="/static/wxgjcn/index.html" >首页</a></li>
+        <li><a href="/static/wxgjcn/case1.htm"  >经典案例</a></li>
+	    <li class="nav_menu_li_1"><a style="width:70px; text-align:left;" class="_hover">产品中心<i></i></a>
+					 <div class="sub-nav">
+						 <a href="/static/wxgjcn/package.htm"  target="_black">服务套餐</a>
+						 <a href="/static/wxgjcn/guide1.htm" >功能介绍</a>
+						 <a href="/static/wxgjcn/topic/weipai.htm"  target="_black">微拍</a>
+
+					 </div>
+
+	    </li>
+        <li><a href="/static/wxgjcn/proxy1.htm"  >渠道代理</a></li>
+        <li><a href="/static/wxgjcn/help.htm"   target="_black">帮助</a></li>
+    </ul>
+            <div class="account">
+        <a href="/reg.html"  class="btn-reg btn0" target="_black">注册</a>
+          </div>
+		</div>
+	</div>
+</div>
+
+<div id="ie9-tips" class="clearfix">
+	<div id="tipsPanel">
+		<div id="tipsDesc">系统检测到您所使用的浏览器版本较低，推荐使用<a   target="_blank">Firefox</a>或<a   target="_blank">Chrome</a>浏览器打开，否则将无法体验完整产品功能。</div>
+		<a id="stopSuggestA" href="javascript:;">×</a>
+	</div>
+</div>
+
+<script>
+var $do_submit = false;
+
+// 绑定回车键
+$('#loginBox').keydown(function(e){
+	if(13 == event.keyCode){
+		login();
+	}
+});
+
+</script>
+<script>
+	if(top!=self) if(self!=top) top.location=self.location;
+</script>
+
+<div id="bd" class="quc-clearfix reg-wrapper-quick" onkeydown="bindEnterKey(event)">
+	<div class="content">
+		<div id="loginWrap">
+			<div id="modLoginWrap" class="mod-qiuser-pop">
+				<dl class="login-wrap">
+					<dt><span id="loginTitle">登录</span></dt>
+					<div class="ipbox">
+						<b class="r1"></b>
+						<b class="r2"></b>
+						<b class="r5"></b>
+						<div class="con">
+							<dd class="botborder" style="z-index:10;">
+								<div class="quc-clearfix login-item">
+									<label for="username">帐号：</label>
+									<input type="text" id="username" name="username" tabindex="1" class="ipt tipinput1" placeholder="用户名" autocomplete="off" maxlength="100" suggestwidth="374px" />
+								</div>
+							</dd>
+							<dd class="password">
+								<div class="quc-clearfix login-item">
+									<label for="password">密码：</label>
+									<input type="password" id="password" name="password" tabindex="2" class="ipt tipinput1" placeholder="请输入您的密码" maxlength="20" autocomplete="off" />
+								</div>
+							</dd>
+						</div>
+						<b class="r5"></b>
+						<b class="r3"></b>
+						<b class="r4"></b>
+					</div>
+					<dd class="find">
+						<label onClick="changeCheckbox();">
+							<span id="keepalive" value="1" class="checked checkbox" tabindex="3"></span>自动登录
+						</label>
+						<a href="/static/wxgjcn/forgotpassword/index.html"  target="_blank" class="fac">忘记密码？</a>
+					</dd>
+					<div style="margin:0 0 10px; color:#c35d00;" id="error_box">
+						<span id="error_tips"></span>
+					</div>
+					<dd class="submit">
+						<span><input type="submit" tabindex="4" class="btn-login" id="btn-login" value="" /></span>
+					</dd>
+				</dl>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="erwei" title="微信扫一扫">
+	<span class="hudongzhushou">官方微信</span>
+	<div class="erwei_big" style="display:none;">
+		<p>扫一扫，关注盛世源码—国内优秀的微信公众服务平台官方微信，体验盛世源码—国内优秀的微信公众服务平台智能服务</p>
+	</div>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var erwei_time = null;
+		$(".erwei").hover(function(){
+			$(".erwei_big").show();
+		}).mouseleave(function(){
+				erwei_time = setTimeout(function(){
+					$(".erwei_big").hide();
+				},1000);
+			});
+		$(".erwei_big").mouseenter(function(){
+			if(erwei_time){
+				clearTimeout(erwei_time);
+			}
+		}).mouseleave(function(){
+				erwei_time = setTimeout(function(){
+					$(".erwei_big").hide();
+				},1000);
+			});
+	});
+</script>
+<!-- 意见反馈 -->
+<div class="feedback" id="feedback">
+	<p class="feedsize"><b>亲爱的用户</b><a class="close" href="javascript:;" onclick= "$('#feedback, #feedback_cover').toggleClass('on');">×</a></p>
+	<p class="bbottom">欢迎您访问盛世源码—国内优秀的微信公众服务平台官方网站！您对盛世源码—国内优秀的微信公众服务平台有任何意见和建议，或在使用过程中遇到问题，请在本页面反馈。我们会实时关注您的反馈不断优化，您的建议将帮助我们改进，为您提供更好的服务！</p>
+	<p class="feedsize"><b>请留下您的宝贵意见和建议！（请填写）</b></p>
+	<form>
+		<textarea  id="feedback-text" name="" id="feedback-text" placeholder="输入文本..."></textarea>
+		<p class="feedsize"><b>您常用的电子邮箱是？（请填写）</b></p>
+		<p style="color:#666; text-indent:1em;"><b class="blue">★</b>请尽量填写，以便我们尽快回复您！</p>
+		<input type="text" placeholder="如：@163.com" id="feedback-input" />
+       <p class="feedsize"><b>验证码</b></p>
+        <input type="text" name="captcha" id="feedback-Captcha" maxlength="4" onclick="">
+        <span name="feedback_captcha" id="feedback_captcha">
+				<img title="看不清？点击更换" style="cursor: pointer;" src="captcha-f=feedback&v=2213746.png"  id="yanzhen" width="60" height="20" border="1">
+	    </span>
+	    <br />
+		<input type="button"  class="feed-btn" value="" onclick="feedbackSubmit(); return false;" />
+	</form>
+</div>
+<div id="feedback_cover" class="feedback_cover"></div>
+<!--QQ咨询-->
+<script charset="utf-8" type="text/javascript" src="/static/wxgjcn//static.b.qq.com/account/bizqq/js/wpa.js-wty=1&type=13&kfuin=631989322&ws=http---www.weimob.com-&title=企业QQ售前&cot1=国内最大的盛世源码—国内优秀的微信公众服务平台&btn1=企业QQ咨询&fsty=0&fposX=2&fposY=1&tx=2&aty=1&a=1001.js" ></script>
+
+<div class="footer">
+	<div class="footer-content clearfix">
+		<div class="foot-menu">
+			<p>
+				<a href="/static/wxgjcn/index1.htm"  target="_blank">盛世源码—国内优秀的微信公众服务平台首页</a>&nbsp;|&nbsp;
+				<a href="/reg.html"  target="_blank">申请入驻</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/proxy1.htm"  target="_blank">渠道代理</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/about1.htm"  target="_blank">关于盛世源码</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/agents.htm"  target="_blank">授权认证</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/jobs.htm"  target="_blank">加入盛世源码</a>
+			</p>
+			<p>免费热线：400-000-0000&nbsp;&nbsp;&nbsp;QQ：631989322&nbsp;&nbsp;&nbsp;邮箱：kf@weiqimobile.com</p>
+			<p>地址：
+								湖南省长沙市</p>
+		</div>
+		<div class="copyright">
+			Copyright 

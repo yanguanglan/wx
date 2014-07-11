@@ -1,0 +1,14 @@
+ <div class="box-content" style="padding:20px 0px 20px 20px">
+<ul class="nav nav-tabs">
+<li class="<if condition="ACTION_NAME EQ 'design' and $isBranch neq 1">active</if>"><a href="{ZF::U('Member_card/design',array('token'=>$token,'id'=>$_GET['id']))}">设计修改</a></li>
+<li class="<if condition="ACTION_NAME EQ 'create' and $isBranch neq 1">active</if>"><a href="{ZF::U('Member_card/create',array('token'=>$token,'id'=>$_GET['id']))}">在线开卡</a></li>
+<li class="<if condition="ACTION_NAME EQ 'exchange' OR $isBranch eq 1">active</if>"><a href="{ZF::U('Member_card/exchange',array('token'=>$token,'id'=>$_GET['id']))}">积分设置</a></li>
+<li class="<if condition="ACTION_NAME EQ 'notice' OR $isBranch eq 1">active</if>"><a href="{ZF::U('Member_card/notice',array('token'=>$token,'id'=>$_GET['id']))}">通知管理</a></li>
+<li class="<if condition="ACTION_NAME EQ 'privilege' OR $isBranch eq 1">active</if>"><a href="{ZF::U('Member_card/privilege',array('token'=>$token,'id'=>$_GET['id']))}">特权管理</a></li>
+<li class="<if condition="ACTION_NAME EQ 'coupon' OR $isBranch eq 1">active</if>"><a href="{ZF::U('Member_card/coupon',array('token'=>$token,'id'=>$_GET['id']))}">优惠券管理</a></li>
+<li class="<if condition="ACTION_NAME EQ 'integral' OR $isBranch eq 1">active</if>"><a href="{ZF::U('Member_card/integral',array('token'=>$token,'id'=>$_GET['id']))}">礼品券管理</a></li>
+<li class="<if condition="ACTION_NAME EQ 'members' OR $isBranch eq 1">active</if>"><a href="{ZF::U('Member_card/members',array('token'=>$token,'id'=>$_GET['id']))}">会员管理</a></li>
+<li class="<if condition="ACTION_NAME EQ 'staff' OR $isBranch eq 1">active</if>"><a href="{ZF::U('Member_card/staff',array('token'=>$token,'id'=>$_GET['id']))}">店员管理</a></li>
+</ul>
+</div>
+<!--tab end-->

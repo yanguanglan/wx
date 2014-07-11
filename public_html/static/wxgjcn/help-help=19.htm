@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="uyan_auth" content="04a3f6938d" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="微信营销、微信代运营、微信定制开发、微信托管、微网站、微商城、微营销" name="Keywords">
+	<meta content="盛世源码—国内优秀的微信公众服务平台，国内最大的微信公众智能服务平台，盛世源码—国内优秀的微信公众服务平台八大微体系：微菜单、微官网、微会员、微活动、微商城、微推送、微服务、微统计，企业微营销必备。" name="Description">
+    <script src="/static/wxgjcn/src/html5.js" ></script>
+    <link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/bootstrap_min.css-2014-03-07-1.css"  media="all" />
+<link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/www/index1/index.css-2014-03-07-1.css"  media="all" />
+<link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/www/help/help.css-2014-03-07-1.css"  media="all" />
+<script type="text/javascript" src="/static/wxgjcn/src/jQuery.js-2014-03-07-1.js" ></script>
+<script type="text/javascript" src="/static/wxgjcn/src/www/index1/weimob-index.js-2014-03-07-1.js" ></script>
+<title>盛世源码—国内优秀的微信公众服务平台</title>
+	<link rel="shortcut icon" href="httpimg/favicon.ico" />
+</head>
+<body>
+	<!--595 850-->
+<script language="javascript">
+	$(function () {
+		$("a").click(function () {
+			var rel = $(this).attr("rel");
+			if (rel) {
+				var pos = $(rel).offset().top-60;
+				$("html,body").animate({ scrollTop: pos }, 800);
+			}
+
+		})
+	})
+</script>
+<script>
+	$().ready(function(){
+
+		window.onscroll = window.onresize = function(){
+			showSideBar();
+		}
+	});
+	function showSideBar(){
+		if(!window.sideMenu){
+			window.sideMenu = $("#sideToolbar");
+		}
+		if((document.body.scrollTop||document.documentElement.scrollTop)>500){
+			sideMenu.addClass("on");
+		}else{
+			sideMenu.removeClass("on");
+		}
+	}
+
+
+
+</script>
+<!--[if lte IE 8]>  <script language="javascript">$(function (){$.browser.msie&&$("#ie9-tips").show().find("#stopSuggestA").click(function(){$("#ie9-tips").hide()})})</script><![endif]-->
+<div class="nav clearfix">
+	<div class="nav-content">
+		<h1 class="left" onclick="location.herf='/site/city1'">盛世源码—国内优秀的微信公众服务平台·微信营销，如此简单！</h1>
+		<div class="left city">
+			<h2>上海</h2>
+							<a href="/static/wxgjcn/city1.htm" >
+					切换城市<i class="tri4"></i>
+				</a>
+					</div>
+		<div class="right line-li">
+			<ul>
+				<li><a href="/" >首页</a></li>
+				<li><a href="/static/wxgjcn/case1.htm"  >经典案例</a></li>
+				<li class="nav_menu_li_1"><a style="width:70px; text-align:left;" class="_hover">产品中心<i></i></a>
+					<div class="sub-nav">
+						<a href="/static/wxgjcn/package.htm"  target="_black">微信套餐</a>
+						<a href="/static/wxgjcn/guide1.htm" >功能介绍</a>
+						
+
+					</div>
+
+				</li>
+				<li><a href="/static/wxgjcn/proxy1.htm"  >渠道代理</a></li>
+				<li><a href="/static/wxgjcn/help.htm"  class="navtwo" target="_black">帮助</a></li>
+			</ul>
+			<div class="account">
+				<a href="/reg.html"  class="btn-reg btn0" target="_black">注册</a>
+									<a href="/login.html" class="btn-login btn0" target="_black">登录</a>
+				</div>
+		</div>
+	</div>
+</div>
+
+	
+<div id="ie9-tips" class="clearfix">
+	<div id="tipsPanel">
+		<div id="tipsDesc">系统检测到您所使用的浏览器版本较低，推荐使用<a   target="_blank">Firefox</a>或<a   target="_blank">Chrome</a>浏览器打开，否则将无法体验完整产品功能。</div>
+		<a id="stopSuggestA" href="javascript:;">×</a>
+	</div>
+</div>
+
+<script>
+	var $do_submit = false;
+
+	// 绑定回车键
+	$('#loginBox').keydown(function(e){
+		if(13 == event.keyCode){
+			login();
+		}
+	});
+
+		function login()
+	{
+		if (true == $do_submit)
+		{
+			return false;
+		}
+
+		var $pre_submit = '登录', $do_submit = '登录中...';
+		var $username = $('#username').val(), $password = $('#password').val(), $keepalive = $('#rememberPwdIcon').val();
+		$('#login_button').text($do_submit);
+		$do_submit = true;
+
+		// check
+		if ('' == $username || '' == $password)
+		{
+			$('#err_tips').text('您输入的盛世源码—国内优秀的微信公众服务平台号或密码错误，请重新输入！');
+			$('#err_area').show();
+			$('#login_button').text($pre_submit);
+			$do_submit = false;
+			return false;
+		}
+
+		var $login_data = {
+			username:$username,
+			password:$password,
+			keepalive:$keepalive
+		};
+		$.post('/login', $login_data, function(rs){
+			if(rs.errno == 200)
+			{
+				location.href = rs.url_route;
+			}
+			else
+			{
+				$('#err_tips').text(rs.error);
+				$('#err_area').show();
+				$('#login_button').text($pre_submit);
+			}
+			$do_submit = false;
+		}, 'json');
+	}
+	</script>
+<div id="top"></div>
+<div id="page">
+	<div class="title"  id="17_1">盛世源码—国内优秀的微信公众服务平台产品（微社区）使用指南</div>
+	<h3 id="19_1">1、基础建设</h3>
+	<h4>1.1社区设置</h4>
+	<p>对应填写各项，用户通过关键词即可触发进入微社区，社区名称将在社区顶部展示，商家通过后台进行发帖或对粉丝的帖子或评论进行回复时，官方的头像和昵称将对应展示；</p>
+	<h4>1.1社区设置</h4>
+	<p>A、可对社区权限进行设置，选择仅会员时，只有商家的会员才可在社区内发帖；</p>
+	<p>B、可对发帖、评论进行审核，开启后只有通过审核的内容才可展示；</p>
+	<p>C、可开启智能排序，开启后所有帖子均以收藏和赞的数量由多至少排序；</p>
+	<p><img src="/static/wxgjcn/img/webabout/wsq1.png"  ></p>
+	<h3 id="19_2">2、社区管理</h3>
+	<p><img src="/static/wxgjcn/img/webabout/wsq2.png"  width="900" ></p>
+	<h4>2.1帖子管理</h4>
+	<p>可对社区内的所有帖子进行管理：审核、评论、编辑、置顶、删除，并且可以官方身份直接评论用户的帖子；</p>
+	<p><img src="/static/wxgjcn/img/webabout/wsq3.png"  ></p>
+	<h4>2.2评论管理</h4>
+	<p>可对所有帖子的评论进行管理：审核、回复、置顶、删除；</p>
+	<p><img src="/static/wxgjcn/img/webabout/wsq4.png"  ></p>
+	<h4>2.3用户管理</h4>
+	<p>可对所有帖子的发帖人进行管理：拉黑、取消拉黑；</p>
+	<h4>2.4帖子查询及发布</h4>
+	<p>所有帖子可根据不同条件或标题进行查询，并且可以官方的身份进行发帖；</p>
+	<p><img src="/static/wxgjcn/img/webabout/wsq5.png"  ></p>
+	<p><img src="/static/wxgjcn/img/webabout/wsq6.png"  ></p>
+	<h3 id="19_3">3、社区统计</h3>
+	<p><img src="/static/wxgjcn/img/webabout/wsq7.png"  width="900" ></p>
+	<p><strong>注</strong></p>
+	<p>1、商家可根据发帖、删帖及社区当天访问量的统计来观察社区的状况；</p>
+	<p>2、商家的用户可在微社区进行发帖、喜欢和赞等操作，喜欢的帖子在【我的】里面可以查看；</p>
+	<p>3、当用户的帖子或评论被其他用户回复、赞时，均会收到对应的消息，并可对应回复。</p>
+
+
+
+
+
+
+	<div id="sideToolbar" style="display: block; position: fixed; top:150px;  right: 0;">
+		<div id="sideCatalog" class="sideCatalogBg" style="visibility: visible;">
+			<div id="sideCatalog-sidebar"></div>
+			<div id="sideCatalog-catalog">
+				<dl style="width:200px;zoom:1">
+					<dd><span>1</span><a href="javascript:void()" rel="#19_1" title="基础建设">基础建设</a></dd>
+					<dd><span>2</span><a href="javascript:void()" rel="#19_2" title="社区管理">社区管理</a></dd>
+					<dd><span>3</span><a href="javascript:void()" rel="#19_3" title="团购券管理">社区统计</a></dd>
+
+				</dl>
+			</div>
+		</div>
+		<a id="sideCatalogBtn" href="/static/wxgjcn/help.htm"  style="visibility: visible;" title="查看帮助目录"></a>
+		<a id="sideToolbar-up"  href="javascript:void()" rel="#top" title="返回顶部" style="visibility: visible;"></a></div>
+</div>
+<script>
+	$(function () {
+		if(location.hash){
+			var pos = $(location.hash).offset().top-60;
+			$("html,body").animate({ scrollTop: pos }, 800);
+		}
+	});
+</script>
+<!--QQ咨询-->
+<div class="footer">
+	<div class="footer-content clearfix">
+		<div class="foot-menu">
+			<p>
+				<a href="/static/wxgjcn/index1.htm"  target="_blank">盛世源码—国内优秀的微信公众服务平台首页</a>&nbsp;|&nbsp;
+				<a href="/reg.html"  target="_blank">申请入驻</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/proxy1.htm"  target="_blank">渠道代理</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/about1.htm"  target="_blank">关于盛世源码</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/agents.htm"  target="_blank">授权认证</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/jobs.htm"  target="_blank">加入盛世源码</a>
+			</p>
+			<p>免费热线：400-800-8888&nbsp;&nbsp;&nbsp;QQ：631989322&nbsp;&nbsp;&nbsp;邮箱：kf@weixin.9upp.com</p>
+			<p>地址：
+								上海市市辖区宝山区逸仙路2816号华滋奔腾大厦A幢15楼</p>
+		</div>
+		<div class="copyright">
+			Copyright (c) 2011-2014 9upp.com. All Rights Reserved 盛世源码团队 粤ICP备13083563号
+		</div>
+	</div>
+</div>
+<div style="display:none;"><script type="text/javascript" src="/static/wxgjcn/src/www/index1/huishuo.js-v=2014-03-07-1.js" ></script></div></body>
+</html>

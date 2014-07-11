@@ -1,0 +1,155 @@
+<include file="Public:head"/>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<!-- Apple devices fullscreen -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<!-- Apple devices fullscreen -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<base target="mainFrame" />
+<link rel="stylesheet" type="text/css" href="/css/wm/index.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/bootstrap_min.css?dddf" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/bootstrap_responsive_min.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/style.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/themes.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/todc_bootstrap.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/inside.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/album.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/uploadify_t.css" media="all" />
+<script src="./tpl/static/jquery-1.4.2.min.js" type="text/javascript"></script>
+
+ <script type="text/javascript" src="/@system/js/yyucadapter.js"></script>
+ <script>
+//图片设置
+ function setpic(o){
+ 	window.piccbk = function(m){
+ 		$(o).parent().find('input[type="text"]').val(m);
+ 		window.piccbk = null;
+ 	}
+ 	window.curpic = null;
+ 	openpicset();	
+ } 
+ function openpicset(){
+ 	pophtml('<iframe src="/admin/businessModule/wspicif.html" style="width:630px;height:470px;border:none;background-color: #dfdfdf;" width="630px" height="475px"></iframe>',670,510,true);
+ }
+ </script>
+ 
+</head>
+<body class="theme-blue">
+	<div id="main">
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="span12">
+					<div class="box">
+						<div class="box-title">
+							<div class="span8">
+								<h3><i class="icon-table"></i>摇一摇活动设置 <span class="FAQ">每次只能开启一个活动，上个活动未结束不能创建下个活动</span></h3>
+							</div>
+						</div>
+<div class="box-content" style="padding: 20px 0;">
+							<div class="row-fluid">
+								<div class="span8 control-group">
+									<a href="{ZF::U('Shake/add')}" class="btn"><i class="icon-plus"></i>添加活动</a>
+									<div class="btn-group datatabletool">
+										<a href="javascript:location.reload();" class="btn"><i class="icon-refresh"></i></a>
+									</div>
+								</div>
+							</div>
+							<div class="row-fluid dataTables_wrapper">
+							
+	                           
+						  </div>
+						  
+						  <!-- table 零-度-微-助-手-wx 0 du  cc-->
+						  <div class="row-fluid dataTables_wrapper">
+						          <form method="post" action="" id="info">
+									<input name="delall" type="hidden" value="">
+									<input name="wxid" type="hidden" value="">
+                                   <table class="table table-hover table-nomargin table-bordered usertable dataTable" id="listTable">
+										<thead>
+										<tr>
+										<th style=" width:180px;">正在进行的活动名称</th>                 
+										<th style=" width:110px;">客户端发送间隔</th>
+										<th>前台发送间隔</th>
+										<th>前台显示人数</th>
+										<th>前台背景图片</th>
+										<th>摇晃类型</th>
+										<th style=" width:150px;" class="norightborder">操作</th>
+										</tr>
+										</thead>
+										<tbody>
+										<tr>
+<if condition="$actinfo neq NULL">
+<td>{ZF:$actinfo.acttitle}</td>
+<td>{ZF:$actinfo.clienttime}</td>
+<td>{ZF:$actinfo.showtime}</td>
+<td>{ZF:$actinfo.shownum}</td>
+<td><img style="width:100px; height:30px;" src="{ZF:$actinfo.pass}"></td>
+<td>{ZF:$actinfo.shaketype}</td>
+<td class="norightborder">
+    <if condition="$actinfo['isopen'] eq 0"> 
+    <a href="{ZF::U('Shake/change',array('id'=>$actinfo['id'],'actid'=>0,'token'=>$_SESSION['token']))}">启动</a>&nbsp;&nbsp;&nbsp;
+    <else /> <a href="{ZF::U('Shake/change',array('id'=>$actinfo['id'],'actid'=>1,'token'=>$_SESSION['token']))}">停止</a>&nbsp;&nbsp;&nbsp;
+    <a target="_blank" href="{ZF::U('Shake/show',array('token'=>$_SESSION['token']))}">前台</a>&nbsp;&nbsp;&nbsp;
+    </if>
+    <a href="{ZF::U('Shake/edit',array('id'=>$actinfo['id'],'token'=>$_SESSION['token']))}" >编辑</a>&nbsp;&nbsp;&nbsp;
+    <a href="{ZF::U('Shake/change',array('id'=>$actinfo['id'],'actid'=>2,'token'=>$_SESSION['token']))}" title="统计活动人数并关闭活动，无法再次开启">关闭</a>
+</td>
+<else />
+<td colspan="7" style="text-align:center">目前没有进行中的活动哦</td>
+</if>
+																				</tr>
+										</tbody>
+										</table>  
+                                    <input type="hidden" name="__hash__" value="b45e26fa22c72959cc12f3676839b459_a81a975b0b37b6242c99f499baf474c2" /></form>
+									<div class="dataTables_paginate paging_full_numbers"><span></span></div>
+                            </div>
+                            <!-- table -->		
+                            
+                            						  <!-- table -->
+						  <div class="row-fluid dataTables_wrapper">
+						          <form method="post" action="" id="info">
+									<input name="delall" type="hidden" value="">
+									<input name="wxid" type="hidden" value="">
+                                   <table class="table table-hover table-nomargin table-bordered usertable dataTable" id="listTable">
+								<thead>
+								<tr>
+								<th style=" width:120px;">过往活动名称</th>                 
+								<th style=" width:70px;">结束时间</th>
+								<th>参与人数</th>
+								<th>摇晃类型</th>
+								<th style=" width:100px;" class="norightborder">操作</th>
+								</tr>
+								</thead>
+<volist name="info" id="vo">
+<tr>
+<td>{ZF:$vo.acttitle}</td>
+<td>{ZF:$vo.endtime|date="Y-m-d",###}</td>
+<td>{ZF:$vo.joinnum}</td>
+<td>{ZF:$vo.shaketype}</td>
+<td class="norightborder">
+	<a href="{ZF::U('Shake/check',array('id'=>$vo['id'],'token'=>$_SESSION['token']))}">查看成绩</a>&nbsp;&nbsp;
+	<a href="{ZF::U('Shake/delold',array('id'=>$vo['id']))}">删除</a>
+</td>
+</tr>
+</volist>										
+																		
+																		</table>  
+                                    <input type="hidden" name="__hash__" value="b45e26fa22c72959cc12f3676839b459_a81a975b0b37b6242c99f499baf474c2" /></form>
+									<div class="dataTables_paginate paging_full_numbers"><span></span></div>
+                            </div>
+                            <!-- table -->					  
+						  
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<br/><br/><br/></body>
+<script src="./tpl/User/default/common/js/common.js" type="text/javascript"></script>
+</html>

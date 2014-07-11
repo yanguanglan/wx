@@ -1,0 +1,87 @@
+<include file="Public:head"/> 
+<link href="{ZF::STATICS}/vote/wap/skins/all.css?v=0.9.1" rel="stylesheet">
+<link href="{ZF::STATICS}/vote/wap/vote.css" rel="stylesheet">
+<script src="{ZF::STATICS}/vote/wap/js/jquery.js"></script>
+<script src="{ZF::STATICS}/vote/wap/jquery.icheck.min.js?v=0.9.1"></script>
+
+<div class="content" style="" > 
+
+
+<div class="layout clear">
+<div class="skin skin-line">          
+ 
+    <div class="skin-section">
+      <h4>{ZF:$vote.title}</h4>  
+      <h3><a href="{ZF::U('Vote/index')}" class="right btnGrayS vm" style="margin-top:-20px">返回</a></h3>
+      
+     <p class="modus"> <if condition="$vote['cknums'] eq 1"> 单选<else/>多选</if>投票，<span class="number">共有{ZF:$count}人参与投票</span></p>
+      <ul class="list">
+      <volist name="vote_item" id="li"> 
+      <if condition="$vote['cknums'] eq 1">
+  <if condition="$vote['type'] eq 'text'">
+      <li>
+        <input tabindex="{ZF:$i}" type="radio" name="vid" value="{ZF:$li.id}" id="line-radio-{ZF:$i}">
+        <label for="line-radio-{ZF:$i}">{ZF:$li.item}</label>
+         
+       <div class="progress-bar orange shine">
+<span style="width: {ZF:$li.per|default=2}%">{ZF:$li.per}%</span></div>             
+     </li>
+  <else/> <!--img-->
+        <li>
+        <span><img src="{ZF:$li.startpicurl}" ></span>
+        <input tabindex="{ZF:$i}" type="radio" name="vid" value="{ZF:$li.id}" id="line-radio-{ZF:$i}">
+        <label for="line-radio-{ZF:$i}">{ZF:$li.item}</label>
+         
+        <div class="progress-bar orange shine">
+<span style="width: {ZF:$li.per|default=2}%">{ZF:$li.per}%</span></div>                   
+      </li>
+  </if>
+         
+
+      <else/>
+            <if condition="$vote['type'] eq 'text'">
+      <li>
+        <input tabindex="{ZF:$i}" type="radio" name="vid" value="{ZF:$li.id}" id="line-radio-{ZF:$i}">
+        <label for="line-radio-{ZF:$i}">{ZF:$li.item}</label>
+         
+        <div class="progress-bar orange shine">
+<span style="width: {ZF:$li.per|default=2}%">{ZF:$li.per}%</span></div>             
+     </li>
+  <else/> <!--img-->
+        <li>
+        <span><img src="{ZF:$li.startpicurl}" ></span>
+        <input tabindex="{ZF:$i}" type="radio" name="vid" value="{ZF:$li.id}" id="line-radio-{ZF:$i}">
+        <label for="line-radio-{ZF:$i}">{ZF:$li.item}</label>
+         
+        <div class="progress-bar orange shine">
+<span style="width: {ZF:$li.per|default=2}%">{ZF:$li.per}%</span></div>                 
+      </li>
+  </if>
+      </if>
+        </volist>                  
+</ul>             
+     
+</div>
+
+
+<script>
+$(document).ready(function(){
+$('.skin-line input').each(function(){
+var self = $(this),
+label = self.next(),
+label_text = label.text();
+
+label.remove();
+self.iCheck({
+ checkboxClass: 'icheckbox_line-orange',
+ radioClass: 'iradio_line-orange',
+ insert: '<div class="icheck_line-icon"></div>' + label_text
+});       
+
+});
+});
+</script>  
+</div> 
+</div>  
+</div>
+<include file="Public:footer"/>

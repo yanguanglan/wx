@@ -1,0 +1,113 @@
+<include file="Public:head"/>
+<html>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<!-- Apple devices fullscreen -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<!-- Apple devices fullscreen -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<base target="mainFrame" />
+<link rel="stylesheet" type="text/css" href="{ZF::RES}/css/cymain.css" />
+<div class="content" style="width:80%; border:none; border:none; margin-bottom:30px;" >
+<link rel="stylesheet" type="text/css" href="/css/wm/index.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/bootstrap_min.css?dddf" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/bootstrap_responsive_min.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/style.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/themes.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/todc_bootstrap.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/inside.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/album.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/uploadify_t.css" media="all" />
+<title>{$_SERVER['WEB_NAME']}—国内最大的微信公众服务平台</title>
+ <script type="text/javascript" src="/@system/js/yyucadapter.js"></script>
+<script type="text/javascript" src="/res/mbaudio/inc/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="/res/mbaudio/inc/jquery.mb.miniPlayer.js"></script>
+<link rel="stylesheet" type="text/css" href="/uploadify/uploadify.css">
+<script type="text/javascript" src="/uploadify/jquery.uploadify.js"></script>
+<link rel="stylesheet" type="text/css" href="/res/mbaudio/css/miniplayer.css" title="style" media="screen"/>
+<link rel="stylesheet" type="text/css" href="{ZF::RES}/css/cymain.css" />
+<script type="text/javascript" src="{ZF::RES}/js/formCheck/formcheck.js"> </script>
+<body class="{Session::get('maintheme')}">
+<div id="main">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="box">
+                    <div class="box-title">
+                        <div class="span10">
+                            <h3><i class="icon-edit"></i>店铺信息配置</h3>
+                        </div>
+                        <div class="span2">
+                            <a class="btn" href="javascript:history.go(-1);">返回</a> 
+                        </div>
+                    </div>
+                <div class="box-content">
+
+<form class='form-horizontal form-validate' method="post" id="form" action=""> 
+<input type="hidden" name="token" value="{ZF::$token}" />
+<input type="hidden" name="storeid" value="{ZF:$set.storeid}" />
+
+                            <div class="control-group">
+                                <label for="name" class="control-label">店铺名称：</label>
+                                <div class="controls">
+                                <b class="red">{ZF:$set.name}</b>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label for="name" class="control-label">店铺公告：</label>
+                                <div class="controls">
+                                <textarea name="bulletin" class="px require" id="bulletin" style="width:400px;height:80px;" placeholder="如：店铺最新优惠：消费100元送十元 ">{ZF:$set.bulletin}</textarea>
+                                <span class="maroon">*</span><span class="help-inline"></span>
+                                </div>
+                            </div>
+							 <div class="control-group">
+                                <label for="name" class="control-label">店铺类型：</label>
+                                <div class="controls">
+                                <input type="text" id="category" name="category" value="{ZF:$set.category}" placeholder="如：小吃、快餐 " class="px require" style="width:400px;" />
+                                <span class="maroon">*</span><span class="help-inline"></span>
+                                </div>
+                            </div>
+							<div class="control-group">
+                                <label for="name" class="control-label">营业时间：</label>
+                                <div class="controls">
+                                <input type="text" id="time" name="time" value="{ZF:$set.time}" placeholder="如：早8:00-晚23:00 " class="px require" style="width:400px;" />
+                                <span class="maroon">*</span><span class="help-inline">营业时间段</span>
+                                </div>
+                            </div>
+							<div class="control-group">
+                                <label for="name" class="control-label">起送价格：</label>
+                                <div class="controls">
+                                <input type="text" id="money" name="money" value="{ZF:$set.money}" placeholder="如100，仅保留小数点后2位 " class="px require" style="width:400px;" />
+                                <span class="maroon">*</span><span class="help-inline">必须设置，否则订单页不显示商品无法提交</span>
+                                </div>
+                            </div>
+							<div class="control-group">
+                                <label for="name" class="control-label">服务距离：</label>
+                                <div class="controls">
+                                <input type="text" id="radius" name="radius" value="{ZF:$set.radius}" placeholder="如：10公里   "  class="px require" style="width:400px;" />
+                                <span class="maroon">*</span><span class="help-inline"></span>
+                                </div>
+                            </div>
+							<div class="control-group">
+                                <label for="name" class="control-label">配送区域：</label>
+                                <div class="controls">
+                                <input type="text" id="scope" name="scope" value="{ZF:$set.scope}" placeholder="如：河南郑州市内等   "   class="px require" style="width:400px;" />
+                                <span class="maroon">*</span><span class="help-inline"></span>
+                                </div>
+                            </div>
+							<div class="form-actions">
+                           <!--零-度微-助-手-w x-0 d u-c c   -->
+       <button type="submit" name="button" class="btn btn-primary">保存</button>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       <button type="button" class="btn" onclick="window.history.go(-1)">取消</button> 
+     </div>
+   </form> 
+</div>
+<div class="cLine">
+
+<div class="clr"></div>
+</div>
+</div>
+</body>
+</html>

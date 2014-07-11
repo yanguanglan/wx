@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="uyan_auth" content="04a3f6938d" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="微信营销、微信代运营、微信定制开发、微信托管、微网站、微商城、微营销" name="Keywords">
+	<meta content="盛世源码—国内优秀的微信公众服务平台，国内最大的微信公众智能服务平台，盛世源码—国内优秀的微信公众服务平台八大微体系：微菜单、微官网、微会员、微活动、微商城、微推送、微服务、微统计，企业微营销必备。" name="Description">
+    <script src="/static/wxgjcn/src/html5.js" ></script>
+    <link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/bootstrap_min.css-2014-03-07-1.css"  media="all" />
+<link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/www/index1/index.css-2014-03-07-1.css"  media="all" />
+<link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/www/help/help.css-2014-03-07-1.css"  media="all" />
+<script type="text/javascript" src="/static/wxgjcn/src/jQuery.js-2014-03-07-1.js" ></script>
+<script type="text/javascript" src="/static/wxgjcn/src/www/index1/weimob-index.js-2014-03-07-1.js" ></script>
+<title>盛世源码—国内优秀的微信公众服务平台</title>
+	<link rel="shortcut icon" href="httpimg/favicon.ico" />
+</head>
+<body>
+	<!--595 850-->
+<script language="javascript">
+	$(function () {
+		$("a").click(function () {
+			var rel = $(this).attr("rel");
+			if (rel) {
+				var pos = $(rel).offset().top-60;
+				$("html,body").animate({ scrollTop: pos }, 800);
+			}
+
+		})
+	})
+</script>
+<script>
+	$().ready(function(){
+
+		window.onscroll = window.onresize = function(){
+			showSideBar();
+		}
+	});
+	function showSideBar(){
+		if(!window.sideMenu){
+			window.sideMenu = $("#sideToolbar");
+		}
+		if((document.body.scrollTop||document.documentElement.scrollTop)>500){
+			sideMenu.addClass("on");
+		}else{
+			sideMenu.removeClass("on");
+		}
+	}
+
+
+
+</script>
+<!--[if lte IE 8]>  <script language="javascript">$(function (){$.browser.msie&&$("#ie9-tips").show().find("#stopSuggestA").click(function(){$("#ie9-tips").hide()})})</script><![endif]-->
+<div class="nav clearfix">
+	<div class="nav-content">
+		<h1 class="left" onclick="location.herf='/site/city1'">盛世源码—国内优秀的微信公众服务平台·微信营销，如此简单！</h1>
+		<div class="left city">
+			<h2>上海</h2>
+							<a href="/static/wxgjcn/city1.htm" >
+					切换城市<i class="tri4"></i>
+				</a>
+					</div>
+		<div class="right line-li">
+			<ul>
+				<li><a href="/static/wxgjcn/index.html" >首页</a></li>
+				<li><a href="/static/wxgjcn/case1.htm"  >经典案例</a></li>
+				<li class="nav_menu_li_1"><a style="width:70px; text-align:left;" class="_hover">产品中心<i></i></a>
+					<div class="sub-nav">
+						<a href="/static/wxgjcn/package.htm"  target="_black">盛世源码—国内优秀的微信公众服务平台套餐</a>
+						<a href="/static/wxgjcn/guide1.htm" >功能介绍</a>
+						<a href="/static/wxgjcn/topic/weipai.htm"  target="_black">微拍</a>
+
+					</div>
+
+				</li>
+				<li><a href="/static/wxgjcn/proxy1.htm"  >渠道代理</a></li>
+				<li><a href="/static/wxgjcn/help.htm"  class="navtwo" target="_black">帮助</a></li>
+			</ul>
+			<div class="account">
+				<a href="/reg.html"  class="btn-reg btn0" target="_black">注册</a>
+									<a href="javascript:;" class="btn-login btn0" onclick="if(location.hostname.indexOf('.cn')>-1){location.href='/static/wxgjcn/login.htm'/*tpa=http://www.weimob.com/site/login*/; return false;} loginBox.toggle(this, event);">登录</a>
+				</div>
+		</div>
+	</div>
+</div>
+
+	<div id="loginBox">
+		<div class="login-panel">
+			<h3>登录</h3>
+			<div class="login-mod">
+				<div class="login-err-panel dn" id="err_area">
+					<span class="icon-wrapper"><i class="icon24-login err" style="margin-top:-.2em;*margin-top:0;"></i></span>
+					<span id="err_tips"></span>
+				</div>
+				<form class="login-form" id="login-form">
+					<div class="login-un">
+						<span class="icon-wrapper"><i class="icon24-login un"></i></span>
+						<input type="text" id="username" placeholder="盛世源码—国内优秀的微信公众服务平台号">
+					</div>
+					<div class="login-pwd">
+						<span class="icon-wrapper"><i class="icon24-login pwd"></i></span>
+						<input type="password" id="password" placeholder="密码">
+					</div>
+				</form>
+				<div class="login-help-panel">
+					<a id="rememberPwd" class="login-remember-pwd" href="javascript:;">
+						<input type="checkbox" id="rememberPwdIcon">记住帐号
+					</a>
+					<a class="login-forget-pwd" href="/reg.html" >我是新用户!<strong>申请入驻</strong></a>
+				</div>
+				<div class="login-btn-panel">
+					<a class="login-btn" title="点击登录" href="javascript:;" id="login_button" onclick="login();">登录</a>
+				</div>
+			</div>
+		</div>
+		<div class="login-cover" onclick="loginBox.toggle(this, event);"></div>
+	</div>
+<div id="ie9-tips" class="clearfix">
+	<div id="tipsPanel">
+		<div id="tipsDesc">系统检测到您所使用的浏览器版本较低，推荐使用<a   target="_blank">Firefox</a>或<a   target="_blank">Chrome</a>浏览器打开，否则将无法体验完整产品功能。</div>
+		<a id="stopSuggestA" href="javascript:;">×</a>
+	</div>
+</div>
+
+<script>
+	var $do_submit = false;
+
+	// 绑定回车键
+	$('#loginBox').keydown(function(e){
+		if(13 == event.keyCode){
+			login();
+		}
+	});
+
+		function login()
+	{
+		if (true == $do_submit)
+		{
+			return false;
+		}
+
+		var $pre_submit = '登录', $do_submit = '登录中...';
+		var $username = $('#username').val(), $password = $('#password').val(), $keepalive = $('#rememberPwdIcon').val();
+		$('#login_button').text($do_submit);
+		$do_submit = true;
+
+		// check
+		if ('' == $username || '' == $password)
+		{
+			$('#err_tips').text('您输入的盛世源码—国内优秀的微信公众服务平台号或密码错误，请重新输入！');
+			$('#err_area').show();
+			$('#login_button').text($pre_submit);
+			$do_submit = false;
+			return false;
+		}
+
+		var $login_data = {
+			username:$username,
+			password:$password,
+			keepalive:$keepalive
+		};
+		$.post('/login', $login_data, function(rs){
+			if(rs.errno == 200)
+			{
+				location.href = rs.url_route;
+			}
+			else
+			{
+				$('#err_tips').text(rs.error);
+				$('#err_area').show();
+				$('#login_button').text($pre_submit);
+			}
+			$do_submit = false;
+		}, 'json');
+	}
+	</script>
+<div id="top"></div><div id="page">
+  <div class="title">盛世源码—国内优秀的微信公众服务平台产品（微预约）使用指南</div>
+  <p>微预约是商家利用盛世源码—国内优秀的微信公众服务平台实现在线预约的一种服务，可以运用于汽车、房产、酒店、医疗、餐饮等一系列行业，给用户的出行办事、购物、消费带来了极大的便利！且操作简单，响应速度非常快，受到业界的一致好评！</p>
+  <h3 id="10_1">1、预约管理</h3>
+  <p>1、点击“预约管理”—“新增预约”，填写触发关键词，设置图文消息回复标题、上传图文封面、填写预约地址、设置地图标识；</p>
+  <p><img src="/static/wxgjcn/img/webabout/wyy1.png"  width="806" height="537"></p>
+  <p>2、填写预约电话、上传订单页头部图片、编辑订单详情、订单接收设置、填写订单的起始和结束时间(为空表示不限制)；</p>
+  <p><img src="/static/wxgjcn/img/webabout/wyy2.png"  width="900" height="480"></p>
+  <p>3、订单内容设置：填写你要收集的内容！订单默认选项不可以修改删除！如果有其他的需求，可以点击“添加”，编辑内容，点击“保存”即可；</p>
+  <p><img src="/static/wxgjcn/img/webabout/wyy3.png"  width="900" height="400"></p>
+  <p>4、回到“预约管理”界面，点击“订单管理”；</p>
+  <p><img src="/static/wxgjcn/img/webabout/wyy4.png"  width="900" height="180"></p>
+  <p>5、进入“在线订单管理”界面，点击“订单查询”，可以查看到用户的订单详细信息，还可以点击“管理”按钮，进行订单处理，并且能够导出用户的订单；</p>
+  <p><img src="/static/wxgjcn/img/webabout/wyy5.png"  width="900" height="240"></p>
+  <p><img src="/static/wxgjcn/img/webabout/wyy6.png"  width="401" height="525"></p>
+  <h4 id="10_2">2、预约统计</h3>
+  <p>点击“预约统计”，进入“我的预约”界面，可以查看到最近一月新增预约趋势图，点击横坐标上面的小圆点可以查看到每天的订单人数，在最右边的方框内会显示“今天新增人数”、“昨天新增人数”和“目前会员共计人数”。</p>
+  <p><img src="/static/wxgjcn/img/webabout/wyy7.png" ></p>
+  <div id="sideToolbar" style="display: block; position: fixed; top:150px;  right: 0;">
+    <div id="sideCatalog" class="sideCatalogBg" style="visibility: visible;">
+      <div id="sideCatalog-sidebar"></div>
+      <div id="sideCatalog-catalog">
+        <dl style="width:200px;zoom:1">
+          <dd><span>1</span><a href="javascript:void()" rel="#10_1" title="预约管理">预约管理</a></dd>
+          <dd><span>2</span><a href="javascript:void()" rel="#10_2" title="预约统计">预约统计</a></dd>
+        </dl>
+      </div>
+    </div>
+   <a id="sideCatalogBtn" href="/static/wxgjcn/help.htm"  style="visibility: visible;" title="查看帮助目录"></a>
+    <a id="sideToolbar-up"  href="javascript:void()" rel="#top" title="返回顶部" style="visibility: visible;"></a></div>
+</div>
+<script>
+	$(function () {
+	   if(location.hash){
+			var pos = $(location.hash).offset().top-60;
+			$("html,body").animate({ scrollTop: pos }, 800);
+		}
+	});
+</script>
+<!--QQ咨询-->
+<div class="footer">
+	<div class="footer-content clearfix">
+		<div class="foot-menu">
+			<p>
+				<a href="/static/wxgjcn/index1.htm"  target="_blank">盛世源码—国内优秀的微信公众服务平台首页</a>&nbsp;|&nbsp;
+				<a href="/reg.html"  target="_blank">申请入驻</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/proxy1.htm"  target="_blank">渠道代理</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/about1.htm"  target="_blank">关于盛世源码</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/agents.htm"  target="_blank">授权认证</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/jobs.htm"  target="_blank">加入盛世源码</a>
+			</p>
+			<p>免费热线：400-000-0000&nbsp;&nbsp;&nbsp;QQ：631989322&nbsp;&nbsp;&nbsp;邮箱：kf@weiqimobile.com</p>
+			<p>地址：
+								上海市市辖区宝山区逸仙路2816号华滋奔腾大厦A幢15楼</p>
+		</div>
+		<div class="copyright">
+			Copyright (c) 2011-2014 http://www.9upp.com. All Rights Reserved 盛世源码团队 湘ICP备13225014号
+		</div>
+	</div>
+</div>
+<div style="display:none;"><script type="text/javascript" src="/static/wxgjcn/src/www/index1/huishuo.js-v=2014-03-07-1.js" ></script></div></body>
+</html>

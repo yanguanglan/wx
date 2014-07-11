@@ -1,0 +1,358 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script>var SITEURL="{ZF::C('site_url')}";</script>
+<title> {ZF::C('site_title')} {ZF::C('site_name')}</title>
+<link href="{ZF::RES}/css/style.css" rel="stylesheet" type="text/css" />
+<link href="{ZF::RES}/css/stylet.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{ZF::RES}/js/jquery.min.js"></script>
+<script type="text/javascript" src="{ZF::RES}/js/main.js"></script>
+<script type="text/javascript" src="{ZF::RES}/js/common.js"></script>
+<link href="{ZF::STATICS}/font-awesome/font-awesome.css" rel="stylesheet" type="text/css" />
+<!--[if IE 7]>
+<link rel="stylesheet" href="{ZF::STATICS}/font-awesome/font-awesome-ie7.min.css">
+<![endif]-->
+<style>
+/*UP*/
+a.a_upload,a.a_choose{border:1px solid #3d810c;box-shadow:0 1px #CCCCCC;-moz-box-shadow:0 1px #CCCCCC;-webkit-box-shadow:0 1px #CCCCCC;cursor:pointer;display:inline-block;text-align:center;vertical-align:bottom;overflow:visible;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;vertical-align:middle;background-color:#f1f1f1;background-image: -webkit-linear-gradient(bottom, #CCC 0%, #E5E5E5 3%, #FFF 97%, #FFF 100%); background-image: -moz-linear-gradient(bottom, #CCC 0%, #E5E5E5 3%, #FFF 97%, #FFF 100%); background-image: -ms-linear-gradient(bottom, #CCC 0%, #E5E5E5 3%, #FFF 97%, #FFF 100%); color:#000;border:1px solid #AAA;padding:2px 8px 2px 8px;text-shadow: 0 1px #FFFFFF;font-size: 14px;line-height: 1.5;
+}
+span[class*="icon"]:before{
+    color:#fff;
+    font-size:25px;
+    line-height:25px;
+}
+</style>
+<script type="text/javascript">
+function ying(){
+	 document.getElementById('tiduser').style.display="none";
+	 document.getElementById('quit').style.display="block";
+}
+function xian(){
+	 document.getElementById('tiduser').style.display="block";
+	 document.getElementById('quit').style.display="none";
+
+}
+setTimeout(xian,5000);
+</script>
+</head>
+
+<body>
+
+<div id="herder" >
+	<div id="top">
+		<img src="{ZF::RES}/images/logo.png" />
+        <a class="line" ></a>
+        <a href="#" class="a" id="tiduser" onmouseover="ying();" >您好：<span>{ZF:$Think.session.uname}</span></a>
+		<a href="{ZF::U('System/Admin/logout')}" class="a1" id="quit" onLoad=setTimeout("abc.style.display='none'",5000) >安全退出</a>
+        <a href="{ZF::U('Home/Index/help')}" >帮助中心</a>
+        <a href="{ZF::U('User/Index/index')}" >管理中心</a>
+		<a href="{ZF::C('site_url')}" >首页</a>
+	</div>
+</div>
+<div id="Frame" class="shadow">
+    <div id="floatline"></div>
+    <script src="{ZF::STATICS}/jquery-1.4.2.min.js" type="text/javascript"></script>
+	<div id="Menu">
+		<div class="top">
+        	
+            <?php if(in_array(MODULE_NAME,array('Function','Areply','Text','Voiceresponse','Sms','Email','Company','Other','Printer'))){ ?>
+                <img src="{ZF::RES}/images/TwoMenu-ico-006.png" />
+            <?php } ?>
+            <?php if(in_array(MODULE_NAME,array('Home','Tmpls','Classify','Img','Diymen','Flash','Photo','Plugmenu','Catemenu'))){ ?>
+                <img src="{ZF::RES}/images/TwoMenu-ico-001.png" />
+            <?php } ?>
+            <?php if(in_array(MODULE_NAME,array('Lottery','Coupon','Zadan','Guajiang'))){ ?>
+                <img src="{ZF::RES}/images/TwoMenu-ico-003.png" />
+            <?php } ?>
+            <?php if(in_array(MODULE_NAME,array('Product','Groupon','Dining','Host','Selfform','Panorama','Reply_info','Estate','Jiudian','Yiliao','Wedding','Zuche'))){ ?>
+                <img src="{ZF::RES}/images/TwoMenu-ico-002.png" />
+            <?php } ?>
+            <?php if(in_array(MODULE_NAME,array('info','Member_card','privilege','create','exchange','Member'))){ ?>
+                <img src="{ZF::RES}/images/TwoMenu-ico-004.png" />
+            <?php } ?>
+            <?php if(in_array(MODULE_NAME,array('Taobao','Api','Liuyan','Heka','Vote','Diaoyan','Research','Shake','Wewall','Yuyue','Wai'))){ ?>
+                <img src="{ZF::RES}/images/TwoMenu-ico-005.png" />
+            <?php } ?>
+                <!--<img src="{ZF::RES}/images/AMenu-Ico.png" />-->
+            <a>
+            	<?php if(in_array(MODULE_NAME,array('Function','Areply','Text','Voiceresponse','Sms','Email','Company','Other','Requerydata','Payment','Printer'))){ ?>基础功能<?php } ?>
+                <?php if(in_array(MODULE_NAME,array('Home','Tmpls','Classify','Img','Diymen','Flash','Photo','Plugmenu','Yulan','Catemenu'))){ ?>微网站<?php } ?>
+                <?php if(in_array(MODULE_NAME,array('Lottery','Coupon','Zadan','Guajiang','Adma'))){ ?>营销功能<?php } ?>
+                <?php if(in_array(MODULE_NAME,array('Product','Groupon','Dining','Host','Selfform','Research','Reply_info','Panorama','Estate','Jiudian','Yiliao','Wedding','Zuche'))){ ?>微商务<?php } ?>
+                <?php if(in_array(MODULE_NAME,array('info','Member_card','privilege','create','exchange','Member'))){ ?>微会员<?php } ?>
+                 <?php if(in_array(MODULE_NAME,array('Taobao','Api','Liuyan','Heka','Vote','Diaoyan','Research','Shake','Wewall','Yuyue','Wai'))){ ?>互动模块<?php } ?>
+            </a>
+            <span>
+            	<if condition="MODULE_NAME eq 'Function'">- 功能管理</if>
+                <if condition="MODULE_NAME eq 'Areply'">- 关注回复</if>
+                <if condition="MODULE_NAME eq 'Text'">- 文本回复</if>
+                <if condition="MODULE_NAME eq 'Voiceresponse'">- 语音回复</if>
+                <if condition="MODULE_NAME eq 'Sms'">- 短信设置</if>
+                <if condition="MODULE_NAME eq 'Email'">- 邮箱设置</if>
+				<if condition="MODULE_NAME eq 'Printer'">- 无线打印设置</if>
+                <if condition="MODULE_NAME eq 'Payment'">- 支付设置</if>
+                <if condition="MODULE_NAME eq 'Requerydata'">- 统计分析</if>
+                <if condition="MODULE_NAME eq 'Company'">- LBS回复</if>
+                <if condition="MODULE_NAME eq 'Home'">- 首页设置</if>
+                <if condition="MODULE_NAME eq 'Tmpls'">- 模版管理</if>
+                <if condition="MODULE_NAME eq 'Classify'">- 分类管理</if>
+                <if condition="MODULE_NAME eq 'Img'">- 图文回复</if>
+                <if condition="MODULE_NAME eq 'Diymen'">- 自定义菜单</if>
+                <if condition="MODULE_NAME eq 'Flash'">- 幻灯片</if>
+                <if condition="MODULE_NAME eq 'Photo'">- 相册</if>
+                <if condition="MODULE_NAME eq 'Catemenu'">- 底部导航</if>
+                <if condition="MODULE_NAME eq 'Plugmenu'">- 老版底部版权</if>
+                <if condition="MODULE_NAME eq 'Panorama'">- 360全景</if>
+                <if condition="MODULE_NAME eq 'Reply_info'">- 回复配置</if>
+                <if condition="MODULE_NAME eq 'Lottery'" >- 大转盘</if>
+                <if condition="MODULE_NAME eq 'Coupon'">- 优惠券</if>
+                <if condition="MODULE_NAME eq 'Guajiang'">- 刮刮卡</if>
+                <if condition="MODULE_NAME eq 'Zadan'">- 砸金蛋</if>
+                <if condition="MODULE_NAME eq 'Wedding'">- 微喜帖</if>
+                <if condition="MODULE_NAME eq 'Diaoyan'">- 微调研</if>
+                <if condition="MODULE_NAME eq 'Shake'">- 摇一摇</if>
+                <if condition="MODULE_NAME eq 'Wewall'">- 微信墙</if>
+                <if condition="MODULE_NAME eq 'Product'">- 微商城</if>
+                <if condition="MODULE_NAME eq 'Groupon'">- 微团购</if>
+				<if condition="MODULE_NAME eq 'Estate'">- 微房产</if>
+				<if condition="MODULE_NAME eq 'Jiudian'">- 微酒店</if>
+				<if condition="MODULE_NAME eq 'Yiliao'">- 微医疗</if>
+				<if condition="MODULE_NAME eq 'Heka'">- 微贺卡</if>
+				<if condition="MODULE_NAME eq 'Yuyue'">- 微预约</if>
+                <if condition="MODULE_NAME eq 'Dining'">- 微订餐</if>
+                <if condition="MODULE_NAME eq 'Zuche'">- 微租车</if>
+                <if condition="MODULE_NAME eq 'Host'">- 通用订单</if>
+                <if condition="MODULE_NAME eq 'Selfform'">- 万能表单</if>
+                <if condition="MODULE_NAME eq 'Adma'">- DIY宣传</if>
+                <if condition="MODULE_NAME eq 'info'">- 商家设置</if>
+                <if condition="MODULE_NAME eq 'Member_card'">- 会员卡</if>
+                <if condition="MODULE_NAME eq 'privilege'">- 会员特权</if>
+                <if condition="MODULE_NAME eq 'create'">- 在线开卡</if>
+                <if condition="MODULE_NAME eq 'exchange'">- 积分设置</if>
+                <if condition="MODULE_NAME eq 'Member'">- 资料管理</if>
+                <if condition="MODULE_NAME eq 'Taobao'">- 淘宝天猫</if>
+                <if condition="MODULE_NAME eq 'Api'">- 第三方</if>
+                <if condition="MODULE_NAME eq 'Vote'">- 微投票</if>
+                <if condition="MODULE_NAME eq 'Liuyan' ">- 留言板</if>
+                <if condition="MODULE_NAME eq 'Wai' ">- 实用外链</if>
+            </span>
+		</div>
+		<div class="TwoMenu">
+			<a href="{ZF::U('Function/index',array('token'=>$token,'id'=>session('wxid')))}" >
+            	<img src="{ZF::RES}/images/TwoMenu-ico-06.png" />
+            	<span>基础</span>
+            </a>
+			<div id="TwoMenu-01" <?php if(in_array(MODULE_NAME,array('Function','Areply','Text','Voiceresponse','Sms','Email','Printer','Company','Other','Requerydata','Payment'))){ ?>style="display:block;" <?php }else{ ?>style="display:none;"<?php } ?> >
+            	<img src="{ZF::RES}/images/TwoMenu-ico-006.png" /><a class="a">基础</a>
+            </div>
+<!-- ----------------------------------------------------------------------------------------------------------------------------------------------------- -->
+			<a href="{ZF::U('Home/set',array('token'=>$token))}" >
+            	<img src="{ZF::RES}/images/TwoMenu-ico-01.png" />
+                <span>微站</span>
+            </a>
+			<div id="TwoMenu-02" <?php if(in_array(MODULE_NAME,array('Home','Tmpls','Classify','Img','Diymen','Flash','Photo','Plugmenu','Catemenu'))){ ?>style="display:block;" <?php }else{ ?>style="display:none;"<?php } ?> >
+            	<img src="{ZF::RES}/images/TwoMenu-ico-001.png" /><a class="a">微站</a>
+            </div>
+<!-- ----------------------------------------------------------------------------------------------------------------------------------------------------- -->
+			<a href="{ZF::U('Lottery/index',array('token'=>$token))}" >
+            	<img src="{ZF::RES}/images/TwoMenu-ico-03.png" /><span>营销</span>
+            </a>
+			<div id="TwoMenu-03" <?php if(in_array(MODULE_NAME,array('Lottery','Coupon','Guajiang','Zadan','Adma'))){ ?>style="display:block;" <?php }else{ ?>style="display:none;"<?php } ?> >
+            	<img src="{ZF::RES}/images/TwoMenu-ico-003.png" /><a class="a">营销</a>
+            </div>
+<!-- ----------------------------------------------------------------------------------------------------------------------------------------------------- -->
+			<a href="{ZF::U('Product/index',array('token'=>$token))}" >
+            	<img src="{ZF::RES}/images/TwoMenu-ico-02.png" /><span>商务</span>
+            </a>
+			<div id="TwoMenu-04" <?php if(in_array(MODULE_NAME,array('Product','Groupon','Dining','Host','Selfform','Panorama','Reply_info','Estate','Jiudian','Yiliao','Wedding','Zuche'))){ ?>style="display:block;" <?php }else{ ?>style="display:none;"<?php } ?> >
+            	<img src="{ZF::RES}/images/TwoMenu-ico-002.png" /><a class="a">商务</a>
+            </div>
+<!-- ----------------------------------------------------------------------------------------------------------------------------------------------------- -->
+			<a href="{ZF::U('Member_card/index',array('token'=>$token))}" >
+            	<img src="{ZF::RES}/images/TwoMenu-ico-04.png" /><span>会员</span>
+            </a>
+			<div id="TwoMenu-05" <?php if(in_array(MODULE_NAME,array('info','Member_card','privilege','create','exchange','Member'))){ ?>style="display:block;" <?php }else{ ?>style="display:none;"<?php } ?> >
+            	<img src="{ZF::RES}/images/TwoMenu-ico-004.png" /><a class="a">会员</a>
+            </div>
+<!-- ----------------------------------------------------------------------------------------------------------------------------------------------------- -->
+			<a href="{ZF::U('Taobao/index',array('token'=>$token))}" >
+            	<img src="{ZF::RES}/images/6-0.png" /><span>互动</span>
+            </a>
+			<div id="TwoMenu-06" <?php if(in_array(MODULE_NAME,array('Taobao','Api','Liuyan','Heka','Diaoyan','Shake','Wewall','Vote','Yuyue','Wai'))){ ?>style="display:block;" <?php }else{ ?>style="display:none;"<?php } ?> >
+            	<img src="{ZF::RES}/images/6-00.png" /><a class="a">互动</a>
+            </div>
+		</div>
+		<div class="ThreeMenu">
+        	<div class="contab" <?php if(in_array(MODULE_NAME,array('Function','Areply','Text','Voiceresponse','Sms','Email','Printer','Company','Other','Requerydata','Payment'))){ ?>style="display:block;" <?php }else{ ?>style="display:none;"<?php } ?> >
+                <a href="{ZF::U('Function/index',array('token'=>$token,'id'=>session('wxid')))}" class="Red" >
+                	<span class="icon-cogs"></span><span>功能管理</span>
+                </a>
+                <a href="{ZF::U('Areply/index',array('token'=>$token))}" class="Highland" >
+                    <span class="icon-apple"></span><span>关注回复</span>
+                </a>
+                <a href="{ZF::U('Text/index',array('token'=>$token))}" class="Navy" >
+                    <span class="icon-rss-sign"></span><span>文本回复</span>
+                </a>
+                <a href="{ZF::U('Voiceresponse/index',array('token'=>$token))}" class="DarkGreen" >
+                    <span class="icon-microphone"></span><span>语音回复</span>
+                </a>
+                <a href="{ZF::U('Sms/index',array('token'=>$token))}" class="LightBlue" >
+                   <span class="icon-envelope"></span><span>短信设置</span>
+                </a>
+                <a href="{ZF::U('Email/index',array('id'=>session('wxid'),'token'=>$token))}" class="Orange" >
+                    <span class="icon-envelope"></span><span>邮箱设置</span>
+                </a>
+                <a href="{ZF::U('Company/index',array('token'=>$token))}" class="Brown" >
+                    <span class="icon-map-marker"></span><span>LBS回复</span>
+                </a>
+                <a href="{ZF::U('Payment/index',array('token'=>$token))}" class="LightPurple" >
+                    <span class="icon-location-arrow"></span><span>支付接口</span>
+                </a>
+                <a href="{ZF::U('Requerydata/index',array('token'=>$token))}" class="LightRed" >
+                    <span class="icon-qrcode"></span><span>统计分析</span>
+                </a>
+                <a href="{ZF::U('Other/index',array('token'=>$token))}" class="LightBlue" >
+                    <span class="icon-comments-alt"></span><span>回答不来配置</span>
+                </a>
+				<a href="{ZF::U('Printer/index',array('token'=>$token))}" class="Highland" >
+                   <span class="icon-file-text"></span><span>无线打印</span>
+                </a>
+            </div>
+<!-- ----------------------------------------------------------------------------------------------------------------------------------------------------- -->
+        	<div class="contab" <?php if(in_array(MODULE_NAME,array('Home','Tmpls','Classify','Img','Diymen','Flash','Photo','Catemenu','Plugmenu'))){ ?>style="display:block;" <?php }else{ ?>style="display:none;"<?php } ?> >
+                 <a href="{ZF::U('Home/set',array('token'=>$token))}" class="Red" >
+                     <span class="icon-home"></span><span>首页设置</span>
+                 </a>
+                <a href="{ZF::U('Tmpls/index',array('token'=>$token))}" class="Highland" >
+                   <span class="icon-hospital"></span><span>模版管理</span>
+                </a>
+                <a href="{ZF::U('Classify/index',array('token'=>$token))}" class="Navy" >
+                   <span class="icon-tasks"></span><span>分类管理</span>
+                </a>
+                <a href="{ZF::U('Img/index',array('token'=>$token))}" class="DarkGreen" >
+                    <span class="icon-picture"></span><span>图文回复</span>
+                </a>
+                <a href="{ZF::U('Diymen/index',array('token'=>$token))}" class="LightBlue" >
+                    <span class="icon-dropbox"></span><span>DIY菜单</span>
+                </a>
+                <a href="{ZF::U('Flash/index',array('token'=>$token))}" class="Orange" >
+                    <span class="icon-desktop"></span><span>幻灯片</span>
+                </a>
+                <a href="{ZF::U('Photo/index',array('token'=>$token))}" class="Brown" >
+                    <span class="icon-camera"></span><span>相册</span>
+                </a>
+                <a href="{ZF::U('Catemenu/index',array('token'=>$token))}" class="LightPurple" >
+                    <span class="icon-warning-sign"></span><span>底部导航</span>
+                </a>
+                
+                <a href="{ZF::U('Yulan/index',array('token'=>$token))}" target="_blank" class="Highland" >
+                     <span class="icon-cloud"></span><span>在线预览</span>
+                </a>
+            </div>
+<!-- ----------------------------------------------------------------------------------------------------------------------------------------------------- -->
+            <div class="contab" <?php if(in_array(MODULE_NAME,array('Lottery','Coupon','Guajiang','Research','Zadan','Adma'))){ ?>style="display:block;" <?php }else{ ?>style="display:none;"<?php } ?> >
+                <a href="{ZF::U('Lottery/index',array('token'=>$token))}" class="Red"  >
+                    <span class="icon-dashboard"></span><span>大转盘</span>
+                </a>
+                <a href="{ZF::U('Coupon/index',array('token'=>$token))}" class="Highland" >
+                    <span class="icon-flag-checkered"></span><span>优惠券</span>
+                </a>
+                <a href="{ZF::U('Guajiang/index',array('token'=>$token))}" class="Navy" >
+                   <span class="icon-indent-right"></span><span>刮刮卡</span>
+                </a>
+                 <a href="{ZF::U('Zadan/index',array('token'=>$token))}" class="DarkGreen">
+                    <span class="icon-legal"></span><span>砸金蛋</span>
+                </a>
+                 <a href="{ZF::U('Adma/index',array('token'=>$token))}"  class="Orange" >
+                    <span class="icon-thumbs-up"></span><span>DIY宣传</span>
+                </a>
+            </div>
+<!-- ----------------------------------------------------------------------------------------------------------------------------------------------------- -->
+            <div class="contab" <?php if(in_array(MODULE_NAME,array('Product','Groupon','Dining','Host','Selfform','Panorama','Reply_info','Estate','Jiudian','Yiliao','Wedding','Zuche'))){ ?>style="display:block;" <?php }else{ ?>style="display:none;"<?php } ?> >
+                <a href="{ZF::U('Product/index',array('token'=>$token))}" class="Red"  >
+                    <span class="icon-shopping-cart"></span><span>微商城</span>
+                </a>
+                <a href="{ZF::U('Groupon/index',array('token'=>$token))}" class="Highland" >
+                    <span class="icon-gift"></span><span>微团购</span>
+                </a>
+                <a href="{ZF::U('Dining/orders',array('token'=>$token))}" class="Navy" >
+                   <span class="icon-coffee"></span><span>微订餐</span>
+                </a>
+                <a href="{ZF::U('Host/index',array('token'=>$token))}"  class="DarkGreen" >
+                    <span class="icon-archive"></span><span>通用订单</span>
+                </a>
+                <a href="{ZF::U('Selfform/index',array('token'=>$token))}" class="LightBlue" >
+                    <span class="icon-hospital"></span><span>万能表单</span>
+                </a>
+               
+                <a href="{ZF::U('Panorama/index',array('token'=>$token))}" class="LightPurple" >
+                    <span class="icon-windows"></span><span>360全景</span>
+                </a>
+				<a href="{ZF::U('Jiudian/index',array('token'=>$token))}" class="Red" >
+                    <span class="icon-glass"></span><span>微酒店</span>
+                </a>
+				<a href="{ZF::U('Estate/index',array('token'=>$token))}" class="LightRed" >
+                    <span class="icon-home"></span><span>微房产</span>
+                </a>
+				<a href="{ZF::U('Yiliao/index',array('token'=>$token))}" class="Navy" >
+                    <span class="icon-medkit"></span><span>微医疗</span>
+                </a>
+                <a href="{ZF::U('Wedding/index',array('token'=>$token))}" class="LightBlue">
+                    <span class="icon-gift"></span><span>微喜帖</span>
+                </a>
+                <a href="{ZF::U('Zuche/index',array('token'=>$token))}" class="LightPurple">
+                    <span class="icon-truck"></span><span>微租车</span>
+                </a>
+            </div>
+<!-- ----------------------------------------------------------------------------------------------------------------------------------------------------- -->
+            <div class="contab" <?php if(in_array(MODULE_NAME,array('info','Member_card','privilege','create','exchange','Member'))){ ?>style="display:block;" <?php }else{ ?>style="display:none;"<?php } ?> >
+                <a href="{ZF::U('Member_card/info',array('token'=>$token))}"  class="Red"  >
+                    <span class="icon-umbrella"></span><span>商家设置</span>
+                </a>
+                <a href="{ZF::U('Member_card/index',array('token'=>$token))}" class="Highland" >
+                    <span class="icon-credit-card"></span><span>会员卡</span>
+                </a>
+                <a href="{ZF::U('Member_card/replyInfoSet',array('token'=>$token))}" class="Orange" >
+                    <span class="icon-cloud"></span><span>回复配置</span>
+                </a>
+                <a href="{ZF::U('Member/members',array('token'=>$token))}" class="DarkGreen" >
+                    <span class="icon-money"></span><span>会员充值</span>
+                </a>
+            </div>
+<!-- ----------------------------------------------------------------------------------------------------------------------------------------------------- -->
+            <div class="contab" <?php if(in_array(MODULE_NAME,array('Taobao','Api','Liuyan','Heka','Diaoyan','Shake','Wewall','Vote','Yuyue','Wai'))){ ?>style="display:block;" <?php }else{ ?>style="display:none;"<?php } ?> >
+                <a href="{ZF::U('Taobao/index',array('token'=>$token))}"  class="Brown"  >
+                    <span class="icon-github"></span><span>淘宝天猫</span>
+                </a>
+                <a href="{ZF::U('Api/index',array('token'=>$token))}" class="Highland" >
+                    <span class="icon-unlink"></span><span>第三方</span>
+                </a>
+                <a href="{ZF::U('Liuyan/index',array('token'=>$token))}" class="Navy" >
+                    <span class="icon-file"></span><span>留言板</span>
+                </a>
+				<a href="{ZF::U('Heka/index',array('token'=>$token))}" class="Red" >
+                    <span class="icon-foursquare"></span><span>微贺卡</span>
+                </a>
+                <a href="{ZF::U('Diaoyan/index',array('token'=>$token))}" class="Orange" >
+                    <span class="icon-user"></span><span>微调研</span>
+                </a>
+                <a href="{ZF::U('Vote/index',array('token'=>$token))}" class="Navy" >
+                    <span class="icon-pencil"></span><span>微投票</span>
+                </a>
+                <a href="{ZF::U('Yuyue/index',array('token'=>$token))}" class="LightPurple" >
+                    <span class="icon-heart"></span><span>微预约</span>
+                </a>
+               <a href="{ZF::U('Shake/index',array('token'=>$token))}" class="LightRed" >
+                    <span class="icon-retweet"></span><span>摇一摇</span>
+                </a>
+                <a href="{ZF::U('Wewall/index',array('token'=>$token))}" class="DarkGreen" >
+                    <span class="icon-twitter"></span><span>微信墙</span>
+                </a>
+             
+               
+            </div>
+		</div>
+	</div>
+	<div id="Content" >
+	</div>

@@ -1,0 +1,379 @@
+
+  
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>微动力——微信营销专家，微信公众号开发，微官网制作，微信自定义菜单，为企业提供专业的微信营销解决方案。</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="keywords" content="微动力，微信营销，移动营销，微信营销软件，微信营销方案，微信营销技巧，微信营销案例，微信营销平台，微信营销公司，微信公众平台开发，微信公众平台营销，微官网制作" />
+<meta name="Description" content="微动力微信营销平台，为你提供最专业的微信营销解决方案，你可以通过微动力，制作属于自己的微信官网，向众多微信用户展示自己的产品信息。并且通过微动力平台，为自己的微信公众账号设置优惠劵，大转盘，会员卡等各种微信营销功能，来吸引用户，提升用户二次消费几率。" />
+<link href="/wx_index/css/vdlzx.css?ver=3" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/wx_css/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/wx_css/js/jcarousellite_1.0.1.min.js"></script>
+</head>
+<body>
+<!--top-->
+
+  
+
+
+
+
+
+
+
+<div class="top" style="height:54px; background:#333333; position:fixed; top:0; z-index:9999;">
+    <div class="top-cont0">
+    	<div class="logo fl"><img src="/wx_index/images/vdl_zxsy_02.png" width="116" height="74"></div>
+        <div class="fr yhdl0"><a href="/go">用户登录</a></div>
+        <div class="top-nav0 fr">
+        	<ul>
+                <li ><a href="/index.html">首页</a></li>
+                <li id="f2"  onmouseover="proOver(2);" onmouseout="proOut(2);"><a id="l2" href="javascript:;">新闻资讯</a>
+                	<ul id="proList2" style="display: none;">
+                        <li><a href="/wx_login/news.htm">媒体报道</a></li>
+                        <li><a href="/wx_new_index/newIndex.htm">微信动态</a></li>
+                        <li><a href="/wx_new_index/infoContentIndex.htm">产品动态</a></li>
+                        <li><a href="/wx_login/weibo.htm">微博动态</a></li>
+                    </ul>
+                </li>
+            	
+                 <li id="f3"  onmouseover="proOver(3);" onmouseout="proOut(3);"><a id="l3" href="javascript:;">产品中心</a>
+
+                	<ul id="proList3" style="display: none;">
+                        <li><a href="/wx_case_index/caseFunction.htm">产品功能</a></li>
+                        <li><a href="/wx_case_index/weibao.htm">微宝打印机</a></li>
+                        <li><a href="/wx_case_index/ticket.htm">微信小票机</a></li>
+
+
+
+                        <li><a href="/wx_case_index/wifi.htm">微信wifi</a></li>
+                        <li><a href="/wx_case_index/interactive.htm">微现场</a></li>
+                        <li><a href="/wx_case_index/app.htm">微营销App</a></li>
+                    </ul>
+                </li>
+                <li ><a href="/wx_case_index/caseIndex2.htm">案例展示</a></li>
+                <li ><a href="/wx_case_index/agencyIndex1.htm">加盟合作</a></li>
+                <li ><a href="/wx_case_index/contactIndex.htm">联系我们</a></li>
+                
+            </ul>
+             <div class="clr"></div>
+        </div>
+        
+        <div class="clr"></div>
+        
+  </div>
+    <div class="top-color "></div>
+
+</div>
+<div style="height:50px; widows:100%;"></div>
+<script type="text/javascript">
+function proOver(flag){
+	$("#proList"+flag).show();
+	//if($("#f"+flag).css("background")!="rgb(255, 132, 0) none repeat scroll 0% 0% / auto padding-box border-box"){
+		//$("#l"+flag).css("background","#FF8400");
+	//}
+	$("#f"+flag).attr("class","teshu");
+}
+function proOut(flag){
+	$("#proList"+flag).hide();
+	/*if($("#f"+flag).css("background")!="rgb(255, 132, 0) none repeat scroll 0% 0% / auto padding-box border-box"){
+		    $("#l"+flag).css("background","");
+			$("#l"+flag).css("color","#3e3e3e");
+			
+	}*/
+	$("#f"+flag).removeClass("teshu");
+}
+</script>
+<div class="content content1">
+    <div class="banner1-4">
+    	<div class="banner11"><img src="/wx_index/images/gnjs_banner.jpg" width="1000" height="204" /></div>
+    </div>
+	
+     <div class="content-d content-f">
+		<div class="lf-lb fl" id="divH1">
+        	<ul>
+                 
+                 <!-- href="/wx_case_index/caseFunction.htm?typeId=52" -->
+                	<a href="javascript:void(0);" onmouseover="caseFunction(52);" >
+                	<li name="lis" id="li52" > 微官网</li>
+                	</a>
+               	
+                 <!-- href="/wx_case_index/caseFunction.htm?typeId=45" -->
+                	<a href="javascript:void(0);" onmouseover="caseFunction(45);" >
+                	<li name="lis" id="li45" ><span class="news_fc"><ins style=" text-decoration:none;color:#ff0000;font-size:12px;">N</ins><ins style=" text-decoration:none;color:#5d5d5d;font-size:11px;">EW</ins></span> 微信会员卡</li>
+                	</a>
+               	
+                 <!-- href="/wx_case_index/caseFunction.htm?typeId=28" -->
+                	<a href="javascript:void(0);" onmouseover="caseFunction(28);" >
+                	<li name="lis" id="li28" ><span class="news_fc"><ins style=" text-decoration:none;color:#ff0000;font-size:12px;">N</ins><ins style=" text-decoration:none;color:#5d5d5d;font-size:11px;">EW</ins></span> 微婚庆</li>
+                	</a>
+               	
+                 <!-- href="/wx_case_index/caseFunction.htm?typeId=25" -->
+                	<a href="javascript:void(0);" onmouseover="caseFunction(25);" >
+                	<li name="lis" id="li25" > 微团购</li>
+                	</a>
+               	
+                 <!-- href="/wx_case_index/caseFunction.htm?typeId=44" -->
+                	<a href="javascript:void(0);" onmouseover="caseFunction(44);" >
+                	<li name="lis" id="li44" > 微活动</li>
+                	</a>
+               	
+                 <!-- href="/wx_case_index/caseFunction.htm?typeId=24" -->
+                	<a href="javascript:void(0);" onmouseover="caseFunction(24);" >
+                	<li name="lis" id="li24" > 微预约</li>
+                	</a>
+               	
+                 <!-- href="/wx_case_index/caseFunction.htm?typeId=12" -->
+                	<a href="javascript:void(0);" onmouseover="caseFunction(12);" >
+                	<li name="lis" id="li12" > 微汽车</li>
+                	</a>
+               	
+                 <!-- href="/wx_case_index/caseFunction.htm?typeId=14" -->
+                	<a href="javascript:void(0);" onmouseover="caseFunction(14);" >
+                	<li name="lis" id="li14" > 微商城</li>
+                	</a>
+               	
+                 <!-- href="/wx_case_index/caseFunction.htm?typeId=2" -->
+                	<a href="javascript:void(0);" onmouseover="caseFunction(2);" >
+                	<li name="lis" id="li2" > 微餐饮</li>
+                	</a>
+               	
+                 <!-- href="/wx_case_index/caseFunction.htm?typeId=13" -->
+                	<a href="javascript:void(0);" onmouseover="caseFunction(13);" >
+                	<li name="lis" id="li13" > 微房产</li>
+                	</a>
+               	
+                 <!-- href="/wx_case_index/caseFunction.htm?typeId=3" -->
+                	<a href="javascript:void(0);" onmouseover="caseFunction(3);" >
+                	<li name="lis" id="li3" > 微酒店</li>
+                	</a>
+               	
+                 <!-- href="/wx_case_index/caseFunction.htm?typeId=10" -->
+                	<a href="javascript:void(0);" onmouseover="caseFunction(10);" >
+                	<li name="lis" id="li10" > 微医疗</li>
+                	</a>
+               	
+                 <!-- href="/wx_case_index/caseFunction.htm?typeId=53" -->
+                	<a href="javascript:void(0);" onmouseover="caseFunction(53);" >
+                	<li name="lis" id="li53" class="teshu-2"><span class="news_fc"><ins style=" text-decoration:none;color:#ff0000;font-size:12px;">N</ins><ins style=" text-decoration:none;color:#5d5d5d;font-size:11px;">EW</ins></span> 摇一摇</li>
+                	</a>
+               	
+                 <!-- href="/wx_case_index/caseFunction.htm?typeId=39" -->
+                	<a href="javascript:void(0);" onmouseover="caseFunction(39);" >
+                	<li name="lis" id="li39" ><span class="news_fc"><ins style=" text-decoration:none;color:#ff0000;font-size:12px;">N</ins><ins style=" text-decoration:none;color:#5d5d5d;font-size:11px;">EW</ins></span> 微屏幕</li>
+                	</a>
+               	
+                 <!-- href="/wx_case_index/caseFunction.htm?typeId=40" -->
+                	<a href="javascript:void(0);" onmouseover="caseFunction(40);" >
+                	<li name="lis" id="li40" ><span class="news_fc"><ins style=" text-decoration:none;color:#ff0000;font-size:12px;">N</ins><ins style=" text-decoration:none;color:#5d5d5d;font-size:11px;">EW</ins></span> 微签到</li>
+                	</a>
+               	
+                 <!-- href="/wx_case_index/caseFunction.htm?typeId=42" -->
+                	<a href="javascript:void(0);" onmouseover="caseFunction(42);" >
+                	<li name="lis" id="li42" ><span class="news_fc"><ins style=" text-decoration:none;color:#ff0000;font-size:12px;">N</ins><ins style=" text-decoration:none;color:#5d5d5d;font-size:11px;">EW</ins></span> 微名片</li>
+                	</a>
+               	
+                 <!-- href="/wx_case_index/caseFunction.htm?typeId=41" -->
+                	<a href="javascript:void(0);" onmouseover="caseFunction(41);" >
+                	<li name="lis" id="li41" ><span class="news_fc"><ins style=" text-decoration:none;color:#ff0000;font-size:12px;">N</ins><ins style=" text-decoration:none;color:#5d5d5d;font-size:11px;">EW</ins></span> 微客服</li>
+                	</a>
+               	
+                 <!-- href="/wx_case_index/caseFunction.htm?typeId=49" -->
+                	<a href="javascript:void(0);" onmouseover="caseFunction(49);" >
+                	<li name="lis" id="li49" > 微管理</li>
+                	</a>
+               	
+                 <!-- href="/wx_case_index/caseFunction.htm?typeId=47" -->
+                	<a href="javascript:void(0);" onmouseover="caseFunction(47);" >
+                	<li name="lis" id="li47" > 微测试</li>
+                	</a>
+               	
+                 <!-- href="/wx_case_index/caseFunction.htm?typeId=50" -->
+                	<a href="javascript:void(0);" onmouseover="caseFunction(50);" >
+                	<li name="lis" id="li50" > 微调研</li>
+                	</a>
+               	
+                 <!-- href="/wx_case_index/caseFunction.htm?typeId=20" -->
+                	<a href="javascript:void(0);" onmouseover="caseFunction(20);" >
+                	<li name="lis" id="li20" > 微生活</li>
+                	</a>
+               	
+                 <!-- href="/wx_case_index/caseFunction.htm?typeId=27" -->
+                	<a href="javascript:void(0);" onmouseover="caseFunction(27);" >
+                	<li name="lis" id="li27" > 微服装</li>
+                	</a>
+               	
+                 <!-- href="/wx_case_index/caseFunction.htm?typeId=26" -->
+                	<a href="javascript:void(0);" onmouseover="caseFunction(26);" >
+                	<li name="lis" id="li26" > 微贸易</li>
+                	</a>
+               	
+                 <!-- href="/wx_case_index/caseFunction.htm?typeId=16" -->
+                	<a href="javascript:void(0);" onmouseover="caseFunction(16);" >
+                	<li name="lis" id="li16" > 微机构</li>
+                	</a>
+               	
+                 <!-- href="/wx_case_index/caseFunction.htm?typeId=15" -->
+                	<a href="javascript:void(0);" onmouseover="caseFunction(15);" >
+                	<li name="lis" id="li15" > 微培训</li>
+                	</a>
+               	
+                 <!-- href="/wx_case_index/caseFunction.htm?typeId=9" -->
+                	<a href="javascript:void(0);" onmouseover="caseFunction(9);" >
+                	<li name="lis" id="li9" > 微娱乐</li>
+                	</a>
+               	
+                
+            </ul>
+           
+        </div>
+        <div class="rt-lb0 fr rt-lb1" id="divH2">
+        
+        <div class=" aljs">
+        	<ul id="ulInfo">
+            	<li style=" background:none; height:auto;">
+                	<div class="aljs_title" style="font-weight:650; line-height:40px; padding-top:10px;">摇一摇</div>
+                    <div class="aljs_font"><p class="MsoNormal">
+	<span style="font-size:16px;">用户关注微信账号，摇动手机参与活动，活跃现场气氛、互动加粉的利器。</span>
+</p>
+<p class="MsoNormal">
+	<br />
+</p></div>
+                    <div class=" wfcjs">
+                    
+                    <div class="fl alzs1"><img style="width:760px" src="/uploads/wx/6968481956693321772.jpg" width="236" height="352" /></div>
+                    
+                    
+                        <div class="clr"></div>
+                    </div>
+                    <div class="aljs_font" style="border-top:#f5ab7a solid 2px; padding-top:15px; margin-top:20px;"><span style="font-size:16px;">摇一摇可以在展会、培训、沙龙等活动场所现场与所有参与者进行互动，在活动现场用户通过关注企业的公众账号，便可进行摇一摇活动，摇的越快，头像的位置就越靠前，根据排名发奖。大家一起在现场玩游戏，现场气氛想不热烈都很难！</span></div>
+                </li>
+            </ul>
+        </div>
+        
+        
+        </div>
+        <div class="clr"></div>
+        
+     </div>
+     
+     <div class="hzal"> 
+     
+	 
+ </div>    
+</div>
+
+<!--bottom-->
+
+  
+
+
+
+
+
+
+
+<div class="botttom">
+	<div class="botttom0">
+        <div class="botttom1">
+        	<div class=botttom2 "fl">
+            	<ul>
+                	<li><p class="teshu-0"><a href="/wx_case_index/caseFunction.htm">了解产品</a></p>
+                	<p><a href="/wx_product_index/productIndex1.htm">微官网</a></p>
+                	<p><a href="/wx_product_index/productIndex2.htm?flag=1#1">微会员卡</a></p>
+                	<p><a href="/wx_product_index/productIndex2.htm?flag=2#2">营销模块</a></p>
+                	<p><a href="/wx_product_index/productIndex2.htm?flag=3#3">喜帖</a></p>
+                	<p><a href="/wx_product_index/productIndex2.htm?flag=4#4">行业解决方案</a></p></li>
+                  <li><p class="teshu-0"><a href="/wx_case_index/caseIndex2.htm">案例展示</a></p>
+                  <p><a href="/wx_case_index/caseIndex2.htm">全部</a></p>
+                  <p><a href="/wx_case_index/caseIndex2.htm#1">分类</a></p>
+                  <p><a href="/wx_case_index/caseIndex2.htm#2">更多案例</a></p></li>
+                  <li><p class="teshu-0"><a href="/wx_case_index/contactIndex.htm#2">联系我们</a></p>
+                  <p><a href="/wx_case_index/contactIndex.htm#1">公司介绍</a></p>
+                  <p><a href="/wx_case_index/contactIndex.htm#2">联系方式</a></p>
+                  <p><a href="/wx_case_index/contactIndex.htm#3">办公环境</a></p></li>
+                </ul>
+            </div>
+            <a href="/wx_login/applyAjax.htm" class="mfzc0 fl">免费注册</a>
+            <div class="fl" style="margin:28px 0 0 30px;"><img src="/wx_index/images/0202.png" width="200" height="71" /></div>
+          <div class="evm fr">
+            	<ul>
+                  <li><p><img src="/wx_index/images/vdlevm.jpg" /></p><p>扫描关注我们</p></li>
+                </ul>
+            </div>
+            <div class="clr"></div>
+        </div>
+        
+        <div class="gsq" style="margin-top:26px;"><span style="float:left;">Copyright©2009-2012 弘威科技 鄂ICP备12013487号-3</span> <span style="float:right;">本站关键词：去创吧/微动力/去创吧</span>                                                                                                                                                                        本站关键词：微动力/去创吧/微信营销</div>
+    </div>
+</div>
+<script type="text/javascript" src="/js/fancybox/jquery.fancybox.pack.js?v=2.1.4"></script>
+<link rel="stylesheet" href="/js/fancybox/jquery.fancybox.css?v=2.1.4" type="text/css" media="screen" />
+<script type="text/javascript">
+function toReg(){
+	$.fancybox.open({
+		href : '/wx_login/applyAjax.htm',
+		type : 'ajax',
+		padding : 5
+	});
+}
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4bb9fb346e25601d222b484d4b01acc3' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+</body>
+<script type="text/javascript" src="/wx_css/js/jquery.flexslider-min.js"></script>
+	
+<script>
+	$(function(){
+		$(".fdc_cont .jCarouselLite").jCarouselLite({
+		    btnNext: ".fdc_cont .next",
+		    btnPrev: ".fdc_cont .prev",
+		    scroll: 1,
+		    visible: 4
+		});
+		var h1=$("#divH1").height();
+		var h2=$("#ulInfo").height();
+		if(h1>=h2){
+			$("#divH2").attr("style","height: "+h1+"px");
+		}else{
+			$("#divH1").attr("style","height: "+(h2+20)+"px");
+		}
+	});
+	function caseFunction(typeId){
+		var lis=$("li[name=lis]");
+		for(i=0;i<lis.length;i++){
+			$(lis[i]).removeClass("teshu-2");
+		}
+		$("#li"+typeId).addClass("teshu-2");
+		$.post("/wx_case_index/caseFunctionAjax.htm?typeId="+typeId,null,function(d){
+			$("#ulInfo").html(d);
+			$(".fdc_cont .jCarouselLite").jCarouselLite({
+			    btnNext: ".fdc_cont .next",
+			    btnPrev: ".fdc_cont .prev",
+			    scroll: 1,
+			    visible: 4
+			});
+			var h1=Number($("#divH1").height());
+			var h2=Number($("#ulInfo").height());
+			if(h1>=h2){
+				$("#divH2").attr("style","height: "+h1+"px");
+			}else{
+				$("#divH2").attr("style","height: "+h2+"px");
+			}
+		});
+		
+	}
+</script>
+</html>

@@ -1,0 +1,103 @@
+<include file="Public:head"/>
+<html>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<!-- Apple devices fullscreen -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<!-- Apple devices fullscreen -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<base target="mainFrame" />
+<link rel="stylesheet" type="text/css" href="{ZF::RES}/css/cymain.css" />
+<div class="content" style="width:80%; border:none; border:none; margin-bottom:30px;" >
+<link rel="stylesheet" type="text/css" href="/css/wm/bootstrap_min.css?dddf" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/bootstrap_responsive_min.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/style.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/themes.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/todc_bootstrap.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/inside.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/album.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/uploadify_t.css" media="all" />
+<title>{$_SERVER['WEB_NAME']}—国内最大的微信公众服务平台</title>
+ <script type="text/javascript" src="/@system/js/yyucadapter.js"></script>
+<script type="text/javascript" src="/res/mbaudio/inc/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="/res/mbaudio/inc/jquery.mb.miniPlayer.js"></script>
+<link rel="stylesheet" type="text/css" href="/uploadify/uploadify.css">
+<script type="text/javascript" src="/uploadify/jquery.uploadify.js"></script>
+<link rel="stylesheet" type="text/css" href="/res/mbaudio/css/miniplayer.css" title="style" media="screen"/>
+
+<body class="{Session::get('maintheme')}">
+<div id="main">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="box">
+                    <div class="box-title">
+                        <div class="span10">
+                            <h3><i class="icon-edit"></i>菜品管理({ZF:$page})</h3>
+                        </div>
+                        <div class="span2">
+                            <a class="btn" href="javascript:history.go(-1);">返回</a> 
+                        </div>
+                    </div>
+                <div class="box-content">
+<div class="cLine">
+<div class="pageNavigator left"> <a href="{ZF::U('Dining/add',array('token'=>$token,'storeid'=>$storeid))}" title="添加" class="btn"><i class="icon-plus"></i>添加菜品</a></div>
+<div class="clr"></div>
+</div>
+<div class="msgWrap">
+<form method="post" action="" id="info">
+<input name="delall" type="hidden" value="">
+<table class="table table-bordered table-hover dataTable">
+<thead>
+<tr>
+<th>名称</th>
+<th>商品缩略图</th>
+<th>价格</th>
+<th>所属分类</th>
+<th>关键词</th>
+<th>时间</th>
+<th>操作</th>
+</tr>
+</thead>
+<tbody style="text-align:center;">
+<volist name="list" id="hostlist"> 
+<tr>
+<td>{ZF:$hostlist.name}</div></td>
+<td><div class="cateimg"><if condition="$hostlist['logourl']"><img style="width:50px; height:50px;" src="{ZF:$hostlist.logourl}" ></if> </div></td>
+<td>{ZF:$hostlist.price}元</td>
+<td><a href="{ZF::U('index',array('catid'=>$hostlist['catid'],'token'=>$token,'storeid'=>$storeid))}" >{ZF:$hostlist.catname}</a></td>
+<td>{ZF:$hostlist.keyword}</td>
+<td>{ZF:$hostlist.time|date="Y-m-d H:i:s",###}</td> 
+
+<td class="norightborder"><a href="{ZF::U('Dining/set',array('id'=>$hostlist['id'],'token'=>$token,'storeid'=>$storeid))}" class="btn"><i class="icon-edit"></i></a>&nbsp;&nbsp; <a href="javascript:drop_confirm('您确定要删除吗?', '{ZF::U('Dining/del',array('id'=>$hostlist['id'],'token'=>$token,'storeid'=>$storeid))}');" class="btn"><i class="icon-remove"></i></a></td>
+</tr>
+</volist>
+</tbody>
+</table>
+</form>
+<script>
+function checkvotethis() {
+	var aa=document.getElementsByName('del_id[]');
+	var mnum = aa.length;
+	j=0;
+	for(i=0;i<mnum;i++){
+		if(aa[i].checked){
+		j++;
+		}
+	}
+	if(j>0) {
+		document.getElementById('info').submit();
+		} else {
+		alert('未选中任何信息！')
+	}
+}
+</script> 
+</div>
+<div class="cLine">
+<div class="pageNavigator right">
+</div>
+<div class="clr"></div>
+</div>
+</div>
+<include file="Public:footer"/>

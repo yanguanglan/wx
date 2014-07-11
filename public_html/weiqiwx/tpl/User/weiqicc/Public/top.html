@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script>var SITEURL='';</script>
+<title> {ZF::C('site_title')} {ZF::C('site_name')}</title>
+<link href="{ZF::RES}/css/style.css" rel="stylesheet" type="text/css" />
+<link href="{ZF::RES}/css/stylet.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{ZF::RES}/js/jquery.min.js"></script>
+<script type="text/javascript" src="{ZF::RES}/js/main.js"></script>
+
+<script type="text/javascript">
+function ying(){
+	 document.getElementById('tiduser').style.display="none";
+	 document.getElementById('quit').style.display="block";
+}
+function xian(){
+	 document.getElementById('tiduser').style.display="block";
+	 document.getElementById('quit').style.display="none";
+}
+setTimeout("xian()",5000);
+</script>
+
+</head>
+
+<body>
+
+
+	<div id="nav">
+    <?php if(!empty($_GET['id'])){ ?>
+		<img src="{ZF:$wecha.headerpic}" width="50" height="50" />
+    <?php }else{ ?>
+    	<img src="{ZF::RES}/images/portrait.jpg" width="50" height="50" />
+    <?php } ?>
+		<ul class="ul">
+        <?php if(!empty($_GET['id'])){ ?>
+			<li><strong>{ZF:$wecha.wxname}</strong><img src="{ZF::RES}/images/vip.png" /></li>
+			<li>微信号：{ZF:$wecha.weixin}</li>
+        <?php }else{ ?>
+        	<li><strong>用户：</strong><strong style="color:#CC3300;" >{ZF:$Think.session.uname}</strong></li>
+			<li><strong>等级：</strong><strong style="color:#CC3300;" >VIP<php>if($_SESSION['gid']>1){echo $_SESSION['gid']-1;}else{echo 0;}</php></strong></li>
+        <?php } ?>
+		</ul>
+		<ul >
+			<li>VIP有效时间：<if condition="$_SESSION['viptime'] neq 0">{ZF:$thisUser.viptime|date="Y-m-d",###}<else/>vip0不限时间</if></li>
+			<li>图文自定义：{ZF:$thisUser.diynum}/{ZF:$userinfo.diynum}</li>
+		</ul>
+		<ul>
+			<li>活动创建数：{ZF:$thisUser.activitynum}/{ZF:$userinfo.activitynum}</li>
+			<li>请求数：{ZF:$thisUser.connectnum}/{ZF:$userinfo.connectnum}</li>
+		</ul>
+		<ul>
+			<li>请求数剩余：<php>echo ($userinfo['connectnum']-$_SESSION['connectnum']);</php></li>
+			<li>已使用：<php>echo $_SESSION['diynum'];</php></li>
+		</ul>
+		<ul>
+			<li>当月赠送请求数：{ZF:$userinfo.connectnum}</li>
+			<li>当月剩余请求数：<php>echo $userinfo['connectnum']-$_SESSION['connectnum'];</php></li>
+		</ul>
+	</div>
+  

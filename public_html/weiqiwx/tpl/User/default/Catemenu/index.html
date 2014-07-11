@@ -1,0 +1,74 @@
+<include file="Public:head"/>
+<!--<link rel="stylesheet" type="text/css" href="./tpl/User/default/common/css/cymain.css" />
+
+<link rel="stylesheet" type="text/css" href="{ZF::RES}/css/catemanu/style2.css" media="all">-->
+<div class="content" style="" >
+<div class="cLineB"><h4>3G站点底部菜单设置</h4></div>     
+	 <ul id="tags">
+		  <li class="selectTag"><a href="{ZF::U('Catemenu/index',array('token'=>$token))}">底部菜单分类设置</a> </li>
+		  <li><a href="{ZF::U('Catemenu/styleSet',array('token'=>$token))}">底部菜单风格选择</a> </li>
+		  <li><a href="{ZF::U('Plugmenu/index',array('token'=>$token))}">老版导航及版权</a> </li>
+		  <div class="clr"></div>
+	  </ul>
+	<div class="ftip" style="margin:10px 0 0 0">一级主菜单最多4个，菜单风格1-8无子菜单，菜单风格9-16子菜单最多10个。</div>
+	 <div class="cLineC" style="line-height: 32px;">
+	 <a <?php if($fid==0){if($countMenu>=4){;?>
+		 href="javascript:alert('主菜单最多4个');"
+		 <?php }else{;?> 
+		 href="{ZF::U('Catemenu/add')}"
+		  <?php }}else{if($countMenu>=10){;?>
+		href="javascript:alert('子菜单最多10个');"
+		<?php }else{;?>
+		href="{ZF::U('Catemenu/add',array('fid'=>$fid))}"
+	  <?php }};?>
+		  class="btnGrayS vm bigbtn">添加<if condition="$fid neq 0">{ZF:$thisCatemanu.name}子</if>菜单</a>　 
+	</div>
+ 
+ <div class="msgWrap form">
+	<div class="bdrcontent">
+	<div id="div_ptype">
+		<table class="ListProduct" border="0" cellSpacing="0" cellPadding="0">
+		<thead>
+			<tr>
+			<th style=" width:120px;">菜单名称</th>
+			<th style=" width:70px;">显示顺序</th>
+			<th><nobr>图标地址(透明png图标)</nobr></th>
+			<th>外链地址 </th>
+			<th style=" width:80px;"  >首页显示</th>
+			<th style=" width:140px;" class="norightborder">操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<volist name="info" id="vo">
+			<tr>
+			<td>{ZF:$vo.name}</td>
+			<td>{ZF:$vo.orderss}</td>
+			<td><div class="cateimg"><img src="{ZF:$vo.picurl}" class="cateimg_small"  /><img src="{ZF:$vo.picurl}" class="cateimg_big"  /></div></td>
+			<td>{ZF:$vo.url}</td>
+			<td><eq name="vo.status" value="1">显示<else/>不显示</eq></td>
+			<td class="norightborder">
+				<?php if ($vo['fid']==0){?><a href="{ZF::U('Catemenu/index',array('fid'=>$vo['id']))}">子菜单</a><?php }?>
+				<a href="<?php if ($vo['fid']==0){?>{ZF::U('Catemenu/edit',array('id'=>$vo['id']))}<?php }else{?>{ZF::U('Catemenu/edit',array('id'=>$vo['id'],'fid'=>$vo['fid']))}<?php }?>">编辑</a>
+				<a href="<?php if ($vo['fid']==0){?>{ZF::U('Catemenu/del',array('id'=>$vo['id']))}<?php }else{?>{ZF::U('Catemenu/del',array('id'=>$vo['id'],'fid'=>$vo['fid']))}<?php }?>">删除</a>
+			</td>
+			</tr>
+			</volist>
+			</tbody>			   
+		</table>
+	</div>
+	</div>
+	<div class="footactions" style="padding-left:10px">
+	  <div class="pages">{ZF:$page}</div>
+	</div>
+</div>
+  
+        </div>
+   
+        <div class="clr"></div>
+      </div>
+    </div>
+  </div> 
+  <!--底部-->
+    </div>
+
+<include file="Public:footer"/>

@@ -1,0 +1,81 @@
+<include file="Public:head"/>
+<link rel="stylesheet" type="text/css" href="{ZF::RES}/css/cymain.css" />
+<div class="content" style=" border:none; border:none; margin-bottom:30px;" >
+<link rel="stylesheet" type="text/css" href="/css/wm/bootstrap_min.css?dddf" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/bootstrap_responsive_min.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/style.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/themes.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/todc_bootstrap.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/inside.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/album.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/uploadify_t.css" media="all" />
+ <script type="text/javascript" src="/@system/js/yyucadapter.js"></script>
+<script type="text/javascript" src="/res/mbaudio/inc/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="/res/mbaudio/inc/jquery.mb.miniPlayer.js"></script>
+<link rel="stylesheet" type="text/css" href="/uploadify/uploadify.css">
+<script type="text/javascript" src="/uploadify/jquery.uploadify.js"></script>
+<link rel="stylesheet" type="text/css" href="/res/mbaudio/css/miniplayer.css" title="style" media="screen"/>
+<style>.ListProduct tr{text-align:center;}</style>
+
+<div id="main">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="box">
+                    <div class="box-title">
+                        <div class="span10">
+                                <h3><i class="icon-edit"></i>职员管理({ZF:$page})</h3>
+                            </div>
+						<div class="span2">
+                            <a class="btn" href="javascript:history.go(-1);">返回</a> 
+                        </div>
+						</div>
+                        <div class="box-content">
+						<div  class="alert">店员是操作会员充值或者消费的唯一标示。使用会员卡需要添加店员<br>备注：积分兑换和优惠券兑换时需要店员验证员工用户名和员工密码才可以的</div>
+
+<div class="cLine">
+<div class="pageNavigator left">
+<a href="{ZF::U('Member_card/staffSet',array('token'=>$token,'id'=>$thisCard['id']))}" title="" class="btn"><i class="icon-plus"></i>添加职员</a>　
+<div class="clr"></div>
+</div>
+<div class="msgWrap">
+<form method="post" action="index.php?ac=importtxt&amp;id=9878&amp;wxid=gh_423dwjkewad" id="info">
+<input name="delall" type="hidden" value="del">
+<input name="wxid" type="hidden" value="gh_423dwjkewad">
+<table class="table table-bordered table-hover dataTable">
+  <thead>
+    <tr>
+    <th>所属店铺</th>
+        <th>姓名</th>
+        <th>电话</th>
+        <th>添加时间</th>
+        <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <volist name="staffs" id="staff">           
+    <tr>
+        
+          <td>{ZF:$staff.companyName}</td>
+         <td>{ZF:$staff.name}</td>
+          <td>{ZF:$staff.tel}</td>
+          <td>{ZF:$staff.time|date='Y-m-d',###}</td>
+          <td class="norightborder">
+            <a href="{ZF::U('Member_card/staffSet',array('itemid'=>$staff['id'],'id'=>$thisCard['id']))}" class="btn"><i class="icon-edit"></i></a>&nbsp; <a href="{ZF::U('Member_card/staffDelete',array('itemid'=>$staff['id'],'id'=>$thisCard['id']))}"class="btn"><i class="icon-remove"></i></a>
+          </td>
+    </tr>
+    </volist>
+     
+  </tbody>
+</table>
+</form> 
+
+</div>
+<div class="cLine">
+<div class="pageNavigator right">
+     <div class="pages"></div>
+ </div>
+<div class="clr"></div>
+</div>
+</div>
+<include file="Public:footer"/>

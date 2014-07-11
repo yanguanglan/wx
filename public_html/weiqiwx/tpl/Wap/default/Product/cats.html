@@ -1,0 +1,17 @@
+<include file="Product:header"/>
+<style type="text/css">
+.du_1 { margin: 6px; border: #ddd solid 1px; border-radius: 5px; font-family: 'Microsoft YaHei'; width:46%;height:100px; float:left; font-weight: normal;font-size: 35px;}
+.du_1 h2 {height: 35px;line-height: 35px;bottom: 0;text-align: center;width: 100%;background: rgba(0,0,0,.1);font-size: 13px;font-weight: normal;color:#fff; margin-top:43%;}
+</style>
+<!--主体-->
+ <center>
+<section class="c_list">
+	<h1><if condition="$parentid neq 0">{ZF:$thisCat.name}</if>全部分类：</h1>
+	<volist name="cats" id="hostlist"> 
+	    
+		<div class="du_1" style="background:url({ZF:$hostlist.logourl}) no-repeat 50% 0;"><center><a href="<if condition="$hostlist['parentid'] eq 0">{ZF::U('Product/products',array('token'=>$_GET['token'],'catid'=>$hostlist['id'],'wecha_id'=>$wecha_id,'dining'=>$isDining))}<else/>{ZF::U('Product/products',array('token'=>$_GET['token'],'catid'=>$hostlist['id'],'wecha_id'=>$wecha_id))}</if>"><h2>{ZF:$hostlist.name}</h2></a></center></div>
+	</volist> 
+		</section>
+		 </center>
+</body>
+</html>

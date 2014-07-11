@@ -1,0 +1,67 @@
+html, body { color: #222; font-family: Microsoft YaHei, Helvitica, Verdana, Tohoma, Arial, san-serif; margin: 0; padding: 0; text-decoration: none; }
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td { margin: 0; padding: 0; }
+img { border: 0; }
+ol, ul { list-style: none outside none; margin: 0; padding: 0; }
+a { color: #000000; text-decoration: none; }
+.clr { display: block; clear: both; height: 0; overflow: hidden; }
+.copyright { padding: 8px; text-align: center; font-size: 14px; color: #666; }
+.copyright a { color: #666; }
+/*cate6*/
+#cate6 { background: url(../../images/themes/bg003.jpg) #E2E3E6; background-size: 150px auto; display: block; margin: 1%; overflow-x: hidden; }
+#cate6 .mainmenu { display: block; margin: 0 auto; padding: 0; }
+#cate6 .mainmenu li { float: left; display: block; }
+/*li4*/
+#cate6 .mainmenu li.li4:nth-child(4) .menumesg { background-color: #0072BC; float: left; display: block; }
+#cate6 .mainmenu li.li4:nth-child(10) .menumesg { background-color: #FFC40D; float: right; display: block; }
+#cate6 .mainmenu li.li4:nth-child(10) .menuimg { margin: 0; float: left; }
+#cate6 .mainmenu li.li4:nth-child(16) .menumesg { background-color: #FF9999; float: left; display: block; }
+#cate6 .mainmenu li.li4:nth-child(22) .menumesg { background-color: #0072BC; float: right; display: block; }
+#cate6 .mainmenu li.li4:nth-child(22) .menuimg { margin: 0; float: left; }
+#cate6 .mainmenu li.li4:nth-child(28) .menumesg { background-color: #FFC40D; }
+#cate6 .mainmenu li.li4:nth-child(34) .menumesg { background-color: #FF9999; }
+/*li4end*/
+/*li5*/
+#cate6 .mainmenu li.li5:nth-child(5) .menumesg { background-color: #F98F2E; float: left; display: block; }
+#cate6 .mainmenu li.li5:nth-child(11) .menumesg { background-color: #69C9D2; float: right; display: block; }
+#cate6 .mainmenu li.li5:nth-child(11) .menuimg { margin: 0; float: left; }
+#cate6 .mainmenu li.li5:nth-child(17) .menumesg { background-color: #BAB7CA; float: left; display: block; }
+#cate6 .mainmenu li.li5:nth-child(23) .menumesg { background-color: #F98F2E; float: right; display: block; }
+#cate6 .mainmenu li.li5:nth-child(23) .menuimg { margin: 0; float: left; }
+#cate6 .mainmenu li.li5:nth-child(29) .menumesg { background-color: #69C9D2; }
+#cate6 .mainmenu li.li5:nth-child(35) .menumesg { background-color: #BAB7CA; }
+/*li5end*/
+/*li0*/
+#cate6 .mainmenu li.li0:nth-child(6) .menumesg { background-color: #01A31C; float: left; display: block; }
+#cate6 .mainmenu li.li0:nth-child(12) .menumesg { background-color: #92ABF8; float: right; display: block; }
+#cate6 .mainmenu li.li0:nth-child(12) .menuimg { margin: 0; float: left; }
+#cate6 .mainmenu li.li0:nth-child(18) .menumesg { background-color: #6DB886; float: left; display: block; }
+#cate6 .mainmenu li.li0:nth-child(24) .menumesg { background-color: #01A31C; float: right; display: block; }
+#cate6 .mainmenu li.li0:nth-child(24) .menuimg { margin: 0; float: left; }
+#cate6 .mainmenu li.li0:nth-child(30) .menumesg { background-color: #92ABF8; }
+#cate6 .mainmenu li.li0:nth-child(31) .menumesg { background-color: #6DB886; }
+/*li0end*/
+#cate6 .mainmenu li .menubtn { }
+#cate6 .mainmenu li .menuimg { display: none; overflow: hidden; }
+#cate6 .mainmenu li .menutext { display: none; }
+/*li4*/
+#cate6 .mainmenu li.li4, #cate6 .mainmenu li.li0 { text-align: center; margin: 1% 0 0 0; width: 32%; display: block; }
+#cate6 .mainmenu li.li5 { text-align: center; margin: 1% 0 0 1.2%; width: 33%; display: block; }
+#cate6 .mainmenu li.li0 { float: right; }
+#cate6 .mainmenu li.li4 .menubtn, #cate6 .mainmenu li.li5 .menubtn, #cate6 .mainmenu li.li0 .menubtn { color: #FFFFFF; display: block; width: 100%; position: relative; height: 300px; overflow-x: hidden; }
+/*zonghe*/
+#cate6 .mainmenu li.li4 .menuimg, #cate6 .mainmenu li.li4 .menumesg, #cate6 .mainmenu li.li5 .menuimg, #cate6 .mainmenu li.li5 .menumesg, #cate6 .mainmenu li.li0 .menuimg, #cate6 .mainmenu li.li0 .menumesg, #cate6 .mainmenu li.li1, #cate6 .mainmenu li.li2, #cate6 .mainmenu li.li3 { box-shadow: 0 0px 3px 0 rgba(0, 0, 0, 0.15); -moz-box-shadow: 0 0px 3px 0 rgba(0, 0, 0, 0.15); -webkit-box-shadow: 0 0px 3px 0 rgba(0, 0, 0, 0.15); display: block; width: 100%; }
+#cate6 .mainmenu li.li4 .menumesg, #cate6 .mainmenu li.li0 .menumesg { background-color: #999; width: 100%; position: absolute; left: 0px; top: 0px; float: left; height: 99px; overflow: hidden; margin-bottom:1px; }
+#cate6 .mainmenu li.li5 .menumesg { background-color: #999; width: 100%; position: absolute; left: 0px; bottom: 0px; float: left; height: 99px; overflow: hidden; margin-top:1px; }
+#cate6 .mainmenu li.li4 .menutitle, #cate6 .mainmenu li.li0 .menutitle { font-size: 24px; line-height: 24px; position: absolute; left: 5px; top: 5px; width:50%; height:80px;overflow-y: hidden;}
+#cate6 .mainmenu li.li5 .menutitle { font-size: 24px; line-height: 24px; position: absolute; left: 5px; bottom: 5px;width:50%;height:80px;overflow-y: hidden; }
+#cate6 .mainmenu li.li4 .menuico, #cate6 .mainmenu li.li0 .menuico { display: block; background-size: 22px auto; content: " "; position: absolute; bottom: 2px; right: 2px; height: 22px; width: 22px; text-indent: -999px; overflow: hidden; z-index: 1; }
+#cate6 .mainmenu li.li5 .menuico { display: block; background-size: 22px auto; content: " "; position: absolute; top: 2px; right: 2px; height: 22px; width: 22px; text-indent: -999px; overflow: hidden; z-index: 1; }
+#cate6 .mainmenu li.li4 .menuimg, #cate6 .mainmenu li.li0 .menuimg { display: block; position: absolute; bottom: 0px; left: 0px; overflow-y: hidden; height: 200px;}
+#cate6 .mainmenu li.li5 .menuimg { display: block; position: absolute; top: 0px; left: 0px; width: 100%; height: 200px; overflow-y: hidden; }
+#cate6 .mainmenu li.li4 .menutext, #cate6 .mainmenu li.li5 .menutext, #cate6 .mainmenu li.li0 .menutext { display: block; font-size: 12px; background-color: rgba(0, 0, 0, 0.5); bottom: 1px; color: #FFFFFF; height: 25px; left: 0; line-height: 25px; position: absolute; text-align: center; width: 100%; padding: 0 10px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center; }
+#cate6 .mainmenu li.li1, #cate6 .mainmenu li.li3 { background-color: #ffffff; text-align: center; margin: 1% 0 0 0; width: 32%; }
+#cate6 .mainmenu li.li1 .menubtn, #cate6 .mainmenu li.li2 .menubtn, #cate6 .mainmenu li.li3 .menubtn { color: #333333; display: block; font-size: 16px; height: 48px; line-height: 48px; }
+#cate6 .mainmenu li.li2 { background-color: #ffffff; text-align: center; margin: 1% 0 0 1.2%; width: 33%; }
+#cate6 .mainmenu li.li3 { float: right; }
+#cate6 .menubtn .menumesg { padding: 0px; }
+#cate6 .mainmenu li div img { border: 0; width: 100%; }

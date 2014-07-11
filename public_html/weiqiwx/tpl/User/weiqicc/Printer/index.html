@@ -1,0 +1,93 @@
+<include file="Public:head"/>
+<html>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<!-- Apple devices fullscreen -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<!-- Apple devices fullscreen -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<base target="mainFrame" />
+<link rel="stylesheet" type="text/css" href="{ZF::RES}/css/cymain.css" />
+<div class="content" style="width:80%; border:none; border:none; margin-bottom:30px;" >
+<link rel="stylesheet" type="text/css" href="/css/wm/index.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/bootstrap_min.css?dddf" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/bootstrap_responsive_min.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/style.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/themes.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/todc_bootstrap.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/inside.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/album.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/uploadify_t.css" media="all" />
+<title>{$_SERVER['WEB_NAME']}—国内最大的微信公众服务平台</title>
+ <script type="text/javascript" src="/@system/js/yyucadapter.js"></script>
+<script type="text/javascript" src="/res/mbaudio/inc/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="/res/mbaudio/inc/jquery.mb.miniPlayer.js"></script>
+<link rel="stylesheet" type="text/css" href="/uploadify/uploadify.css">
+<script type="text/javascript" src="/uploadify/jquery.uploadify.js"></script>
+<link rel="stylesheet" type="text/css" href="/res/mbaudio/css/miniplayer.css" title="style" media="screen"/>
+
+<body class="{Session::get('maintheme')}">
+<div id="main">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="box">
+                    <div class="box-title">
+                        <div class="span10">
+                            <h3><i class="icon-edit"></i>无线打印配置</h3>
+                        </div>
+                        <div class="span2">
+                            <a class="btn" href="javascript:history.go(-1);">返回</a> 
+                        </div>
+                    </div>
+                <div class="box-content">
+<!--tab start-->
+<form class='form-horizontal form-validate' method="post"  action="">
+                            <div class="control-group">
+                                <label for="name" class="control-label">商户代码：</label>
+                                <div class="controls">
+                                <input type="text" required="" class="px" name="memberCode" value="{ZF:$set.memberCode}" tabindex="1" size="35"> 
+                                <span class="maroon">*</span><span class="help-inline">平台提供的的商户API代码</span>
+                                </div>
+                            </div>
+							<div class="control-group">
+                                <label for="name" class="control-label">API 密钥：</label>
+                                <div class="controls">
+                                <input type="text" required="" class="px" name="feiyin_key" value="{ZF:$set.feiyin_key}" tabindex="1" size="25"> 
+                                <span class="maroon">*</span><span class="help-inline">平台提供的的商户API密钥</span>
+                                </div>
+                            </div>
+							<div class="control-group">
+                                <label for="name" class="control-label">打印机设备编码：</label>
+                                <div class="controls">
+                                <input type="text" required="" class="px" name="deviceNo" value="{ZF:$set.deviceNo}" tabindex="1" size="25"> 
+                                <span class="maroon">*</span><span class="help-inline">通过打印机后面的激活按键获取，为16位数字，例如"4600365507768327"</span>
+                                </div>
+                            </div>
+							<div class="control-group">
+                                <label for="name" class="control-label">是否开启打印功能：</label>
+                                <div class="controls">
+								<input type="text" required="" class="px" name="status" value="{ZF:$set.status}" tabindex="1" size="25">
+                                <span class="maroon">*</span><span class="help-inline">温馨提示 1为开启 0为关闭 其他值无效</span>
+                                </div>
+                            </div>
+							<div class="control-group">
+                                <label for="name" class="control-label">说明：</label>
+                                <div class="controls">
+								打印机为飞印网络打印机，如何配置使用请联系工作人员！
+                                <span class="maroon"></span><span class="help-inline"></span>
+                                </div>
+                            </div>
+                     <div class="form-actions">
+                  <!--零-度微-助-手-w x-0 d u-c c   -->
+                  <input type="submit" value="保存"  name="sbmt"  class="btn btn-primary"  style="float:left; margin-right:20px;" /> 
+				   <a href="{ZF::U('Printer/test',array('token'=>$token))}" class="btn">测试打印</a>
+				 
+    </div>
+</form>
+
+</div>
+</div>
+</body>
+</html>

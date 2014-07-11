@@ -1,0 +1,4 @@
+User-agent: * 
+Disallow: /agencyAdmin/
+Disallow: /htm/help/
+Disallow: /admin2/

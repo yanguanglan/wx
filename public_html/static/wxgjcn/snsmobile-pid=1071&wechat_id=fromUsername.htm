@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta content="" name="description">
+		<meta content="" name="keywords">
+		<meta content="eric.wu" name="author">
+		<meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+		<meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+		<meta content="no-cache" http-equiv="pragma">
+		<meta content="0" http-equiv="expires">
+		<meta content="telephone=no, address=no" name="format-detection">
+		<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+		<link rel="stylesheet" type="text/css" href="css/sns/main.css"  ></link>
+		<link rel="stylesheet" type="text/css" href="css/sns/dialog.css"  ></link>
+		<script src="src/sns/jquery_min.js"  ></script>
+		<script src="src/sns/main.js"  ></script>
+		<script src="src/sns/dialog_min.js"  ></script>
+		<style>
+			.container{
+				background:url(imgs/4.png)/*tpa=http://www.weimob.com/imgs/4.png*/;
+				-webkit-background-size:100%;
+			}
+			.layer_tip{
+				text-align: center;
+				padding:100px 10px 10px;
+			}
+			.layer_tip header img{
+				width:80px;
+				max-height:80px;
+				margin:5px auto;
+			}
+			.layer_tip article h4{
+				font-size:26px;
+				color:#007aff;
+				padding:15px 0;
+				font-weight: 100;
+			}
+			.layer_tip article p{
+				line-height:23px;
+				font-size:13px;
+				color:#333333;
+			}
+		</style>
+		<script>
+		 	$().ready(function(){
+				//window.imgsReady();
+			});
+
+
+		</script>
+	</head>
+	<body onselectstart="return true;" ondragstart="return false;" class="discuss_error">
+		<div id="container" class="container">
+			<header></header>
+			<div class="body">
+				<div class="layer_tip">
+					<header>
+						<img src="img/sns/5.png" >
+					</header>
+					<article>
+						<h4>很抱歉</h4>
+						<p>您已被商家拉黑，无权进入<br/>如有疑问请联系商家解封哦</p>
+					</article>
+				</div>
+			</div>
+			<footer></footer>
+		</div>
+	</body>
+	<script>
+    	document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+        WeixinJSBridge.call('hideOptionMenu');
+    });
+	</script>
+</html>

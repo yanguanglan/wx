@@ -1,0 +1,980 @@
+<include file="Public:head"/>
+<link rel="stylesheet" href="{ZF::STATICS}/kindeditor/themes/default/default.css" />
+<link rel="stylesheet" href="{ZF::STATICS}/kindeditor/plugins/code/prettify.css" />
+<script src="{ZF::STATICS}/kindeditor/kindeditor.js" type="text/javascript"></script>
+<script src="{ZF::STATICS}/kindeditor/lang/zh_CN.js" type="text/javascript"></script>
+<script src="{ZF::STATICS}/kindeditor/plugins/code/prettify.js" type="text/javascript"></script>
+<div class="content"  >
+
+    <div class="cLineB">
+        <h4>模板管理 <span class="FAQ">选择适合您的模版风格，手机输入“首页”测试效果。</span></h4>
+    </div>
+
+    <div class="msgWrap form">
+        <ul id="tags" style="width:920px;">
+            <li class="selectTag"><a onclick="selectTag('tagContent0',this)" href="javascript:void(0)">1. 栏目首页模板风格</a> </li>
+            <li><a onclick="selectTag('tagContent1',this)" href="javascript:void(0)">2.图文列表模板风格</a> </li>
+            <li><a onclick="selectTag('tagContent2',this)" href="javascript:void(0)">3.图文详细页模板风格</a> </li>
+            <li><a onclick="selectTag('tagContent3',this)" href="javascript:void(0)">4.颜色风格&预览</a> </li>
+            <div class="clr"></div>
+        </ul>
+
+        <div id="tagContent">
+            <div class="tagContent selectTag" id="tagContent0">
+                <fieldset>
+				 <div class="g filterBox">
+                  <h1>按底部导航:</h1>
+                  <ul class="filterBtn">
+                    <li class="filter on active" data-filter=""><p>全部模版</p><i></i></li>
+                   <li class="filter" data-filter="zzfootmenu"><p>支持底部导航</p><i></i></li>
+                    <li class="filter" data-filter="nofootmenu"><p>不支持底部导航</p><i></i></li>
+                  </ul>
+				  <ul><li>当前选择模板编号：{ZF::$info['tpltypeid']}</li></ul>
+                </div><div class="clr"></div>
+					<ul class="cateradio nomenutpl">
+					  <if condition="$info['tpltypeid'] eq 54"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/nomenucate54.png" onclick="javascript:alert('已选择模板54')" />
+                                <input class="radio" type="radio" name="optype" value="54" <eq name="info.tpltypeid" value="54">checked</eq> /> 不支持新版导航模版54
+                            </label>
+                        </li>
+                      
+					 <if condition="$info['tpltypeid'] eq 53"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/nomenucate53.png" onclick="javascript:alert('已选择模板53')" />
+                                <input class="radio" type="radio" name="optype" value="53" <eq name="info.tpltypeid" value="53">checked</eq> /> 不支持新版导航模版53
+                            </label>
+                        </li>
+						 <if condition="$info['tpltypeid'] eq 52"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/nomenucate52.png" onclick="javascript:alert('已选择模板52')" />
+                                <input class="radio" type="radio" name="optype" value="52" <eq name="info.tpltypeid" value="52">checked</eq> /> 不支持新版导航模版52
+                            </label>
+                        </li>
+						 <if condition="$info['tpltypeid'] eq 51"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/nomenucate51.png" onclick="javascript:alert('已选择模板51')" />
+                                <input class="radio" type="radio" name="optype" value="51" <eq name="info.tpltypeid" value="51">checked</eq> /> 不支持新版导航模版51
+                            </label>
+                        </li>
+						 <if condition="$info['tpltypeid'] eq 50"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/nomenucate50.png" onclick="javascript:alert('已选择模板50')" />
+                                <input class="radio" type="radio" name="optype" value="50" <eq name="info.tpltypeid" value="50">checked</eq> /> 不支持新版导航模版50
+                            </label>
+                        </li>
+						<if condition="$info['tpltypeid'] eq 49"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/home-17.png" onclick="javascript:alert('已选择模板49')" />
+                                <input class="radio" type="radio" name="optype" value="49" <eq name="info.tpltypeid" value="49">checked</eq> /> 不支持新版导航模版49
+                            </label>
+                        </li>
+						<if condition="$info['tpltypeid'] eq 48"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/home-0.png" onclick="javascript:alert('已选择模板48')" />
+                                <input class="radio" type="radio" name="optype" value="48" <eq name="info.tpltypeid" value="48">checked</eq> /> 不支持新版导航模版48
+                            </label>
+                        </li>
+                       <if condition="$info['tpltypeid'] eq 47"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+                                <label>
+                                    <img src="{ZF::RES}/images/home-58.png" onclick="javascript:alert('已选择模板47')" />
+                                    <input class="radio" type="radio" name="optype" value="47" <eq name="info.tpltypeid" value="47">checked</eq> /> 不支持新版导航模版47
+                                </label>
+                            </li>
+                       <if condition="$info['tpltypeid'] eq 46"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+                                <label>
+                                    <img src="{ZF::RES}/images/home-21.png" onclick="javascript:alert('已选择模板46')" />
+                                    <input class="radio" type="radio" name="optype" value="46" <eq name="info.tpltypeid" value="46">checked</eq> /> 不支持新版导航模版46
+                                </label>
+                            </li>
+   						<if condition="$info['tpltypeid'] eq 45"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/home-48.png" onclick="javascript:alert('已选择模板45')" />
+                                <input class="radio" type="radio" name="optype" value="45" <eq name="info.tpltypeid" value="45">checked</eq> /> 不支持新版导航模版45
+                            </label>
+                        </li>	
+                       <if condition="$info['tpltypeid'] eq 44"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/home-49.png" onclick="javascript:alert('已选择模板44')" />
+                                <input class="radio" type="radio" name="optype" value="44" <eq name="info.tpltypeid" value="44">checked</eq> /> 不支持新版导航模版44
+                            </label>
+                        </li>
+						<if condition="$info['tpltypeid'] eq 43"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/home-26.png" onclick="javascript:alert('已选择模板43')" />
+                                <input class="radio" type="radio" name="optype" value="43" <eq name="info.tpltypeid" value="43">checked</eq> /> 不支持新版导航模版43
+                            </label>
+                        </li>
+						<if condition="$info['tpltypeid'] eq 42"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/home-28.png" onclick="javascript:alert('已选择模板42')" />
+                                <input class="radio" type="radio" name="optype" value="42" <eq name="info.tpltypeid" value="42">checked</eq> /> 不支持新版导航模版42
+                            </label>
+                        </li>
+						<if condition="$info['tpltypeid'] eq 41"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/home17.png" onclick="javascript:alert('已选择模板41')" />
+                                <input class="radio" type="radio" name="optype" value="41" <eq name="info.tpltypeid" value="41">checked</eq> /> 不支持新版导航模版41
+                            </label>
+                        </li>
+						<if condition="$info['tpltypeid'] eq 40"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/home-32.png" onclick="javascript:alert('已选择模板40')" />
+                                <input class="radio" type="radio" name="optype" value="40" <eq name="info.tpltypeid" value="40">checked</eq> /> 不支持新版导航模版40
+                            </label>
+                        </li>
+						<if condition="$info['tpltypeid'] eq 39"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/nomenucate39.png" onclick="javascript:alert('已选择模板39')" />
+                                <input class="radio" type="radio" name="optype" value="39" <eq name="info.tpltypeid" value="39">checked</eq> /> 不支持新版导航模版39
+                            </label>
+                        </li>
+                         <if condition="$info['tpltypeid'] eq 38"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/nomenucate38.png" onclick="javascript:alert('已选择模板38')" />
+                                <input class="radio" type="radio" name="optype" value="38" <eq name="info.tpltypeid" value="38">checked</eq> /> 不支持新版导航模版38
+                            </label>
+                        </li>
+                         <if condition="$info['tpltypeid'] eq 37"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+							<label>
+								<img src="{ZF::RES}/images/cate1377.png" onclick="javascript:alert('已选择模板37')" />
+								<input class="radio" type="radio" name="optype" value="37" <eq name="info.tpltypeid" value="37">checked</eq> /> 不支持新版导航模版37
+							</label>
+						</li>
+                         <if condition="$info['tpltypeid'] eq 36"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+							<label>
+								<img src="{ZF::RES}/images/cate1366.png" onclick="javascript:alert('已选择模板36')" />
+								<input class="radio" type="radio" name="optype" value="36" <eq name="info.tpltypeid" value="36">checked</eq> /> 不支持新版导航模版36
+							</label>
+						</li>
+                         <if condition="$info['tpltypeid'] eq 35"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+						<label>
+							<img src="{ZF::RES}/images/cate1355.png" onclick="javascript:alert('已选择模板35')" />
+							<input class="radio" type="radio" name="optype" value="35" <eq name="info.tpltypeid" value="35">checked</eq> /> 不支持新版导航模版35
+						</label>
+					</li>
+                         <if condition="$info['tpltypeid'] eq 34"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+							<label>
+								<img src="{ZF::RES}/images/cate1344.png" onclick="javascript:alert('已选择模板34')" />
+								<input class="radio" type="radio" name="optype" value="34" <eq name="info.tpltypeid" value="34">checked</eq> /> 不支持新版导航模版34
+							</label>
+						</li>
+                         <if condition="$info['tpltypeid'] eq 33"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+							<label>
+								<img src="{ZF::RES}/images/cate1333.png" onclick="javascript:alert('已选择模板33')" />
+								<input class="radio" type="radio" name="optype" value="33" <eq name="info.tpltypeid" value="33">checked</eq> /> 不支持新版导航模版33
+							</label>
+						</li>
+					   <if condition="$info['tpltypeid'] eq 32"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/nomenucate137.png" onclick="javascript:alert('已选择模板32')" />
+                                <input class="radio" type="radio" name="optype" value="32" <eq name="info.tpltypeid" value="32">checked</eq> /> 不支持新版导航模版32
+                            </label>
+                        </li>
+					   <if condition="$info['tpltypeid'] eq 31"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/nomenucate136.png" onclick="javascript:alert('已选择模板31')" />
+                                <input class="radio" type="radio" name="optype" value="31" <eq name="info.tpltypeid" value="31">checked</eq> /> 不支持新版导航模版31
+                            </label>
+                        </li>
+					   <if condition="$info['tpltypeid'] eq 30"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/nomenucate133.png" onclick="javascript:alert('已选择模板30')" />
+                                <input class="radio" type="radio" name="optype" value="30" <eq name="info.tpltypeid" value="30">checked</eq> /> 不支持新版导航模版30
+                            </label>
+                        </li>
+					   <if condition="$info['tpltypeid'] eq 29"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/nomenucate132.png" onclick="javascript:alert('已选择模板29')" />
+                                <input class="radio" type="radio" name="optype" value="29" <eq name="info.tpltypeid" value="29">checked</eq> /> 不支持新版导航模版29
+                            </label>
+                        </li>
+					   <if condition="$info['tpltypeid'] eq 28"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/nomenucate131.png" onclick="javascript:alert('已选择模板28')" />
+                                <input class="radio" type="radio" name="optype" value="28" <eq name="info.tpltypeid" value="28">checked</eq> /> 不支持新版导航模版28
+                            </label>
+                        </li>
+					   <if condition="$info['tpltypeid'] eq 27"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/nomenucate130.png" onclick="javascript:alert('已选择模板27')" />
+                                <input class="radio" type="radio" name="optype" value="27" <eq name="info.tpltypeid" value="27">checked</eq> /> 不支持新版导航模版27
+                            </label>
+                        </li>
+					   <if condition="$info['tpltypeid'] eq 26"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/nomenucate128.png" onclick="javascript:alert('已选择模板26')" />
+                                <input class="radio" type="radio" name="optype" value="26" <eq name="info.tpltypeid" value="26">checked</eq> /> 不支持新版导航模版26
+                            </label>
+                        </li>
+					   <if condition="$info['tpltypeid'] eq 25"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/nomenucate127.png" onclick="javascript:alert('已选择模板25')" />
+                                <input class="radio" type="radio" name="optype" value="25" <eq name="info.tpltypeid" value="25">checked</eq> /> 不支持新版导航模版25
+                            </label>
+                        </li>
+					   <if condition="$info['tpltypeid'] eq 24"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/nomenucate124.png" onclick="javascript:alert('已选择模板24')" />
+                                <input class="radio" type="radio" name="optype" value="24" <eq name="info.tpltypeid" value="24">checked</eq> /> 不支持新版导航模版24
+                            </label>
+                        </li>
+					   <if condition="$info['tpltypeid'] eq 23"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/nomenucate123.png" onclick="javascript:alert('已选择模板23')" />
+                                <input class="radio" type="radio" name="optype" value="23" <eq name="info.tpltypeid" value="23">checked</eq> /> 不支持新版导航模版23
+                            </label>
+                        </li>
+					   <if condition="$info['tpltypeid'] eq 22"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/nomenucate122.png" onclick="javascript:alert('已选择模板22')" />
+                                <input class="radio" type="radio" name="optype" value="22" <eq name="info.tpltypeid" value="22">checked</eq> /> 不支持新版导航模版22
+                            </label>
+                        </li>
+					   <if condition="$info['tpltypeid'] eq 21"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/nomenucate121.png" onclick="javascript:alert('已选择模板21')" />
+                                <input class="radio" type="radio" name="optype" value="21" <eq name="info.tpltypeid" value="21">checked</eq> /> 不支持新版导航模版21
+                            </label>
+                        </li>
+					   <if condition="$info['tpltypeid'] eq 20"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/nomenucate120.png" onclick="javascript:alert('已选择模板20')" />
+                                <input class="radio" type="radio" name="optype" value="20" <eq name="info.tpltypeid" value="20">checked</eq> /> 不支持新版导航模版20
+                            </label>
+                        </li>
+					   <if condition="$info['tpltypeid'] eq 19"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/nomenucate119.png" onclick="javascript:alert('已选择模板19')" />
+                                <input class="radio" type="radio" name="optype" value="19" <eq name="info.tpltypeid" value="19">checked</eq> /> 不支持新版导航模版19
+                            </label>
+                        </li>
+					   <if condition="$info['tpltypeid'] eq 118"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/nomenucate118.png" onclick="javascript:alert('已选择模板18')" />
+                                <input class="radio" type="radio" name="optype" value="18" <eq name="info.tpltypeid" value="18">checked</eq> /> 不支持新版导航模版18
+                            </label>
+                        </li>
+					   <if condition="$info['tpltypeid'] eq 17"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/nomenucate117.png" onclick="javascript:alert('已选择模板17')" />
+                                <input class="radio" type="radio" name="optype" value="17" <eq name="info.tpltypeid" value="17">checked</eq> /> 不支持新版导航模版17
+                            </label>
+                        </li>
+					   <if condition="$info['tpltypeid'] eq 16"> <li class="nomenutpl active" ><else/><li class="nomenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/nomenucate116.png" onclick="javascript:alert('已选择模板16')" />
+                                <input class="radio" type="radio" name="optype" value="16" <eq name="info.tpltypeid" value="16">checked</eq> /> 不支持新版导航模版16
+                            </label>
+                        </li>
+					
+					</ul>
+                    <ul class="cateradio yesmenutpl">
+					<if condition="$info['tpltypeid'] eq y70"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate170.png"  onclick="javascript:alert('已选择新版模板70')" >
+                                <input class="radio" type="radio" name="optype" value="y70" <eq name="info.tpltypeid" value="y70">checked</eq> /> 模板70
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y69"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate169.png"  onclick="javascript:alert('已选择新版模板69')" >
+                                <input class="radio" type="radio" name="optype" value="y69" <eq name="info.tpltypeid" value="y69">checked</eq> /> 模板69
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y68"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate168.png"  onclick="javascript:alert('已选择新版模板68')" >
+                                <input class="radio" type="radio" name="optype" value="y68" <eq name="info.tpltypeid" value="y68">checked</eq> /> 模板68
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y67"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate167.png"  onclick="javascript:alert('已选择新版模板67')" >
+                                <input class="radio" type="radio" name="optype" value="y67" <eq name="info.tpltypeid" value="y67">checked</eq> /> 模板67
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y66"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate166.png"  onclick="javascript:alert('已选择新版模板66')" >
+                                <input class="radio" type="radio" name="optype" value="y66" <eq name="info.tpltypeid" value="y66">checked</eq> /> 模板66
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y65"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate165.png"  onclick="javascript:alert('已选择新版模板65')" >
+                                <input class="radio" type="radio" name="optype" value="y65" <eq name="info.tpltypeid" value="y65">checked</eq> /> 模板65
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y64"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate164.png"  onclick="javascript:alert('已选择新版模板64')" >
+                                <input class="radio" type="radio" name="optype" value="y64" <eq name="info.tpltypeid" value="y64">checked</eq> /> 模板64
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y63"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate163.png"  onclick="javascript:alert('已选择新版模板63')" >
+                                <input class="radio" type="radio" name="optype" value="y63" <eq name="info.tpltypeid" value="y63">checked</eq> /> 模板63
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y62"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate162.png"  onclick="javascript:alert('已选择新版模板62')" >
+                                <input class="radio" type="radio" name="optype" value="y62" <eq name="info.tpltypeid" value="y62">checked</eq> /> 模板62
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y61"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate161.png"  onclick="javascript:alert('已选择新版模板61')" >
+                                <input class="radio" type="radio" name="optype" value="y61" <eq name="info.tpltypeid" value="y61">checked</eq> /> 模板61
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y60"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate160.png"  onclick="javascript:alert('已选择新版模板60')" >
+                                <input class="radio" type="radio" name="optype" value="y60" <eq name="info.tpltypeid" value="y60">checked</eq> /> 模板60
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y59"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate159.png"  onclick="javascript:alert('已选择新版模板59')" >
+                                <input class="radio" type="radio" name="optype" value="y59" <eq name="info.tpltypeid" value="y59">checked</eq> /> 模板59
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y58"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate158.png"  onclick="javascript:alert('已选择新版模板58')" >
+                                <input class="radio" type="radio" name="optype" value="y58" <eq name="info.tpltypeid" value="y58">checked</eq> /> 模板58
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y57"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate157.png"  onclick="javascript:alert('已选择新版模板57')" >
+                                <input class="radio" type="radio" name="optype" value="y57" <eq name="info.tpltypeid" value="y57">checked</eq> /> 模板57
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y56"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate156.png"  onclick="javascript:alert('已选择新版模板56')" >
+                                <input class="radio" type="radio" name="optype" value="y56" <eq name="info.tpltypeid" value="y56">checked</eq> /> 模板56
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y55"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate155.png"  onclick="javascript:alert('已选择新版模板55')" >
+                                <input class="radio" type="radio" name="optype" value="y55" <eq name="info.tpltypeid" value="y55">checked</eq> /> 模板55
+                            </label>
+                        </li>
+					<li class="yesmenutpl " <eq name="info.tpltypeid" value="y54"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate154.png"  onclick="javascript:alert('已选择新版模板54')" >
+                                <input class="radio" type="radio" name="optype" value="y54" <eq name="info.tpltypeid" value="y54">checked</eq> /> 模板54
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y53"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate153.png"  onclick="javascript:alert('已选择新版模板53')" >
+                                <input class="radio" type="radio" name="optype" value="y53" <eq name="info.tpltypeid" value="y53">checked</eq> /> 模板53
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y52"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate152.png"  onclick="javascript:alert('已选择新版模板52')" >
+                                <input class="radio" type="radio" name="optype" value="y52" <eq name="info.tpltypeid" value="y52">checked</eq> /> 模板52
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y51"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate151.png"  onclick="javascript:alert('已选择新版模板51')" >
+                                <input class="radio" type="radio" name="optype" value="y51" <eq name="info.tpltypeid" value="y51">checked</eq> /> 模板51
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y50"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate150.png"  onclick="javascript:alert('已选择新版模板50')" >
+                                <input class="radio" type="radio" name="optype" value="y50" <eq name="info.tpltypeid" value="y50">checked</eq> /> 模板50
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y49"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate149.png"  onclick="javascript:alert('已选择新版模板49')" >
+                                <input class="radio" type="radio" name="optype" value="y49" <eq name="info.tpltypeid" value="y49">checked</eq> /> 模板49
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y48"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate148.png"  onclick="javascript:alert('已选择新版模板48')" >
+                                <input class="radio" type="radio" name="optype" value="y48" <eq name="info.tpltypeid" value="y48">checked</eq> /> 模板48
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y47"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate147.png"  onclick="javascript:alert('已选择新版模板47')" >
+                                <input class="radio" type="radio" name="optype" value="y47" <eq name="info.tpltypeid" value="y47">checked</eq> /> 模板47
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y46"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate146.png"  onclick="javascript:alert('已选择新版模板46')" >
+                                <input class="radio" type="radio" name="optype" value="y46" <eq name="info.tpltypeid" value="y46">checked</eq> /> 模板46
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y45"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate145.png"  onclick="javascript:alert('已选择新版模板45')" >
+                                <input class="radio" type="radio" name="optype" value="y45" <eq name="info.tpltypeid" value="y45">checked</eq> /> 模板45
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y44"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate144.png"  onclick="javascript:alert('已选择新版模板44')" >
+                                <input class="radio" type="radio" name="optype" value="y44" <eq name="info.tpltypeid" value="y44">checked</eq> /> 模板44
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y43"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate143.png"  onclick="javascript:alert('已选择新版模板43')" >
+                                <input class="radio" type="radio" name="optype" value="y43" <eq name="info.tpltypeid" value="y43">checked</eq> /> 模板43
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y42"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate142.png"  onclick="javascript:alert('已选择新版模板42')" >
+                                <input class="radio" type="radio" name="optype" value="y42" <eq name="info.tpltypeid" value="y42">checked</eq> /> 模板42
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y41"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate141.png"  onclick="javascript:alert('已选择新版模板41')" >
+                                <input class="radio" type="radio" name="optype" value="y41" <eq name="info.tpltypeid" value="y41">checked</eq> /> 模板41
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y40"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate140.png"  onclick="javascript:alert('已选择新版模板40')" >
+                                <input class="radio" type="radio" name="optype" value="y40" <eq name="info.tpltypeid" value="y40">checked</eq> /> 模板40
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y39"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate139.png"  onclick="javascript:alert('已选择新版模板39')" >
+                                <input class="radio" type="radio" name="optype" value="y39" <eq name="info.tpltypeid" value="y39">checked</eq> /> 模板39
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y38"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate138.png"  onclick="javascript:alert('已选择新版模板38')" >
+                                <input class="radio" type="radio" name="optype" value="y38" <eq name="info.tpltypeid" value="y38">checked</eq> /> 模板38
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y37"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate137.png"  onclick="javascript:alert('已选择新版模板37')" >
+                                <input class="radio" type="radio" name="optype" value="y37" <eq name="info.tpltypeid" value="y37">checked</eq> /> 模板37
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y36"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate136.png"  onclick="javascript:alert('已选择新版模板36')" >
+                                <input class="radio" type="radio" name="optype" value="y36" <eq name="info.tpltypeid" value="y36">checked</eq> /> 模板36
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y35"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate135.png"  onclick="javascript:alert('已选择新版模板35')" >
+                                <input class="radio" type="radio" name="optype" value="y35" <eq name="info.tpltypeid" value="y35">checked</eq> /> 模板35
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y34"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate134.png"  onclick="javascript:alert('已选择新版模板34')" >
+                                <input class="radio" type="radio" name="optype" value="y34" <eq name="info.tpltypeid" value="y34">checked</eq> /> 模板34
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y33"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate133.png"  onclick="javascript:alert('已选择新版模板33')" >
+                                <input class="radio" type="radio" name="optype" value="y33" <eq name="info.tpltypeid" value="y33">checked</eq> /> 模板33
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y32"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate132.png"  onclick="javascript:alert('已选择新版模板32')" >
+                                <input class="radio" type="radio" name="optype" value="y32" <eq name="info.tpltypeid" value="y32">checked</eq> /> 模板32
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y31"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate131.png"  onclick="javascript:alert('已选择新版模板31')" >
+                                <input class="radio" type="radio" name="optype" value="y31" <eq name="info.tpltypeid" value="y31">checked</eq> /> 模板31
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y30"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate130.png"  onclick="javascript:alert('已选择新版模板30')" >
+                                <input class="radio" type="radio" name="optype" value="y30" <eq name="info.tpltypeid" value="y30">checked</eq> /> 模板30
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y29"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate129.png"  onclick="javascript:alert('已选择新版模板29')" >
+                                <input class="radio" type="radio" name="optype" value="y29" <eq name="info.tpltypeid" value="y29">checked</eq> /> 模板29
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y28"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate128.png"  onclick="javascript:alert('已选择新版模板28')" >
+                                <input class="radio" type="radio" name="optype" value="y28" <eq name="info.tpltypeid" value="y28">checked</eq> /> 模板28
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y27"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate127.png"  onclick="javascript:alert('已选择新版模板27')" >
+                                <input class="radio" type="radio" name="optype" value="y27" <eq name="info.tpltypeid" value="y27">checked</eq> /> 模板27
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y26"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate126.png"  onclick="javascript:alert('已选择新版模板26')" >
+                                <input class="radio" type="radio" name="optype" value="y26" <eq name="info.tpltypeid" value="y26">checked</eq> /> 模板26
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y25"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate125.png"  onclick="javascript:alert('已选择新版模板25')" >
+                                <input class="radio" type="radio" name="optype" value="y25" <eq name="info.tpltypeid" value="y25">checked</eq> /> 模板25
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y24"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate124.png"  onclick="javascript:alert('已选择新版模板24')" >
+                                <input class="radio" type="radio" name="optype" value="y24" <eq name="info.tpltypeid" value="y24">checked</eq> /> 模板24
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y23"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate123.png"  onclick="javascript:alert('已选择新版模板23')" >
+                                <input class="radio" type="radio" name="optype" value="y23" <eq name="info.tpltypeid" value="y23">checked</eq> /> 模板23
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y22"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate122.png"  onclick="javascript:alert('已选择新版模板22')" >
+                                <input class="radio" type="radio" name="optype" value="y22" <eq name="info.tpltypeid" value="y22">checked</eq> /> 模板22
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y21"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate121.png"  onclick="javascript:alert('已选择新版模板21')" >
+                                <input class="radio" type="radio" name="optype" value="y21" <eq name="info.tpltypeid" value="y21">checked</eq> /> 模板21
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y20"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate120.png"  onclick="javascript:alert('已选择新版模板20')" >
+                                <input class="radio" type="radio" name="optype" value="y20" <eq name="info.tpltypeid" value="y20">checked</eq> /> 模板20
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y19"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate119.png"  onclick="javascript:alert('已选择新版模板19')" >
+                                <input class="radio" type="radio" name="optype" value="y19" <eq name="info.tpltypeid" value="y19">checked</eq> /> 模板19
+                            </label>
+                        </li>
+					   <if condition="$info['tpltypeid'] eq y18"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate118.png"  onclick="javascript:alert('已选择新版模板18')" >
+                                <input class="radio" type="radio" name="optype" value="y18" <eq name="info.tpltypeid" value="y18">checked</eq> /> 模板18
+                            </label>
+                        </li>
+					<if condition="$info['tpltypeid'] eq y17"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate117.png"  onclick="javascript:alert('已选择新版模板17')" >
+                                <input class="radio" type="radio" name="optype" value="y17" <eq name="info.tpltypeid" value="y17">checked</eq> /> 模板17
+                            </label>
+                        </li>
+					 <if condition="$info['tpltypeid'] eq y16"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate116.png"  onclick="javascript:alert('已选择新版模板16')" >
+                                <input class="radio" type="radio" name="optype" value="y16" <eq name="info.tpltypeid" value="y16">checked</eq> /> 模板16
+                            </label>
+                        </li>
+					   <if condition="$info['tpltypeid'] eq 15"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate115.png"  onclick="javascript:alert('已选择新版模板15')" >
+                                <input class="radio" type="radio" name="optype" value="15" <eq name="info.tpltypeid" value="15">checked</eq> /> 模板15
+                            </label>
+                        </li>
+                       <if condition="$info['tpltypeid'] eq 14"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate114.png"  onclick="javascript:alert('已选择新版模板14')" >
+                                <input class="radio" type="radio" name="optype" value="14" <eq name="info.tpltypeid" value="14">checked</eq> /> 模板14
+                            </label>
+                        </li>
+                       <if condition="$info['tpltypeid'] eq 13"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate113.png"  onclick="javascript:alert('已选择新版模板13')" >
+                                <input class="radio" type="radio" name="optype" value="13" <eq name="info.tpltypeid" value="13">checked</eq> /> 模板13
+                            </label>
+                        </li>
+                       <if condition="$info['tpltypeid'] eq 12"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate112.png"  onclick="javascript:alert('已选择新版模板12')" >
+                                <input class="radio" type="radio" name="optype" value="12" <eq name="info.tpltypeid" value="12">checked</eq> /> 模板12
+                            </label>
+                        </li>
+                       <if condition="$info['tpltypeid'] eq 11"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate111.png"  onclick="javascript:alert('已选择新版模板11')" >
+                                <input class="radio" type="radio" name="optype" value="11" <eq name="info.tpltypeid" value="11">checked</eq> /> 模板11
+                            </label>
+                        </li>
+                       <if condition="$info['tpltypeid'] eq 10"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate110.png"  onclick="javascript:alert('已选择新版模板10')" >
+                                <input class="radio" type="radio" name="optype" value="10" <eq name="info.tpltypeid" value="10">checked</eq> /> 模板10 
+                            </label>
+                        </li>
+                       <if condition="$info['tpltypeid'] eq 9"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate109.png"  onclick="javascript:alert('已选择新版模板9')" >
+                                <input class="radio" type="radio" name="optype" value="9" <eq name="info.tpltypeid" value="9">checked</eq> /> 模板9 
+                            </label>
+                        </li>
+                       <if condition="$info['tpltypeid'] eq 8"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate108.png"  onclick="javascript:alert('已选择新版模板8')" >
+                                <input class="radio" type="radio" name="optype" value="8" <eq name="info.tpltypeid" value="8">checked</eq> /> 模板8
+                            </label>
+                        </li>
+                       <if condition="$info['tpltypeid'] eq 7"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate107.png"  onclick="javascript:alert('已选择新版模板7')" >
+                                <input class="radio" type="radio" name="optype" value="7" <eq name="info.tpltypeid" value="7">checked</eq> /> 模板7 
+                            </label>
+                        </li>
+                       <if condition="$info['tpltypeid'] eq 6"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate106.png"  onclick="javascript:alert('已选择新版模板6')" >
+                                <input class="radio" type="radio" name="optype" value="6" <eq name="info.tpltypeid" value="6">checked</eq> /> 模板6 
+                            </label>
+                        </li>
+                       <if condition="$info['tpltypeid'] eq 5"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if><label>
+                                <img src="{ZF::RES}/images/cate5.png"  onclick="javascript:alert('已选择新版模板5')" >
+                                <input class="radio" type="radio" name="optype" value="5" <eq name="info.tpltypeid" value="5">checked</eq> /> 模板5 
+                            </label>
+                        </li>
+                       <if condition="$info['tpltypeid'] eq 4"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate4.png" onclick="javascript:alert('已选择模板4')" />
+                                <input class="radio" type="radio" name="optype" value="4" <eq name="info.tpltypeid" value="4">checked</eq> /> 模板4 
+                            </label>
+                        </li>
+                       <if condition="$info['tpltypeid'] eq 3"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate3.png" onclick="javascript:alert('已选择模板3')" />
+                                <input class="radio" type="radio" name="optype" value="3" <eq name="info.tpltypeid" value="3">checked</eq> />模板3
+                            </label>
+                        </li>
+                       <if condition="$info['tpltypeid'] eq 2"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate2.png" onclick="javascript:alert('已选择模板2')" />
+                                <input class="radio" type="radio" name="optype" value="2" <eq name="info.tpltypeid" value="2">checked</eq> /> 模板2 
+                            </label>
+                        </li>
+                       <if condition="$info['tpltypeid'] eq 1"> <li class="yesmenutpl active" ><else/><li class="yesmenutpl"></if>
+                            <label>
+                                <img src="{ZF::RES}/images/cate1.png" onclick="javascript:alert('已选择模板1')" />
+                                <input class="radio" type="radio" name="optype" value="1" <eq name="info.tpltypeid" value="1">checked</eq> /> 模板1 
+                            </label>
+                        </li>
+                    </ul>
+                </fieldset>
+            </div>
+            <div class="tagContent" id="tagContent1">
+                <fieldset>
+                    <ul class="cateradio2">
+                        <!-- <li <eq name="info.tpllistid" value="01">class="active"</eq> >
+                            <label><img src="{ZF::RES}/images/list1.png">
+                                <input class="radio2" type="radio" name="optype2" value="01" <eq name="info.tpllistid" value="01">checked</eq> /> 模板1(省流量)
+                            </label>
+                        </li>
+                        <li <eq name="info.tpllistid" value="02">class="active"</eq>>
+                            <label><img src="{ZF::RES}/images/list2.png">
+                                <input class="radio2" type="radio" name="optype2" value="02" <eq name="info.tpllistid" value="02">checked</eq> /> 模板2(美观)
+                            </label>
+                        </li>
+						<li <eq name="info.tpllistid" value="3">class="active"</eq>>
+                            <label><img src="{ZF::RES}/images/list3.png">
+                                <input class="radio2" type="radio" name="optype2" value="3" <eq name="info.tpllistid" value="3">checked</eq> /> 简洁列表模式
+                            </label>
+                        </li>
+						<li <eq name="info.tpllistid" value="4">class="active"</eq>>
+                            <label><img src="{ZF::RES}/images/list4.png">
+                                <input class="radio2" type="radio" name="optype2" value="4" <eq name="info.tpllistid" value="4">checked</eq> /> 新闻图文列表模式
+                            </label>
+                        </li>
+						<li <eq name="info.tpllistid" value="5">class="active"</eq>>
+                            <label><img src="{ZF::RES}/images/list5.png">
+                                <input class="radio2" type="radio" name="optype2" value="5" <eq name="info.tpllistid" value="5">checked</eq> /> 格状酷似微信列表
+                            </label>
+                        </li>
+						<li <eq name="info.tpllistid" value="6">class="active"</eq>>
+                            <label><img src="{ZF::RES}/images/list6.png">
+                                <input class="radio2" type="radio" name="optype2" value="6" <eq name="info.tpllistid" value="6">checked</eq> /> 切图列表模式
+                            </label>
+                        </li>-->
+						<li <eq name="info.tpllistid" value="0">class="active"</eq>>
+							<label><img src="{ZF::RES}/tmplimg/list-0.png" onclick="javascript:alert('列表0')" />
+								<input class="radio2" type="radio" name="optype2" value="0" <eq name="info.tpllistid" value="0">checked</eq> /> 列表0 
+							</label>
+						</li>
+						<li <eq name="info.tpllistid" value="1">class="active"</eq>>
+							<label><img src="{ZF::RES}/tmplimg/list-1.png" onclick="javascript:alert('列表1')" /> 
+								<input class="radio2" type="radio" name="optype2" value="1" <eq name="info.tpllistid" value="1">checked</eq> /> 列表1
+							</label>
+						</li>
+						<li <eq name="info.tpllistid" value="2">class="active"</eq>>
+							<label><img src="{ZF::RES}/tmplimg/list-2.png" onclick="javascript:alert('列表2')" /> 
+								<input class="radio2" type="radio" name="optype2" value="2" <eq name="info.tpllistid" value="2">checked</eq> /> 列表2
+							</label>
+						</li>
+						<li <eq name="info.tpllistid" value="3">class="active"</eq>>
+							<label><img src="{ZF::RES}/tmplimg/list-3.png" onclick="javascript:alert('列表3')" /> 
+								<input class="radio2" type="radio" name="optype2" value="3" <eq name="info.tpllistid" value="3">checked</eq> />列表3
+							</label>
+						</li>
+						<li	class=" <eq name="info.tpllistid" value="4"> class=" active "</eq> >
+							<label><img src="{ZF::RES}/tmplimg/list-4.png" onclick="javascript:alert('列表4')" /> 
+								<input class="radio2" type="radio" name="optype2" value="4" <eq name="info.tpllistid" value="4">checked</eq> /> 列表4 
+							</label>
+						</li>
+						<li <eq name="info.tpllistid" value="5">class="active"</eq>>
+							<label><img src="{ZF::RES}/tmplimg/list-5.png" onclick="javascript:alert('列表5')" /> 
+								<input class="radio2" type="radio" name="optype2" value="5" <eq name="info.tpllistid" value="5">checked</eq> /> 列表5 
+							</label>
+						</li>
+						<li <eq name="info.tpllistid" value="6">class="active"</eq>>
+							<label><img src="{ZF::RES}/tmplimg/list-6.png" onclick="javascript:alert('列表6')" /> 
+								<input class="radio2" type="radio" name="optype2" value="6" <eq name="info.tpllistid" value="6">checked</eq> /> 列表6 
+							</label>
+						</li>
+						<li <eq name="info.tpllistid" value="7">class="active"</eq>>
+							<label><img src="{ZF::RES}/tmplimg/list-7.png" onclick="javascript:alert('列表7')" />
+								<input class="radio2" type="radio" name="optype2" value="7" <eq name="info.tpllistid" value="7">checked</eq> /> 列表7 
+							</label>
+						</li>
+						<li <eq name="info.tpllistid" value="8">class="active"</eq>>
+							<label><img src="{ZF::RES}/tmplimg/list-8.png" onclick="javascript:alert('列表8')" /> 
+								<input class="radio2" type="radio" name="optype2" value="8" <eq name="info.tpllistid" value="8">checked</eq> /> 列表8 
+							</label>
+						</li>
+                    </ul>
+                </fieldset>
+            </div>
+            <div class="tagContent" id="tagContent2">
+			<fieldset>
+			<ul class="cateradio3">
+			<li <eq name="info.tplcontentid" value="1">class="active"</eq> style="margin:10px 30px 30px;"><label><img src="{ZF::RES}/images/news1.png" onclick="javascript:alert('已选择模板1')" /><input class="radio3" type="radio" name="optype3" value="1" <eq name="info.tplcontentid" value="1">checked</eq>/>模板1</label></li>
+			<li <eq name="info.tplcontentid" value="2">class="active"</eq> style="margin:10px 30px 30px;"><label><img src="{ZF::RES}/images/news2.png" onclick="javascript:alert('已选择模板2')" /><input class="radio3" type="radio" name="optype3" value="2" <eq name="info.tplcontentid" value="2">checked</eq>/>模板2</label></li>
+			<li <eq name="info.tplcontentid" value="3">class="active"</eq> style="margin:10px 30px 30px;"><label><img src="{ZF::RES}/images/news3.png" onclick="javascript:alert('已选择模板3')" /><input class="radio3" type="radio" name="optype3" value="3" <eq name="info.tplcontentid" value="3">checked</eq>/>模板3</label></li>
+			<li <eq name="info.tplcontentid" value="4">class="active"</eq> style="margin:10px 30px 30px;"><label><img src="{ZF::RES}/tmplimg/detail-0.png" onclick="javascript:alert('已选择详情1')"/><input class="radio3" type="radio" name="optype3" value="4" <eq name="info.tplcontentid" value="4">checked</eq> />详情1</label></li>
+			<li <eq name="info.tplcontentid" value="5">class="active"</eq> style="margin:10px 30px 30px;"><label><img src="{ZF::RES}/tmplimg/detail-1.png" onclick="javascript:alert('已选择详情2')"/><input class="radio3" type="radio" name="optype3" value="5" <eq name="info.tplcontentid" value="5">checked</eq>/>详情2</label></li>
+			<li <eq name="info.tplcontentid" value="6">class="active"</eq> style="margin:10px 30px 30px;"><label><img src="{ZF::RES}/tmplimg/detail-2.png" onclick="javascript:alert('已选择详情3')"/><input class="radio3" type="radio" name="optype3" value="6" <eq name="info.tplcontentid" value="6">checked</eq>/>详情3</label></li>
+			<li <eq name="info.tplcontentid" value="7">class="active"</eq> style="margin:10px 30px 30px;"><label><img src="{ZF::RES}/tmplimg/detail-3.png" onclick="javascript:alert('已选择详情4')"/><input class="radio3" type="radio" name="optype3" value="7" <eq name="info.tplcontentid" value="7">checked</eq>/>详情4</label></li>
+			</ul>
+			</fieldset>
+            </div>
+			<div class="tagContent" id="tagContent5">
+			<fieldset>
+			  <ul class="cateradio5">
+				<li 
+				<eq name="info.tplcontentid" value="0">class="active"</eq> style="margin:10px 30px 30px 30px;"   >
+				<label><img src="{ZF::RES}/tmplimg/menu-0.png" onclick="javascript:alert('已选择导航1')" /><input class="radio5" type="radio" name="optype5" value="0" 
+				  <eq name="info.tplcontentid" value="0">checked</eq>
+				  />导航1</label>
+				</li>
+				<li 
+				<eq name="info.tplcontentid" value="1">class="active"</eq> style="margin:10px 30px 30px 30px;"   >
+				<label><img src="{ZF::RES}/tmplimg/menu-1.png" onclick="javascript:alert('已选择导航2')" /><input class="radio5" type="radio" name="optype5" value="1" 
+				  <eq name="info.tplcontentid" value="1">checked</eq>
+				  />导航2</label>
+				</li>
+				<li 
+				<eq name="info.tplcontentid" value="2">class="active"</eq> style="margin:10px 30px 30px 30px;"   >
+				<label><img src="{ZF::RES}/tmplimg/menu-2.png" onclick="javascript:alert('已选择导航3')"/ ><input class="radio5" type="radio" name="optype5" value="2" 
+				  <eq name="info.tplcontentid" value="2">checked</eq>
+				  />导航3</label>
+				</li>
+				<li <eq name="info.tplcontentid" value="3">class="active"</eq> style="margin:10px 30px 30px 30px;"   >
+				<label><img src="{ZF::RES}/tmplimg/menu-3.png" onclick="javascript:alert('已选择导航4')"/ ><input class="radio5" type="radio" name="optype5" value="3" 
+				  <eq name="info.tplcontentid" value="3">checked</eq>/>导航4</label>
+				</li>
+			  </ul>
+			</fieldset>
+		  </div>
+            <div class="tagContent" id="tagContent3">
+                <fieldset>
+                    <div class="cateradio4">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr>
+                                    <td width="400" rowspan="2" valign="top">
+                                        <div class="samsung-render">
+										<iframe src="{ZF::U('Wap/Index/index',array('token'=>$info['token'],'show'=>1))}" id="myiframe" width="320" height="406" frameborder="0" style="overflow-x:hidden;"></iframe>
+                                        </div>
+                                    </td>
+                                    <td valign="top"><h3>请选择你喜欢的颜色风格，实时预览 (<span style="color:#c30">注意：只有在手机上才能获得最佳浏览效果，电脑浏览并不一定是最终显示效果，并且仅部分模板支持更换颜色风格</span>)</h3>
+                                        <ul>
+                                            <li><label><input class="radio4" type="radio" name="optype4" value="0" <eq name="info.color_id" value="0">checked="checked"</eq>> 默认风格</label></li>
+                                            <li><label><input class="radio4" type="radio" name="optype4" value="1" <eq name="info.color_id" value="1">checked="checked"</eq>> 黑色风格</label></li>
+                                            <li><label><input class="radio4" type="radio" name="optype4" value="2" <eq name="info.color_id" value="2">checked="checked"</eq>> 蓝色风格</label></li>
+                                            <li><label><input class="radio4" type="radio" name="optype4" value="3" <eq name="info.color_id" value="3">checked="checked"</eq>> 木纹风格</label></li>
+                                            <li><label><input class="radio4" type="radio" name="optype4" value="4" <eq name="info.color_id" value="4">checked="checked"</eq>> 橙色风格</label></li>
+                                            <li><label><input class="radio4" type="radio" name="optype4" value="5" <eq name="info.color_id" value="5">checked="checked"</eq>> 紫色风格</label></li>
+                                            <li><label><input class="radio4" type="radio" name="optype4" value="6" <eq name="info.color_id" value="6">checked="checked"</eq>> 绿色风格</label></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="clr"></div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            function selectTag(showContent,selfObj){
+                // 操作标签
+                var tag = document.getElementById("tags").getElementsByTagName("li");
+                var taglength = tag.length;
+                for(i=0; i<taglength; i++){
+                    tag[i].className = "";
+                }
+                selfObj.parentNode.className = "selectTag";
+                // 操作内容
+                for(i=0; j=document.getElementById("tagContent"+i); i++){
+                    j.style.display = "none";
+                }
+                document.getElementById(showContent).style.display = "block";
+
+
+            }
+        </script>
+
+
+        <script>
+			var $ = jQuery;
+           jQuery(".filter").click(function(){
+               jQuery(".filterBtn li").each(function(){
+                   jQuery(this).removeClass("active");
+                });
+                jQuery(this).addClass("active");
+			    jQuery(".cateradio li").each(function(){
+				 jQuery(this).hide();
+				});
+				switch (jQuery(this).attr('data-filter')){
+				case('nofootmenu'):
+					jQuery("li.nomenutpl").show('slow');
+					break;
+				case('zzfootmenu'):
+					jQuery("li.yesmenutpl").show('slow');
+					break;
+				default:
+					jQuery(".cateradio li").show('slow');
+				}
+                //var myurl='index.php?g=User&m=Tmpls&a=add&style='+$(this).val()+'&r='+Math.random(); 
+                //$.ajax({url:myurl,async:false});
+               // $("#myiframe").attr("src",$("#myiframe").attr("src")+'&r='+Math.random());
+
+
+            });
+            $(".radio").click(function(){
+                $(".cateradio li").each(function(){
+                    $(this).removeClass("active");
+                });
+                $(this).parents("li").addClass("active");
+                var myurl='index.php?g=User&m=Tmpls&a=add&style='+$(this).val()+'&r='+Math.random(); 
+                $.ajax({url:myurl,async:false});
+                $("#myiframe").attr("src",$("#myiframe").attr("src")+'&r='+Math.random());
+
+
+            });
+            $(".radio2").click(function(){
+                $(".cateradio2 li").each(function(){
+                    $(this).removeClass("active");
+                });
+                $(this).parents("li").addClass("active");
+  
+                var myurl ='index.php?g=User&m=Tmpls&a=lists&style='+$(this).val()+'&r='+Math.random(); 
+                $.ajax({url:myurl,async:false});
+
+
+            });
+            $(".radio3").click(function(){
+                $(".cateradio3 li").each(function(){
+                    $(this).removeClass("active");
+                });
+                $(this).parents("li").addClass("active");
+  
+                var myurl='index.php?g=User&m=Tmpls&a=content&style='+$(this).val()+'&r='+Math.random(); 
+                $.ajax({url:myurl,async:false});
+
+            });
+            $(".radio4").click(function(){
+                var myurl='index.php?g=User&m=Tmpls&a=background&style='+$(this).val()+'&r='+Math.random(); 
+                $.ajax({url:myurl,async:false});
+                $("#myiframe").attr("src",$("#myiframe").attr("src")+'&r='+Math.random());
+            });
+            function changeapp(obj,gid){
+                if(obj.checked==true){
+                    //var image=new Image();   
+                    var myurl='index.php?ac=app&op=open&value=1&id=9379&wxid=gh_858dwjkeww5&openid='+gid+'&r='+Math.random(); 
+                    $.ajax({url:myurl,async:false});
+
+                }else{
+ 
+                    var myurl='index.php?ac=app&op=open&value=0&id=9379&wxid=gh_858dwjkeww5&openid='+gid+'&r='+Math.random(); 
+                    $.ajax({url:myurl,async:false});
+
+                }
+            }
+			//jQuery.noConflict(); 
+        </script>
+
+
+        <div class="clr"></div>
+    </div>
+
+</div>
+
+<div class="clr"></div>
+</div>
+</div>
+</div> 
+<!--底部-->
+</div><script>
+    KindEditor.ready(function(K) {
+        var editor = K.editor({
+            allowFileManager : true
+        });
+
+        K('#image').click(function() {
+            editor.loadPlugin('image', function() {
+                editor.plugin.imageDialog({
+                    showRemote : false,
+                    imageUrl : K('#img').val(),
+                    clickFn : function(url, title, width, height, border, align) {
+                        K('#img').val(url);
+                        var show_img = '<img src = "' + url + '" width="80" height="80" />';
+                        $('#show_img').html(show_img);
+                        editor.hideDialog();
+                    }
+                });
+            });
+        });
+    });
+</script>
+<include file="Public:footer"/>

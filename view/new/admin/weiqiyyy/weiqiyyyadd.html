@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<!-- Apple devices fullscreen -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<!-- Apple devices fullscreen -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<base target="mainFrame" />
+<link rel="stylesheet" type="text/css" href="{$CSS}wm/index.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{$CSS}wm/bootstrap_min.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{$CSS}wm/bootstrap_responsive_min.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{$CSS}wm/style.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{$CSS}wm/themes.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{$CSS}wm/todc_bootstrap.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{$CSS}wm/inside.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{$CSS}wm/album.css" media="all" />
+<title>{$_SERVER['WEB_NAME']}—国内最大的微信公众服务平台</title>
+<link rel="shortcut icon" href="/favicon.ico" />
+</head>
+<body class="{Session::get('maintheme')}">
+	<div id="main">
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="span12">
+					<div class="box">
+						<div class="box-title">
+							<div class="span12">
+								<h3><i class="icon-cog"></i>添加活动</h3>
+							</div>
+						</div>
+						<div class="box-content">
+							<form action="" method="post" class="form-horizontal form-validate">{tk()}{$m->hidden('id')}
+							<input type="hidden" name="aid" id="aid" value="33260"/>
+								<div class="control-group">
+									<label for="title" class="control-label">活动名称：</label>
+									<div class="controls">
+									{$m->text('acttitle','class="input-large" required="required"')}
+										<span class="maroon">*</span>
+										<span class="help-inline">尽量简单，不要超过10字</span>
+									</div>
+								</div>
+								<div class="control-group">
+									<label for="title" class="control-label">摇晃类型：</label>
+									<div class="controls">
+									{$m->text('isopen','class="input-large" required="required"')}
+										<span class="maroon">*</span>
+										<span class="help-inline">1为以手机竖直中轴线垂直地面的为临界点，左右摇省力<BR>2为以手机摇晃时达到一定的加速度值为一次来计算，较费力，但不用考虑方向</span>
+									</div>
+								</div>
+								<div class="control-group">
+									<label for="title" class="control-label">客户端传输间隔：</label>
+									<div class="controls">
+									{$m->text('clienttime','class="input-large" required="required"')}
+										<span class="maroon">*</span>
+										<span class="help-inline"> 数字越大服务器负担越小，但是要考虑客户体验! </span>
+									</div>
+								</div>
+								<div class="control-group">
+									<label for="title" class="control-label">前台页面传输间隔：</label>
+									<div class="controls">
+									{$m->text('showtime','class="input-large" required="required"')}
+										<span class="maroon">*</span>
+										<span class="help-inline"> 数字越大服务器负担越小，但是要考虑客户体验! </span>
+									</div>
+								</div>
+								<div class="control-group">
+									<label for="title" class="control-label">游戏开始倒数计时：</label>
+									<div class="controls">
+									{$m->text('starttime','class="input-large" required="required"')}
+										<span class="maroon">*</span>
+										<span class="help-inline"> 倒计时时间 单位秒，比如3秒填写值3 </span>
+									</div>
+								</div>
+								<div class="control-group">
+									<label for="title" class="control-label">截止摇晃数：</label>
+									<div class="controls">
+									{$m->text('endshake','class="input-large" required="required"')}
+										<span class="maroon">*</span>
+										<span class="help-inline"> 当有用户达到此数值时，游戏结束。 </span>
+									</div>
+								</div>
+								<div class="control-group">
+									<label for="title" class="control-label">前台页面展示人数：</label>
+									<div class="controls">
+									{$m->text('shownum','class="input-large" required="required"')}
+										<span class="maroon">*</span>
+										<span class="help-inline"> 当有用户达到此数值时，游戏结束。 </span>
+									</div>
+								</div>
+								<div class="control-group">
+                                    <label class="control-label" for="brief">客户端起始音效: </label>
+                                    <div class="controls">
+										<?php echo $m->textarea('pass3','class="input-large" style="height:80px;width:380px;"'); ?>	
+                                        <span class="maroon">*</span>
+                                        <span class="help-block">提醒用户开始摇一摇的音效.填写音乐外联地址！请用MP3或者MAV格式的！<br>
+                                        示例：http://www.weiqimobile.com/music/qingyinyue.MP3</span>
+                                    </div>
+                                </div>
+								<div class="control-group">
+                                    <label class="control-label" for="brief">前台背景音乐: </label>
+                                    <div class="controls">
+										<?php echo $m->textarea('pass2','class="input-large" style="height:80px;width:380px;"'); ?>	
+                                        <span class="maroon">*</span>
+                                        <span class="help-block">填写音乐外联地址！请用MP3或者MAV格式的！<br>
+                                        示例：http://www.weiqimobile.com/music/qingyinyue.MP3</span>
+                                    </div>
+                                </div>
+								<div class="control-group">
+                                    <label class="control-label" for="cover">前台页面背景：</label>
+									  <div class="controls">
+										<img class="thumb_img" src="{$m->pass;}" id="pic_pic1" style="max-height:100px;" />
+										 {$m->hidden('pass')}
+										<span class="help-inline">
+											<button class="btn select_img" type="button" onclick="setpic('pic_pic1','weiqi_yyypic');">选择背景图片</button>
+											<span class="help-inline">定义前台页面背景,建议图片大小不超过300K</span>
+										</span>
+									</div>
+                                </div>
+								
+								<input type="hidden" name="id" value="47">
+								<div class="form-actions">
+									<button type="submit" id="bsubmit" data-loading-text="提交中..." class="btn btn-primary">保存</button>
+									<button type="button" class="btn" onclick="window.history.go(-1);">取消</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<br/><br/><br/></body>
+<script type="text/javascript">
+		window.document.onkeydown = function(e) {
+			if ('' == document.activeElement.id) {
+				var e=e || event;
+　 				var currKey=e.keyCode || e.which || e.charCode;
+				if (8 == currKey) {
+					return false;
+				}
+			}
+		};	
+	 function setpic(imgid,hideid){
+		window.piccbk = function(m){
+			$('#'+imgid).attr('src',m);
+			$('#'+hideid).val(m);
+			window.piccbk = null;
+		}
+		window.curpic = null;
+		openpicset();	
+	} 
+</script>
+<script type="text/javascript" src="<?php echo $JS; ?>comm.js"></script>
+</html>

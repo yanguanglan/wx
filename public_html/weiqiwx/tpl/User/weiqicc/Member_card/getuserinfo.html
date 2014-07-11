@@ -1,0 +1,117 @@
+<include file="Public:head"/>  
+<link rel="stylesheet" type="text/css" href="{ZF::RES}/css/cymain.css" />
+<div class="content" style=" border:none; border:none; margin-bottom:30px;" >
+<link rel="stylesheet" type="text/css" href="/css/wm/bootstrap_min.css?dddf" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/bootstrap_responsive_min.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/style.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/themes.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/todc_bootstrap.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/inside.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/album.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/uploadify_t.css" media="all" />
+ <script type="text/javascript" src="/@system/js/yyucadapter.js"></script>
+<script type="text/javascript" src="/res/mbaudio/inc/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="/res/mbaudio/inc/jquery.mb.miniPlayer.js"></script>
+<link rel="stylesheet" type="text/css" href="/uploadify/uploadify.css">
+<script type="text/javascript" src="/uploadify/jquery.uploadify.js"></script>
+<link rel="stylesheet" type="text/css" href="/res/mbaudio/css/miniplayer.css" title="style" media="screen"/>
+<style>.ListProduct tr{text-align:center;}</style>
+<div id="main">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="box">
+                    <div class="box-title">
+                        <div class="span10">
+                                <h3><i class="icon-edit"></i>会员卡信息</h3>
+                            </div>
+						<div class="span2">
+                            <a class="btn" href="javascript:history.go(-1);">返回</a> 
+                        </div>
+						</div>
+                        <div class="box-content" >
+						<div  class="alert">在这里你可以看到会员的一些基本信息</div>
+						
+        
+
+ </div>
+          <div class="msgWrap">
+        
+          <input name="delall"  type="hidden" value="del" />
+           <input name="wxid"  type="hidden" value="gh_423dwjkewad" />
+            <TABLE class="table table-bordered table-hover dataTable">
+         
+                <TR>				 
+					<TH>会员编号</TH>
+					<TD>{ZF:$list.id} </TD>				 
+                </TR>
+				<TR>
+					<TH>微信名称</TH>	
+					<TD>{ZF:$list.wechaname} </TD>
+				</TR>
+         		<TR>
+					<TH>真实姓名</TH>				
+					<TD>{ZF:$list.truename} </TD>
+				<TR>
+					<TH>联系电话</TH>			
+					<TD>{ZF:$list.tel} </TD>
+				</TR>
+				<TR>
+					<TH>QQ 号码</TH>	
+					<TD>{ZF:$list.qq} </TD> 
+				</TR>
+				<TR>
+					<TH>性	&nbsp;&nbsp;别</TH>
+				    <TD><if condition="$list['sex'] eq 1">男<else/>女</if></TD>
+				</TR>
+				<TR>					
+					<TH>年	&nbsp;&nbsp;龄</TH>
+					<TD>{ZF:$list.age} </TD>   
+				</TR>
+				<TR>
+					<TH>生	&nbsp;&nbsp;日</TH>
+					<TD><if condition="$list['birthday']">{ZF:$list.birthday}<else/>会员未曾提交生日信息</if> </TD>
+				</TR>
+				<TR>
+					<TH>地    &nbsp;&nbsp;址</TH>
+					<TD><if condition="$list['address']">{ZF:$list.address} <else/>会员未曾提交生日信息</if> </TD>
+				</TR>
+				<TR>
+					<TH>领卡时间</TH>	
+					<TD>{ZF:$list.getcardtime|date='Y-m-d',###} </TD>
+				</TR>
+				<TR> 
+					<TH>账户余额</TH>	
+					<TD>{ZF:$list.account} 元</TD>
+                </TR>
+				<TR>
+					<TH>备    &nbsp;&nbsp;注</TH>
+					<TD>{ZF:$list.info} </TD>
+				</TR>
+                <TR>                 
+                </TR>
+			
+            
+            </TABLE>
+         
+          
+          </div>
+            
+
+ 
+ 
+          <div class="cLine">
+            <div class="pageNavigator right">
+                 <div class="pages"></div>
+              </div>
+            <div class="clr"></div>
+          </div>
+        </div>
+
+        <div class="clr"></div>
+      </div>
+    </div>
+  </div>
+
+  	</div>
+<include file="Public:footer"/>  

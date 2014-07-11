@@ -1,0 +1,54 @@
+<include file="Public:head"/>
+<div class="content" style="" >
+<div class="cLineB">
+<h4>短信设置</h4>
+<span class="FAQ">填写错误将不能接收到短信,接口请向管理员申请！</span>
+</div>
+<div class="msgWrap">
+<form method="post"  action="{ZF::U('Sms/insert')}">
+<table class="userinfoArea" border="0" cellspacing="0" cellpadding="0" width="100%">
+<thead>
+<tr>
+<th width="150"><span class="red"></span>接收短信手机：</th>
+<td>
+<input type="text" class="px" value="{ZF:$smsdata.phone}" name="phone"> 一般用于通知商家订单信息，多个用,隔开，可为空。
+</td>	
+</tr>
+<tr>
+<th width="150"><span class="red">*</span>短信接口帐号：</th>
+<td>
+<input type="text" class="px require" value="{ZF:$smsdata.account}" name="account"> <a href="http://www.smsbao.com/reg?r=33010" target="_blank">注册短信账号</a>
+</td>	
+</tr>
+<tr>
+<th><span class="red">*</span>短信接口密码：</th>
+<td>
+<input type="password" class="px require" value="{ZF:$smsdata.password}" name="password">
+</td>	
+</tr>
+<tr>
+<th><span class="red">*</span>是否开启：</th>
+<td>
+<label for="statu-1">
+开启
+</label>
+<input type="radio" name="status" <if condition="$smsdata.status eq 1">checked</if> id="statu-1" value="1">
+&nbsp;&nbsp;
+<label for="statu-0">
+关闭
+</label>
+<input type="radio" name="status" <if condition="$smsdata.status eq 0">checked</if> id="statu-0" value="0">
+</td>	
+</tr>
+<tr>
+<td height="50" colspan="2">
+<input type="submit" value="保存"  name="sbmt"  class="btnGreen"  style="float:left; margin-right:20px;" /> <a href="{ZF::U('Sms/sends',array('token'=>$token))}" class="btnGray">测试发送短信</a>
+</tr>
+</thead>
+</table>
+</form>
+
+</div>
+</div>
+
+<include file="Public:footer"/>	

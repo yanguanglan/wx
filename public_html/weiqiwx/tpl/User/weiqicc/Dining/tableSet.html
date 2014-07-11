@@ -1,0 +1,97 @@
+<include file="Public:head"/>
+<html>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<!-- Apple devices fullscreen -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<!-- Apple devices fullscreen -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<base target="mainFrame" />
+<link rel="stylesheet" type="text/css" href="{ZF::RES}/css/cymain.css" />
+<div class="content" style="width:80%; border:none; border:none; margin-bottom:30px;" >
+<link rel="stylesheet" type="text/css" href="/css/wm/bootstrap_responsive_min.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/style.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/themes.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/todc_bootstrap.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/inside.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/album.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/uploadify_t.css" media="all" />
+<title>{$_SERVER['WEB_NAME']}—国内最大的微信公众服务平台</title>
+ <script type="text/javascript" src="/@system/js/yyucadapter.js"></script>
+<script type="text/javascript" src="/res/mbaudio/inc/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="/res/mbaudio/inc/jquery.mb.miniPlayer.js"></script>
+<link rel="stylesheet" type="text/css" href="/uploadify/uploadify.css">
+<script type="text/javascript" src="/uploadify/jquery.uploadify.js"></script>
+<link rel="stylesheet" type="text/css" href="/res/mbaudio/css/miniplayer.css" title="style" media="screen"/>
+<script src="{ZF::STATICS}/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="{ZF::STATICS}/artDialog/plugins/iframeTools.js"></script>
+<script src="{ZF::STATICS}/upyun.js"></script>
+<body class="{Session::get('maintheme')}">
+<div id="main">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="box">
+                    <div class="box-title">
+                        <div class="span10">
+                            <h3><i class="icon-edit"></i>桌台设置</h3>
+                        </div>
+                        <div class="span2">
+                            <a class="btn" href="javascript:history.go(-1);">返回</a> 
+                        </div>
+                    </div>
+                <div class="box-content"> 
+                <form class='form-horizontal form-validate' method="post" action="" enctype="multipart/form-data"> 
+                <input type="hidden" name="id" value="{ZF:$set.id}" />
+                            <div class="control-group">
+                                <label for="name" class="control-label">桌台名称：</label>
+                                <div class="controls">
+                                <input type="text" name="name" value="{ZF:$set.name}" class="px" style="width:200px;" /> 
+                                <span class="maroon">*</span><span class="help-inline"></span>
+                            </div><br>
+							<div class="control-group">
+                                <label for="name" class="control-label">所属店铺：</label>
+                                <div class="controls">
+                                <select id="storeid" name="storeid" class="px">  <option value="0">请选择...</option>
+                                <volist id="v" name="Stores">
+                                <option value="{ZF:$v.id}" <if condition="$set['storeid'] eq $v['id']">selected</if>>{ZF:$v.name}</option>
+                                </volist>
+                                </select> 
+                                <span class="maroon">*</span><span class="help-inline"></span>
+                            </div><br>
+							<div class="control-group">
+                                <label for="name" class="control-label">桌台订金：</label>
+                                <div class="controls">
+                                <input type="text" id="price" name="price" value="{ZF:$set.price}" class="px" style="width:60px;" /> 元 
+                            </div><br>
+							<div class="control-group">
+                                <label for="name" class="control-label">缩略图：</label>
+                                <div class="controls">
+                                <input type="text" name="picurl" value="{ZF:$set.picurl}" class="px" id="picurl" style="width:400px;" /> 
+								<a href="###" onclick="chooseFile('picurl','my')" class="a_upload">选择</a>&nbsp;
+								<a href="###" onclick="upyunPicUpload('picurl',700,700,'{ZF:$token}')" class="a_upload">上传</a> &nbsp;<a href="###" onclick="viewImg('picurl')" class="a_upload">预览</a>
+                            </div><br>
+							<div class="control-group">
+                                <label for="name" class="control-label">桌台介绍：</label>
+                                <div class="controls">
+                                <textarea name="intro" class="px" style="width:400px;">{ZF:$set.intro}</textarea>
+                            </div><br>
+							<div class="control-group">
+                                <label for="name" class="control-label">桌台顺序：</label>
+                                <div class="controls">
+                                <input type="text" name="taxis" value="{ZF:$set.taxis}" class="px" style="width:60px;" />
+                            </div><br>
+				  <div class="form-actions">
+                  <!--零-度微-助-手-w x-0 d u-c c   -->
+       <button type="submit" name="button" class="btn btn-primary">保存</button> 
+	   &nbsp; 
+	   <a href="{ZF::U('Dining/tables',array('token'=>$token,'storeid'=>$storeid))}" class="btn">取消</a></td> 
+     </div>
+   </form> 
+  </div> 
+  </div>
+ </div>
+</div>
+</body>
+</html>

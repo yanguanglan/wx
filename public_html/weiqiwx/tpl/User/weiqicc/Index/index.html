@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title> {ZF::C('site_title')} {ZF::C('site_name')}</title>
+<link type="text/css" rel="stylesheet" href="{ZF::RES}/css/frame.css" />
+<script type="text/javascript" src="{ZF::RES}/js/jquery-1.7.2.min.js"></script>
+<link type="text/css" rel="stylesheet" href="{ZF::RES}/css/bootstrap.css" />
+<script type="text/javascript" src="{ZF::RES}/js/bootstrap.js"></script>
+<link type="text/css" rel="stylesheet" href="{ZF::RES}/css/jquery.mCustomScrollbar.css" />
+<script type="text/javascript" src="{ZF::RES}/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<link type="text/css" rel="stylesheet" href="{ZF::STATICS}/font-awesome/font-awesome.css" />
+<!--[if IE 7]>
+<link rel="stylesheet" href="{ZF::STATICS}/font-awesome/font-awesome-ie7.min.css">
+<![endif]-->
+<!--[if lte IE 6]>
+<link rel="stylesheet" type="text/css" href="{ZF::RES}/css/bootstrap-ie6.min.css">
+<link rel="stylesheet" type="text/css" href="{ZF::RES}/css/ie.css">
+<![endif]-->
+<script type="text/javascript">
+	/*
+	ajaxopen
+*/
+function ajaxopen(url, callback) {
+	$.getJSON(url, function(data){
+		if (data.type == 'error') {
+			message(data.message, data.redirect, data.type);
+		} else {
+			if (typeof callback == 'function') {
+				callback(data.message, data.redirect, data.type);
+			} else if(data.redirect) {
+				location.href = data.redirect;	
+			}
+		}
+	});	
+	return false;
+}
+</script>
+</head>
+<body style="height:100%; overflow:hidden;" scroll="no">
+<div id="header">
+	<div class="pull-left" style="color:#72A1FF; width:200px; text-align:center;background:#36393a;"> <h4>微信营销管理中心</h4></div>
+	<!-- 导航 -->
+	<div class="hnav clearfix">
+		<div class="row-fluid">
+			<ul class="hnav-main text-center unstyled pull-left" style="width:55%;">
+				<!--<li class="hnav-parent active"><a href="{ZF::U('Index/account_list',array('token'=>$token))}">当前公众号</a></li>
+				<li class="hnav-parent "><a href="./index.php?do=global">全局设置</a></li>
+				<li class="hnav-parent">
+					<a href="">常用</a>
+					<ul class="hnav-child unstyled text-left">
+						<li><a target="main" href="cloud.php?act=upgrade&">自动更新</a></li>
+						<li><a target="main" href="test.php">调试工具</a></li>
+						<li><a target="main" href="setting.php?act=updatecache&">更新缓存</a></li>
+					</ul>
+				</li>-->
+				<li class="hnav-parent"><a href="http://www.webhui.net/" target="_blank">智风论坛</a></li>
+				<li class="hnav-parent"><a href="https://mp.weixin.qq.com/" target="_blank">公众平台</a></li>
+				<li class="hnav-parent"><a href="{ZF::U('User/Index/help')}" target="main">帮助</a></li>
+			</ul>
+			<!-- 右侧管理菜单 -->
+			<ul class="hnav-manage text-center unstyled pull-right">
+				<li class="hnav-parent" id="wechatpanel">
+					<a href="javascript:;"><i class="icon-chevron-down icon-large"></i><span id="current-account"><if condition="$_SESSION['wxname']">{ZF:$Think.session.wxname}<else/>请先切换公众号</if></span></a>
+					<ul class="hnav-child unstyled text-left">
+						  <volist name="info" id="vo"> 
+						<li><a href="{ZF::U('Index/ajaxopen',array('id'=>$vo['id'],'token'=>$vo['token']))}" onclick="return ajaxopen(this.href)" target="main">{ZF:$vo.wxname}</a></li>
+						</volist>
+					</ul>
+				</li>
+				<li class="hnav-parent"><a href=""><i class="icon-user icon-large"></i>{ZF:$Think.session.uname}</a></li>
+				<li class="hnav-parent"><a href="{ZF::U('System/Admin/logout')}"><i class="icon-signout icon-large"></i>退出</a></li>
+			</ul>
+			<!-- end -->
+		</div>
+	</div>
+	<!-- end -->
+</div>
+<!-- 头部 end -->
+<div class="content-main">
+	<table width="100%" height="100%" cellspacing="0" cellpadding="0" id="frametable">
+		<tbody>
+			<tr>
+				<td valign="top" height="100%" class="content-left" style="">
+					<div class="sidebar-nav" style="">
+						<div id="snav-big">
+							<span class="snav-big" type="basic"><i class="icon-star"></i><span>基本设置</span></span>
+							<if condition="$token">
+							<span class="snav-big" type="wap"><i class="icon-briefcase"></i><span>微站功能</span></span>
+							<span class="snav-big" type="customer"><i class="icon-shopping-cart"></i><span>商务模块</span></span>
+							<span class="snav-big" type="industry"><i class="icon-sitemap"></i><span>行业模块</span></span>
+							<span class="snav-big" type="activity"><i class="icon-gift"></i><span>营销互动</span></span>
+							<span class="snav-big" type="member"><i class="icon-credit-card"></i><span>会员管理</span></span>
+							<span class="snav-big" type="weixinuser"><i class="icon-credit-card"></i><span>粉丝服务</span></span>
+							<span class="snav-big" type="other"><i class="icon-gift"></i><span>其它</span></span>
+							</if>
+						</div>
+						<div id="snav">
+							<ul class="snav unstyled hide" id="basic">
+								<li class="snav-header"><a href="">账号信息<i class="arrow"></i></a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Index/add')}">添加公号<i class="arrow"></i></a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Index/account_list')}">公号列表<i class="arrow"></i></a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Index/useredit')}">修改密码<i class="arrow"></i></a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Alipay/index')}">账号充值<i class="arrow"></i></a></li>
+							</ul>
+							<if condition="$token">
+							<ul class="snav unstyled hide" id="basic">
+								<li class="snav-header"><a href="">自动回复<i class="arrow"></i></a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Areply/index',array('token'=>$token))}" target="main">关注回复<i class="icon-plus"></i></a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Text/index',array('token'=>$token))}" target="main">文字回复<i class="icon-plus"></i></a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Img/index',array('token'=>$token))}" target="main">图文回复<i class="icon-plus"></i></a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Voiceresponse/index',array('token'=>$token))}" target="main">语音回复<i class="icon-plus"></i></a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Other/index',array('token'=>$token))}" target="main">回答不上来配置</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Diymen/index',array('token'=>$token))}" target="main">微信自定义菜单</a></li>
+							</ul>
+							<!--<ul class="snav unstyled hide" id="basic">
+								<li class="snav-header"><a href="">参数设置&其他<i class="arrow"></i></a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Sms/index',array('token'=>$token))}" target="main">短信设置</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Email/index',array('id'=>session('wxid'),'token'=>$token))}" target="main">邮箱设置</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Printer/index',array('token'=>$token))}" target="main">无线打印</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Payment/index',array('token'=>$token))}" target="main">支付参数</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Company/index',array('token'=>$token))}" target="main">LBS信息</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Requerydata/index',array('token'=>$token))}" target="main">统计分析</a></li>
+							</ul>-->
+							<ul class="snav unstyled hide" id="basic">							
+								<li class="snav-header-list"><a href="{ZF::U('Sms/index',array('token'=>$token))}" target="main">短信设置</a></li>							
+							</ul>
+							<ul class="snav unstyled hide" id="basic">							
+								<li class="snav-header-list"><a href="{ZF::U('Email/index',array('id'=>session('wxid'),'token'=>$token))}" target="main">邮箱设置</a></li>
+							</ul>
+							<ul class="snav unstyled hide" id="basic">							
+								<li class="snav-header-list"><a href="{ZF::U('Printer/index',array('token'=>$token))}" target="main">无线打印</a></li>
+							</ul>
+							<ul class="snav unstyled hide" id="basic">							
+								<li class="snav-header-list"><a href="{ZF::U('Payment/index',array('token'=>$token))}" target="main">支付参数</a></li>
+							</ul>
+							<ul class="snav unstyled hide" id="basic">							
+								<li class="snav-header-list"><a href="{ZF::U('Company/index',array('token'=>$token))}" target="main">LBS信息</a></li>
+							</ul>
+							</if>
+							<ul class="snav unstyled hide" id="wap">
+								<li class="snav-header"><a href="">微站功能<i class="arrow"></i></a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Home/set',array('token'=>$token))}" target="main">微站基本设置</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Tmpls/index',array('token'=>$token))}" target="main">网站风格设置</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Catemenu/index',array('token'=>$token))}" target="main">微站导航设置</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Classify/index',array('token'=>$token))}" target="main">网站分类管理</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Img/index',array('token'=>$token))}" target="main">微站文章管理</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Flash/index',array('token'=>$token))}" target="main">幻灯片设置</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Index/tools',array('token'=>$token))}" target="main">实用工具</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Yulan/index',array('token'=>$token))}" target="main">微站预览</a></li>
+							</ul>
+							<ul class="snav unstyled hide" id="wap">
+								<li class="snav-header"><a href="">微相册<i class="arrow"></i></a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Photo/index',array('token'=>$token))}" target="main">相册列表</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Photo/add',array('token'=>$token))}" target="main">添加相册</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Panorama/index',array('token'=>$token))}" target="main">360全景列表</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Panorama/add',array('token'=>$token))}" target="main">添加360全景</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Reply_info/set',array('token'=>$token,'infotype'=>'panorama'))}" target="main">360全景关键字触发<i class="icon-plus"></i></a></li>
+							</ul>						
+							<ul class="snav unstyled hide" id="wap">							
+								<li class="snav-header-list"><a href="{ZF::U('Adma/index',array('token'=>$token))}" target="main">DIY宣传</a></li>								
+							</ul>
+							<ul class="snav unstyled hide" id="customer">
+								<li class="snav-header"><a href="">微商城<i class="arrow"></i></a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Reply_info/set',array('token'=>$token,'infotype'=>'Shop'))}" target="main">关键字触发</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Product/index',array('token'=>$token))}" target="main">商品管理</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Product/cats',array('token'=>$token))}" target="main">商品分类</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Product/orders',array('token'=>$token))}" target="main">订单管理</a></li>
+							</ul>
+							<ul class="snav unstyled hide" id="customer">
+								<li class="snav-header"><a href="">微团购<i class="arrow"></i></a></li>
+								<li class="snav-list"><a href="{ZF::U('Reply_info/set',array('token'=>$token,'infotype'=>'Groupon'))}" target="main">关键字触发</a></li>
+								<li class="snav-list"><a href="{ZF::U('Groupon/index',array('token'=>$token))}" target="main">微团购</a></li>							
+							</ul>
+							<ul class="snav unstyled hide" id="customer">
+								<li class="snav-header"><a href="">微订餐<i class="arrow"></i></a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Reply_info/set',array('token'=>$token,'infotype'=>'Dining'))}" target="main">关键字触发<i class="icon-plus"></i></a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Dining/orders',array('token'=>$token))}" target="main">订单列表</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Dining/cats',array('token'=>$token))}" target="main">菜品分类</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Dining/index',array('token'=>$token))}" target="main">菜肴管理</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Dining/tables',array('token'=>$token))}" target="main">桌台管理</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Dining/stores',array('token'=>$token))}" target="main">店铺信息</a></li>
+							</ul>
+							<ul class="snav unstyled hide" id="customer">
+								<li class="snav-header-list"><a href="{ZF::U('Selfform/index',array('token'=>$token))}" target="main">万能表单</a></li>								
+							</ul>
+							<ul class="snav unstyled hide" id="customer">
+								<li class="snav-header-list"><a href="{ZF::U('Host/index',array('token'=>$token))}" target="main">通用订单</a></li>
+							</ul>
+							<ul class="snav unstyled hide" id="industry">
+								<li class="snav-header"><a href="">微房产<i class="arrow"></i></a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Estate/index',array('token'=>$token))}" target="main">楼盘简介</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Estate/expert',array('token'=>$token))}" target="main">专家点评</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Estate/housetype',array('token'=>$token))}" target="main">楼盘户型</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Estate/album',array('token'=>$token))}" target="main">楼盘相册</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Estate/son',array('token'=>$token))}" target="main">子楼盘</a></li>					
+							</ul>
+							<ul class="snav unstyled hide" id="industry">
+								<li class="snav-header"><a href="">微汽车<i class="arrow"></i></a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Car/carset',array('token'=>$token))}" target="main">关键字触发</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Car/index',array('token'=>$token))}" target="main">品牌管理</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Car/series',array('token'=>$token))}" target="main">车系管理</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Car/carmodel',array('token'=>$token))}" target="main">车型管理</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Car/salers',array('token'=>$token))}" target="main">销售管理</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Car/reservation',array('token'=>$token))}" target="main">预约管理</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Car/carowner',array('token'=>$token))}" target="main">车主关怀</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Car/carnews',array('token'=>$token))}" target="main">汽车文章</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Car/caronwers',array('token'=>$token))}" target="main">车主分析统计</a></li>
+							</ul>
+							<ul class="snav unstyled hide" id="industry">
+								<li class="snav-header"><a href="">微旅游<i class="arrow"></i></a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Lvyou/index',array('token'=>$token))}" target="main">旅游区简介</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Lvyou/expert',array('token'=>$token))}" target="main">游客点评</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Lvyou/housetype',array('token'=>$token))}" target="main">景点</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Lvyou/album',array('token'=>$token))}" target="main">风景相册</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Yuyue/index',array('token'=>$token,'type'=>'lvyou'))}" target="main">门票预订</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Lvyou/son',array('token'=>$token))}" target="main">景区</a></li>	
+							</ul>
+							<ul class="snav unstyled hide" id="industry">
+								<li class="snav-header"><a href="">微健身<i class="arrow"></i></a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Jianshen/index',array('token'=>$token))}" target="main">俱乐部</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Jianshen/expert',array('token'=>$token))}" target="main">会员感受</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Jianshen/housetype',array('token'=>$token))}" target="main">健身房</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Jianshen/album',array('token'=>$token))}" target="main">健身房相册</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Yuyue/index',array('token'=>$token,'type'=>'jianshen'))}" target="main">预约管理</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Jianshen/son',array('token'=>$token))}" target="main">景区</a></li>	
+							</ul>
+							<ul class="snav unstyled hide" id="industry">
+								<li class="snav-header"><a href="">微教育<i class="arrow"></i></a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Jiaoyu/index',array('token'=>$token))}" target="main">学校介绍</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Jiaoyu/expert',array('token'=>$token))}" target="main">学员印象</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Jiaoyu/housetype',array('token'=>$token))}" target="main">培训课程</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Jiaoyu/album',array('token'=>$token))}" target="main">学习相册</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Yuyue/index',array('token'=>$token,'type'=>'jiaoyu'))}" target="main">预约管理</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Jiaoyu/son',array('token'=>$token))}" target="main">校区</a></li>	
+							</ul>
+							<ul class="snav unstyled hide" id="industry">
+								<li class="snav-header"><a href="">微美容<i class="arrow"></i></a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Meirong/index',array('token'=>$token))}" target="main">美容店简介</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Meirong/expert',array('token'=>$token))}" target="main">美丽分享</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Meirong/housetype',array('token'=>$token))}" target="main">美容服务</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Meirong/album',array('token'=>$token))}" target="main">美容相册</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Meirong/index',array('token'=>$token,'type'=>'meirong'))}" target="main">门票预订</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Meirong/son',array('token'=>$token))}" target="main">美容店面</a></li>	
+							</ul>
+							<ul class="snav unstyled hide" id="industry">
+								<li class="snav-header"><a href="">微酒吧<i class="arrow"></i></a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Jiuba/index',array('token'=>$token))}" target="main">旅游区简介</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Jiuba/expert',array('token'=>$token))}" target="main">游客点评</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Jiuba/housetype',array('token'=>$token))}" target="main">景点</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Jiuba/album',array('token'=>$token))}" target="main">风景相册</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Yuyue/index',array('token'=>$token,'type'=>'jiuba'))}" target="main">门票预订</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Jiuba/son',array('token'=>$token))}" target="main">景区</a></li>	
+							</ul>
+							<ul class="snav unstyled hide" id="industry">
+								<li class="snav-header"><a href="">微KTV<i class="arrow"></i></a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Ktv/index',array('token'=>$token))}" target="main">KTV简介</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Ktv/expert',array('token'=>$token))}" target="main">贵客评价</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Ktv/housetype',array('token'=>$token))}" target="main">包房介绍</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Ktv/album',array('token'=>$token))}" target="main">宣传相册</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Yuyue/index',array('token'=>$token,'type'=>'ktv'))}" target="main">在线预订</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Ktv/son',array('token'=>$token))}" target="main">门店介绍</a></li>	
+							</ul>
+							<ul class="snav unstyled hide" id="industry">								
+								<li class="snav-header-list"><a href="{ZF::U('Jiudian/index',array('token'=>$token))}" target="main">微酒店</a></li>
+							</ul>
+							<ul class="snav unstyled hide" id="industry">
+								<li class="snav-header-list"><a href="{ZF::U('Yiliao/index',array('token'=>$token))}" target="main">微医疗</a></li>
+							</ul>
+							<ul class="snav unstyled hide" id="industry">							
+								<li class="snav-header-list"><a href="{ZF::U('Wedding/index',array('token'=>$token))}" target="main">微喜帖</a></li>								
+							</ul>
+							<ul class="snav unstyled hide" id="industry">							
+								<li class="snav-header"><a href="" target="main">微租车<i class="arrow"></i></a></li>								
+								<li class="snav-list hide"><a href="{ZF::U('Reply_info/set',array('token'=>$token,'infotype'=>'Zuche'))}" target="main">关键字触发<i class="icon-plus"></i></a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Zuche/cats',array('token'=>$token))}" target="main">车型分类</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Zuche/index',array('token'=>$token))}" target="main">车型管理</a></li>								
+								<li class="snav-list hide"><a href="{ZF::U('Zuche/stores',array('token'=>$token))}" target="main">店铺信息</a></li>
+							</ul>
+							<ul class="snav unstyled hide" id="activity">							
+								<li class="snav-header-list"><a href="{ZF::U('Wifi/index',array('token'=>$token))}" target="main">营销WIFI</a></li>								
+							</ul>
+							<ul class="snav unstyled hide" id="activity">							
+								<li class="snav-header-list"><a href="{ZF::U('Lottery/index',array('token'=>$token))}" target="main">大转盘</a></li>								
+							</ul>
+							<ul class="snav unstyled hide" id="activity">							
+								<li class="snav-header-list"><a href="{ZF::U('Guajiang/index',array('token'=>$token))}" target="main">刮刮卡</a></li>								
+							</ul>
+							<ul class="snav unstyled hide" id="activity">							
+								<li class="snav-header-list"><a href="{ZF::U('Zadan/index',array('token'=>$token))}" target="main">砸金蛋</a></li>								
+							</ul>
+							<ul class="snav unstyled hide" id="activity">							
+								<li class="snav-header-list"><a href="{ZF::U('Shake/index',array('token'=>$token))}" target="main">摇一摇</a></li>								
+							</ul>
+							<ul class="snav unstyled hide" id="activity">							
+								<li class="snav-header-list"><a href="{ZF::U('Wewall/index',array('token'=>$token))}" target="main">微信墙</a></li>								
+							</ul>
+							<ul class="snav unstyled hide" id="activity">							
+								<li class="snav-header-list"><a href="{ZF::U('Heka/index',array('token'=>$token))}" target="main">微贺卡</a></li>								
+							</ul>
+							<ul class="snav unstyled hide" id="activity">							
+								<li class="snav-header-list"><a href="{ZF::U('Coupon/index',array('token'=>$token))}" target="main">优惠券</a></li>								
+							</ul>
+							<ul class="snav unstyled hide" id="activity">							
+								<li class="snav-header-list"><a href="{ZF::U('Diaoyan/index',array('token'=>$token))}" target="main">微调研</a></li>								
+							</ul>
+							<ul class="snav unstyled hide" id="activity">							
+								<li class="snav-header-list"><a href="{ZF::U('Yuyue/index',array('token'=>$token))}" target="main">微预约</a></li>								
+							</ul>
+							<ul class="snav unstyled hide" id="activity">							
+								<li class="snav-header-list"><a href="{ZF::U('Taobao/index',array('token'=>$token))}" target="main">淘宝天猫</a></li>								
+							</ul>
+							<ul class="snav unstyled hide" id="activity">
+									<li class="snav-header"><a href="">留言板<i class="arrow"></i></a></li>
+									<li class="snav-list hide"><a href="{ZF::U('Reply_info/set',array('token'=>$token,'infotype'=>'Liuyan'))}" target="main">关键字触发<i class="icon-plus"></i></a></li>
+									<li class="snav-list hide"><a href="{ZF::U('Liuyan/index',array('token'=>$token))}" target="main">留言板</a></li>
+							</ul>
+							<ul class="snav unstyled hide" id="activity">
+									<li class="snav-header"><a href="">微投票<i class="arrow"></i></a></li>
+									<li class="snav-list hide"><a href="{ZF::U('Vote/index',array('token'=>$token))}" target="main">微投票</a></li>
+									<li class="snav-list hide"><a href="{ZF::U('Vote/add',array('token'=>$token,'type'=>'text'))}" target="main">文字投票</a></li>
+									<li class="snav-list hide"><a href="{ZF::U('Vote/add',array('token'=>$token,'type'=>'img'))}" target="main">图文投票</a></li>
+							</ul>
+							<ul class="snav unstyled hide" id="member">
+									<li class="snav-header"><a href="">微会员<i class="arrow"></i></a></li>
+									<li class="snav-list hide"><a href="{ZF::U('Member_card/replyInfoSet',array('token'=>$token))}" target="main">关键字触发</a></li>
+									<li class="snav-list hide"><a href="{ZF::U('Member_card/design',array('token'=>$token))}" target="main">添加会员卡</a></li>
+									<li class="snav-list hide"><a href="{ZF::U('Member_card/index',array('token'=>$token))}" target="main">会员卡管理</a></li>
+									<li class="snav-list hide"><a href="{ZF::U('Member/members',array('token'=>$token))}" target="main">会员账户</a></li>
+									<li class="snav-list hide"><a href="{ZF::U('Member_card/info',array('token'=>$token))}" target="main">商家设置</a></li>
+									<li class="snav-list hide"><a href="{ZF::U('Member_card/staff',array('token'=>$token))}" target="main">店员管理</a></li>
+							</ul>
+							<ul class="snav unstyled hide" id="weixinuser">
+									<li class="snav-header"><a href="">微客服<i class="arrow"></i></a></li>
+									<li class="snav-list hide"><a href="{ZF::U('ServiceUser/index',array('token'=>$token))}" target="main">客服管理</a></li>
+									<li class="snav-list hide"><a href="{ZF::U('ServiceUser/chat_log',array('token'=>$token))}" target="main">聊天记录</a></li>
+									<li class="snav-list hide"><a href="{ZF::U('ServiceUser/add',array('token'=>$token))}" target="main">添加客服</a></li>
+							</ul>
+							<ul class="snav unstyled hide" id="weixinuser">							
+								<li class="snav-header-list"><a href="{ZF::U('Recognition/index',array('token'=>$token))}" target="main">渠道二维码</a></li>								
+							</ul>
+							<ul class="snav unstyled hide" id="weixinuser">							
+								<li class="snav-header"><a href="" target="main">粉丝行为分析<i class="arrow"></i></a></li>	
+								<li class="snav-list hide"><a href="{ZF::U('Wechat_behavior/statistics',array('token'=>$token))}" target="main">7日统计分析</a></li>
+								<li class="snav-list hide"><a href="{ZF::U('Wechat_behavior/statisticsTrend',array('token'=>$token))}" target="main">趋势对比分析</a></li>	
+							</ul>
+							<ul class="snav unstyled hide" id="weixinuser">							
+								<li class="snav-header-list"><a href="{ZF::U('Wechat_group/groups',array('token'=>$token))}" target="main">分组管理</a></li>								
+							</ul>
+							<ul class="snav unstyled hide" id="weixinuser">							
+								<li class="snav-header-list"><a href="{ZF::U('Wechat_group/index',array('token'=>$token))}" target="main">粉丝管理</a></li>								
+							</ul>
+							<ul class="snav unstyled hide" id="other">							
+								<li class="snav-header-list"><a href="{ZF::U('Api/index',array('token'=>$token))}" target="main">融合第三方接口</a></li>								
+							</ul>
+						</div>
+					</div>
+				</td>
+				<td valign="top" height="100%" style=" ">
+				<if condition="$token">
+				<iframe width="100%" scrolling="yes" height="100%" frameborder="0" style="min-width:800px; overflow:visible; height:100%;" name="main" id="main" src="{ZF::U('Function/index',array('token'=>$token,'id'=>$_SESSION['wxid']))}"></iframe>
+				<else/>
+				<iframe width="100%" scrolling="yes" height="100%" frameborder="0" style="min-width:800px; overflow:visible; height:100%;" name="main" id="main" src="{ZF::U('Index/account_list',array('token'=>$token))}"></iframe>
+				</if>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<script type="text/javascript">
+function max(a) {
+	var b = a[0];
+	for(var i=1;i<a.length;i++){ if(b<a[i])b=a[i]; }
+	return b;
+}
+function currentMenuItem(a) {
+	window.frames['main'].location.href= a;
+}
+function switchHandler(s) {
+	var mainurl = window.frames['main'].location;
+	if (window.frames['main'].location.href.indexOf('token') > -1) {
+		window.top.location.onload = mainurl;
+	}
+	window.top.location.onload=mainurl;
+	$('#current-account').html(s);
+}
+function strlen(str) {
+		var n = 0;
+		for(i=0;i<str.length;i++){
+			var leg=str.charCodeAt(i);
+			n+=1;
+		}
+		return n;
+}
+function leftScrollbar() {
+	$('.content-left').mCustomScrollbar("destroy");
+	$('.content-left').mCustomScrollbar({
+		scrollButtons:{
+			enable:true
+		},
+		theme:"dark-thin",
+		autoHideScrollbar:false
+	});
+}
+//导航滚动条
+function bigScrollbar(){
+	$('.sidebar-nav #snav-big').mCustomScrollbar("destroy");
+	$(".sidebar-nav #snav-big").mCustomScrollbar({
+		scrollButtons:{
+			enable:true
+		},
+		theme:"dark-thin",
+		autoHideScrollbar:true
+	});
+}
+
+$(document).ready(function() {
+	//顶部子导航
+	$(".hnav").delegate(".hnav-parent", "mouseover", function(){
+		var $this = this;
+		if ($(this).attr('id') == 'wechatpanel') {
+			if ($(this).attr('loading') == '1'){
+				return false;
+			}
+			position();
+			/*if (cookie.get('wxid') == '1') {
+				return true;
+			}*/
+			$($this).find(".hnav-child").html('<li><a>加载中</a></li>');
+			$(this).attr('loading', '1');
+			ajaxopen("{ZF::U('Index/ajaxopen',array(''))}.php?act=wechat&", function(s){
+				var obj = $($this).find(".hnav-child");
+				var html = '';
+				for (i in s) {
+					html += '<li><a href="account.php?act=switch&id='+s[i]['weid']+'" onclick="return ajaxopen(this.href, function(s) {switchHandler(s)})">'+s[i]['name']+'</a></li>';
+				}
+				obj.html(html);
+				$('#wechatpanel').attr('loading', '0');
+			});
+		} else {
+			position();
+		}
+		function position() {
+			var tmp = new Array();
+			$($this).find(".hnav-child").show();
+			$($this).find(".hnav-child li").each(function(i) {
+				tmp[i] = strlen($(this).find("a").html());
+			});
+			$($this).find(".hnav-child li a").css("width", max(tmp)*18);
+			$($this).find(".hnav-child").css("left", $($this).offset().left);
+		}
+		return false;
+	});
+	$(".hnav").delegate(".hnav-parent", "mouseout", function(){
+		$(".hnav-child").hide();
+	});
+	//左侧导航
+	var snav_type = $(".sidebar-nav #snav-big .snav-big:eq(0)").attr("type");
+	$(".sidebar-nav #snav-big .snav-big:eq(0)").addClass("on");
+	$(".sidebar-nav .snav[id="+snav_type+"]").removeClass("hide");
+	//初始化第一条显示
+	$(".sidebar-nav #snav-big .snav-big").each(function() {
+		var a = $(this).attr("type");
+		$(".sidebar-nav .snav[id="+a+"]").eq(0).find(".snav-header").addClass("open");
+		$(".sidebar-nav .snav[id="+a+"]").eq(0).find(".snav-list").addClass("open");
+	});
+	$(".sidebar-nav #snav-big").delegate(".snav-big", "click", function(){
+		var a = $(this).attr("type");
+		$(".sidebar-nav #snav-big .snav-big").removeClass("on");
+		$(this).addClass("on");
+		$(".sidebar-nav .snav").addClass("hide");
+		$(".sidebar-nav .snav[id="+a+"]").removeClass("hide");
+		//右侧菜单滚动控制
+		leftScrollbar();
+		bigScrollbar();
+	});
+	$(".sidebar-nav").delegate(".snav-header", "click", function(){
+		var a = $(this).hasClass("open");
+		var b = $(this).parent().attr("id");
+		$(".sidebar-nav .snav[id="+b+"] .snav-header").removeClass("open");
+		$(".sidebar-nav .snav[id="+b+"] .snav-list").addClass("hide");
+		if(a) {
+			$(this).removeClass("open");
+			$(this).parent().find(".snav-list").each(function(i) {
+				$(this).addClass("hide");
+			});
+		} else {
+			$(this).addClass("open");
+			$(this).parent().find(".snav-list").each(function(i) {
+				$(this).removeClass("hide");
+			});
+		}
+		//右侧菜单滚动控制
+		leftScrollbar();
+		bigScrollbar();
+		return false;
+	});
+	$(".sidebar-nav .snav").each(function() {
+		if($(this).find(".snav-header").hasClass("open")) {
+			$(this).find(".snav-list").each(function() {
+				$(this).toggleClass("hide");
+			});
+		}
+		$(this).find(".snav-list").each(function() {
+			if($(this).hasClass("current")) {
+				$(this).parent().find(".snav-header").toggleClass("open");
+				$(this).parent().find(".snav-list").each(function() {
+					$(this).toggleClass("hide");
+				});
+			}
+		});
+		$(this).find(".snav-list a,.snav-header-list a").click(function() {
+			$(".snav-list,.snav-header-list").removeClass("current");
+			$(this).parent().addClass("current");
+			currentMenuItem($(this).attr("href"));
+			return false;
+		});
+	});
+});
+$(function() {
+	//调整框架宽高 兼容ie8
+	$(".content-main, .content-main table td, .sidebar-nav #snav-big").height($(window).height()-40);
+	$("#main").width($(window).width()-200);
+	//右侧菜单滚动控制
+	leftScrollbar();
+	bigScrollbar();
+});
+$(window).resize(function(){
+	//调整框架宽高 兼容ie8
+	$(".content-main, .content-main table td, .sidebar-nav #snav-big").height($(window).height()-40);
+	$("#main").width($(window).width()-200);
+	//右侧菜单滚动控制
+	leftScrollbar();
+	bigScrollbar();
+});
+</script>
+</body>
+</html>

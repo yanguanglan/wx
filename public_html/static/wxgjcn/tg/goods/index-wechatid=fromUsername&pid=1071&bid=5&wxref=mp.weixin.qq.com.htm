@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>团购首页</title>
+    <meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+    <meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+    <meta content="no-cache" http-equiv="pragma">
+    <meta content="0" http-equiv="expires">
+    <meta content="telephone=no, address=no" name="format-detection">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <link href="/static/wxgjcn//css/tg/main.css-v=2014-03-07-1.css"  rel="stylesheet" />
+    <link href="/static/wxgjcn//css/tg/dialog.css-v=2014-03-07-1.css"  rel="stylesheet" />
+
+<script>
+document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+    WeixinJSBridge.call('hideToolbar');
+});
+</script>
+
+    <script src="/static/wxgjcn//src/jquery.min.js-v=2014-03-07-1.js" ></script>
+    <script src="/static/wxgjcn//src/tg/swipe.js-v=2014-03-07-1.js" ></script>
+    <script src="/static/wxgjcn//src/tg/dialog_min.js-v=2014-03-07-1.js" ></script>
+    <script src="/static/wxgjcn//src/tg/global.js-v=2014-03-07-1.js" ></script>
+</head>
+<script type="text/javascript">
+(function() {
+	var wtj = document.createElement('script'); wtj.type = 'text/javascript'; wtj.async = true;
+	wtj.src = 'http://tj.weimob.com/wtj.js?url=' + encodeURIComponent(location.href);
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wtj, s);
+})();
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd80741dd59de91e1846b2add2c0ad2a2' type='text/javascript'%3E%3C/script%3E"));
+function weimobAfterShare(shareFromWechatId,sendFriendLink,shareToPlatform){
+	var wmShare = document.createElement('script'); wmShare.type = 'text/javascript'; wmShare.async = true;
+    wmShare.src = 'http://' + getShareApiRouter() + '/api-share.js?fromWechatId=' + shareFromWechatId + '&shareToPlatform=';
+	wmShare.src += shareToPlatform + '&pid=1071&sendFriendLink=' + encodeURIComponent(sendFriendLink);
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wmShare, s);
+}
+function getShareApiRouter(){
+	var str_domain = location.href.split('/',4)[2];
+	var tj_domain = '127.0.0.1';
+	switch(str_domain){
+		case 'http://www.weimob.com/tg/goods/www.weimob.com':
+			tj_domain = 'http://www.weimob.com/tg/goods/tj.weimob.com';
+			break;
+		case 'http://www.weimob.com/tg/goods/112.124.28.82':
+			tj_domain = '112.124.28.82:400';
+			break;
+	}
+	return tj_domain;
+}
+if(typeof(window.shareData) == 'undefined'){
+	window.shareData = {
+				"imgUrl": "", 
+		"timeLineLink": "http://www.weimob.com/tg/goods?wechatid=fromUsername&pid=1071&bid=5&wxref=mp.weixin.qq.com",
+		"sendFriendLink": "http://www.weimob.com/tg/goods?wechatid=fromUsername&pid=1071&bid=5&wxref=mp.weixin.qq.com",
+		"weiboLink": "http://www.weimob.com/tg/goods?wechatid=fromUsername&pid=1071&bid=5&wxref=mp.weixin.qq.com",
+		"tTitle": document.title,
+		"tContent": document.title,
+		"fTitle": document.title,
+		"fContent": document.title,
+		"wContent": document.title
+	}
+}
+document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {	 
+	// 发送给好友
+	WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+		WeixinJSBridge.invoke('sendAppMessage', { 
+			"img_url": window.shareData.imgUrl,
+			"img_width": "640",
+			"img_height": "640",
+			"link": window.shareData.sendFriendLink,
+			"desc": window.shareData.fContent,
+			"title": window.shareData.fTitle
+		}, function (res) {
+			weimobAfterShare("",window.shareData.sendFriendLink,'appmessage');
+			_report('send_msg', res.err_msg);
+		})
+	});
+
+	// 分享到朋友圈
+	WeixinJSBridge.on('menu:share:timeline', function (argv) {
+		WeixinJSBridge.invoke('shareTimeline', {
+			"img_url": window.shareData.imgUrl,
+			"img_width": "640",
+			"img_height": "640",
+			"link": window.shareData.timeLineLink,
+			"desc": window.shareData.tContent,
+			"title": window.shareData.tTitle
+		}, function (res) {
+							//alert("android-share-test-000001",10000);
+						//weimobAfterShare("",window.shareData.timeLineLink,'timeline');
+			_report('timeline', res.err_msg);
+		});
+	});
+
+	// 分享到微博
+	WeixinJSBridge.on('menu:share:weibo', function (argv) {
+		WeixinJSBridge.invoke('shareWeibo', {
+			"content": window.shareData.wContent,
+			"url": window.shareData.weiboLink
+		}, function (res) {
+			weimobAfterShare("",window.shareData.weiboLink,'weibo');
+			_report('weibo', res.err_msg);
+		});
+	});
+}, false);
+</script>
+<script type="text/javascript" src="/static/wxgjcn///kf.weimob.com/js/ChatFloat.js" ></script>
+<script type="text/javascript">
+var str_domain = location.href.split('/',4)[2];
+var boolIsTest = true;
+if(str_domain == 'http://www.weimob.com/tg/goods/www.weimob.com'){
+	boolIsTest = false;
+}
+new ChatFloat({
+        AId: '1071',
+        openid: "",
+		top:150,
+		right:0,
+		IsTest:boolIsTest
+});
+</script>
+<body onselectstart="return true;" ondragstart="return false;" class="gbuy_grid">
+
+<script>
+    $(function(){
+        window.swiper = new Swipe(document.getElementById('list_uls'), {
+            speed:500,
+            // auto:3000,
+            callback: function(){
+                $("#nav_list_uls li").removeClass("on").eq(this.index).addClass("on");
+            }
+        });
+    })
+</script>
+
+<div>
+    <div id="container" class="container animate">
+        <header></header>
+        <div class="body ofh">
+            <section>
+                <ul id="nav_list_uls" class="nav_list_uls box">
+                                        <li class="on">&nbsp;</li>
+                                        <li >&nbsp;</li>
+                                        <li >&nbsp;</li>
+                                    </ul>
+            </section>
+            <section id="list_uls" class="list_section box_swipe">
+                <ul class="gbuy_list_grid">
+                                            <li>
+                            <a   >
+                                <div>
+                                    <figure>
+                                        <span class="span_img">
+                                                <img src="/static/wxgjcn///img.weimob.com/1c/38/3c/7_29513/image/20140128/20140128110816_11093.jpg"  />
+                                        </span>
+                                        <figcaption class="box">
+                                            <dd><label>进行中</label></dd>
+                                            <dd><label>
+                                                                                                    已售<span>610</span>
+                                                                                            </label></dd>
+                                        </figcaption>
+                                    </figure>
+                                    <div class="price">
+                                        <h3>￥0.01<span><s>￥1.00</s></span></h3>
+                                    </div>
+                                    <article>
+                                        <h4>
+                                            <label>
+                                                【演示】情人节自助晚宴双人餐                                            </label>
+                                        </h4>
+                                        <p>
+                                            【演示】情人节自助晚宴双人餐1套（2人）仅售0.01元！价值598元的情人节自助晚宴双人餐，不要迟疑，该是表达爱的时候了。                                        </p>
+                                    </article>
+                                </div>
+                            </a>
+                        </li>
+                                            <li>
+                            <a   >
+                                <div>
+                                    <figure>
+                                        <span class="span_img">
+                                                <img src="/static/wxgjcn///img.weimob.com/1c/38/3c/7_29518/image/20140128/20140128112728_57502.jpg"  />
+                                        </span>
+                                        <figcaption class="box">
+                                            <dd><label>进行中</label></dd>
+                                            <dd><label>
+                                                                                                    已售<span>121</span>
+                                                                                            </label></dd>
+                                        </figcaption>
+                                    </figure>
+                                    <div class="price">
+                                        <h3>￥0.01<span><s>￥100.00</s></span></h3>
+                                    </div>
+                                    <article>
+                                        <h4>
+                                            <label>
+                                                【演示】【8店通用】火锅                                            </label>
+                                        </h4>
+                                        <p>
+                                            【演示】仅售0.01元！价值100元的火锅代金券1张，可自由叠加使用，全场通用。无需预约，周末通用。地道重庆风味，袭击您的味蕾，不可错过~                                        </p>
+                                    </article>
+                                </div>
+                            </a>
+                        </li>
+                                            <li>
+                            <a   >
+                                <div>
+                                    <figure>
+                                        <span class="span_img">
+                                                <img src="/static/wxgjcn///img.weimob.com/1c/38/3c/7_29525/image/20140128/20140128120117_35663.jpg"  />
+                                        </span>
+                                        <figcaption class="box">
+                                            <dd><label>进行中</label></dd>
+                                            <dd><label>
+                                                                                                    已售<span>333</span>
+                                                                                            </label></dd>
+                                        </figcaption>
+                                    </figure>
+                                    <div class="price">
+                                        <h3>￥0.01<span><s>￥80.00</s></span></h3>
+                                    </div>
+                                    <article>
+                                        <h4>
+                                            <label>
+                                                【演示】熊出没之夺宝熊兵                                            </label>
+                                        </h4>
+                                        <p>
+                                            【演示】仅售0.01元！价值80元的电影票1张，2D/3D通兑。观看4D电影需到店另付20元/张；贺岁档、春节档海量大片一网打尽！熊出没来啦！                                        </p>
+                                    </article>
+                                </div>
+                            </a>
+                        </li>
+                                    </ul>
+            </section>
+        </div>
+        <footer>
+    <section class="nav_footer">
+        <ul class="box">
+            <li>
+                <a   class="on">
+                    <span class="nav_tg">&nbsp;</span>
+                    <label>团 购</label>
+                </a>
+            </li>
+            <li>
+                <a   class="">
+                    <span class="nav_tgq">&nbsp;</span>
+                    <label>团购券</label>
+                </a>
+            </li>
+            <li>
+                <a   class="">
+                    <span class="nav_dd">&nbsp;</span>
+                    <label>订 单</label>
+                </a>
+            </li>
+            <!--
+            <li>
+                <a href="javascript:;" class="">
+                    <span class="nav_shc">&nbsp;</span>
+                    <label>收 藏</label>
+                </a>
+            </li>
+            -->
+<!--            <li>-->
+<!--                <a href="/tg/goods/index/pid/--><!--/bid/--><!--/wechatid/--><!--/" class="--><!--">-->
+<!--                    <span class="nav_shzh">&nbsp;</span>-->
+<!--                    <label>设 置</label>-->
+<!--                </a>-->
+<!--            </li>-->
+        </ul>
+    </section>
+</footer>
+    </div>
+</div>
+<script>
+document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+    WeixinJSBridge.call('showOptionMenu');
+});
+</script>
+
+</body>
+</html>

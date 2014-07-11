@@ -1,0 +1,214 @@
+﻿<include file="Public:head"/>
+<link rel="stylesheet" href="{ZF::STATICS}/kindeditor/themes/default/default.css" />
+<link rel="stylesheet" href="{ZF::STATICS}/kindeditor/plugins/code/prettify.css" />
+<script src="{ZF::STATICS}/kindeditor/kindeditor.js" type="text/javascript"></script>
+<script src="{ZF::STATICS}/kindeditor/lang/zh_CN.js" type="text/javascript"></script>
+<script src="{ZF::STATICS}/kindeditor/plugins/code/prettify.js" type="text/javascript"></script>
+<script src="{ZF::STATICS}/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="{ZF::STATICS}/artDialog/plugins/iframeTools.js"></script>
+
+
+<div class="content" style="" >
+   <div class="cLineB"> 
+
+    <h4>编辑贺卡</h4> 
+
+    <a href="{ZF::U('Heka/index',array('token'=>$token))}" class="right  btnGreen" style="margin-top:-27px">返回</a> 
+
+   </div> 
+
+
+
+   <form class="form" method="post" id="form" action="" enctype="multipart/form-data"> 
+
+<if condition="$isUpdate eq 1">
+
+<input type="hidden" name="id" value="{ZF:$set.id}" />
+
+</if>
+
+    <div class="msgWrap bgfc"> 
+
+     <table class="userinfoArea" style=" margin:0;" border="0" cellspacing="0" cellpadding="0" width="100%"> 
+
+      <tbody> 
+
+       
+
+	   <tr> 
+
+        <th><span class="red">*</span>标题名字：</th>
+
+        <td><input type="text" name="title" id="title" value="{ZF:$set.title}" class="px" style="width:400px;" />
+
+		</td> 
+
+       </tr>
+
+	  <tr> 
+
+        <th><span class="red">*</span>关键词：</th>
+
+        <td><input type="text" name="keyword" id="keyword" value="{ZF:$set.keyword}" class="px" style="width:400px;" />
+
+		</td> 
+
+       </tr>
+
+	   <tr> 
+
+        <th><span class="red"></span>回复图片：</th>
+
+        <td><input type="text" name="topic" value="{ZF:$set.topic}" id="pic" class="px" style="width:400px;"  readonly="readonly"/><script src="{ZF::STATICS}/upyun.js?2013"></script><a href="###" onclick="upyunPicUpload('pic',700,420,'{ZF:$token}')" class="a_upload">上传</a> <a href="###" onclick="viewImg('pic')">预览</a></td> 
+
+       </tr>
+
+	   <tr> 
+
+        <th><span class="red"></span>背景图片：</th>
+
+        <td><input type="text" name="bg_topic" value="{ZF:$set.bg_topic}" id="small_pic" class="px" style="width:400px;"  readonly="readonly"/><script src="{ZF::STATICS}/upyun.js?2013"></script><a href="###" onclick="chooseFile('small_pic','background')" class="a_upload">选择</a> <a href="###" onclick="upyunPicUpload('small_pic',700,420,'{ZF:$token}')" class="a_upload">上传</a> <a href="###" onclick="viewImg('small_pic')">预览</a></td> 
+
+       </tr>
+
+	   <tr> 
+
+        <th><span class="red"></span>背景音乐：</th>
+
+        <td><input type="text" name="bg_music" value="{ZF:$set.bg_music}" id="bg_music" class="px" style="width:400px;" /><a href="###" onclick="chooseFile('bg_music','music')" class="a_upload">选择</a>
+
+			<span>要输入完整的地址</span>
+
+		</td> 
+
+       </tr>
+
+	   <tr> 
+
+        <th ><span class="red">*</span>选择动画：</th> 
+
+        <td>        <select name="bg_action"   > 
+
+                    <option   value="">请选择</option>
+
+                    <option  value="0" <if condition="$set['bg_action'] eq 0">selected</if> >无动画</option>
+
+                    <option   value="1" <if condition="$set['bg_action'] eq 1">selected</if> >下落的枫叶</option>
+
+                    <option   value="2" <if condition="$set['bg_action'] eq 2">selected</if> >飘雪</option>
+
+                    <option   value="4" <if condition="$set['bg_action'] eq 4">selected</if> >飘玫瑰</option>
+
+					</select>
+
+		</td> 
+
+       </tr> 
+
+	   
+
+	   <TR>
+
+			<TH valign="top"><label for="info">贺卡内容：</label></TH>
+
+            <TD><textarea name="content" id="info"  class="px" rows="5" style="width:590px;height:160px">{ZF:$set.content}</textarea>
+
+				<br><span class="red">*</span>最多可150字,这里请不要使用HTML代码
+
+			</TD>
+
+        </TR> 
+
+		
+
+	   
+
+  
+
+
+
+       <tr> 
+
+        <th><span class="red"></span>版权：</th>
+
+        <td><input type="text" name="banquan" value="{ZF:$set.banquan}" class="px" style="width:400px;" /></td> 
+
+       </tr>
+
+		<tr> 
+
+        <th><span class="red"></span>按钮文字：</th>
+
+        <td><input type="text" name="sub" value="{ZF:$set.sub}" class="px" style="width:400px;" />可不写</td> 
+
+        </tr>
+
+		<tr> 
+
+        <th><span class="red"></span>是否显示转发数：</th>
+
+        <td>		<select name="show"   > 
+
+                     <option   value="0">不显示</option>
+
+                     <option   value="1" <if condition="$set['show'] eq 1">selected</if> >显示</option>
+
+                    </select></td> 
+
+        </tr>
+
+        <tr> 
+
+        <th><span class="red"></span>收卡名字：</th>
+
+        <td><input type="text" name="name" value="{ZF:$set.name}" class="px" style="width:400px;" /></td> 
+
+        </tr>
+
+       <tr>         
+
+       <th>&nbsp;</th>
+
+       <td>
+
+		<!--input type="hidden" name="time" value="{ZF:$set.time}" /-->
+
+       <button type="submit" class="btnGreen">保存</button> &nbsp; <a href="{ZF::U('Heka/index',array('token'=>$token))}" class="btnGray vm">取消</a></td> 
+
+       </tr> 
+
+	   
+
+      </tbody> 
+
+     </table> 
+
+     </div>
+
+    
+
+   </form> 
+
+  </div> 
+
+<script language="javascript">
+
+$(function(){
+
+	$("#form").valid([
+
+	{ name:"name",simple:"名称",require:true},
+
+	{ name:"keyword",simple:"关键词",require:true}
+
+		
+
+	],true,true);
+
+
+
+})
+
+</script>
+
+  <include file="Public:footer" />

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="微信营销、微信代运营、微信定制开发、微信托管、微网站、微商城、微营销" name="Keywords">
+	<meta content="盛世源码—国内优秀的微信公众服务平台，国内最大的微信公众智能服务平台，盛世源码—国内优秀的微信公众服务平台八大微体系：微菜单、微官网、微会员、微活动、微商城、微推送、微服务、微统计，企业微营销必备。" name="Description">
+    <link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/onlinebooking.css-2014-03-07-1.css"  media="all" />
+<link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/datepicker.css-2014-03-07-1.css"  media="all" />
+<script type="text/javascript" src="/static/wxgjcn/src/jQuery.js-2014-03-07-1.js" ></script>
+<script type="text/javascript" src="/static/wxgjcn/src/jquery-ui.js-2014-03-07-1.js" ></script>
+<title>在线挂号</title>
+	<link rel="shortcut icon" href="httpimg/favicon.ico" />
+    <!--[if lte IE 9]><script src="/static/wxgjcn/src/watermark.js" ></script><![endif]-->
+	<!--[if IE 7]><link href="/static/wxgjcn/css/font_awesome_ie7.css"  rel="stylesheet" /><![endif]-->
+</head>
+<body>
+	<!DOCTYPE>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>在线挂号</title>
+	<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+	<meta name="format-detection" content="telephone=no">
+	<style>
+	.masklayer{
+	display:none;
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:2000;
+	width:100%;
+	height:100%;
+	background-color:rgba(0,0,0,0.5);
+	text-align:right;
+}
+.masklayer.on{
+	display:block;
+}
+.masklayer img{
+	margin-top:10px;
+	margin-right:30px;
+	width:160px;
+}
+	</style>
+</head>
+<body id="onlinebooking">
+	<div class="qiandaobanner"> 
+		<img src="/static/wxgjcn/img/RTqs2yHIc9reg.jpg" >
+	</div>
+	<div class="cardexplain">
+	<!--普通用户登录时显示-->
+	<ul class="round">
+		<li>
+			<a  ><span>我的挂号<em class="ok">0</em></span></a>
+		</li>
+		<li class="addr">
+			<a  ><span>医院地址:上海市杨浦区政旦东路27号</span></a>
+		</li>
+		<li class="tel">
+			<a href="tel:18601776826"><span>联系电话:18601776826</span></a>
+		</li>
+	</ul>
+
+	<!--粉丝填写过的信息的，直接就显示名字电话，粉丝没有填写过信息的话，这里就直接留空让粉丝填写-->
+	<ul class="round">
+	<from action="javascript:;" method="post">
+		<li class="title mb"><span class="none">请认真填写表单</span></li>
+				<li class="nob">
+			<input name="formhash" id="formhash" value="2be3071a" type="hidden">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr>
+					<th>患者姓名</th>
+					<td><input name="name" class="px" id="name" placeholder="请输入您的名字" type="text"></td>
+				</tr>
+			</table>
+		</li>
+						<li class="nob">
+			<input name="formhash" id="formhash" value="2be3071a" type="hidden">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr>
+					<th>性别</th>
+					<td>
+						<select name="sex" class="px" id="sex">
+							<option value="男">男</option>
+							<option value="女">女</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+		</li>
+						<li class="nob">
+			<input name="formhash" id="formhash" value="2be3071a" type="hidden">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr>
+					<th>年龄</th>
+					<td><input name="age" class="px" id="age" placeholder="请输入您的年龄" type="number"></td>
+				</tr>
+			</table>
+		</li>
+						<li class="nob">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr>
+					<th>联系电话</th>
+					<td><input name="tel" class="px" id="tel" placeholder="请输入您的电话" type="tel"></td>
+				</tr>
+			</table>
+		</li>
+						<li class="nob">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<th>预约日期</th>
+				<td>
+					<input type="text" class="px" name="reservation_time" id="dateline" placeholder="请输入预定日期" readonly="readonly" />
+				</td>
+				</tr>
+			</table>
+		</li>
+						<li class="nob">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr>
+					<th>联系地址</th>
+					<td><input name="address" class="px" id="address" placeholder="请输入联系地址" type="text"></td>
+				</tr>
+			</table>
+		</li>
+						<li class="nob">
+			<input name="formhash" id="formhash" value="2be3071a" type="hidden">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr>
+					<th>预约科室</th>
+					<td>
+						<select name="section" class="px" id="section">
+														<option value="例如:神经科">例如:神经科</option>
+														<option value="妇科">妇科</option>
+														<option value="皮肤科">皮肤科</option>
+													</select>
+					</td>
+				</tr>
+			</table>
+		</li>
+						<li class="nob">
+			<input name="formhash" id="formhash" value="2be3071a" type="hidden">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr>
+					<th>预约专家</th>
+					<td>
+						<select name="experts" class="px" id="experts">
+														<option value="例如:张三">例如:张三</option>
+														<option value="李四">李四</option>
+														<option value="王二">王二</option>
+													</select>
+					</td>
+				</tr>
+			</table>
+		</li>
+						<li class="nob">
+			<input name="formhash" id="formhash" value="2be3071a" type="hidden">
+			<table class="kuang" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr>
+					<th>预约病种</th>
+					<td>
+						<select name="diseases" class="px" id="diseases">
+														<option value="例如:血管瘤">例如:血管瘤</option>
+														<option value="高血压">高血压</option>
+														<option value="冠心病">冠心病</option>
+													</select>
+					</td>
+				</tr>
+			</table>
+		</li>
+				        	</ul>
+	<div class="footReturn">
+		<input id="showcard" class="submit" value="提交订单" type="button"> 
+		<div class="window" id="windowcenter">
+			<div id="title" class="wtitle">操作提示<span class="close" id="alertclose"></span></div>
+			<div class="content">
+				<div id="txt"></div>
+			</div>
+		</div>
+	</div>
+	</form>
+	</div>
+<div class="masklayer on" ontouchmove="return true;" onclick="$(this).toggleClass('on');">
+    <script>
+        var isAndroid = navigator.userAgent.toLowerCase().indexOf("android");
+        document.write(isAndroid>-1?"<img src='/img/instruction_android.png'/*tpa=httpimg/instruction_android.png*/ alt='' />":"<img src='/img/instruction_iphone.png'/*tpa=httpimg/instruction_iphone.png*/ alt='' />");
+    </script>
+</div>
+<script type="text/javascript"> 
+	//var oLay = document.getElementById("overlay");	
+	var ret_single = ret_download = '';
+	$(document).ready(function () {
+		$( "#dateline" ).datepicker({
+			minDate: new Date(),
+			dateFormat: "yy-mm-dd"
+		}).val((
+				function(d){
+					return [d.getFullYear(), d.getMonth()+1, d.getDate()].join("-");
+				}
+			)(new Date()));
+
+		$("#showcard").click(function () {
+			if($("#name").val()==''){alert('名字不能为空');return;}
+			if($("#tel").val()==''){alert('电话不能为空');return;}     
+			//if($("#dateline").val()==''){alert('请选择时间');return;}
+
+			$(".single").each(function(i){
+			var s_name = $(this).parent().siblings().text();
+			var s_value = $(this).val();
+			if('' != s_value) ret_single += s_name+'#'+s_value+'@';
+			});
+
+			$(".download").each(function(i){
+				var s_name = $(this).parent().siblings().text();
+				var s_value = $(this).val();
+				if('' != s_value) ret_download += s_name+'#'+s_value+'@';
+			});
+
+			var submitData = {
+				wxname: "fromUsername",
+				plc_sourceid:"gh_eb4ee5efd751",
+				sdid:5,
+				configid:34,
+				regid:59,
+				name: $("#name").val(),
+				sex: $("#sex").val(),
+				age: $("#age").val(),
+				tel: $("#tel").val(),
+				address:$("#address").val(),
+				time: $("#dateline").val(), 
+				section: $("#section").val(),
+				experts: $("#experts").val(),
+				diseases: $("#diseases").val(),
+				single:ret_single,
+				fielddownload:ret_download,
+				action: "setTel"
+			};
+			$.post('/Webmedical/OnlineReg', submitData,
+				function(data) {
+					if (data.success == true) {
+						alert(data.msg);
+						setTimeout("window.location.href='http://www.weimob.com/Webmedical/RegView?regid=59&pid=1071&configid=34&sdid=5&wxname=fromUsername'",2000);
+						return
+					} else {
+						alert(data.msg);
+					}
+				},
+				"json")
+//			oLay.style.display = "block";
+			}); 
+
+
+
+
+
+		$("#windowclosebutton").click(function () { 
+			$("#windowcenter").slideUp(500);
+//			oLay.style.display = "none";
+		}); 
+		$("#alertclose").click(function () { 
+			$("#windowcenter").slideUp(500);
+//			oLay.style.display = "none";
+		}); 
+	});
+
+	function alert(title){ 
+		$("#windowcenter").slideToggle("slow"); 
+		$("#txt").html(title);
+		//$("#windowcenter").hide("slow"); 
+		setTimeout('$("#windowcenter").slideUp(500)',4000);
+	} 
+	        document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+        window.shareData = {  
+            "imgUrl": "/img/RTqs2yHIc9reg.jpg"/*tpa=httpimg/RTqs2yHIc9reg.jpg*/, 
+            "timeLineLink": "http://www.weimob.com/Webmedical/OnlineReg?id=34&regid=59&pid=1071&bid=5&wechatid=fromUsername&wxref=mp.weixin.qq.com",
+            "sendFriendLink": "http://www.weimob.com/Webmedical/OnlineReg?id=34&regid=59&pid=1071&bid=5&wechatid=fromUsername&wxref=mp.weixin.qq.com",
+            "weiboLink": "http://www.weimob.com/Webmedical/OnlineReg?id=34&regid=59&pid=1071&bid=5&wechatid=fromUsername&wxref=mp.weixin.qq.com",
+            "tTitle": "在线挂号",
+            "tContent": "盛世源码—国内优秀的微信公众服务平台智慧医疗挂号",
+            "fTitle": "在线挂号",
+            "fContent": "盛世源码—国内优秀的微信公众服务平台智慧医疗挂号",
+            "wContent": "盛世源码—国内优秀的微信公众服务平台智慧医疗挂号" 
+        };
+        // 发送给好友
+        WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+            WeixinJSBridge.invoke('sendAppMessage', { 
+                "img_url": window.shareData.imgUrl,
+                "img_width": "640",
+                "img_height": "640",
+                "link": window.shareData.sendFriendLink,
+                "desc": window.shareData.fContent,
+                "title": window.shareData.fTitle
+            }, function (res) {
+                _report('send_msg', res.err_msg);
+            })
+        });
+
+        // 分享到朋友圈
+        WeixinJSBridge.on('menu:share:timeline', function (argv) {
+            WeixinJSBridge.invoke('shareTimeline', {
+                "img_url": window.shareData.imgUrl,
+                "img_width": "640",
+                "img_height": "640",
+                "link": window.shareData.timeLineLink,
+                "desc": window.shareData.tContent,
+                "title": window.shareData.tTitle
+            }, function (res) {
+                _report('timeline', res.err_msg);
+            });
+        });
+
+        // 分享到微博
+        WeixinJSBridge.on('menu:share:weibo', function (argv) {
+            WeixinJSBridge.invoke('shareWeibo', {
+                "content": window.shareData.wContent,
+                "url": window.shareData.weiboLink,
+            }, function (res) {
+                _report('weibo', res.err_msg);
+            });
+        });
+        }, false)
+</script> 
+</body>
+<footer style="text-align:center; color:#ffd800;margin-right:20px"><a href="/static/wxgjcn/weisite/home-pid=1071&bid=5&wechatid=fromUsername&wxref=mp.weixin.qq.com.htm" >

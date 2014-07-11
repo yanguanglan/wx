@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="uyan_auth" content="04a3f6938d" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="微信营销、微信代运营、微信定制开发、微信托管、微网站、微商城、微营销" name="Keywords">
+	<meta content="盛世源码—国内优秀的微信公众服务平台，国内最大的微信公众智能服务平台，盛世源码—国内优秀的微信公众服务平台八大微体系：微菜单、微官网、微会员、微活动、微商城、微推送、微服务、微统计，企业微营销必备。" name="Description">
+    <script src="/static/wxgjcn/src/html5.js" ></script>
+    <link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/bootstrap_min.css-2014-03-07-1.css"  media="all" />
+<link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/www/index1/index.css-2014-03-07-1.css"  media="all" />
+<script type="text/javascript" src="/static/wxgjcn/src/jQuery.js-2014-03-07-1.js" ></script>
+<script type="text/javascript" src="/static/wxgjcn/src/www/index1/weimob-index.js-2014-03-07-1.js" ></script>
+<script type="text/javascript" src="/static/wxgjcn/src/www/index1/jquery_lazyload.js-2014-03-07-1.js" ></script>
+<title>盛世源码—国内优秀的微信公众服务平台</title>
+	<link rel="shortcut icon" href="httpimg/favicon.ico" />
+</head>
+<body>
+	<!--[if lte IE 8]>  <script language="javascript">$(function (){$.browser.msie&&$("#ie9-tips").show().find("#stopSuggestA").click(function(){$("#ie9-tips").hide()})})</script><![endif]-->
+<div class="nav clearfix">
+	<div class="nav-content">
+		<h1 class="left"><a href="/static/wxgjcn/index.html"   title="盛世源码—国内优秀的微信公众服务平台官网">盛世源码—国内优秀的微信公众服务平台·微信营销，如此简单！</a></h1>
+		<div class="left city">
+			<h2>上海</h2>
+							<a href="/static/wxgjcn/city1.htm" >
+					切换城市<i class="tri4"></i>
+				</a>
+					</div>
+		<div class="right line-li">
+        
+			 <ul>
+        <li><a href="/static/wxgjcn/index.html" >首页</a></li>
+        <li><a href="/static/wxgjcn/case1.htm"  >经典案例</a></li>
+	    <li class="nav_menu_li_1"><a style="width:70px; text-align:left;" class="_hover">产品中心<i></i></a>
+					 <div class="sub-nav">
+						 <a href="/static/wxgjcn/package.htm"  target="_black">盛世源码—国内优秀的微信公众服务平台套餐</a>
+						 <a href="/static/wxgjcn/guide1.htm" >功能介绍</a>
+						 <a href="weipai.htm"  target="_black">微拍</a>
+
+					 </div>
+
+	    </li>
+        <li><a href="/static/wxgjcn/proxy1.htm"  >渠道代理</a></li>
+        <li><a href="/static/wxgjcn/help.htm"   target="_black">帮助</a></li>
+    </ul>
+            <div class="account">
+        <a href="/reg.html"  class="btn-reg btn0" target="_black">注册</a>
+                  <a href="/login.html" class="btn-login btn0" target="_black">登录</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div id="loginBox">
+		<div class="login-panel">
+			<h3>登录</h3>
+			<div class="login-mod">
+				<div class="login-err-panel dn" id="err_area">
+					<span class="icon-wrapper"><i class="icon24-login err" style="margin-top:-.2em;*margin-top:0;"></i></span>
+					<span id="err_tips"></span>
+				</div>
+				<form class="login-form" id="login-form">
+					<div class="login-un">
+						<span class="icon-wrapper"><i class="icon24-login un"></i></span>
+						<input type="text" id="username" placeholder="盛世源码—国内优秀的微信公众服务平台号">
+					</div>
+					<div class="login-pwd">
+						<span class="icon-wrapper"><i class="icon24-login pwd"></i></span>
+						<input type="password" id="password" placeholder="密码">
+					</div>
+				</form>
+				<div class="login-help-panel">
+					<a id="rememberPwd" class="login-remember-pwd" href="javascript:;">
+						<input type="checkbox" id="rememberPwdIcon">记住帐号
+					</a>
+					<a class="login-forget-pwd" href="/static/wxgjcn/forgotpassword/index.html" >忘记密码？</a>
+                    <a class="login-forget-pwd" href="/static/wxgjcn/reg1.htm" >新用户注册</a>
+				</div>
+				<div class="login-btn-panel">
+					<a class="login-btn" title="点击登录" href="javascript:;" id="login_button" onclick="login();">登录</a>
+				</div>
+			</div>
+		</div>
+		<div class="login-cover" onclick="loginBox.toggle(this, event);"></div>
+	</div>
+<div id="ie9-tips" class="clearfix">
+	<div id="tipsPanel">
+		<div id="tipsDesc">系统检测到您所使用的浏览器版本较低，推荐使用<a   target="_blank">Firefox</a>或<a   target="_blank">Chrome</a>浏览器打开，否则将无法体验完整产品功能。</div>
+		<a id="stopSuggestA" href="javascript:;">×</a>
+	</div>
+</div>
+
+<script>
+var $do_submit = false;
+
+// 绑定回车键
+$('#loginBox').keydown(function(e){
+	if(13 == event.keyCode){
+		login();
+	}
+});
+
+	function login()
+	{
+		if (true == $do_submit)
+		{
+			return false;
+		}
+
+		var $pre_submit = '登录', $done_submit = '登录中...';
+		var $username = $('#username').val(), $password = $('#password').val(), $keepalive = $('#rememberPwdIcon').val();
+		$('#login_button').text($done_submit);
+		$do_submit = true;
+
+		// check
+		if ('' == $username || '' == $password)
+		{
+			$('#err_tips').text('您输入的盛世源码—国内优秀的微信公众服务平台号或密码错误，请重新输入！');
+			$('#err_area').show();
+			$('#login_button').text($pre_submit);
+			$do_submit = false;
+			return false;
+		}
+
+		var $login_data = {
+			username:$username,
+			password:$password,
+			keepalive:$keepalive
+		};
+		$.post('/login', $login_data, function(rs){
+			if(rs.errno == 200)
+			{
+				location.href = rs.url_route;
+			}
+			else
+			{
+				$('#err_tips').text(rs.error);
+				$('#err_area').show();
+				$('#login_button').text($pre_submit);
+			}
+			$do_submit = false;
+		}, 'json');
+	}
+</script>
+
+
+<style>
+*{ margin:0; padding:0;}
+a img {
+	border: 0
+}
+img {
+	vertical-align: middle
+}
+ul li{ list-style:none;}
+div {
+	display: block;
+}
+body {
+	background:#a3a2ca url(/img/www/index1/weipai/body.png)/*tpa=httpimg/www/index1/weipai/body.png*/ center 48px no-repeat;
+}
+.wall-layout {
+	width:980px;
+	margin: 0 auto;
+	overflow:hidden;
+	clear:both;
+	margin-top:48px;
+	
+}
+.wall-conten{ margin:0 auto; width:980px;}
+.banner{ width:980px; margin:0 auto; }
+.slide{ width:980px;margin:0 auto;  }
+
+</style>
+
+<body>
+
+<div class="wall-layout">
+       <div class="banner">
+            <div class="slide">
+          		<img src="/static/wxgjcn/img/www/index1/weipai/weipai_03.jpg-v=2014-03-07-1.jpg"  height="105"/>
+                <img src="/static/wxgjcn/img/www/index1/weipai/weipai_05.jpg-v=2014-03-07-1.jpg"  height="106"/>
+                <img src="/static/wxgjcn/img/www/index1/weipai/weipai_06.jpg-v=2014-03-07-1.jpg"  height="171" usemap="#Map3" border="0"/>
+               <map name="Map3" id="Map3">
+                  <area shape="rect" coords="600,5,802,63"   target="_blank">
+                </map>
+             
+                
+           </div>
+       
+       </div>
+
+	 <div class="wall-conten">
+        <img src="/static/wxgjcn/img/www/index1/weipai/weipai_07.jpg-v=2014-03-07-1.jpg"  height="110"/>
+     	<img src="/static/wxgjcn/img/www/index1/weipai/weipai_08.jpg-v=2014-03-07-1.jpg"  height="113"/>
+        <img src="/static/wxgjcn/img/www/index1/weipai/weipai_09.jpg-v=2014-03-07-1.jpg"  height="88" />
+        <img src="/static/wxgjcn/img/www/index1/weipai/weipai_10.jpg-v=2014-03-07-1.jpg"  height="115" />
+        <img src="/static/wxgjcn/img/www/index1/weipai/weipai_11.jpg-v=2014-03-07-1.jpg"  height="123" />
+        <img src="/static/wxgjcn/img/www/index1/weipai/weipai_12.jpg-v=2014-03-07-1.jpg"  height="130" />
+        <img src="/static/wxgjcn/img/www/index1/weipai/weipai_13.jpg-v=2014-03-07-1.jpg"  height="109" />
+         <img src="/static/wxgjcn/img/www/index1/weipai/weipai_14.jpg-v=2014-03-07-1.jpg"  height="125" />
+        <img src="/static/wxgjcn/img/www/index1/weipai/weipai_15.jpg-v=2014-03-07-1.jpg"  height="126" />
+        <img src="/static/wxgjcn/img/www/index1/weipai/weipai_16.jpg-v=2014-03-07-1.jpg"  height="126" />
+        <img src="/static/wxgjcn/img/www/index1/weipai/weipai_17.jpg-v=2014-03-07-1.jpg"  height="132" />
+        <img src="/static/wxgjcn/img/www/index1/weipai/weipai_18.jpg-v=2014-03-07-1.jpg"  height="110" />
+        <img src="/static/wxgjcn/img/www/index1/weipai/weipai_19.jpg-v=2014-03-07-1.jpg"  height="116" />
+         <img src="/static/wxgjcn/img/www/index1/weipai/weipai_20.jpg-v=2014-03-07-1.jpg"  height="108" />
+        <img src="/static/wxgjcn/img/www/index1/weipai/weipai_21.jpg-v=2014-03-07-1.jpg"  height="135" />
+        <img src="/static/wxgjcn/img/www/index1/weipai/weipai_22.jpg-v=2014-03-07-1.jpg"  height="174" />
+        <img src="/static/wxgjcn/img/www/index1/weipai/weipai_23.jpg-v=2014-03-07-1.jpg"  height="139" />
+        <img src="/static/wxgjcn/img/www/index1/weipai/weipai_24.jpg-v=2014-03-07-1.jpg"  height="162" usemap="#Map2" style=" margin-bottom:20px;"  border="0" />
+        <map name="Map2" id="Map2">
+          <area shape="rect" coords="391,53,601,120"   target="_blank" />
+          <area shape="rect" coords="755,8,896,41" href="/static/wxgjcn/case1.htm"  target="_blank" />
+        </map>
+        
+     </div>
+
+</div>
+</body>
+
+<div class="erwei" title="微信扫一扫">
+	<span class="hudongzhushou">官方微信</span>
+	<div class="erwei_big" style="display:none;">
+		<p>扫一扫，关注盛世源码—国内优秀的微信公众服务平台官方微信，体验盛世源码—国内优秀的微信公众服务平台智能服务</p>
+	</div>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var erwei_time = null;
+		$(".erwei").hover(function(){
+			$(".erwei_big").show();
+		}).mouseleave(function(){
+				erwei_time = setTimeout(function(){
+					$(".erwei_big").hide();
+				},1000);
+			});
+		$(".erwei_big").mouseenter(function(){
+			if(erwei_time){
+				clearTimeout(erwei_time);
+			}
+		}).mouseleave(function(){
+				erwei_time = setTimeout(function(){
+					$(".erwei_big").hide();
+				},1000);
+			});
+	});
+</script>
+<!-- 意见反馈 -->
+<div class="feedback" id="feedback">
+	<p class="feedsize"><b>亲爱的用户</b><a class="close" href="javascript:;" onclick= "$('#feedback, #feedback_cover').toggleClass('on');">×</a></p>
+	<p class="bbottom">欢迎您访问盛世源码—国内优秀的微信公众服务平台官方网站！您对盛世源码—国内优秀的微信公众服务平台有任何意见和建议，或在使用过程中遇到问题，请在本页面反馈。我们会实时关注您的反馈不断优化，您的建议将帮助我们改进，为您提供更好的服务！</p>
+	<p class="feedsize"><b>请留下您的宝贵意见和建议！（请填写）</b></p>
+	<form>
+		<textarea  id="feedback-text" name="" id="feedback-text" placeholder="输入文本..."></textarea>
+		<p class="feedsize"><b>您常用的电子邮箱是？（请填写）</b></p>
+		<p style="color:#666; text-indent:1em;"><b class="blue">★</b>请尽量填写，以便我们尽快回复您！</p>
+		<input type="text" placeholder="如：@163.com" id="feedback-input" />
+       <p class="feedsize"><b>验证码</b></p>
+        <input type="text" name="captcha" id="feedback-Captcha" maxlength="4" onclick="">
+        <span name="feedback_captcha" id="feedback_captcha">
+				<img title="看不清？点击更换" style="cursor: pointer;" src="/static/wxgjcn/captcha-f=feedback&v=8155646.png"  id="yanzhen" width="60" height="20" border="1">
+	    </span>
+	    <br />
+		<input type="button"  class="feed-btn" value="" onclick="feedbackSubmit(); return false;" />
+	</form>
+</div>
+<div id="feedback_cover" class="feedback_cover"></div>
+
+<!--QQ咨询-->
+<script charset="utf-8" type="text/javascript" src="/static/wxgjcn//static.b.qq.com/account/bizqq/js/wpa.js-wty=1&type=13&kfuin=631989322&ws=http---www.weimob.com-&title=企业QQ售前&cot1=国内最大的盛世源码—国内优秀的微信公众服务平台&btn1=企业QQ咨询&fsty=0&fposX=2&fposY=1&tx=2&aty=1&a=1001.js" ></script>
+
+<div class="footer">
+	<div class="footer-content clearfix">
+		<div class="foot-menu">
+			<p>
+				<a href="/static/wxgjcn/index1.htm"  target="_blank">盛世源码—国内优秀的微信公众服务平台首页</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/reg1.htm"  target="_blank">申请入驻</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/proxy1.htm"  target="_blank">渠道代理</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/about1.htm"  target="_blank">关于盛世源码</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/agents.htm"  target="_blank">授权认证</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/jobs.htm"  target="_blank">加入盛世源码</a>
+			</p>
+			<p>免费热线：400-000-0000&nbsp;&nbsp;&nbsp;QQ：631989322&nbsp;&nbsp;&nbsp;邮箱：631989322@qq.com</p>
+			<p>地址：
+								湖南省长沙市</p>
+		</div>
+		<div class="copyright">
+			Copyright (c) 2011-2014 http://www.9upp.com. All Rights Reserved 盛世源码团队 湘ICP备13225014号
+		</div>
+	</div>
+</div>
+<a class="feedbackbot" href="javascript:;" onclick= "$('#feedback, #feedback_cover').toggleClass('on');"></a>
+<div style="display:none;"><script type="text/javascript" src="/static/wxgjcn/src/www/index1/huishuo.js-v=2014-03-07-1.js" ></script></div>
+
+<script>
+	$(document).ready(function(){
+		$("#yanzhen").click(function(){
+			var img_src= '/site/captcha-f=feedback&v=.png'/*tpa=http://www.weimob.com/site/captcha?f=feedback&v=*/;
+			$(this).attr({"src":img_src + Math.random()*100000});
+		});
+	});
+	function feedbackSubmit(){
+		var $data = {
+			feedback: $('#feedback-text').val(),
+			email: $('#feedback-input').val(),
+			captcha: $('#feedback-Captcha').val(),
+			url: self.location.hrefy
+		};
+		$.post('/site/feedback', $data, function(rs){
+			alert(rs.error);
+			if (200 == rs.code)
+			{
+				$('#feedback, #feedback_cover').toggleClass('on');
+			}
+		}, 'json');
+	}
+</script>
+
+</body>
+</html>

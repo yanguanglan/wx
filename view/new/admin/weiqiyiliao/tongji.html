@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<link rel="stylesheet" type="text/css" href="/css/wm/bootstrap_min.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/bootstrap_responsive_min.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/style.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/themes.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/todc_bootstrap.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/inside.css" media="all" />
+<title>微信管家—国内最大的微信公众服务平台</title><script type="text/javascript">var yyuc_jspath = "/@system/";</script><script type="text/javascript" src="/@system/js/jquery.js"></script><script type="text/javascript" src="/@system/js/yyucadapter.js"></script>
+
+<script src="http://libs.baidu.com/highcharts/2.2.5/highcharts.js"></script>
+
+</head>
+<body>
+	   <style>
+body {
+	font-family: 微软雅黑,宋体,Arial,sans-serif;
+}
+h1,h2,h3,h4,h5,h6 {
+	padding: 0;
+	margin: 0;
+}
+.row {
+	width: 950px;
+	margin: 20px 0 30px 20px;
+	position: relative;
+}
+.area {
+	border: 1px solid #cdced0;
+	width: 700px;
+}
+#memberChart {
+	height: 250px;
+	width: 100%;
+}
+#snConsumeChart {
+	height: 250px;
+	width: 100%;
+}
+#memberRight {
+	width: 200px;
+}
+.total {
+	border-top: 1px solid #cdced0;
+	padding: 7px 0 7px 15px;
+}
+.right {
+	position: absolute;
+	top: 0;
+	right: 15px;
+	border: 1px solid #cdced0;
+	height: 286px;
+	width: 210px;
+	text-align: center;
+	background-color: #eeeff1;
+}
+.sep {
+	height: 1px;
+	background-color: #cdced0
+}
+.txt-1 {
+	padding: 15px;
+	color: #1f4171;
+}
+.txt-2 {
+	padding: 5px;
+	color: #ff7900;
+	font-weight: normal;
+}
+.txt-3 {
+	padding: 5px;
+	padding-bottom: 20px;
+	color: #beaa8f;
+	font-weight: normal;
+}
+.txt-4 {
+	position: relative;
+	top: 6px;
+	left: -20px;
+	color: #2d3645;
+}
+.count-1 {
+	padding-top: 25px;
+	color: #ff7900;
+}
+.count-2{
+     margin-top: 20px;
+	color: #beaa8f;
+}
+.start-time {
+	margin-right: 10px;
+}
+.end-time {
+	margin-left: 10px;
+	margin-right: 5px;
+}
+.info-block {
+	text-align: center;
+}    </style>
+
+    <div id="main">
+        <div class="container-fluid">
+
+            <div class="row-fluid">
+                <div class="span12">
+
+                    <div class="box">
+                        <div class="box-title">
+                            <h3><i class="icon-table"></i>微医疗数据统计</h3>
+                        </div>
+                        <div class="box-content">
+                            <div class="row">
+                                <div class="area">
+                                    <div id="memberChart">
+                                   
+                                    </div>
+                                    <div class="total">
+                                        <span class="start-time">2014-02-03</span>
+								                                    到<span class="end-time">2014-03-05</span>
+								                                     共新增16名预约
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <h4 class="txt-1">新增预约</h4>
+                                    <div class="sep sep1"></div>
+                                    <h1 class="count-1">0</h1>
+                                    <h4 class="txt-2">今日新增预约</h4>
+                                    <h1 class="count-2">0</h1>
+                                    <h4 class="txt-3">昨日新增预约</h4>
+                                    <div class="sep sep2"></div>
+                                    <span class="txt-4">目前预约共计16人</span>
+                                </div>
+                            </div>
+                            <div class="row consume">
+                                <div class="area">
+                                    <div id="snConsumeChart">
+                                    </div>
+                                    <div class="total">
+                                        <span class="start-time">2014-02-03</span>
+							                                        到<span class="end-time">2014-03-05</span>
+							                                        共到诊2人
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <h4 class="txt-1">到诊人数</h4>
+                                    <div class="sep sep1"></div>
+                                    <h1 class="count-1">0</h1>
+                                    <h4 class="txt-2">今日到诊人数</h4>
+                                    <h1 class="count-2">0</h1>
+                                    <h4 class="txt-3">昨日到诊人数</h4>
+                                    <div class="sep sep2"></div>
+                                    <span class="txt-4">目前到诊共计2人</span>
+                                </div>
+                            </div>
+
+                            <script type="text/javascript">
+                                $(function () {
+                                    new Highcharts.Chart({
+                                        chart: {
+                                            renderTo: 'memberChart',
+                                            type: 'line',
+                                            marginRight: 30,
+                                            marginBottom: 25
+                                        },
+                                        title: {
+                                            text: '最近一月新增预约趋势图',
+                                            align: 'left'
+                                        },
+                                        xAxis: {
+                                            type: 'datetime',
+                                            labels: {
+                                                formatter: function () {
+                                                    return getFormatDate(this.value);
+                                                },
+                                                style: {
+                                                    color: '#2f7ed8'
+                                                }
+                                            },
+                                            gridLineWidth: 1,
+                                            tickInterval: 7 * 24 * 3600 * 1000// one week
+                                        },
+                                        yAxis: {
+                                            title: {
+                                                text: '<span>最近一月新增预约趋势图</span>'
+                                            },
+                                
+                                            plotLines: [{
+                                                value: 0,
+                                                width: 1,
+                                                color: '#808080'
+                                            }],
+                                            min: -1,
+                                            
+                                            
+                                        },
+                                        tooltip: {
+                                            formatter: function () {
+                                                return getFormatDate(this.x) + ': <span style="color:red">' + this.y + '人<span>';
+                                            }
+                                        },
+                                        series: [{
+                                            name: "新预约者人数",
+                                            data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,5,4,0,1,1,0,0,1,0,0],
+                                            pointStart: Date.UTC(2014,1,03),
+                                            pointInterval: 24 * 3600 * 1000 // one day
+                                        }],
+                                        legend: { enabled: false }
+                                    });
+
+                                    new Highcharts.Chart({
+                                        chart: {
+                                            renderTo: 'snConsumeChart',
+                                            type: 'line',
+                                            marginRight: 30,
+                                            marginBottom: 25
+                                        },
+                                        colors: [
+                                                 '#8bbc21'
+                                        ],
+                                        title: {
+                                            text: '最近一月到诊人数趋势图',
+                                            align: 'left'
+                                        },
+                                        xAxis: {
+                                            type: 'datetime',
+                                            labels: {
+                                                formatter: function () {
+                                                    return getFormatDate(this.value);
+                                                },
+                                                style: {
+                                                    color: '#2f7ed8'
+                                                }
+                                            },
+                                            gridLineWidth: 1
+                                        },
+                                        yAxis: {
+                                            title: {
+                                                text: '<span>最近一月到诊人数趋势图</span>'
+                                            },
+                                            plotLines: [{
+                                                value: 0,
+                                                width: 1,
+                                                color: '#808080'
+                                            }],
+                                            min: -1,
+                                        },
+                                        tooltip: {
+                                            formatter: function () {
+                                                return getFormatDate(this.x) + ': <span style="color:red">' + this.y + '人<span>';
+                                            }
+                                        },
+                                        series: [{
+                                            name: "新增到诊人数",
+                                            data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0],
+                                            pointStart: Date.UTC(2014,1,03),
+                                            pointInterval: 24 * 3600 * 1000 // one day
+                                        }],
+                                        legend: { enabled: false, verticalAlign: "top" }
+                                    });
+
+                                    function getFormatDate(v) {
+                                        var d = new Date(v);
+                                        return d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+                                    }
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

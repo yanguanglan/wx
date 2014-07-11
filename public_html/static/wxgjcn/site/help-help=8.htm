@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="uyan_auth" content="04a3f6938d" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="微信营销、微信代运营、微信定制开发、微信托管、微网站、微商城、微营销" name="Keywords">
+	<meta content="盛世源码—国内优秀的微信公众服务平台，国内最大的微信公众智能服务平台，盛世源码—国内优秀的微信公众服务平台八大微体系：微菜单、微官网、微会员、微活动、微商城、微推送、微服务、微统计，企业微营销必备。" name="Description">
+    <script src="/static/wxgjcn/src/html5.js" ></script>
+    <link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/bootstrap_min.css-2014-03-07-1.css"  media="all" />
+<link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/www/index1/index.css-2014-03-07-1.css"  media="all" />
+<link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/www/help/help.css-2014-03-07-1.css"  media="all" />
+<script type="text/javascript" src="/static/wxgjcn/src/jQuery.js-2014-03-07-1.js" ></script>
+<script type="text/javascript" src="/static/wxgjcn/src/www/index1/weimob-index.js-2014-03-07-1.js" ></script>
+<title>盛世源码—国内优秀的微信公众服务平台</title>
+	<link rel="shortcut icon" href="httpimg/favicon.ico" />
+</head>
+<body>
+	
+<!--595 850-->
+<script language="javascript">
+	$(function () {
+		$("a").click(function () {
+			var rel = $(this).attr("rel");
+			if (rel) {
+				var pos = $(rel).offset().top-60;
+				$("html,body").animate({ scrollTop: pos }, 800);
+			}
+
+		})
+	})
+</script>
+<script>
+	$().ready(function(){
+
+		window.onscroll = window.onresize = function(){
+			showSideBar();
+		}
+	});
+	function showSideBar(){
+		if(!window.sideMenu){
+			window.sideMenu = $("#sideToolbar");
+		}
+		if((document.body.scrollTop||document.documentElement.scrollTop)>500){
+			sideMenu.addClass("on");
+		}else{
+			sideMenu.removeClass("on");
+		}
+	}
+
+
+
+</script>
+<!--[if lte IE 8]>  <script language="javascript">$(function (){$.browser.msie&&$("#ie9-tips").show().find("#stopSuggestA").click(function(){$("#ie9-tips").hide()})})</script><![endif]-->
+<div class="nav clearfix">
+	<div class="nav-content">
+		<h1 class="left" onclick="location.herf='/site/city1'">盛世源码—国内优秀的微信公众服务平台·微信营销，如此简单！</h1>
+		<div class="left city">
+			<h2>上海</h2>
+							<a href="/static/wxgjcn/city1.htm" >
+					切换城市<i class="tri4"></i>
+				</a>
+					</div>
+		<div class="right line-li">
+			<ul>
+				<li><a href="/static/wxgjcn/index.html" >首页</a></li>
+				<li><a href="/static/wxgjcn/case1.htm"  >经典案例</a></li>
+				<li class="nav_menu_li_1"><a style="width:70px; text-align:left;" class="_hover">产品中心<i></i></a>
+					<div class="sub-nav">
+						<a href="/static/wxgjcn/package.htm"  target="_black">盛世源码—国内优秀的微信公众服务平台套餐</a>
+						<a href="/static/wxgjcn/guide1.htm" >功能介绍</a>
+						<a href="/static/wxgjcn/topic/weipai.htm"  target="_black">微拍</a>
+
+					</div>
+
+				</li>
+				<li><a href="/static/wxgjcn/proxy1.htm"  >渠道代理</a></li>
+				<li><a href="/static/wxgjcn/help.htm"  class="navtwo" target="_black">帮助</a></li>
+			</ul>
+			<div class="account">
+				<a href="/reg.html"  class="btn-reg btn0" target="_black">注册</a>
+									<a href="javascript:;" class="btn-login btn0" onclick="if(location.hostname.indexOf('.cn')>-1){location.href='/static/wxgjcn/login.htm'/*tpa=http://www.weimob.com/site/login*/; return false;} loginBox.toggle(this, event);">登录</a>
+				</div>
+		</div>
+	</div>
+</div>
+
+	<div id="loginBox">
+		<div class="login-panel">
+			<h3>登录</h3>
+			<div class="login-mod">
+				<div class="login-err-panel dn" id="err_area">
+					<span class="icon-wrapper"><i class="icon24-login err" style="margin-top:-.2em;*margin-top:0;"></i></span>
+					<span id="err_tips"></span>
+				</div>
+				<form class="login-form" id="login-form">
+					<div class="login-un">
+						<span class="icon-wrapper"><i class="icon24-login un"></i></span>
+						<input type="text" id="username" placeholder="盛世源码—国内优秀的微信公众服务平台号">
+					</div>
+					<div class="login-pwd">
+						<span class="icon-wrapper"><i class="icon24-login pwd"></i></span>
+						<input type="password" id="password" placeholder="密码">
+					</div>
+				</form>
+				<div class="login-help-panel">
+					<a id="rememberPwd" class="login-remember-pwd" href="javascript:;">
+						<input type="checkbox" id="rememberPwdIcon">记住帐号
+					</a>
+					<a class="login-forget-pwd" href="/reg.html" >我是新用户!<strong>申请入驻</strong></a>
+				</div>
+				<div class="login-btn-panel">
+					<a class="login-btn" title="点击登录" href="javascript:;" id="login_button" onclick="login();">登录</a>
+				</div>
+			</div>
+		</div>
+		<div class="login-cover" onclick="loginBox.toggle(this, event);"></div>
+	</div>
+<div id="ie9-tips" class="clearfix">
+	<div id="tipsPanel">
+		<div id="tipsDesc">系统检测到您所使用的浏览器版本较低，推荐使用<a   target="_blank">Firefox</a>或<a   target="_blank">Chrome</a>浏览器打开，否则将无法体验完整产品功能。</div>
+		<a id="stopSuggestA" href="javascript:;">×</a>
+	</div>
+</div>
+
+<script>
+	var $do_submit = false;
+
+	// 绑定回车键
+	$('#loginBox').keydown(function(e){
+		if(13 == event.keyCode){
+			login();
+		}
+	});
+
+		function login()
+	{
+		if (true == $do_submit)
+		{
+			return false;
+		}
+
+		var $pre_submit = '登录', $do_submit = '登录中...';
+		var $username = $('#username').val(), $password = $('#password').val(), $keepalive = $('#rememberPwdIcon').val();
+		$('#login_button').text($do_submit);
+		$do_submit = true;
+
+		// check
+		if ('' == $username || '' == $password)
+		{
+			$('#err_tips').text('您输入的盛世源码—国内优秀的微信公众服务平台号或密码错误，请重新输入！');
+			$('#err_area').show();
+			$('#login_button').text($pre_submit);
+			$do_submit = false;
+			return false;
+		}
+
+		var $login_data = {
+			username:$username,
+			password:$password,
+			keepalive:$keepalive
+		};
+		$.post('/login', $login_data, function(rs){
+			if(rs.errno == 200)
+			{
+				location.href = rs.url_route;
+			}
+			else
+			{
+				$('#err_tips').text(rs.error);
+				$('#err_area').show();
+				$('#login_button').text($pre_submit);
+			}
+			$do_submit = false;
+		}, 'json');
+	}
+	</script>
+<div id="top"></div><div id="page">
+   
+       <div class="title">盛世源码—国内优秀的微信公众服务平台产品（微汽车）使用指南</div>
+          <h3 id="8_1">1、汽车设置</h3>
+          <p>使用方法：进入微汽车设置界面，设置触发关键词、编辑标题、上传图文封面、编辑图文消息简介，点击保存；</p>
+          <p><img src="/static/wxgjcn/img/webabout/qcsz.png"  width="724" height="528"></p>
+          <h3 id="8_2">2、品牌管理</h3>
+     	  <p>使用方法：点击品牌管理，进入品牌管理界面，添加品牌：编辑品牌名称、官方网站地址、上传logo标识、设置显示顺序、品牌简介，点击保存；</p>
+          <p><img src="/static/wxgjcn/img/webabout/ppgl1.png"  width="900" height="230"></p>
+          <p><img src="/static/wxgjcn/img/webabout/ppgl2.png"  width="930" height="483"></p>
+          <h3 id="8_3">3、车系管理</h3>
+             <p>使用方法：点击“添加车系”，进入车系管理页面，添加车系：选择品牌、编辑车系名称、车系简称、上传车系图片、设置显示顺序、编辑车系亮点，点击保存；</p>
+          <p>备注：注意填写车系的简称，因为在手机端的前台页面上我们显示的是简称。</p>
+     		<p><img src="/static/wxgjcn/img/webabout/cxgl.png"  width="900" height="500"></p>
+            <h3 id="8_4">4、车型管理</h3>
+             <p>使用方法：进入车型管理界面，添加车型：编辑车型名称、选择品牌和车系、年款、设置显示顺序、设定指导价、经销商报价、上传图片（50张以内）、设置排量、档位个数、选择变速箱，点击保存；</p>
+           <p>备注：为之前添加的每一款车系添加相应的车型，请认真填写每一项内容并为该款车型添加清晰的图片。</p>
+            <p><img src="/static/wxgjcn/img/webabout/cvgl1.png"  width="921" height="540"></p>
+     	 <p><img src="/static/wxgjcn/img/webabout/cvgl2.png"  width="655" height="343"></p>
+         <h3 id="8_5">5、销售管理</h3>
+            <p>使用方法：添加销售顾问，输入姓名、上传头像、填写电话号码、设置显示顺序、选择类型（售前/售后）、编辑简介，点击保存；</p>
+           <p>备注：添加为您服务的销售人员联系方式，您的顾客将可以通过手机端直接拨打电话。</p>
+            <p><img src="/static/wxgjcn/img/webabout/xsgl.png"  width="768" height="542"></p>
+          <h3 id="8_6">6、预约保养</h3>
+              <p>使用方法：点击新增预约，设置触发关键词、图文消息标题、上传图文封面、填写预约地址、设置地图标识、填写预约电话、上传订单页头部图片、编辑订单详情、设置重命名订单、重命名订单说明、重命名订单电话、订单接收设置、填写订单的起始和结束时间，设置订单内容，点击保存；</p>
+              <p><img src="/static/wxgjcn/img/webabout/yyby1.png"  width="796" height="533"></p>
+              <p><img src="/static/wxgjcn/img/webabout/yyby2.png"  width="900" height="480"></p>
+     		<p><img src="/static/wxgjcn/img/webabout/yyby3.png"  width="900" height="480"></p>
+              <p>基本流程与预约保养一样，用户只需按照流程步骤来操作即可完成预约试驾功能，点击保存；</p>
+             <h3 id="8_7">7、预约试驾</h3> 
+              <p>使用方法：点击新增预约，设置触发关键词、图文消息标题、上传图文封面、填写预约地址、设置地图标识、填写预约电话、上传订单页头部图片、编辑订单详情、设置重命名订单、重命名订单说明、重命名订单电话、订单接收设置、填写订单的起始和结束时间，设置订单内容，点击保存；</p>
+             <p><img src="/static/wxgjcn/img/webabout/yyby1.png"  width="796" height="533"></p>
+            <p><img src="/static/wxgjcn/img/webabout/yyby2.png"  width="900" height="500"></p>
+            <p><img src="/static/wxgjcn/img/webabout/yyby3.png"  width="900" height="490"></p>
+            <p>基本流程与预约保养一样，用户只需按照流程步骤来操作即可完成预约试驾功能，点击保存；</p>
+            <h3 id="8_8">8、实用工具</h3>
+            <p>使用方法：点击新增预约，设置触发关键词、图文消息标题、上传图文封面、填写预约地址、设置地图标识、填写预约电话、上传订单页头部图片、编辑订单详情、设置重命名订单、重命名订单说明、重命名订单电话、订单接收设置、填写订单的起始和结束时间，设置订单内容，点击保存；</p>
+     	 <p><img src="/static/wxgjcn/img/webabout/sygj.png"  width="913" height="329"></p>
+        <p>使用方法：保险计算、车贷计算、全款计算、车型比较，商家可以根据需求，设置打开功能。</p>
+        <p>备注：我们暂时给您提供了5款实用小工具，以后会逐步增加更多。</p>
+        <p>注意：当您完成了以上内容设置之后，还有一些内容您需要花几分钟时间去设置：</p>
+        <p><img src="/static/wxgjcn/img/webabout/sygj1.png"  width="900" height="400"></p>
+        <p>a、“微官网”--“首页幻灯片”：添加几张您的微汽车首页的幻灯片，并做简短的描述；</p>
+        <p><img src="/static/wxgjcn/img/webabout/sygj2.png"  width="900" height="310"></p>
+        <p>b、“微官网”--“分类管理”：请建立6个状态为“显示”的分类，依次在“回复类型”中选择调用“微汽车”下的6个功能模块；</p>
+        <p><img src="/static/wxgjcn/img/webabout/sygj3.png"  width="599" height="526" ></p>
+     	 <p><img src="/static/wxgjcn/img/webabout/sygj4.png"  width="624" height="517"></p>
+        <p> c、“微官网”--“模板管理”中选择我们为您精心设计的微汽车模板“模板0”以及“图文列表模板风格”中选择“列表0”；</p>
+         <p><img src="/static/wxgjcn/img/webabout/sygj5.png"  style=" width:80%; height:50%;"></p>
+     	<p><img src="/static/wxgjcn/img/webabout/sygj6.png"  width="844" height="527"></p>
+         <p><img src="/static/wxgjcn/img/webabout/sygj7.png"  width="907" height="552"></p>
+         <p> d、进入“回复设置”界面--“图文回复”：中添加新闻资讯内容，并将分类设置为“最新资讯”。
+好了，全部完成，用您的手机触发关键字来看看您的“微汽车”官网吧！</p>
+         
+   
+  <div id="sideToolbar" style="display: block; position: fixed; top:150px;  right: 0;">
+  <div id="sideCatalog" class="sideCatalogBg" style="visibility: visible;">
+    <div id="sideCatalog-sidebar"></div>
+    <div id="sideCatalog-catalog">
+      <dl style="width:200px;zoom:1">
+        <dd><span>1</span><a href="javascript:void()" rel="#8_1" title="汽车设置">汽车设置</a></dd>
+        <dd><span>2</span><a href="javascript:void()" rel="#8_2" title="品牌管理">品牌管理</a></dd>
+        <dd><span>3</span><a href="javascript:void()" rel="#8_3" title="车系管理">车系管理</a></dd>
+        <dd><span>4</span><a href="javascript:void()" rel="#8_4" title="车型管理">车型管理</a></dd>
+        <dd><span>5</span><a href="javascript:void()" rel="#8_5" title="销售管理">销售管理</a></dd>
+        <dd><span>6</span><a href="javascript:void()" rel="#8_6" title="预约保养">预约保养</a></dd>
+        <dd><span>7</span><a href="javascript:void()" rel="#8_7" title="预约试驾">预约试驾</a></dd>
+        <dd><span>8</span><a href="javascript:void()" rel="#8_8" title="实用工具">实用工具</a></dd>
+      </dl>
+    </div>
+  </div>
+  <a id="sideCatalogBtn" href="/static/wxgjcn/help.htm"  style="visibility: visible;" title="查看帮助目录"></a>
+  <a id="sideToolbar-up"  href="javascript:void()" rel="#top" title="返回顶部" style="visibility: visible;"></a></div>
+     
+</div>
+<script>
+	$(function () {
+	   if(location.hash){
+			var pos = $(location.hash).offset().top-60;
+			$("html,body").animate({ scrollTop: pos }, 800);
+		}
+	});
+</script>
+<!--QQ咨询-->
+<div class="footer">
+	<div class="footer-content clearfix">
+		<div class="foot-menu">
+			<p>
+				<a href="/static/wxgjcn/index1.htm"  target="_blank">盛世源码—国内优秀的微信公众服务平台首页</a>&nbsp;|&nbsp;
+				<a href="/reg.html"  target="_blank">申请入驻</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/proxy1.htm"  target="_blank">渠道代理</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/about1.htm"  target="_blank">关于盛世源码</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/agents.htm"  target="_blank">授权认证</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/jobs.htm"  target="_blank">加入盛世源码</a>
+			</p>
+			<p>免费热线：400-000-0000&nbsp;&nbsp;&nbsp;QQ：631989322&nbsp;&nbsp;&nbsp;邮箱：kf@weiqimobile.com</p>
+			<p>地址：
+								上海市市辖区宝山区逸仙路2816号华滋奔腾大厦A幢15楼</p>
+		</div>
+		<div class="copyright">
+			Copyright 

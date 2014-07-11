@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta http-equiv="MSThemeCompatible" content="Yes" />
+<link rel="stylesheet" type="text/css" href="{ZF::RES}/css/style_2_common.css?BPm" />
+<script src="{ZF::RES}/js/common.js" type="text/javascript"></script>
+<link href="{ZF::RES}/css/style.css" rel="stylesheet" type="text/css" />
+<script src="{ZF::STATICS}/jquery-1.4.2.min.js" type="text/javascript"></script>
+
+<link rel="stylesheet" type="text/css" href="{ZF::RES}/css/cymain.css" />
+<script src="{ZF::STATICS}/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="{ZF::STATICS}/artDialog/plugins/iframeTools.js"></script>
+<if condition="$type eq 'music'">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+<script type="text/javascript" src="{ZF::STATICS}/audioplayer/inc/jquery.jplayer.min.js"></script>
+    <script type="text/javascript" src="{ZF::STATICS}/audioplayer/inc/jquery.mb.miniPlayer.js"></script>
+    <link rel="stylesheet" type="text/css" href="{ZF::STATICS}/audioplayer/css/miniplayer.css" title="style" media="screen"/>
+    <script type="text/javascript">
+        $(function () {
+
+            $(".audio").mb_miniPlayer({
+                width: 200,
+                inLine: false,
+                onEnd: playNext
+            });
+
+            function playNext(player) {
+                var players = $(".audio");
+                document.playerIDX = player.idx + 1 <= players.length - 1 ? player.idx + 1 : 0;
+                players.eq(document.playerIDX).mb_miniPlayer_play();
+            }
+        });
+    </script>
+    </if>
+</head>
+<body style="background:#fff">
+<script>
+function changeFolder(v){
+	window.location.href="{ZF:$siteUrl}?g=User&m=Attachment&a=index&type={ZF:$type}&folder="+v;
+}
+</script>
+<!--tab start-->
+<div class="tab">
+<ul>
+<?php
+if ($type!='my'){
+?>
+<if condition="$type eq 'icon'"><li class="current tabli" id="tab0"><a href="{ZF::U('Attachment/index',array('type'=>'icon'))}">图标</a></li></if>
+<if condition="$type eq 'focus'"><li class="current tabli" id="tab0"><a href="{ZF::U('Attachment/index',array('type'=>'focus'))}">幻灯片</a></li></if>
+<if condition="$type eq 'background'"><li class="current tabli" id="tab0"><a href="{ZF::U('Attachment/index',array('type'=>'background'))}">背景图</a></li></if>
+<if condition="$type eq 'music'"><li class="current tabli" id="tab0"><a href="{ZF::U('Attachment/index',array('type'=>'music'))}">音乐</a></li></if>
+<?php
+}else{
+?>
+<li class="tabli" id="tab0"><a href="{ZF::U('Attachment/index',array('type'=>'icon'))}">图标</a></li>
+<li class="tabli" id="tab0"><a href="{ZF::U('Attachment/index',array('type'=>'focus'))}">幻灯片</a></li>
+<li class="tabli" id="tab0"><a href="{ZF::U('Attachment/index',array('type'=>'background'))}">背景图</a></li>
+<li class="tabli" id="tab0"><a href="{ZF::U('Attachment/index',array('type'=>'music'))}">音乐</a></li>
+<?php
+}
+?>
+<li class="<if condition="$type eq 'my'">current</if> tabli" id="tab0"><a href="{ZF::U('Attachment/my',array('type'=>'my'))}">我的素材</a></li>
+</ul>
+</div>
+<!--tab end-->
+<div style="margin:10px;">
+
+<div>
+<?php
+if ($type!='my'){
+?>
+<div style="margin-bottom:10px;">请选择类别：<select onchange="changeFolder(this.value)"><volist name="folders" id="f"><option value="{ZF:$f.folder}" <if condition="$f.folder eq $folder">selected</if>>{ZF:$f.name}</option></volist></select></div>
+<if condition="$type neq 'music'">
+<ul>
+<volist name="files" id="item">
+<li style="float:left;width:{ZF:$height}px;margin:1px;background:#ddd"><a href="###" onclick="returnHomepage('{ZF:$siteUrl}/tpl/static/attachment/{ZF:$type}/{ZF:$folder}/{ZF:$item}')"><img style="width:{ZF:$height}px;height:{ZF:$height}px;" src="{ZF::STATICS}/attachment/{ZF:$type}/{ZF:$folder}/{ZF:$item}" /></a></li>
+</volist>
+</ul>
+<else/>
+<table class="ListProduct" border="0" cellSpacing="0" cellPadding="0" width="100%">
+<thead>
+<tr>
+<th>播放</th>
+<th>选择 <span class="tooltips" ><img src="{ZF::RES}/images/price_help.png" align="absmiddle" /><span>
+<p>点击歌名即可</p>
+</span></span></th>
+</tr>
+</thead>
+<volist name="files" id="item">
+<tr><td><a style="width:220px;float:left" class="audio {skin:'blue'}" href="{ZF:$siteUrl}/tpl/static/attachment/{ZF:$type}/{ZF:$folder}/{ZF:$item.file}">{ZF:$item.name}</a></td><td>&nbsp;&nbsp;<a href="###" onclick="returnHomepage('{ZF:$siteUrl}/tpl/static/attachment/{ZF:$type}/{ZF:$folder}/{ZF:$item.file}')">{ZF:$item.name}</a></td></tr>
+</volist>
+</table>
+</if>
+<?php
+}else{
+?>
+<table class="ListProduct" border="0" cellSpacing="0" cellPadding="0" width="100%">
+<thead>
+<tr>
+<th>文件</th>
+<th>大小</th>
+<th>时间</th>
+<th>操作</th>
+</tr>
+</thead>
+<volist name="list" id="item">
+<tr style="text-align:center;">
+<td><a href="###" onclick="returnHomepage('{ZF:$item.url}')" title="点击选中"><img src="{ZF:$item.url}" width="80" /></a></td>
+<td>{ZF:$item.size|number_format=###/1024,2}KB</td>
+<td>{ZF:$item.time|date='Y-m-d',###}</td>
+<td><a href="###" onclick="returnHomepage('{ZF:$item.url}')">选中</a> | <a href="{ZF::U('Attachment/delmy',array('id'=>$item['id']))}">删除</a></td>
+</tr>
+</volist>
+</table>
+<div class="footactions" style="padding-left:10px">
+  <div class="pages">{ZF:$page}</div>
+</div>
+<?php
+}
+?>
+
+</div>
+</div>
+<div style="clear:both;height:30px;"></div>
+
+<script>
+var domid=art.dialog.data('domid');
+// 返回数据到主页面
+function returnHomepage(url){
+	var origin = artDialog.open.origin;
+	var dom = origin.document.getElementById(domid);
+	var domsrcid=domid+'_src';
+
+	if(origin.document.getElementById(domsrcid)){
+	origin.document.getElementById(domsrcid).src=url;
+	}
+	
+	dom.value=url;
+	setTimeout("art.dialog.close()", 100 )
+}
+</script>
+
+</body>
+</html>

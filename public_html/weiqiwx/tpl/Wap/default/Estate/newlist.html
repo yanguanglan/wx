@@ -1,0 +1,35 @@
+﻿<include file="Estate:header"/>
+<link rel="stylesheet" type="text/css" href="{ZF::STATICS}/vhouse/wap/weiwin-ui-1-1.css" media="all">
+<link rel="stylesheet" type="text/css" href="{ZF::STATICS}/vhouse/wap/common.css" media="all">
+<link rel="stylesheet" type="text/css" href="{ZF::STATICS}/vhouse/wap/car_reset.css" media="all">
+<link rel="stylesheet" type="text/css" href="{ZF::STATICS}/vhouse/wap/list-8.css" media="all">
+<link rel="stylesheet" type="text/css" href="{ZF::STATICS}/vhouse/wap/menu-2.css" media="all">
+<script type="text/javascript" src="{ZF::STATICS}/vhouse/wap/jQuery.js"></script>
+<body onselectstart="return true;" ondragstart="return false;">
+<div class="body" style="padding-bottom:60px;">
+                    <footer class="nav_footer">
+        <ul class="box">
+            <li><a href="javascript:history.go(-1);">返回</a></li>
+            <li><a href="javascript:history.go(1);">前进</a></li>
+            <li><a href="">首页</a></li>
+            <li><a href="javascript:location.reload();">刷新</a></li>
+        </ul>
+    </footer>
+
+        <section class="news_article">
+        <header>
+            <h3 style="font-size:14px;">{ZF:$imgtxt['title']}</h3>
+            <small class="gray">{ZF:$imgtxt['createtime']|date="Y-m-d",###}</small>
+        </header>
+        <article>
+            <p>
+             <img src="{ZF:$imgtxt['pic']}" style="width:100%;">
+             </p><p>
+   <?php echo html_entity_decode(htmlspecialchars_decode($imgtxt['info'])); ?>
+</p>            <p></p>
+        </article>
+    </section>
+
+</div>
+<include file="Estate:menu"/>
+</body></html>

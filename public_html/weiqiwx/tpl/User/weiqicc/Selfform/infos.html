@@ -1,0 +1,88 @@
+<include file="Public:head"/>
+<html>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<!-- Apple devices fullscreen -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<!-- Apple devices fullscreen -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<base target="mainFrame" />
+<link rel="stylesheet" type="text/css" href="{ZF::RES}/css/cymain.css" />
+<div class="content" style="width:80%; border:none; border:none; margin-bottom:30px;" >
+<link rel="stylesheet" type="text/css" href="/css/wm/index.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/bootstrap_min.css?dddf" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/bootstrap_responsive_min.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/style.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/themes.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/todc_bootstrap.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/inside.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/album.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/uploadify_t.css" media="all" />
+<title>{$_SERVER['WEB_NAME']}—国内最大的微信公众服务平台</title>
+ <script type="text/javascript" src="/@system/js/yyucadapter.js"></script>
+<script type="text/javascript" src="/res/mbaudio/inc/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="/res/mbaudio/inc/jquery.mb.miniPlayer.js"></script>
+<link rel="stylesheet" type="text/css" href="/uploadify/uploadify.css">
+<script type="text/javascript" src="/uploadify/jquery.uploadify.js"></script>
+<link rel="stylesheet" type="text/css" href="/res/mbaudio/css/miniplayer.css" title="style" media="screen"/>
+
+<body class="{Session::get('maintheme')}">
+<div id="main">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="box">
+                    <div class="box-title">
+                        <div class="span10">
+                            <h3><i class="icon-edit"></i>“{ZF:$thisForm.name}”信息列表 <if condition="$page">({ZF:$page})</if></h3>
+                        </div>
+                        <div class="span2">
+                            <a class="btn" href="javascript:history.go(-1);">返回</a> 
+                        </div>
+                    </div>
+                <div class="box-content">
+
+<div class="searchbar">
+<form method="post" action="">
+<input type="text" id="msgSearchInput" class="txt left" placeholder="输入关键词搜索" name="searchkey" value="">
+<input type="submit" value="搜索" id="msgSearchBtn" href="" class="btn" title="搜索">
+</form>
+</div>
+<div class="clr"></div>
+<form method="post" action="" id="info">
+<input name="delall" type="hidden" value="">
+<input name="wxid" type="hidden" value="">
+<table  class="table table-bordered table-hover dataTable">
+<thead>
+<tr>
+<th>ID</th>
+<th>时间</th>
+<volist name="fields" id="item">
+<th>{ZF:$item.displayname}</th>
+</volist>
+<th>操作</th>
+</tr>
+</thead>
+<tbody>
+<tr></tr>
+<volist name="list" id="item"> 
+<tr>
+<volist name="item" id="citem">
+<td>{ZF:$citem}</td>
+</volist>
+<td class="norightborder"><a href="javascript:drop_confirm('您确定要删除吗?', '{ZF::U('Selfform/infoDelete',array('id'=>$item['id'],'token'=>$token))}');" class="btn"><i class="icon-remove"></i>删除</a></td>
+</tr>
+</volist>
+</tbody>
+</table>
+</form>
+
+</div>
+<div class="cLine">
+<div class="pageNavigator">
+</div>
+<div class="clr"></div>
+</div>
+</div>
+<include file="Public:footer"/>

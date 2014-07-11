@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="uyan_auth" content="04a3f6938d" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="微信营销、微信代运营、微信定制开发、微信托管、微网站、微商城、微营销" name="Keywords">
+	<meta content="盛世源码—国内优秀的微信公众服务平台，国内最大的微信公众智能服务平台，盛世源码—国内优秀的微信公众服务平台八大微体系：微菜单、微官网、微会员、微活动、微商城、微推送、微服务、微统计，企业微营销必备。" name="Description">
+    <script src="/static/wxgjcn/src/html5.js" ></script>
+    <link rel="stylesheet" type="text/css" href="/static/wxgjcn/css/www/index1/index.css-2014-03-07-1.css"  media="all" />
+<script type="text/javascript" src="/static/wxgjcn/src/jQuery.js-2014-03-07-1.js" ></script>
+<script type="text/javascript" src="/static/wxgjcn/src/www/index1/weimob-index.js-2014-03-07-1.js" ></script>
+<title>盛世源码—国内优秀的微信公众服务平台</title>
+	<link rel="shortcut icon" href="httpimg/favicon.ico" />
+</head>
+<body>
+	<!--[if lte IE 8]>  <script language="javascript">$(function (){$.browser.msie&&$("#ie9-tips").show().find("#stopSuggestA").click(function(){$("#ie9-tips").hide()})})</script><![endif]-->
+<div class="nav clearfix">
+	<div class="nav-content">
+		<h1 class="left"><a href="/static/wxgjcn/index.html"   title="盛世源码—国内优秀的微信公众服务平台官网">盛世源码—国内优秀的微信公众服务平台·微信营销，如此简单！</a></h1>
+		<div class="left city">
+			<h2>上海</h2>
+							<a href="/static/wxgjcn/city1.htm" >
+					切换城市<i class="tri4"></i>
+				</a>
+					</div>
+		<div class="right line-li">
+        
+			 <ul>
+        <li><a href="/static/wxgjcn/index.html" >首页</a></li>
+        <li><a href="/static/wxgjcn/case1.htm"  >经典案例</a></li>
+	    <li class="nav_menu_li_1"><a style="width:70px; text-align:left;" class="_hover">产品中心<i></i></a>
+					 <div class="sub-nav">
+						 <a href="/static/wxgjcn/package.htm"  target="_black">服务套餐</a>
+						 <a href="/static/wxgjcn/guide1.htm" >功能介绍</a>
+						 <a href="/static/wxgjcn/topic/weipai.htm"  target="_black">微拍</a>
+
+					 </div>
+
+	    </li>
+        <li><a href="/static/wxgjcn/proxy1.htm"  >渠道代理</a></li>
+        <li><a href="/static/wxgjcn/help.htm"   target="_black">帮助</a></li>
+    </ul>
+            <div class="account">
+        <a href="/reg.html"  class="btn-reg btn0" target="_black">注册</a>
+                  <a href="javascript:;" class="btn-login btn0" onclick="if(location.hostname.indexOf('.cn')>-1){location.href='/static/wxgjcn/login.htm'/*tpa=http://www.weimob.com/site/login*/; return false;} loginBox.toggle(this, event);">登录</a>
+		</div>
+		</div>
+	</div>
+</div>
+
+	<div id="loginBox">
+		<div class="login-panel">
+			<h3>登录</h3>
+			<div class="login-mod">
+				<div class="login-err-panel dn" id="err_area">
+					<span class="icon-wrapper"><i class="icon24-login err" style="margin-top:-.2em;*margin-top:0;"></i></span>
+					<span id="err_tips"></span>
+				</div>
+				<form class="login-form" id="login-form">
+					<div class="login-un">
+						<span class="icon-wrapper"><i class="icon24-login un"></i></span>
+						<input type="text" id="username" placeholder="盛世源码—国内优秀的微信公众服务平台号">
+					</div>
+					<div class="login-pwd">
+						<span class="icon-wrapper"><i class="icon24-login pwd"></i></span>
+						<input type="password" id="password" placeholder="密码">
+					</div>
+				</form>
+				<div class="login-help-panel">
+					<a id="rememberPwd" class="login-remember-pwd" href="javascript:;">
+						<input type="checkbox" id="rememberPwdIcon">记住帐号
+					</a>
+					<a class="login-forget-pwd" href="/static/wxgjcn/forgotpassword/index.html" >忘记密码？</a>
+                    <a class="login-forget-pwd" href="/reg.html" >新用户注册</a>
+				</div>
+				<div class="login-btn-panel">
+					<a class="login-btn" title="点击登录" href="javascript:;" id="login_button" onclick="login();">登录</a>
+				</div>
+			</div>
+		</div>
+		<div class="login-cover" onclick="loginBox.toggle(this, event);"></div>
+	</div>
+<div id="ie9-tips" class="clearfix">
+	<div id="tipsPanel">
+		<div id="tipsDesc">系统检测到您所使用的浏览器版本较低，推荐使用<a   target="_blank">Firefox</a>或<a   target="_blank">Chrome</a>浏览器打开，否则将无法体验完整产品功能。</div>
+		<a id="stopSuggestA" href="javascript:;">×</a>
+	</div>
+</div>
+
+<script>
+var $do_submit = false;
+
+// 绑定回车键
+$('#loginBox').keydown(function(e){
+	if(13 == event.keyCode){
+		login();
+	}
+});
+
+	function login()
+	{
+		if (true == $do_submit)
+		{
+			return false;
+		}
+
+		var $pre_submit = '登录', $done_submit = '登录中...';
+		var $username = $('#username').val(), $password = $('#password').val(), $keepalive = $('#rememberPwdIcon').val();
+		$('#login_button').text($done_submit);
+		$do_submit = true;
+
+		// check
+		if ('' == $username || '' == $password)
+		{
+			$('#err_tips').text('您输入的盛世源码—国内优秀的微信公众服务平台号或密码错误，请重新输入！');
+			$('#err_area').show();
+			$('#login_button').text($pre_submit);
+			$do_submit = false;
+			return false;
+		}
+
+		var $login_data = {
+			username:$username,
+			password:$password,
+			keepalive:$keepalive
+		};
+		$.post('/login', $login_data, function(rs){
+			if(rs.errno == 200)
+			{
+				location.href = rs.url_route;
+			}
+			else
+			{
+				$('#err_tips').text(rs.error);
+				$('#err_area').show();
+				$('#login_button').text($pre_submit);
+			}
+			$do_submit = false;
+		}, 'json');
+	}
+</script>
+
+<div class="Public-content clearfix">
+	<div class="Public">
+		<h1 class="Public-h1">功能介绍</h1>
+		<div class="Public-box clearfix">
+			<ul id="nav_lis" class="case-nav left">
+				<li data-index="0"  data-hash="#site">微官网</li>
+				<li data-index="1" data-hash="#member"><span style=" left:3px; position:absolute; "><ins style=" text-decoration:none;color:#4343fd;font-size:11px;">N</ins><ins style="color:#6d7183;font-size:8px;text-decoration:none;">EW</ins></span>微信会员卡</li>
+				<li data-index="2" data-hash="#activities">微活动</li>
+				<li data-index="3" data-hash="#push">微推送</li>
+				<li data-index="4" data-hash="#services">微服务</li>
+				<li data-index="5" data-hash="#message">微留言</li>
+				<li data-index="6" data-hash="#photo">微相册</li>
+				<li data-index="7" data-hash="#menu">自定义菜单</li>
+				<li data-index="8" data-hash="#research">微调研</li>
+				<li data-index="9" data-hash="#estate">微房产</li>
+				<li data-index="10" data-hash="#car">微汽车</li>
+				<li data-index="11" data-hash="#wedd">微喜帖</li>
+				<li data-index="12" data-hash="#medical">微医疗</li>
+				<li data-index="13" data-hash="#hotels">微酒店</li>
+				<li data-index="14" data-hash="#lbs">LBS图文回复</li>
+                <li data-index="15" data-hash="#cate">微餐饮</li>
+				<li data-index="16" data-hash="#vshop">微商城</li>
+                <li data-index="17" data-hash="#reser">微预约</li>
+                <li data-index="18" data-hash="#vlife">微生活</li>
+                <li data-index="19" data-hash="#vkefu"><span style=" left:3px; position:absolute; "><ins style=" text-decoration:none;color:#4343fd;font-size:11px;">N</ins><ins style="color:#6d7183;font-size:8px;text-decoration:none;">EW</ins></span>微客服</li>
+                <li data-index="20" data-hash="#addup"><span style=" left:3px; position:absolute; "><ins style=" text-decoration:none;color:#4343fd;font-size:11px;">N</ins><ins style="color:#6d7183;font-size:8px;text-decoration:none;">EW</ins></span>数据魔方</li>
+				<li data-index="21" data-hash="#vwall"><span style=" left:3px; position:absolute; "><ins style=" text-decoration:none;color:#4343fd;font-size:11px;">N</ins><ins style="color:#6d7183;font-size:8px;text-decoration:none;">EW</ins></span>微信墙</li>
+                <li data-index="22" data-hash="#vwall"><span style=" left:3px; position:absolute; "><ins style=" text-decoration:none;color:#4343fd;font-size:11px;">N</ins><ins style="color:#6d7183;font-size:8px;text-decoration:none;">EW</ins></span>微拍</li>
+                
+                <li data-index="23" data-hash="#vwall"><span style=" left:3px; position:absolute; "><ins style=" text-decoration:none;color:#4343fd;font-size:11px;">N</ins><ins style="color:#6d7183;font-size:8px;text-decoration:none;">EW</ins></span>微团购</li>
+				<li data-index="24" data-hash="#vwall"><span style=" left:3px; position:absolute; "><ins style=" text-decoration:none;color:#4343fd;font-size:11px;">N</ins><ins style="color:#6d7183;font-size:8px;text-decoration:none;">EW</ins></span>微社区</li>
+				</ul>
+			<div id="nav_uls">
+				<div data-index="0" data-on class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微官网:快速帮用户打造超炫微信移动网站<a href="help-help=6.htm"  target="_blank" class="guideright ">查看该项使用指南</a></h2>
+						<p class="guideimg"><img src="/static/wxgjcn/img/www/index1/weimob1.jpg-v=2014-03-07-1.jpg"  /></p>
+						<p class="guidep">盛世源码—国内优秀的微信公众服务平台全国首创微信3G网站，用户只要通过简单的设置，就能快速生成属于您自己的微信3G网站，并且有各种精美模板，可供选择，还有自定义模版，可以设计出自己的风格，让您的粉丝有种惊艳的感觉。在盛世源码—国内优秀的微信公众服务平台官方微信号输入"首页"体验微信3G网站。</p>
+					</div>
+				</div>
+				<div data-index="1" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微信会员卡:微时代会员卡，方便携带，永不挂失<a href="/static/wxgjcn/topic/mcard.htm"  target="_blank" class="guideright-topic">查看专题</a><a href="help-help=5.htm"  target="_blank" class="guideright ">查看该项使用指南</a></h2>
+						<p class="guideimg"><img src="/static/wxgjcn/img/www/index1/weimob2.jpg-v=2014-03-07-1.jpg"  /></p>
+						<p class="guidep">微信会员卡通过在微信内植入会员卡，基于全国4亿微信用户，帮助企业建立集品牌推广、会员管理、营销活动、统计报表于一体的微信会员管理平台。清晰记录企业用户的消费行为并进行数据分析；还可根据用户特征进行精细分类，从而实现各种模式的精准营销。</p>
+					</div>
+				</div>
+				<div data-index="2" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微活动——优惠券+刮刮卡+大转盘+微投票+一战到底的会员再营销<a href="help-help=3.htm"  target="_blank" class="guideright ">查看该项使用指南</a></h2>
+						<p  class="guideimg"><img src="/static/wxgjcn/img/www/index1/weimob3.jpg-v=2014-03-07-1.jpg"  /></p>
+						<p  class="guidep">我们将利用微信的强交互性，让您通过对互动流程、环节和方式的设计，运用各种设计活动从而实现与用户的互动交流,，微整合系统互动符合微信娱乐性强的产品本质，盛世源码—国内优秀的微信公众服务平台内置了专为商家定制的“商家营销服务模块”，包括优惠券推广模块、幸运大转盘推广模块、刮刮卡抽奖模块、微投票、一战到底等功能模块，商家通过发起营销活动，对已有客户进行再营销，通过不断更新补充主题，用户可以反复参与，并可带动周边朋友一起分享，从而形成极强的口碑营销效果。</p>
+					</div>
+				</div>
+				<div data-index="3" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微推送（LSP）：微信附近的人——精准营销</h2>
+						<p  class="guideimg"><img src="/static/wxgjcn/img/www/index1/weimob4.jpg-v=2014-03-07-1.jpg"  /></p>
+						<p  class="guidep">Location Surround Push(基于附近的人的消息推送)微信中基于LBS(基于位置的服务)的功能插件“查看附近的人”便可以使更多陌生人看到这种强制性广告。 用户点击“查看附近的人”后，可以根据自己的地理位置查找到周围的微信用户。在这些附近的微信用户中，除了显示用户姓名等基本信息外，还会显示用户签名档的内容。所以用户可以利用这个免费的广告位为自己的产品打广告。
+						</p>
+					</div>
+				</div>
+				<div data-index="4" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微服务——微信企业应用与电子商务<a href="help-help=4.htm"  target="_blank" class="guideright ">查看该项使用指南</a></h2>
+						<p class="guideimg"><img src="/static/wxgjcn/img/www/index1/weimob5.jpg-v=2014-03-07-1.jpg"  /></p>
+						<p class="guidep">有小黄鸡陪聊加强版510万数据，过滤了广告和一些敏感词汇。 还有天气查询 ，手机查询，邮编查询，快递查询（支持160家快递公司），身份证查询，人品计算，翻译，字典，百科（全网数据），音乐80.1万 ，笑话5万条，小黄鸡陪聊510万条，诗词23万首，诗句 225万，成语5万，谜语5万，解梦3万，糗事55万，公交线路4万，火车线路4500，机器人学习功能等等......</p>
+					</div>
+				</div>
+				<div data-index="5" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微留言:用户的互动交流利器</h2>
+						<p class="guideimg"><img src="/static/wxgjcn/img/www/index1/weimob6.jpg-v=2014-03-07-1.jpg"  /></p>
+						<p class="guidep">“微留言”是一种能为商家带来巨大的社会化流量的功能，允许留言可以被分享于留言者的朋友圈、腾讯微博和发送给好友，这意味着留言可以被无数的粉丝分享，用户对商家进行实时且客观的评价，真实的社交环境保证了留言的客观性和有效性。“微留言”的使用商家只需做好产品和用户服务即可，随着口碑的传播，消费者将源源不断。</p>
+					</div>
+				</div>
+				<div data-index="6" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微相册:照片展现，让商品一览无余</h2>
+						<p class="guideimg"><img src="/static/wxgjcn/img/www/index1/weimob7.jpg-v=2014-03-07-1.jpg"  /></p>
+						<p class="guidep">微相册作为盛世源码—国内优秀的微信公众服务平台的一项主打基本功能，为盛世源码—国内优秀的微信公众服务平台用户提供图片的存储和展示服务，是基于图片兴趣分享的社区型产品。在微相册里，您可以方便的创建相册，轻松地发布您需要展示的照片，还可以拓展为商家开展活动的一种展现方式。</p>
+					</div>
+				</div>
+				<div data-index="7" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">自定义菜单：各模块均可直接展现使用，随需求而定，随需要而链</h2>
+						<p class="guideimg"><img src="/static/wxgjcn/img/www/index1/weimob8.jpg-v=2014-03-07-1.jpg"  /></p>
+						<p class="guidep">盛世源码—国内优秀的微信公众服务平台提供微信公众号自定义菜单管理功能，用户无需再通过输入关键词触发回复，直接点击菜单就可以看相关的内容，盛世源码—国内优秀的微信公众服务平台可与企业原有Wap进行打通，复用企业APP原有功能，同时可定制个性化功能、使用HTML5新技术进行无限拓展，帮助企业打造最便捷、易推广的微信内置APP，此功能如果结合微信3G网站可以使您的公众号用户体验更好，带给粉丝不一样的感受。</p>
+					</div>
+				</div>
+				<div data-index="8" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微调研：实时统计，为市场调研添加一份有力数据</h2>
+						<p class="guideimg"><img src="/static/wxgjcn/img/www/index1/weimob9.jpg-v=2014-03-07-1.jpg"  /></p>
+						<p class="guidep">微调研是一种以问卷调查的方式，基于盛世源码—国内优秀的微信公众服务平台而展现出的一种新的在线调研应用方式，微调研已经完成调研项目数十个，涉及游戏、快速消费品、汽车、房产、美食、数码产品、家用电器等多个行业，具备有对微信用户进行生活形态研究的能力，受到行业客户的一致认可。</p>
+					</div>
+				</div>
+				
+				<div data-index="9" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微房产:360度全景看房<a href="help-help=9.htm"  target="_blank" class="guideright ">查看该项使用指南</a></h2>
+						<p class="guideimg"><img src="/static/wxgjcn/img/www/index1/weimob11.jpg-v=2014-03-07-1.jpg"  /></p>
+						<p class="guidep">微房产是利用盛世源码—国内优秀的微信公众服务平台打造的一款全新超炫酷的房产官方网站，其功能非常强大，包含了楼盘介绍、子楼盘管理、户型介绍及户型图、楼盘相册、房友印象以及专家点评等功能，更有360度全景看房超强大功能震撼登场！花几分钟时间即可打造微房产官网。</p>
+					</div>
+				</div>
+				<div data-index="10" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微汽车：预约试驾、预约保养、360度看车、车主关怀应有尽有！<a href="help-help=8.htm"  target="_blank" class="guideright ">查看该项使用指南</a></h2>
+						<p class="guideimg"><img src="/static/wxgjcn/img/www/index1/weimob12.jpg-v=2014-03-07-1.jpg"  /></p>
+						<p class="guidep">微汽车采用盛世源码—国内优秀的微信公众服务平台进行汽车的销售管理、预约保养、预约试驾、保险计算、车贷计算、车型比较、违章查询、360度全景看车、车主关怀等功能，整个过程非常便捷，省时省力省心，并通过与盛世源码—国内优秀的微信公众服务平台有交互能力的手机客户端，快速便捷的实现了商家的销售管理与预约过程，同时也实现了客户无需进入4s店就能进行预约保养和试驾的功能。</p>
+					</div>
+				</div>
+				<div data-index="11" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微喜帖：颠覆传统方式，让庆典更时尚环保</h2>
+						<p class="guideimg"><img src="/static/wxgjcn/img/www/index1/weimob13.jpg-v=2014-03-07-1.jpg"  /></p>
+						<p class="guidep">微喜帖是针对结婚庆典而推出的一款行业产品，主要是为计划结婚的用户们，通过使用微喜帖应用来向亲朋好友传播自己即将结婚的动态，可以展现用户想要表达的话、结婚日期、地址、导航、接待电话，同时亲朋好友可以在微喜帖平台上提交赴宴通知、送上祝福，并且转发喜帖。</p>
+					</div>
+				</div>
+				<div data-index="12" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微医疗：互联网时代的医疗小助手</h2>
+						<p class="guideimg"><img src="/static/wxgjcn/img/www/index1/weimob14.jpg-v=2014-03-07-1.jpg"  /></p>
+						<p class="guidep">用户可通过盛世源码—国内优秀的微信公众服务平台实现在线挂号、内容设置、预约查询、预约统计的一整套服务体系，能够有效解决患者挂号难、排队累、就医不方便等一系列难题</p>
+					</div>
+				</div>
+				<div data-index="13" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2  class="guideh2">微酒店：一键点击，轻松订房<a href="help-help=7.htm"  target="_blank" class="guideright ">查看该项使用指南</a></h2>
+						<p class="guideimg"><img src="/static/wxgjcn/img/www/index1/weimob15.jpg-v=2014-03-07-1.jpg"  /></p>
+						<p class="guidep">1、消息管理：包含自动消息回复和功能性消息编辑功能，优化对用户的消息服务，提升用户体验。</p>
+						<p class="guidep">2、门店管理：即对门店详情页面显示内容进行管理，且用户可直接一键导航或一键拨号。</p>
+						<p class="guidep">3、用户管理：用户信息管理模块，给每个用户打上各种标签，为精准营销提供服务。</p>
+						<p class="guidep">4、数据统计：各式各样的数据为后期运营提供重要帮助。</p>
+						<p class="guidep">5、提供服务：用户直接可在公众账号进行预约房间、预约餐厅等操作。</p>
+					</div>
+				</div>
+                <div data-index="14" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">LBS回复:LBS范围内精准的商家地理位置回复</h2>
+							<p class="guideimg"><img src="/static/wxgjcn/img/www/index1/weimob16.jpg-v=2014-03-07-1.jpg"  /></p>
+						<p class="guidep">LBS图文回复是由商家设置店铺位置，用户提交当前所在位置后，可以找到最近的商家店铺，并进行一键导航、一键拨号，如果店铺当前有进行的活动（如：优惠券、刮刮卡），也可把活动显示出来。</p>
+					</div>
+				</div>
+				<div data-index="15" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微餐饮——实时数据统计，监控运营效果<a href="help-help=11.htm"  target="_blank" class="guideright ">查看该项使用指南</a></h2>
+					
+                        <p class="guideimg"><img src="/static/wxgjcn/img/www/index1/weimob17.jpg-v=2014-03-07-1.jpg"  /></p>
+						<p class="guidep">盛世源码—国内优秀的微信公众服务平台后台可以实时统计微信公众号的粉丝关注情况和用户语音请求数，根据统计对相关推广营销活动效果及某些敏感因素对您的影响作出判断，并对相关市场行为作出相应调整，从一定程度上实现了对市场的监控与及时应对。</p>
+					</div>
+				</div>
+				<div data-index="16" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微商城：打造微信移动电商 <a href="/static/wxgjcn/topic/vmall.htm"  target="_blank" class="guideright-topic">查看专题</a> <a href="help-help=12.htm"  target="_blank" class="guideright ">查看该项使用指南</a></h2>
+						
+                        <p class="guideimg"><img src="/static/wxgjcn/img/www/index1/weimob18.jpg-v=2014-03-07-1.jpg"  /></p>
+						<p class="guidep">“微商城”（又名Vshop）是由盛世源码团队推出的，一款基于移动互联网的商城应用服务产品，以时下最热门的互动应用微信为媒介，配合微信5.0微信支付功能，实现商家与客户的在线互动，即时推送最新商品信息给微信用户，实现微信在线的购物功能。
+							其主要功能包括：支持商品管理、支持会员管理、支持购物车、支持商品分类管理、支持订单管理、支持店铺设置、支持支付方式管理、支持配送方式管理。</p>
+					</div>
+				</div>
+				
+                <div data-index="17" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微预约：在线预约，盛世源码—国内优秀的微信公众服务平台帮您一键搞定<a href="help-help=10.htm"  target="_blank" class="guideright ">查看该项使用指南</a></h2>
+						<p class="guideimg"><img src="/static/wxgjcn/img/www/index1/weimob19.jpg-v=2014-03-07-1.jpg"  /></p>
+						<p class="guidep">微预约是商家利用盛世源码—国内优秀的微信公众服务平台实现在线预约的一种服务，可以运用于汽车、房产、酒店、医疗、餐饮等一系列行业，给用户的出行办事、购物、消费带来了极大的便利！且操作简单，响应速度非常快，受到业界的一致好评！</p>
+					</div>
+				</div>
+                <div data-index="18" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微生活：生活服务、方便快捷更高效  <a href="help-help=13.htm"  target="_blank" class="guideright ">查看该项使用指南</a></h2>
+						<p class="guideimg"><img src="/static/wxgjcn/img/www/index1/weimob20.jpg-v=2014-03-07-1.jpg"  /></p>
+						<p class="guidep">随着微信等新媒介的兴起，生活方式正在发生“微”“秒”的变化，微生活是通过盛世源码—国内优秀的微信公众服务平台打造的一款彻底专为用户提供全方位生活服务的移动网站，通过微生活服务，用户可以时时刻刻享受在线购物、点餐、定机票、预约酒店等多项服务的功能，彻底改变了用户传统的生活模式。<br />
+                        1、商户管理：微生活支持商户管理功能，其中包括商户的基础设置、商户信息设置、会员设置、优惠设置以及商品的展示功能，让用户通过盛世源码—国内优秀的微信公众服务平台可以浏览整个商圈。<br />
+                        2、会员管理：用户通过在手机端领取会员卡，商家就可以在盛世源码—国内优秀的微信公众服务平台后台查询到用户的会员记录，包括会员卡号、用户姓名、手机号、领取卡的时间、所属用户以及会员卡的状态设置，让用户资源随手可得。
+</p>
+					</div>
+				</div>
+                
+                <div data-index="19" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微客服：沟通6亿用户、创造无限商机<a href="/static/wxgjcn/topic/kefu.htm"  target="_blank" class="guideright-topic">查看专题</a><a href="help-help=14.htm"  target="_blank" class="guideright ">查看该项使用指南</a></h2>
+						<p class="guideimg"><img src="/static/wxgjcn/img/www/index1/weimob21.jpg-v=2014-03-07-1.jpg"  /></p>
+						<p class="guidep">随着互联网的发展及网络营销模式重要性的凸显，在线客服系统 会成为网络营销的重要工具，也是提升企业形象、加强企业与访客互动的必备工具；如今，微信迅速崛起，商家都把店铺搬进了 公众账号，而盛世源码—国内优秀的微信公众服务平台微客服系统，就是一款为微信商家打造的实时 沟通软件，让商家可以分享微信6亿用户，创造无限商机。</p>
+					</div>
+				</div>
+                
+                <div data-index="20" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">数据魔方，轻松了解买家，不错过任何一个客户<a href="/static/wxgjcn/topic/datacube.htm"  target="_blank" class="guideright-topic">查看专题</a><a href="help-help=15.htm"  target="_blank" class="guideright ">查看该项使用指南</a></h2>
+						<p class="guideimg"><img src="/static/wxgjcn/img/www/index1/weimob22.jpg-v=2014-03-07-1.jpg"  /></p>
+						<p class="guidep">通过数据魔方，商家可轻松了解买家，诊断微网信息，不错过任何一个潜在客户。数据魔方将包括：用户分析、图文内容分析、渠道分析、关键词分析等功能。</p>
+					</div>
+				</div>
+
+				<div data-index="21" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微信墙——活跃现场气氛！<a href="/static/wxgjcn/topic/wallcame.htm"  target="_blank" class="guideright-topic">查看专题</a><a href="help-help=16.htm"  target="_blank" class="guideright ">查看该项使用指南</a></h2>
+						<p class="guideimg"><img src="/static/wxgjcn/img/www/index1/weimob23.jpg-v=2014-03-07-1.jpg"  /></p>
+						<p class="guidep">现场用户关注活动主办方微信公众账号，发送文字、表情、图片消息就可上墙展示，迅速提升现场热度，让大家互动起来。</p>
+					</div>
+				</div>
+                
+                	<div data-index="22" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微拍，让顾客在体验中感受企业魅力<a href="/static/wxgjcn/topic/weipai.htm"  target="_blank" class="guideright-topic">查看专题</a><a href="help-help=17.htm"  target="_blank" class="guideright ">查看该项使用指南</a></h2>
+						<p class="guideimg"><img src="/static/wxgjcn/img/www/index1/weimob24.jpg-v=2014-03-07-1.jpg"  /></p>
+						<p class="guidep">通过“微拍”产品将可轻松的打印时尚美照、给微信加粉、对企业进行品牌推广，让顾客在体验中感受企业魅力！同时，购微拍产品，还可尊享微官网等一系列功能，让企业营销线上线下完美结合！。</p>
+					</div>
+				</div>
+                
+                <div data-index="23" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微团购，拇指微团，将优惠装入客户口袋<a href="/static/wxgjcn/topic/cust.htm"  target="_blank" class="guideright-topic">查看专题</a><a href="help-help=18.htm"  target="_blank" class="guideright ">查看该项使用指南</a></h2>
+						<p class="guideimg"><img src="/static/wxgjcn/img/www/index1/weimob25.jpg-v=2014-03-07-1.jpg"  /></p>
+						<p class="guidep">微团购商家管理分为后台管理及门店管理两个部分。后台管理分为团购管理、订单管理、团购券管理以及会员管理、退款管理：团购管理包括新建团购、复制团购、上架管理、添加通知等功能；订单管理及团购券管理主要功能为查询与导出；会员管理中可以看到会员消费总数据；退款管理中可以查看用户的退款信息。门店管理分为团购券验证及团购券管理两部分：团购券验证可以验证适用门店已选择当前门店的团购券；团购券管理仅支持已被授权的团购。</p>
+					</div>
+				</div>
+
+				<div data-index="24" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微社区-建立微信社交平台<a href="/static/wxgjcn/topic/community.htm"  target="_blank" class="guideright-topic">查看专题</a><a href="help-help=19.htm"  target="_blank" class="guideright ">查看该项使用指南</a></h2>
+						<p class="guideimg"><img src="/static/wxgjcn/img/www/index1/weimob26.jpg-v=2014-03-07-1.jpg"  /></p>
+						<p class="guidep">微社区是基于商家微信公众账号的社交平台，社区虽小，但商家互不相识的粉丝，可以在社区内进行互动，在互动中共同创造内容发生传播，并且支持图片、视频、文字、表情等方式，让交流无限。</p>
+					</div>
+				</div>
+
+                
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="erwei" title="微信扫一扫">
+	<span class="hudongzhushou">官方微信</span>
+	<div class="erwei_big" style="display:none;">
+		<p>扫一扫，关注盛世源码—国内优秀的微信公众服务平台官方微信，体验盛世源码—国内优秀的微信公众服务平台智能服务</p>
+	</div>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var erwei_time = null;
+		$(".erwei").hover(function(){
+			$(".erwei_big").show();
+		}).mouseleave(function(){
+				erwei_time = setTimeout(function(){
+					$(".erwei_big").hide();
+				},1000);
+			});
+		$(".erwei_big").mouseenter(function(){
+			if(erwei_time){
+				clearTimeout(erwei_time);
+			}
+		}).mouseleave(function(){
+				erwei_time = setTimeout(function(){
+					$(".erwei_big").hide();
+				},1000);
+			});
+	});
+</script>
+<!-- 意见反馈 -->
+<div class="feedback" id="feedback">
+	<p class="feedsize"><b>亲爱的用户</b><a class="close" href="javascript:;" onclick= "$('#feedback, #feedback_cover').toggleClass('on');">×</a></p>
+	<p class="bbottom">欢迎您访问盛世源码—国内优秀的微信公众服务平台官方网站！您对盛世源码—国内优秀的微信公众服务平台有任何意见和建议，或在使用过程中遇到问题，请在本页面反馈。我们会实时关注您的反馈不断优化，您的建议将帮助我们改进，为您提供更好的服务！</p>
+	<p class="feedsize"><b>请留下您的宝贵意见和建议！（请填写）</b></p>
+	<form>
+		<textarea  id="feedback-text" name="" id="feedback-text" placeholder="输入文本..."></textarea>
+		<p class="feedsize"><b>您常用的电子邮箱是？（请填写）</b></p>
+		<p style="color:#666; text-indent:1em;"><b class="blue">★</b>请尽量填写，以便我们尽快回复您！</p>
+		<input type="text" placeholder="如：@163.com" id="feedback-input" />
+       <p class="feedsize"><b>验证码</b></p>
+        <input type="text" name="captcha" id="feedback-Captcha" maxlength="4" onclick="">
+        <span name="feedback_captcha" id="feedback_captcha">
+				<img title="看不清？点击更换" style="cursor: pointer;" src="captcha-f=feedback&v=7536108.png"  id="yanzhen" width="60" height="20" border="1">
+	    </span>
+	    <br />
+		<input type="button"  class="feed-btn" value="" onclick="feedbackSubmit(); return false;" />
+	</form>
+</div>
+<div id="feedback_cover" class="feedback_cover"></div>
+<!--QQ咨询-->
+<script charset="utf-8" type="text/javascript" src="/static/wxgjcn//static.b.qq.com/account/bizqq/js/wpa.js-wty=1&type=13&kfuin=631989322&ws=http---www.weimob.com-&title=企业QQ售前&cot1=国内最大的盛世源码—国内优秀的微信公众服务平台&btn1=企业QQ咨询&fsty=0&fposX=2&fposY=1&tx=2&aty=1&a=1001.js" ></script>
+
+<div class="footer">
+	<div class="footer-content clearfix">
+		<div class="foot-menu">
+			<p>
+				<a href="/static/wxgjcn/index1.htm"  target="_blank">盛世源码—国内优秀的微信公众服务平台首页</a>&nbsp;|&nbsp;
+				<a href="/reg.html"  target="_blank">申请入驻</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/proxy1.htm"  target="_blank">渠道代理</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/about1.htm"  target="_blank">关于盛世源码</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/agents.htm"  target="_blank">授权认证</a>&nbsp;|&nbsp;
+				<a href="/static/wxgjcn/jobs.htm"  target="_blank">加入盛世源码</a>
+			</p>
+			<p>免费热线：400-000-0000&nbsp;&nbsp;&nbsp;QQ：631989322&nbsp;&nbsp;&nbsp;邮箱：kf@weiqimobile.com</p>
+			<p>地址：
+								湖南省长沙市</p>
+		</div>
+		<div class="copyright">
+			Copyright 

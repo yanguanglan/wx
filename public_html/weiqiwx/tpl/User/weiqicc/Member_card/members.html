@@ -1,0 +1,134 @@
+<include file="Public:head"/>
+<link rel="stylesheet" type="text/css" href="{ZF::RES}/css/cymain.css" />
+<div class="content" style=" border:none; border:none; margin-bottom:30px;" >
+<link rel="stylesheet" type="text/css" href="/css/wm/bootstrap_min.css?dddf" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/bootstrap_responsive_min.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/style.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/themes.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/todc_bootstrap.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/inside.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/album.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/uploadify_t.css" media="all" />
+ <script type="text/javascript" src="/@system/js/yyucadapter.js"></script>
+<script type="text/javascript" src="/res/mbaudio/inc/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="/res/mbaudio/inc/jquery.mb.miniPlayer.js"></script>
+<link rel="stylesheet" type="text/css" href="/uploadify/uploadify.css">
+<script type="text/javascript" src="/uploadify/jquery.uploadify.js"></script>
+<link rel="stylesheet" type="text/css" href="/res/mbaudio/css/miniplayer.css" title="style" media="screen"/>
+<script src="{ZF::RES}/js/date/WdatePicker.js"></script>  
+<style>.ListProduct tr{text-align:center;}</style>
+<body>
+<div id="main">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="box">
+                    <div class="box-title">
+                        <div class="span10">
+                                <h3><i class="icon-edit"></i>{ZF:$thisCard.cardname}会员管理({ZF:$page})</h3>
+                            </div>
+						<div class="span2">
+                            <a class="btn" href="javascript:history.go(-1);">返回</a> 
+                        </div>
+						</div>
+                        <div class="box-content" style="padding:20px 0px 20px 20px">
+<ul class="nav nav-tabs">
+<li class="<if condition="ACTION_NAME EQ 'create' and $isBranch neq 1">active</if>"><a href="{ZF::U('Member_card/create',array('token'=>$token,'id'=>$_GET['id']))}">在线开卡</a></li>
+<li class="<if condition="ACTION_NAME EQ 'exchange' OR $isBranch eq 1">active</if>"><a href="{ZF::U('Member_card/exchange',array('token'=>$token,'id'=>$_GET['id']))}">积分设置</a></li>
+<li class="<if condition="ACTION_NAME EQ 'notice' OR $isBranch eq 1">active</if>"><a href="{ZF::U('Member_card/notice',array('token'=>$token,'id'=>$_GET['id']))}">通知管理</a></li>
+<li class="<if condition="ACTION_NAME EQ 'privilege' OR $isBranch eq 1">active</if>"><a href="{ZF::U('Member_card/privilege',array('token'=>$token,'id'=>$_GET['id']))}">特权管理</a></li>
+<li class="<if condition="ACTION_NAME EQ 'coupon' OR $isBranch eq 1">active</if>"><a href="{ZF::U('Member_card/coupon',array('token'=>$token,'id'=>$_GET['id']))}">优惠券管理</a></li>
+<li class="<if condition="ACTION_NAME EQ 'integral' OR $isBranch eq 1">active</if>"><a href="{ZF::U('Member_card/integral',array('token'=>$token,'id'=>$_GET['id']))}">礼品券管理</a></li>
+<li class="<if condition="ACTION_NAME EQ 'members' OR $isBranch eq 1">active</if>"><a href="{ZF::U('Member_card/members',array('token'=>$token,'id'=>$_GET['id']))}">会员管理</a></li>
+</ul>
+</div>
+
+<div class="cLineD">
+查询资料[仅支持按照会员卡号查询]
+<form method="post" action="">
+<input size="80" value="" name="searchkey" class="px">&nbsp;
+<button type="submit" name="appidsubmit" value="true" class="btn" ><strong>查询</strong></button>
+</form>
+</div>
+<div class="msgWrap">
+<div style="background:#fefbe4;border:1px solid #f3ecb9;color:#993300;padding:10px;margin-top:5px;">注意:在每行的输入框里可以通过输入消费金额（可以填写负数）来增减会员积分</div>
+<input name="delall"  type="hidden" value="del" />
+<TABLE class="table table-bordered table-hover dataTable">
+<THEAD>
+<TR>
+<TH>卡号</TH>
+<TH>微信名</TH>
+<TH>姓名</TH>
+<TH>联系电话</TH>
+<TH>QQ号码</TH> 
+<TH>领卡时间</TH>
+<TH>积分</TH>
+<TH>消费总额(元)</TH>
+<TH>消费金额(元)</TH> 
+<TH class="norightborder">添加</TH>              
+<TH >操作</TH>
+</TR>
+</THEAD>
+<TBODY>
+<TR></TR>
+
+<volist id="list" name="members">
+<TR>
+<TD>{ZF:$list.number}</TD>
+<TD>{ZF:$list.wechaname}</TD>
+<TD>{ZF:$list.truename}</TD>
+<TD>{ZF:$list.tel}</TD>
+<TD>{ZF:$list.qq}</TD> 
+<TD>
+<if condition="$list['getcardtime'] gt 0">
+{ZF:$list.getcardtime|date='Y-m-d',###}
+<else/>
+无时间记录
+</if>                      
+</TD>
+<TD>{ZF:$list.total_score}</TD> 
+<TD>{ZF:$list.expensetotal}</TD> 
+<form method="post"  action="{ZF::U('Member_card/memberExpense',array('token'=>$token,'id'=>$thisCard['id']))}" >
+<TD>
+<input type="text" name="money" value="0" class="px" style="width:40px;">
+<input type="hidden" name="wecha_id" value="{ZF:$list.wecha_id}">
+</TD>
+<TD>  <button type="submit" style="cursor:pointer" class="btn">设置</button></TD>
+</form>
+<TD class="norightborder">				  
+<a href="{ZF::U('Member_card/member',array('token'=>$token,'id'=>$thisCard['id'],'itemid'=>$list['id']))}" class="btn"><strong>消费记录</strong></a> &nbsp; 
+<a href="{ZF::U('Member_card/signrecords',array('token'=>$token,'id'=>$thisCard['id'],'itemid'=>$list['id']))}" class="btn"><strong>签到记录</strong></a> &nbsp; <a href="javascript:drop_confirm('您确定要删除吗?', '{ZF::U('Member_card/member_del',array('token'=>$token,'id'=>$thisCard['id'],'itemid'=>$list['id']))}');" class="btn"><strong>删除</strong></a> 
+</TD>
+</TR>
+</volist>
+
+
+</TBODY>
+</TABLE>
+</div>
+<div class="cLine">
+<div class="pageNavigator right">
+<div class="pages">{ZF:$page}</div>
+</div>
+<div class="clr"></div>
+</div>
+</div>
+
+<div class="clr"></div>
+</div>
+</div>
+</div>
+<script>
+
+function checkAll(form, name) {
+for(var i = 0; i < form.elements.length; i++) {
+var e = form.elements[i];
+if(e.name.match(name)) {
+e.checked = form.elements['chkall'].checked;
+}
+}
+}
+</script>
+<!--底部-->
+</div>
+<include file="Public:footer"/>  

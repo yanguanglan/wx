@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+<link rel="stylesheet" type="text/css" href="<?php echo $CSS; ?>wm/index.css" media="all" />
+<link rel="stylesheet" type="text/css" href="<?php echo $CSS; ?>wm/bootstrap_min.css" media="all" />
+<link rel="stylesheet" type="text/css" href="<?php echo $CSS; ?>wm/bootstrap_responsive_min.css" media="all" />
+<link rel="stylesheet" type="text/css" href="<?php echo $CSS; ?>wm/style.css" media="all" />
+<link rel="stylesheet" type="text/css" href="<?php echo $CSS; ?>wm/themes.css" media="all" />
+<link rel="stylesheet" type="text/css" href="<?php echo $CSS; ?>wm/todc_bootstrap.css" media="all" />
+<link rel="stylesheet" type="text/css" href="<?php echo $CSS; ?>wm/inside.css" media="all" />
+<link rel="stylesheet" type="text/css" href="<?php echo $CSS; ?>wm/album.css" media="all" />
+<title>微信管家—国内最大的微信公众服务平台</title><script type="text/javascript">var yyuc_jspath = "/@system/";</script><script type="text/javascript" src="/@system/js/jquery.js"></script><script type="text/javascript" src="/@system/js/yyucadapter.js"></script>
+</head>
+<body class="<?php echo Session::get('maintheme'); ?>">
+
+<div id="main">
+    <div class="container-fluid">
+
+        <div class="row-fluid">
+            <div class="span12">
+
+                <div class="box">
+                    <div class="box-title">
+                        <div class="span4">
+                            <h3><i class="icon-cog"></i>预约挂号列表</h3>
+                        </div>
+                        <form action="" method="get" id="form1" name="form1">
+                        <div class="span8">
+                            <div class="form-horizontal">
+                                <select name="types" id="types" class="span2">
+                                    <option value="" >全部</option>
+                                    <option value="id">预约号</option>
+                                    <option value="tel">电话</option>
+                                    <option value="name">姓名</option>
+                                    <option value="keshi">预约科室</option>
+                                    <option value="zj">预约专家</option>
+                                    <option value="bz">预约病种</option>
+                                    <option value="yddate">预约日期</option>
+                                </select>
+                                <input type="text" id="keywords" name="keywords" value="" class="input-medium" placeholder="请输入关键词">
+                                <button class="btn" id="search">查询</button>
+                                                            </div>
+                        </div>
+                        </form>
+                    </div>
+
+                    <div class="box-content">
+                        
+                       <div class="row-fluid dataTables_wrapper">
+                                <table id="listTable" class="table table-bordered table-hover dataTable table-striped ajax-checkbox" >
+                                    <thead>
+									<tr>
+									<th>预约号</th>
+				<?php $c =0; foreach ((array)$ddx as $dd) {  ?>
+							
+							<th><?php echo $dd->name;  $c++;?></th>
+				<?php } ?>
+									<th>状态</th>
+									<th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+									<?php $b = 1; foreach((array)$arr as $ff){
+									
+									if($c<16)
+									{
+									$a[$c] ="<!--";
+									$a['16'] = "-->";
+									}
+                                        echo 	"<tr>";
+										echo	'<td>'.$b.'</td>';
+                                        echo $a['0'].'<td>'.$ff->form0.'</td>';
+										echo $a['1'].'<td>'.$ff->form1.'</td>';
+										echo $a['2'].'<td>'.$ff->form2.'</td>';
+										echo $a['3'].'<td>'.$ff->form3.'</td>';
+										echo $a['4'].'<td>'.$ff->form4.'</td>';
+										echo $a['5'].'<td>'.$ff->form5.'</td>';
+										echo $a['6'].'<td>'.$ff->form6.'</td>';
+										echo $a['7'].'<td>'.$ff->form7.'</td>';
+										echo $a['8'].'<td>'.$ff->form8.'</td>';
+										echo $a['9'].'<td>'.$ff->form9.'</td>';
+										echo $a['10'].'<td>'.$ff->form10.'</td>';
+										echo $a['11'].'<td>'.$ff->form11.'</td>';
+										echo $a['12'].'<td>'.$ff->form12.'</td>';
+										echo $a['13'].'<td>'.$ff->form13.'</td>';
+										echo $a['14'].'<td>'.$ff->form14.'</td>';
+										echo $a['15'].'<td>'.$ff->form15.'</td>';
+                                        echo $a['16'].'<td><span style="color:red;font-weight:bold;">'.$fff[$ff->state].'</span></td>
+                                                <td width="10%">
+                                                    <a href="edit-'.$ff->id.'.html" class="btn" rel="tooltip" title="Edit"><i class="icon-edit"></i></a>
+                                                </td> 
+                                            </tr>';
+									} ?>		
+                                    </tbody>
+                                </table>
+                                <div class="dataTables_paginate paging_full_numbers"><span> <a class="paginate_active">1</a> </span></div>
+                       </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+  $(function () {
+	  var tp = "";
+	  if(tp!='') $("#types").val(tp);
+  });
+</script>
+</body>
+</html>

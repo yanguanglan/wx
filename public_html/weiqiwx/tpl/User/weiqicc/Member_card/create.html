@@ -1,0 +1,127 @@
+<include file="Public:head"/>
+<link rel="stylesheet" type="text/css" href="{ZF::RES}/css/cymain.css" />
+<div class="content" style=" border:none; border:none; margin-bottom:30px;" >
+<link rel="stylesheet" type="text/css" href="/css/wm/bootstrap_min.css?dddf" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/bootstrap_responsive_min.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/style.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/themes.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/todc_bootstrap.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/inside.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/album.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/wm/uploadify_t.css" media="all" />
+ <script type="text/javascript" src="/@system/js/yyucadapter.js"></script>
+<script type="text/javascript" src="/res/mbaudio/inc/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="/res/mbaudio/inc/jquery.mb.miniPlayer.js"></script>
+<link rel="stylesheet" type="text/css" href="/uploadify/uploadify.css">
+<script type="text/javascript" src="/uploadify/jquery.uploadify.js"></script>
+<link rel="stylesheet" type="text/css" href="/res/mbaudio/css/miniplayer.css" title="style" media="screen"/>
+<script>
+function selectall(name) {
+	var checkItems=$('.cbitem');
+	if ($("#check_box").attr('checked')==false) {
+		$.each(checkItems, function(i,val){
+			val.checked=false;
+		});
+		
+	} else {
+		$.each(checkItems, function(i,val){
+			val.checked=true;
+		});
+	}
+}
+</script> 
+<link rel="stylesheet" type="text/css" href="{ZF::RES}/css/cymain.css" />
+<body>
+<div id="main">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="box">
+                    <div class="box-title">
+                        <div class="span10">
+                                <h3><i class="icon-edit"></i>创建会员卡号({ZF:$page})(此会员卡号,会员领取一张，这里将会少一张,当全部被领取完了,请再次开卡)</h3>
+							
+                            </div>
+						<div class="span2">
+                            <a class="btn" href="javascript:history.go(-1);">返回</a> 
+                        </div>
+						</div>
+                        <div class="box-content" style="padding:20px 0px 20px 20px">
+<ul class="nav nav-tabs">
+<li class="<if condition="ACTION_NAME EQ 'create' and $isBranch neq 1">active</if>"><a href="{ZF::U('Member_card/create',array('token'=>$token,'id'=>$_GET['id']))}">在线开卡</a></li>
+<li class="<if condition="ACTION_NAME EQ 'exchange' OR $isBranch eq 1">active</if>"><a href="{ZF::U('Member_card/exchange',array('token'=>$token,'id'=>$_GET['id']))}">积分设置</a></li>
+<li class="<if condition="ACTION_NAME EQ 'notice' OR $isBranch eq 1">active</if>"><a href="{ZF::U('Member_card/notice',array('token'=>$token,'id'=>$_GET['id']))}">通知管理</a></li>
+<li class="<if condition="ACTION_NAME EQ 'privilege' OR $isBranch eq 1">active</if>"><a href="{ZF::U('Member_card/privilege',array('token'=>$token,'id'=>$_GET['id']))}">特权管理</a></li>
+<li class="<if condition="ACTION_NAME EQ 'coupon' OR $isBranch eq 1">active</if>"><a href="{ZF::U('Member_card/coupon',array('token'=>$token,'id'=>$_GET['id']))}">优惠券管理</a></li>
+<li class="<if condition="ACTION_NAME EQ 'integral' OR $isBranch eq 1">active</if>"><a href="{ZF::U('Member_card/integral',array('token'=>$token,'id'=>$_GET['id']))}">礼品券管理</a></li>
+<li class="<if condition="ACTION_NAME EQ 'members' OR $isBranch eq 1">active</if>"><a href="{ZF::U('Member_card/members',array('token'=>$token,'id'=>$_GET['id']))}">会员管理</a></li>
+</ul>
+</div>
+
+<a href="{ZF::U('Member_card/create_add',array('token'=>$token,'id'=>$thisCard['id']))}" title="创建会员卡号" class="btn"><i class="icon-plus"></i>创建会员卡号
+				</a>&nbsp;&nbsp;<a class="btn" href="###" onclick="if(confirm('确定删除吗')){$('#info').submit()}">删除</a>&nbsp;&nbsp; <strong>已经领取 <span style="color:red">{ZF:$usecount}</span> 张，剩余<span style="color:red">{ZF:$ucount}</span>张未领取，一共 <span style="color:red">{ZF:$count}</span>张</strong>
+
+          <div class="clr"></div>
+          </div><br>
+          <form method="post" action="" id="info">
+          <input name="delall" type="hidden" value="del">
+            <table class="table table-bordered table-hover dataTable">
+              <thead>
+                <tr>
+					<th class="select"><input type="checkbox" value="" id="check_box" onclick="selectall('id[]');"></th>
+					<th class="category">会员卡号</th>					
+					<th class="edit norightborder">状态</th>
+                    <th class="category">会员资料</th>
+                </tr>
+              </thead>
+              <tbody>
+                <volist name="data_vip" id="data_vip">           
+                <tr>
+					  <td><input type="checkbox" value="{ZF:$data_vip.id}" class="cbitem" name="id_{ZF:$i}"></td>
+
+					  <td><div class="answer_text">{ZF:$data_vip.number}</div></td>
+					 
+					  <td class="norightborder">
+						<!--a href="">使用统计</a--> 
+						<if condition="$data_vip['wecha_id'] eq false">空闲卡<else/><strong>使用中</strong></if>
+					  </td>
+                      <td> 
+                      <if condition="$data_vip['wecha_id'] neq false">
+                            
+                    <a href="{ZF::U('Member_card/getuserinfo',array('id'=>$data_vip['wecha_id']))}" class="btn">查看详情</a>
+                       
+                      </if>
+                    
+                    </td>
+                </tr>
+				</volist>
+      			
+              </tbody>
+            </table>
+           </form> 
+			<script>
+			   function checkvotethis() {
+					var aa=document.getElementsByName('del_id[]');
+					var mnum = aa.length;
+					j=0;
+					for(i=0;i<mnum;i++){
+					if(aa[i].checked){
+					j++;
+					}
+					}
+					if(j>0) {
+					document.getElementById('info').submit();
+					} else {
+					alert('未选中内容！')
+					}
+				}
+			</script>
+          </div>
+          <div class="cLine">
+            <div class="pageNavigator right">
+                 <div class="pages"></div>
+             </div>
+            <div class="clr"></div>
+          </div>
+        </div>
+<include file="Public:footer"/>

@@ -1,0 +1,76 @@
+﻿<include file="Public:head"/>
+
+<div class="content" style="" >
+
+<div class="cLineB">
+
+<h4 class="left">贺卡管理</h4></div>
+<div class="cLine">
+
+<div class="pageNavigator left"> <a href="{ZF::U('Heka/add',array('token'=>$token))}" title="添加贺卡" class="btnGrayS vm bigbtn"><img src="{ZF::RES}/images/product/add.png" width="16" class="vm">添加贺卡</a></div>
+
+<div class="clr"></div>
+
+</div>
+
+<div class="msgWrap">
+<table class="ListProduct" border="0" cellspacing="0" cellpadding="0" width="100%">
+<thead>
+<tr>
+
+<th width="160">贺卡名称</th>
+
+<th width="160">关键词</th>
+
+<th width="160">转发次数</th>
+
+<th width="160">查看次数</th>
+
+<th width="200" class="norightborder">操作</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr></tr>
+
+<volist name="data" id="item"> 
+
+<tr>
+
+<td>{ZF:$item.title}</td>
+
+<td>{ZF:$item.keyword}</td>
+
+<td>{ZF:$item.forwards}</td>
+
+<td>{ZF:$item.see}</td>
+
+<td class="norightborder"><a href="{ZF::U('Heka/set',array('id'=>$item['id'],'token'=>$token))}">修改</a>&nbsp;&nbsp;<a target="_blank" href="{ZF::U('Wap/Heka/index',array('id'=>$item['id'],'token'=>$token))}">查看</a>&nbsp;&nbsp;<a href="{ZF::U('Heka/del',array('id'=>$item['id'],'token'=>$token))}">删除</a></td>
+
+</tr>
+
+</volist>
+
+</tbody>
+
+</table>
+</div>
+
+<div class="cLine">
+
+<div class="pageNavigator right">
+
+<div class="pages">{ZF:$page}</div>
+
+</div>
+
+<div class="clr"></div>
+
+</div>
+
+</div>
+
+<include file="Public:footer"/>

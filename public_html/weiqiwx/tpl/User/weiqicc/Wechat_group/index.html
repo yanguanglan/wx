@@ -1,0 +1,136 @@
+<include file="Public:head"/>
+<script>
+function selectall(name) {
+	var checkItems=$('.cbitem');
+	if ($("#check_box").attr('checked')==false) {
+		$.each(checkItems, function(i,val){
+			val.checked=false;
+		});
+		
+	} else {
+		$.each(checkItems, function(i,val){
+			val.checked=true;
+		});
+	}
+}
+</script>
+<script src="{ZF::STATICS}/fushionCharts/JSClass/FusionCharts.js" type="text/javascript"></script>   
+<link rel="stylesheet" type="text/css" href="{ZF::RES}/css/cymain.css" />
+<div class="content">
+  <div class="cLineB">
+              <h4 class="left">关注粉丝管理</h4>
+
+								<div class="searchbar right">
+<form method="post" action="">
+<input type="text" id="msgSearchInput" class="txt left" placeholder="输入昵称搜索" name="keyword" value="">
+<input type="submit" value="搜索" id="msgSearchBtn" href="" class="btnGrayS" title="搜索">
+</form>
+</div>        
+              <div class="clr"></div>
+          </div>
+ <div class="cLineD">
+
+         </div>
+          <div class="cLine">
+    <div class="ftip" style="margin:0 auto">高级服务号才能使用此功能，点击下面的“更新列表”便会同步您的粉丝信息</div>
+</div>
+
+
+	<if condition="$showStatistics eq 1">
+<div id="chartdiv1" align="center"></div>
+					<script type="text/javascript">
+					var chart = new FusionCharts("{ZF::STATICS}/fushionCharts/Charts/Pie3D.swf", "ChartId", "600", "400", "0", "1");
+					//chart.setTransparent("false");
+					chart.setDataXML('{ZF:$xml}');
+					//chart.setDataURL("data.html");
+					chart.render("chartdiv1");
+					</script>
+</if>					
+          
+          <div class="cLine">
+            <div class="pageNavigator left">
+				<a href="{ZF::U('User/Wechat_group/send')}" class="btnGrayS vm bigbtn">
+					<img src="{ZF::RES}/images/text.png" class="vm">更新列表
+				</a>
+				<a href="{ZF::U('User/Wechat_group/send_info',array('all'=>1))}" class="btnGrayS vm bigbtn">
+					<img src="{ZF::RES}/images/text.png" class="vm">刷新所有粉丝信息
+				</a>
+            </div>
+            <div class="clr"></div>
+          </div>
+          <div class="msgWrap" style="border-top:1px solid #ccc;padding-top:10px;margin-top:10px;">
+          
+          <div style="margin:10px 0">
+          <div style="float:right;width:25%;text-align:right">
+          <form method="post" action="">
+<input type="text" id="msgSearchInput" class="px" placeholder="输入昵称搜索" name="keyword" value="">
+<input type="submit" value="搜索" id="msgSearchBtn" href="" class="btnGrayS" title="搜索">
+</form>
+</div>
+<form method="post" action="{ZF::U('User/Wechat_group/setGroup')}" id="info">
+          <div style="width:70%;float:left">将选中粉丝转移到分组中 <select name="wechatgroupid">
+		  <volist name='groups' id='vo'>
+		  <option value="{ZF:$vo.wechatgroupid}">{ZF:$vo.name}</option>
+		  </volist></select> <input type="submit" value="转移" id="msgSearchBtn" href="" class="btnGrayS" title="转移">&nbsp;&nbsp;按分组查看粉丝：<select id="wechatgroupid" onchange="location.href='?g=User&m=Wechat_group&a=index&token={ZF:$token}&wechatgroupid='+this.value">
+		  <volist name='groups' id='vo'>
+		  <option value="{ZF:$vo.wechatgroupid}"<?php if ($_GET['wechatgroupid']==$g['wechatgroupid']){echo ' selected';}?>>{ZF:$vo.name}</option>
+		  </volist>
+		  </select>
+          </div>
+          
+<div style="clear:both"></div>
+</div>
+          
+            <table class="ListProduct" border="0" cellspacing="0" cellpadding="0" width="100%">
+              <thead>
+                <tr>
+                    <th class="select"><input type="checkbox" value="" id="check_box" onclick="selectall('id[]');"></th>
+					<th class="select">编号</th>
+					<th>粉丝昵称</th>
+					<th>性别 </th>
+					<th>分组名</th>
+					<th>省(直辖市) </th>
+					<th>城市 </th>
+					<th>头像</th>
+					<th>关注时间</th>
+					<th class="norightborder">操作</th>
+                </tr>
+              </thead>
+              <tbody>
+			  <volist name='list' id='vo'>
+                <tr>
+                  <td><input type="checkbox" value="{ZF:$list.id}" class="cbitem" name="id_{ZF:$list.id}"></td>
+                  <td>{ZF:$vo.id}</td>
+                  <td>{ZF:$vo.nickname}</td>
+                  <td><if condition="$vo['sex'] eq 1">男<else/>女</if></td>
+                  <td>{ZF:$vo.groupName}</td>
+                  <td>{ZF:$vo.province}</td>
+                  <td>{ZF:$vo.city}</td>
+                  <td>
+					
+					<div class="cateimg">
+						<a href="?g=User&m=Wechat_group&a=showExternalPic&url={ZF:$list.headimgurl}&token={ZF:$token}&wecha_id={ZF:$list.openid}" target="_blank"><?php if (strlen($list['smallheadimgurl'])){?><img src="?g=User&m=Wechat_group&a=showExternalPic&url={ZF:$list.smallheadimgurl}&token={ZF:$token}&wecha_id={ZF:$list.openid}" class="cateimg_small"  /><?php }?></a></div>
+					</td>
+                  <td>{ZF:$vo.subscribe_time|date='Y-m-d',###} </td>
+                  <td class="norightborder">
+						<a href="{ZF::U('Wechat_behavior/statisticsOfSingleFans',array('openid'=>$list['openid']))}">粉丝行为管理</a>　
+						
+						
+				   </td>
+                </tr>
+      			</volist>
+                 <tr>
+
+                </tr>
+              </tbody>
+            </table>
+            </form>
+          </div>
+          <div class="cLine">
+            <div class="pageNavigator right">
+                 <div class="pages">{ZF:$page}</div>
+            </div>
+            <div class="clr"></div>
+          </div>
+        </div>	
+<include file="Public:footer"/>

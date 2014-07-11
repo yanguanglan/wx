@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <!-- Apple devices fullscreen -->
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <!-- Apple devices fullscreen -->
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <base target="mainFrame" />
+        <link rel="stylesheet" type="text/css" href="/css/wm/index.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="/css/wm/bootstrap_min.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="/css/wm/bootstrap_responsive_min.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="/css/wm/style.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="/css/wm/themes.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="/css/wm/todc_bootstrap.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="/css/wm/inside.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="/css/wm/album.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="/css/wm/uploadify_t.css" media="all" />
+        <title>无线烽火台</title><script type="text/javascript">var yyuc_jspath = "/@system/";</script><script type="text/javascript" src="/@system/js/jquery.js"></script><script type="text/javascript" src="/@system/js/yyucadapter.js"></script>
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <script type="text/javascript" src="/res/mbaudio/inc/jquery.jplayer.min.js"></script>
+        <script type="text/javascript" src="/res/mbaudio/inc/jquery.mb.miniPlayer.js"></script>
+        <link rel="stylesheet" type="text/css" href="/uploadify/uploadify.css">
+        <script type="text/javascript" src="/uploadify/jquery.uploadify.js"></script>
+        <link rel="stylesheet" type="text/css" href="/res/mbaudio/css/miniplayer.css" title="style" media="screen"/>
+        <script type="text/javascript" src="/uploadify/jquery.zclip.js"></script>
+        <script type="text/javascript" src="/uploadify/set.js"></script>
+    </head>
+    <body class="theme-blue">
+        <div id="main">
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <div class="box">
+                            <div class="box-title">
+                                <div class="span12">
+                                    <h3><i class="icon-cog"></i>WIFI--关注页提示设置</h3>
+                                </div>
+                            </div>
+                            <div class="box-content">
+                                <form action="" method="post" class="form-horizontal form-validate">
+                                    {tk()}{$model->hidden('id')}
+                                    <input type="hidden" value = "{$model->id}" name="Fl9SWW9dBE8WCkNWZVxT" id="wifi_keywordid" />
+                                    <input type="hidden" name="aid" id="aid" value="33260"/>
+                                    <div class="control-group">
+                                        <label class="control-label" for="title">标题：</label>
+                                        <div class="controls">
+                                            {$model->text('title', array("class"=>'input-xlarge','id'=>'wifi_keywordname'))}<span class="maroon">*</span>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="cover">图文消息封面</label>
+                                        <div class="controls">
+                                            <img class="thumb_img" src="{$model->adimg}" id="pic_pic" style="max-height:100px;" />
+                                            <input type='hidden' value='{$model->adimg}' name="adimg" id="wifi_keywordpic">
+
+                                            <span class="help-inline">
+                                                <button class="btn select_img" type="button" onclick="setpic('pic_pic', 'wifi_keywordpic');">选择图片</button>
+                                                <span class="help-inline">建议尺寸：宽720像素，高400像素,图片大小不超过300K</span>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <label class="control-label" for="cover">公众号二维码</label>
+                                        <div class="controls">
+                                            <img class="thumb_img" src="{$model->wximg}" id="erweima_pic" style="max-height:100px;" />
+                                            <input type='hidden' value='{$model->wximg}' name="wximg" id="wifi_keyworderweima_pic">
+
+                                            <span class="help-inline">
+                                                <button class="btn select_img" type="button" onclick="setpic('erweima_pic', 'wifi_keyworderweima_pic');">选择封面</button>
+                                                <span class="help-inline">建议尺寸：宽720像素，高400像素,图片大小不超过300K</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="brief">图文消息简介</label>
+                                        <div class="controls">
+                                            {$model->textArea('msg', array('id'=>'wifi_keywordms', 'class'=>'input-large','style'=>'height:80px;width:380px;'))}
+                                            <span class="help-block">150文字以内</span>
+                                        </div>
+                                    </div>
+                                    <!--<div class="control-group">
+                                        <label class="control-label" for="brief">是否使用链接</label>
+                                        <div class="controls">
+                                            {$model->checkbox('target')}
+                                        </div>
+                                    </div>-->
+
+
+                                    <input type="hidden" name="id" value="47">
+                                    <div class="form-actions">
+                                        <button id="bsubmit" type="submit" data-loading-text="提交中..." class="btn btn-primary">保存</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+<script type="text/javascript">
+            $(function() {
+                $('#file_upload-button').uploadify({
+                    height: 20,
+                    swf: '/uploadify/uploadify.swf',
+                    uploader: '/uploadify.html',
+                    width: 70,
+                    multi: true,
+                    buttonText: '<span class="uploadify-button-text"><i class="icon-plus-sign"></i>上传音乐</span>',
+                    buttonClass: 'btn pl_add btn-primary',
+                    onUploadSuccess: function(a, b, c, d, e) {
+                        $('input[rel="music"]').val(b);
+                        $('.audiotd').html('<a id="m1" class="audio { skin:\'blue\'}" href="' + b + '" >......</a>');
+                        $(".audio").mb_miniPlayer({
+                            width: 50,
+                            inLine: false
+                        });
+                    }
+                });
+
+                $(".audio").mb_miniPlayer({
+                    width: 50,
+                    inLine: false
+                });
+            });
+
+
+            window.document.onkeydown = function(e) {
+                if ('' == document.activeElement.id) {
+                    var e = e || event;
+                    var currKey = e.keyCode || e.which || e.charCode;
+                    if (8 == currKey) {
+                        return false;
+                    }
+                }
+            };
+
+</script>
+<script type="text/javascript" src="/js/comm.js"></script>
