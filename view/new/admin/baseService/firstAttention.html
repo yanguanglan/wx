@@ -53,41 +53,18 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript">
-    $(function(){
-    	$('input[name="hflx"]').click(function(){
-    		var val = $('input[name="hflx"]:checked').val();
-    		$('#answertype').val(val).trigger('change');
-    		if(val=='1'){
-    			 openscset();
-    		}
-    	});
-    });
-    
-    function openscset(){
-		pophtml('<iframe src="/admin/baseService/contresource-tosel.html" style="width:880px;height:470px;border:none;background-color: #dfdfdf;" width="880px" height="475px"></iframe>',920,510,true);
-	}
-    
-    function setselid(id){
-    	$('input[relval="'+id+'"]').prop('checked',true);
-    	$('#multiArticle11if').attr('src','/admin/baseService/contresourceshowone-'+id+'.html');
-    	
-    }
-    </script>
 	<form class="form-horizontal" id="reply_form" style="margin-left: 10px;margin-top:10px;">	        
 			<div class="control-group">
-			  <label class="control-label" for="answertype" style="text-align: right;margin-top: -4px;">自动回复类型:</label>
+			  <label class="control-label" style="text-align: right;margin-top: -4px;">自动回复类型:</label>
 			    <div class="controls">
-			    <input type="radio" name="hflx" style="margin-top: -2px; outline: none;" id="answertype0" value="0">文字
-			    <input type="radio" name="hflx" style="margin-top: -2px; outline: none;margin-left: 60px;"  value="1" id="answertype1">图文
-					<select class="span2" id="answertype" name="answertype" style="display: none;">
-					  <option value="0">文字</option>
-					   <option selected="selected" value="1">图文</option>
-					</select>
+                    <select class="span2" id="answertype" name="answertype">
+                        <option value="0">文字</option>
+                        <option selected="selected" value="1">图文</option>
+                    </select>
 			   </div>
 		  	</div>
-	        <div style="display: none;" class="control-group" id="textreply">
-	            <label class="control-label" for="reply"  style="text-align: right;margin-top: -4px;">自动回复内容:</label>
+	        <div class="control-group" id="textreply">
+	            <label class="control-label" for="textreply"  style="text-align: right;margin-top: -4px;">自动回复内容:</label>
 	            <div class="controls">
 	           		
 
@@ -235,21 +212,11 @@
 		</div>
 	</div>
 </div>
-<script type="text/javascript">
-$(function(){
-	
-});
-
-
-</script>
 		      		<span class="maroon">*</span><span class="help-inline">必填, 用户添加您的时候自动回复语</span>
 		        </div>
 	        </div>
-	        <div class="control-group" id="multiArticle11" style="display: none;width: 100%;">
-	        <iframe id="multiArticle11if" src="" style="margin-left:130px;width:380px;height:330px;border:none;" width="380px" ></iframe>
-	        </div>
-	        <div class="control-group" id="multiArticle" style="display: none;">
-			  <label class="control-label" for="answertype">自动回复图文:</label>
+	        <div class="control-group" id="multiArticle">
+			  <label class="control-label" style="text-align: right;">自动回复图文:</label>
 			    <div class="controls art_table">
 			    	<table class="table table-bordered">
 						<thead>
@@ -274,41 +241,21 @@ $(function(){
 								{if $item['typ'] == 1}
 									<a href="javascript:void(0);" onclick="if(confirm('确定要修改吗？')){ goto('contresourceone-{$item['id']}.html');}">[编辑]</a></th>
 								{else}
-								    	<a href="javascript:void(0);" onclick="if(confirm('确定要修改吗？')){ goto('contresourcemore-{$item['id']}.html');}">[编辑]</a></th>
+								    <a href="javascript:void(0);" onclick="if(confirm('确定要修改吗？')){ goto('contresourcemore-{$item['id']}.html');}">[编辑]</a></th>
 								{/if}
-								<!-- <th>
-								<span class="modifyArticle">
-								[<a href="javascript:void(0);" onclick="if(confirm('确定要修改吗？')){ goto('firstAttention-{edit}-{$item['id']}.html');}">修改]</a>
-							    </span>
-								[<a href="javascript:void(0);" onclick="if(confirm('确定要删除吗？')){ goto(firstAttention-{delete}-{$item['id']}.html');}">删除]</a>
-								</th> -->
 							</tr>
 						{/loop}	
 						</tbody>
 					</table>
-					<div class="tb-toolbar">
-					<!-- 	<button id="addArticle" class="btn btn-small btn-primary">新增</button> -->
-					</div>
 			   </div>
 		  	</div>
 	         <div class="control-group" style="margin-top: 20px;">
 	            <div class="controls">
-	           		<button type="submit" class="btn-large btn-primary" id="submitbtn">保存</button>
+	           		<button type="button" class="btn-large btn-primary" id="submitbtn">保存</button>
 		        </div>
 	        </div>
 	</form>
-	<div id="myModal" class="modal hide fade">
-		sss
-	</div>
-	<textarea id="q_fircon" style="display: none;">{$content}</textarea>
-  
-  
-  <div id="gotonext" style="display: none;">
-	<img src="{$IMG}/admin/v3/kefu.png" ></img>
-  </div>
-  
-  
-<script>
+<script type="text/javascript">
 var itemRow = 0;
 var auto_reply_id = '{$id}';   //autoreply table id
 //类型转换
@@ -428,13 +375,13 @@ $(function(){
 		var type = $("#answertype").val(); 
 		if (type == 0) {
 			$("div#textreply").show();
-			$("div#multiArticle11").hide();
+			$("div#multiArticle").hide();
 		} else if(type == 1){
 			$("div#textreply").hide();
-			$("div#multiArticle11").show();
+			$("div#multiArticle").show();
 		} else{
 			$("div#textreply").hide();
-			$("div#multiArticle11").show();
+			$("div#multiArticle").show();
 			initRenderArticle();
 		}
 	});
@@ -474,40 +421,19 @@ $(function(){
 		$('input[value="'+itemData.resource_id+'-'+itemData.typ+'"]').prop('checked',true);
 		if(itemData.typ == 0){
 			 $("#answertype").val("0");
-			 $('#answertype0').prop('checked',true);
 			 $("div#textreply").show();
-			 $("div#multiArticle11").hide();			 
+			 $("div#multiArticle").hide();
 			 initRenderArticle();
 		 }else if(itemData.typ != 0){
 			 $("#answertype").val('1');
-			 $('#answertype1').prop('checked',true);
 			 $("div#textreply").hide();
-			 $("div#multiArticle11").show();
-			 setselid(itemData.resource_id)
+			 $("div#multiArticle").show();
 		 }
 	}else{
 		 $("#answertype").val("0");
-		 $('#answertype0').prop('checked',true);
 		 $("div#textreply").show();
-		 $("div#multiArticle11").hide();
+		 $("div#multiArticle").hide();
 	}
-	
-	
-	
-	//新增一条多图文
-	$("#addArticle").click(function(){
-		var submitData = {
-				action : 'addArticle',
-				wuid : wuid
-			};
-	     var add = 'add'; 
-		$.post('/admin/baseService/ajax.html',{ type:2},function(data) {
-			alert(data);
-				$("#myModal").html(data);
-				$('#myModal').modal('show');
-		},"html");
-		return false;
-	});
 	
 	//删除一条图文
 	$("#multiArticle").on("click", ".delArticle", function(){
@@ -582,12 +508,6 @@ $(function(){
 		}
 		
 		return false;
-	});
-	
-	
-	$("#gotonext").click(function(){
-		window.parent.$('.menu-kefu').trigger('click');
-		//window.parent.$('.menu-gjz').trigger('click');
 	});
 });
 </script>
